@@ -1,8 +1,16 @@
 # silenzio_robot_library
 
-### HARDWARE SOFTWARE SETUP
 
-### nVIDIA Jetson Orin NX 16GB
+- [Hardware](HARDWARE/README.md)<br/>
+- [Linux Setup and Commands](LINUX/README.md)<br/>
+- [ROS1 noetic](ROS1/README.md)<br/>
+- [ROS2 humble](ROS2/README.md)<br/>
+
+____
+
+### My current Hardwere & Software Setup
+
+### Dev-board: nVIDIA Jetson Orin NX 16GB
 
 Platform:
 - System: Linux
@@ -26,3 +34,6 @@ Hardware:
 - Soc: tegra234
 - LAT: 36.4.3
 - Jetpack: 6.2
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
