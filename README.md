@@ -9,7 +9,7 @@
 
 ____
 
-### My current Hardwere & Software Setup
+### Current Hardware & Software Setup
 
 ### Dev-board: nVIDIA Jetson Orin NX 16GB
 
