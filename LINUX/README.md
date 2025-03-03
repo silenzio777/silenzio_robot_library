@@ -1,4 +1,4 @@
-### LINUX commands:
+### Ubuntu 22.04 commands:
 ___________
 ```
 spci
