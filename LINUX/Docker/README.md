@@ -1,6 +1,6 @@
 # Docker commands:
 > [!TIP]
-> Useful info about NVIDIA Containers: [The NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.13.5/install-guide.html?highlight=get%20docker#setting-up-docker)
+> Useful info about NVIDIA Containers: [The NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/1.13.5/install-guide.html)
 
 ________
 ## Install:
