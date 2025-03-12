@@ -197,6 +197,10 @@ RUN cd /usr/src/librealsense \
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
 RUN python3 get-pip.py 
 
+## for UbuntuPC (arm64)
+# RUN apt-get update && apt-get install -y iputils-ping ros-noetic-rqt ros-noetic-rqt-graph ros-noetic-rqt-common-plugins
+
+## for Jetson (arm64)
 RUN apt install -y iputils-ping
 RUN apt install -y ros-noetic-rqt-common-plugins; exit 0
 
