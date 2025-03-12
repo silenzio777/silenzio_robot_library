@@ -211,18 +211,19 @@ WORKDIR /catkin_ws
 ```
 docker build --network=host --build-arg NVIDIA_DRIVER_CAPABILITIES=compute,utility -t r1_nv_rs_ssl_slam_ceres_cuda --target r1_nv_rs_ssl_slam_ceres_cuda --build-arg LIBRS_VERSION=2.48.0 --progress=plain . 
 ```
+--------
 
-### RUN:
+### RUN on Jetson NX:
 ```
 docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUTHORITY}:/root/.Xauthority" --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/_dataset:/_dataset -v ~/catkin_ws:/catkin_ws r1_nv_rs_ssl_slam_ceres_cuda bash
 ```
 
-### RUN inside docker container:
+### RUN inside Jetson NX docker container:
 ```
 #INSIDE DOCKER:
 
-export ROS_MASTER_URI=http://192.168.X.XX:11311
-export ROS_IP=192.168.X.XX
+export ROS_MASTER_URI=http://192.168.X.XX:11311 <<< use Jetson NX ip
+export ROS_IP=192.168.X.XX  <<< use Jetson NX ip
 
 source ./devel/setup.bash
 #SSL_SLAM2:
@@ -237,6 +238,33 @@ roslaunch ssl_slam ssl_slam_L515_octo_mapping.launch
 roslaunch realsense2_camera demo_t265.launch
 
 ```
+--------
+
+### RUN on Ubuntu PC:
+```
+docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUTHORITY}:/root/.Xauthority" --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/_dataset:/_dataset -v ~/catkin_ws:/catkin_ws r1_nv_rs_ssl_slam_ceres_cuda bash
+```
+
+### RUN inside Ubuntu PC docker container:
+```
+#INSIDE DOCKER:
+
+export ROS_MASTER_URI=http://192.168.X.XX:11311  <<< use Jetson NX ip
+
+source ./devel/setup.bash
+#SSL_SLAM2:
+roslaunch ssl_slam2 ssl_slam2_mapping.launch
+roslaunch ssl_slam2 ssl_slam2_large_mapping.launch
+roslaunch ssl_slam2 ssl_slam2_localization.launch
+
+#SSL_SLAM:
+roslaunch ssl_slam ssl_slam_L515.launch
+roslaunch ssl_slam ssl_slam_L515_octo_mapping.launch
+
+roslaunch realsense2_camera demo_t265.launch
+
+```
+--------
 
 ### Test driver version:
 ```
