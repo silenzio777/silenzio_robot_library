@@ -456,6 +456,26 @@ Stream Profiles supported by Tracking Module
     Accel	 N/A		@ 62Hz	   MOTION_XYZ32F
     Pose	 N/A		@ 200Hz	   6DOF
 ```
+-----
+
+### Packages for build:
+```
+silenzio@jetsonnx:~/catkin_ws/src$ ls
+
+realsense-ros-2.3.1
+vision_opencv
+diagnostics
+omni
+ssl_slam
+ssl_slam2
+ssl_slam3
+common_msgs
+geometry
+ddynamic_reconfigure
+install_rep.sh
+CMakeLists.txt
+```
+
 
 ### Test launch:
 ```
@@ -654,22 +674,4 @@ root@jetsonnx:/catkin_ws# rostopic list
 /rosout_agg
 /tf
 /tf_static
-```
-
-### Packages for build:
-```
-silenzio@jetsonnx:~/catkin_ws/src$ ls
-
-realsense-ros-2.3.1
-vision_opencv
-diagnostics
-omni
-ssl_slam
-ssl_slam2
-ssl_slam3
-common_msgs
-geometry
-ddynamic_reconfigure
-install_rep.sh
-CMakeLists.txt
 ```
