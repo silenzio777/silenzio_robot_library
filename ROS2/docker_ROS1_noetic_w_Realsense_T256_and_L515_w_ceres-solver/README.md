@@ -588,7 +588,7 @@ NODES
 
 auto-starting new master
 process[master]: started with pid [69]
-ROS_MASTER_URI=http://192.168.2.34:11311
+ROS_MASTER_URI=http://192.168.X.XX:11311
 
 setting /run_id to 2f593092-ff6e-11ef-bcd6-488f4cfd08c6
 process[rosout-1]: started with pid [86]
