@@ -197,8 +197,8 @@ RUN cd /usr/src/librealsense \
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py 
 RUN python3 get-pip.py 
 
-#RUN apt-get update && apt-get install -y ros-noetic-rqt ros-noetic-rqt-graph ros-noetic-rqt-common-plugins
-RUN apt-get update && apt-get install -y iputils-ping
+RUN apt install -y iputils-ping
+RUN apt install -y ros-noetic-rqt-common-plugins; exit 0
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
