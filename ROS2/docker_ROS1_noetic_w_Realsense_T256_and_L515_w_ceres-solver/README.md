@@ -204,6 +204,11 @@ ENV PATH=$PATH:/opt/librealsense/bin
 WORKDIR /catkin_ws
 ```
 
+### Build docker container
+```
+docker build --network=host --build-arg NVIDIA_DRIVER_CAPABILITIES=compute,utility -t r1_nv_rs_ssl_slam_ceres_cuda --target r1_nv_rs_ssl_slam_ceres_cuda --build-arg LIBRS_VERSION=2.48.0 --progress=plain . 
+```
+
 ### RUN:
 ```
 docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUTHORITY}:/root/.Xauthority" --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/_dataset:/_dataset -v ~/catkin_ws:/catkin_ws r1_nv_rs_ssl_slam_ceres_cuda bash
@@ -213,8 +218,8 @@ docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUT
 ```
 #INSIDE DOCKER:
 
-export ROS_MASTER_URI=http://192.168.2.34:11311
-export ROS_IP=192.168.2.34
+export ROS_MASTER_URI=http://192.168.X.XX:11311
+export ROS_IP=192.168.X.XX
 
 source ./devel/setup.bash
 #SSL_SLAM2:
@@ -231,9 +236,3 @@ roslaunch realsense2_camera demo_t265.launch
 ```
 
 
-
-
-### Build docker container
-```
-docker build --network=host --build-arg NVIDIA_DRIVER_CAPABILITIES=compute,utility -t r1_nv_rs_ssl_slam_ceres_cuda --target r1_nv_rs_ssl_slam_ceres_cuda --build-arg LIBRS_VERSION=2.48.0 --progress=plain . 
-```
