@@ -7,11 +7,15 @@
 --------
 
 ### Create dockerfile:
-Dockerfile
+cd ~/lib
+mkdir docker_installs
+cd docker_installs
+mkdir R1_NV_RS_SSL_SLAM_CERES_CUDA
+cd R1_NV_RS_SSL_SLAM_CERES_CUDA
+nano Dockerfile
 
 ```
 #FROM arm64v8/ros:noetic-robot-focal AS r1_nv_rs_ssl_slam_ceres_cuda
-
 FROM dustynv/ros:noetic-desktop-l4t-r35.4.1 AS r1_nv_rs_ssl_slam_ceres_cuda
 
 #- Found CUDA version 11.4.315 installed in: /usr/local/cuda
