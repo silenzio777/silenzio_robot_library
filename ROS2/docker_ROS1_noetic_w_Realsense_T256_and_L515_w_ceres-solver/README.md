@@ -1,5 +1,9 @@
 
 
+
+
+
+### Create dockerfile:
 Dockerfile
 
 ```
@@ -198,8 +202,35 @@ ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/librealsense/lib
 ENV PATH=$PATH:/opt/librealsense/bin
 
 WORKDIR /catkin_ws
+```
+
+### RUN:
+```
+docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUTHORITY}:/root/.Xauthority" --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/_dataset:/_dataset -v ~/catkin_ws:/catkin_ws r1_nv_rs_ssl_slam_ceres_cuda bash
+```
+
+### RUN inside docer container:
+```
+#INSIDE DOCKER:
+
+export ROS_MASTER_URI=http://192.168.2.34:11311
+export ROS_IP=192.168.2.34
+
+source ./devel/setup.bash
+#SSL_SLAM2:
+roslaunch ssl_slam2 ssl_slam2_mapping.launch
+roslaunch ssl_slam2 ssl_slam2_large_mapping.launch
+roslaunch ssl_slam2 ssl_slam2_localization.launch
+
+#SSL_SLAM:
+roslaunch ssl_slam ssl_slam_L515.launch
+roslaunch ssl_slam ssl_slam_L515_octo_mapping.launch
+
+roslaunch realsense2_camera demo_t265.launch
 
 ```
+
+
 
 
 ### Build docker container
