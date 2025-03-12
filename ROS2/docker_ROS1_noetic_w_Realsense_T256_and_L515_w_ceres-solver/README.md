@@ -7,12 +7,14 @@
 --------
 
 ### Create dockerfile:
+```
 cd ~/lib
 mkdir docker_installs
 cd docker_installs
 mkdir R1_NV_RS_SSL_SLAM_CERES_CUDA
 cd R1_NV_RS_SSL_SLAM_CERES_CUDA
 nano Dockerfile
+```
 
 ```
 #FROM arm64v8/ros:noetic-robot-focal AS r1_nv_rs_ssl_slam_ceres_cuda
