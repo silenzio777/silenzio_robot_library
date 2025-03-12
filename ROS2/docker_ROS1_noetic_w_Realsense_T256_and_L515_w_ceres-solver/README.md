@@ -655,3 +655,20 @@ root@jetsonnx:/catkin_ws# rostopic list
 /tf
 /tf_static
 ```
+### Packages:
+```
+silenzio@jetsonnx:~/catkin_ws/src$ ls
+
+realsense-ros-2.3.1
+vision_opencv
+diagnostics
+omni
+ssl_slam
+ssl_slam2
+ssl_slam3
+common_msgs
+geometry
+ddynamic_reconfigure
+install_rep.sh
+CMakeLists.txt
+```
