@@ -603,4 +603,23 @@ QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
 shutting down processing monitor...
 ... shutting down processing monitor complete
 ```
-
+### Rostopic list:
+```
+root@jetsonnx:/catkin_ws# rostopic list
+/camera/accel/imu_info
+/camera/accel/sample
+/camera/gyro/imu_info
+/camera/gyro/sample
+/camera/odom/sample
+/camera/realsense2_camera_manager/bond
+/camera/tracking_module/parameter_descriptions
+/camera/tracking_module/parameter_updates
+/clicked_point
+/diagnostics
+/initialpose
+/move_base_simple/goal
+/rosout
+/rosout_agg
+/tf
+/tf_static
+```
