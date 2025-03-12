@@ -485,7 +485,7 @@ Checking log directory for disk usage. This may take a while.
 Press Ctrl-C to interrupt
 Done checking log file disk usage. Usage is <1GB.
 
-started roslaunch server http://192.168.2.34:46343/
+started roslaunch server http://192.168.X.XX:46343/
 
 SUMMARY
 ========
