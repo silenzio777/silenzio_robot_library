@@ -1,7 +1,10 @@
 
+### Work on Ubuntu 22.04:
 
+- Jetson NX 
+- Ubuntu PC  
 
-
+--------
 
 ### Create dockerfile:
 Dockerfile
