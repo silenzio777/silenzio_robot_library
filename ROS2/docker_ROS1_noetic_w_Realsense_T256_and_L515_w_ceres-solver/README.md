@@ -655,7 +655,8 @@ root@jetsonnx:/catkin_ws# rostopic list
 /tf
 /tf_static
 ```
-### Packages:
+
+### Packages for build:
 ```
 silenzio@jetsonnx:~/catkin_ws/src$ ls
 
