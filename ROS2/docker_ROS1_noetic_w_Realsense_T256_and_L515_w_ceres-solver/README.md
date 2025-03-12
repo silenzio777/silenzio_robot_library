@@ -9,10 +9,8 @@
 ### Create dockerfile:
 ```
 cd ~/lib
-mkdir docker_installs
-cd docker_installs
-mkdir R1_NV_RS_SSL_SLAM_CERES_CUDA
-cd R1_NV_RS_SSL_SLAM_CERES_CUDA
+mkdir -p docker_installs/R1_NV_RS_SSL_SLAM_CERES_CUDA
+cd docker_installs/R1_NV_RS_SSL_SLAM_CERES_CUDA
 nano Dockerfile
 ```
 
