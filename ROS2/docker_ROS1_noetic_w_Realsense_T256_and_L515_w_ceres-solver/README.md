@@ -214,7 +214,7 @@ docker build --network=host --build-arg NVIDIA_DRIVER_CAPABILITIES=compute,utili
 docker run -it --net=host --privileged --env="DISPLAY=$DISPLAY" --volume="${XAUTHORITY}:/root/.Xauthority" --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/_dataset:/_dataset -v ~/catkin_ws:/catkin_ws r1_nv_rs_ssl_slam_ceres_cuda bash
 ```
 
-### RUN inside docer container:
+### RUN inside docker container:
 ```
 #INSIDE DOCKER:
 
