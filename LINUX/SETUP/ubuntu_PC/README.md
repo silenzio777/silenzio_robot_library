@@ -11,6 +11,14 @@
 - OpemCV: 4.10.0 with CUDA: YES
 _____
 
+### INSTALL:
+```
+pip install torch==2.5.0 
+pip install torchvision==0.20.0 --no-deps
+pip install torchaudio==2.5.0 --no-deps
+```
+
+### CHECK:
 ```
 silenzio@ubuntuPC:/lib$ python3
 Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
