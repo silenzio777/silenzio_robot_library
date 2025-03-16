@@ -9,4 +9,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch; torch.cuda.is_available();torch.__version__
 True
 '2.5.0'
+>>> import torchvision
+>>> torchvision.__version__
+'0.20.0'
 ```
