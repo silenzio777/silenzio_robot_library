@@ -1,5 +1,5 @@
 
-### conda torch and torchvision
+### Conda Torch and Torchvision with GPU
 
 - Python 3.6.13
 - Torch 1.10.1+cu111
