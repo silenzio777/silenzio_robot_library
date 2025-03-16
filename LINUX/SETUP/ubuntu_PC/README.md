@@ -16,6 +16,10 @@ _____
 pip install torch==2.5.0 
 pip install torchvision==0.20.0 --no-deps
 pip install torchaudio==2.5.0 --no-deps
+
+pip3 install opencv-contrib-python==4.2.0
+pip3 install PyGLM psutil matplotlib IPython scikit-learn pandas imageio
+
 ```
 
 ### CHECK:
@@ -36,9 +40,6 @@ True
 >>>torchaudio.__version__
 '2.5.0+cu124'
 >>> 
-
-pip3 install opencv-contrib-python==4.2.0
-pip3 install PyGLM psutil matplotlib IPython scikit-learn pandas imageio
 
 ```
 
