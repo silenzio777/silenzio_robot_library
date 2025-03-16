@@ -66,6 +66,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import torch; torch.cuda.is_available();torch.__version__
 True
 '1.10.1+cu111'
+
 >>> import torchvision;torchvision.__version__
 '0.11.2+cu111'
 
