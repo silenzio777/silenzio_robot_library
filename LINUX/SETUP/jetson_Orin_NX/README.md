@@ -29,6 +29,10 @@ True
 >>> torchvision.__version__
 '0.20.0'
 
+>>> import torchaudio
+>>> torchaudio.__version__
+'2.5.0'
+
 >>> import torch;print(torch.nn.Conv2d(3, 3, 3).cuda()(torch.rand(1, 3, 6, 6, device='cuda')))
 tensor([[[[-0.2334, -0.6982, -0.1686, -0.2675],
           [ 0.0341, -0.3815, -0.1165, -0.4988],
