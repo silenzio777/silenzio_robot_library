@@ -1,3 +1,10 @@
+
+### conda torch and torchvision
+
+- Python 3.6.13
+- Torch 1.10.1+cu111
+- torchvision 0.11.2+cu111
+
 ```
 nano ~/.bashrc
 ```
