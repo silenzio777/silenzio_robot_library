@@ -4,7 +4,8 @@
 - Python 3.10.12
 - Torch 2.5.0
 - Torchvision 0.20.0
-- 
+_____
+
 ```
 silenzio@jetsonnx:~/ros2_ws$ python3
 Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
