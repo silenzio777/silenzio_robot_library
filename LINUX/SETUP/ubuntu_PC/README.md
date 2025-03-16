@@ -42,7 +42,7 @@ License: BSD-3
 Location: /home/silenzio/miniconda3/envs/pt/lib/python3.6/site-packages
 Requires: typing-extensions, dataclasses
 Required-by: torchvision, torchaudio
----
+
 (pt) silenzio@ubuntuPC:~$ pip3 show torchvision
 Name: torchvision
 Version: 0.11.2+cu111
