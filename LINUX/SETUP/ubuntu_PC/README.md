@@ -83,5 +83,28 @@ tensor([[[[-0.1617, -0.2088, -0.1004, -0.1646],
           [-0.1958, -0.2622, -0.0784, -0.0208]]]], device='cuda:0',
        grad_fn=<AddBackward0>)
 >>> 
+```
+
+
+```
+(pt) silenzio@ubuntuPC:~/jNano/onBoardNNetwork/06.20_VAE_GPU$ python3 VAE_CNN_60_60_JNNX.py
+__CUDNN VERSION: 8005
+__Number CUDA Devices: 1
+__CUDA Device Name: NVIDIA GeForce GTX 1050 Ti
+__CUDA Device Total Memory [GB]: 4.22445056
+device: cuda
+
+__platform: Linux  os.name: posix  release: 6.8.0-52-generic
+>modelType:  CVAE
+>condList.shape:  (503, 5)
+classes len:  250
+>latent_dim:  16
+>condNum:  5
+>size_inp_images:  128
+>train_dataLen:  250
+>batch_size:  220
+>numCategories:  250
+>dsDirDeep:  1
+>time:  2025-03-16 19:36:08.667040
 
 ```
