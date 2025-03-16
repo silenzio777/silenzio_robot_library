@@ -13,6 +13,14 @@ _____
 
 ### INSTALL:
 ```
+
+### https://github.com/XuehaiPan/nvitop?tab=readme-ov-file
+
+git clone --depth=1 https://github.com/XuehaiPan/nvitop.git
+cd nvitop
+pip3 install .
+
+
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
 CUDA Toolkit Installer
 
