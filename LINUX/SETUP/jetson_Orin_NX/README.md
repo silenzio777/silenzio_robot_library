@@ -1,9 +1,15 @@
 
 ### System Torch and Torchvision with GPU
 
+- Ubuntu 22.04 Jammy
 - Python 3.10.12
 - Torch 2.5.0
 - Torchvision 0.20.0
+- CUDA: 12.6.68
+- cuDNN: 9.8.0.87
+- TensorRT: 10.3.0.30
+- VPI: 3.2.4
+- OpemCV: 4.10.0 with CUDA: YES
 _____
 
 ```
