@@ -37,8 +37,9 @@ True
 '2.5.0+cu124'
 >>> 
 
+pip3 install opencv-contrib-python==4.2.0
+pip3 install PyGLM psutil matplotlib IPython scikit-learn pandas imageio
 
- 
 ```
 
 _____
