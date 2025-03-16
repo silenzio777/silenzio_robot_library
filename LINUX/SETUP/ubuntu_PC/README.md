@@ -60,14 +60,15 @@ Required-by:
 Python 3.6.13 |Anaconda, Inc.| (default, Jun  4 2021, 14:25:59) 
 [GCC 7.5.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
-```
-```
+
+
 >>> import torch
 >>> import torch; torch.cuda.is_available();torch.__version__
 True
 '1.10.1+cu111'
 >>> import torchvision;torchvision.__version__
 '0.11.2+cu111'
+
 >>> import torch;print(torch.nn.Conv2d(3, 3, 3).cuda()(torch.rand(1, 3, 6, 6, device='cuda')))
 tensor([[[[-0.1617, -0.2088, -0.1004, -0.1646],
           [-0.2828, -0.1115,  0.0105, -0.0419],
@@ -85,10 +86,7 @@ tensor([[[[-0.1617, -0.2088, -0.1004, -0.1646],
           [-0.1958, -0.2622, -0.0784, -0.0208]]]], device='cuda:0',
        grad_fn=<AddBackward0>)
 >>> 
-```
 
-
-```
 (pt) silenzio@ubuntuPC:~/jNano/onBoardNNetwork/06.20_VAE_GPU$ python3 VAE_CNN_60_60_JNNX.py
 __CUDNN VERSION: 8005
 __Number CUDA Devices: 1
