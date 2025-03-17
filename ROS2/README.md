@@ -49,8 +49,8 @@ CMake Error in /home/silenzio/ros2_ws/build/llama_cpp_vendor/CMakeFiles/CMakeScr
   CUDA_ARCHITECTURES is set to "native", but no NVIDIA GPU was detected.
 ```
 ## FIX:
-### https://github.com/mgonzs13/llama_ros/issues/8
-### https://github.com/jetsonhacks/buildLibrealsense2TX/issues/13
+https://github.com/mgonzs13/llama_ros/issues/8
+https://github.com/jetsonhacks/buildLibrealsense2TX/issues/13
 
 ```
 colcon build --cmake-args -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=87
