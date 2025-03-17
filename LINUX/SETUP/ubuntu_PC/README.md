@@ -121,6 +121,10 @@ pip3 install .
 nvitop
 python3 -m ~/lib/nvitop
 ```
+### Btop:
+```
+sudo snap install btop
+```
 
 ### CUDA and cuDNN:
 ```
