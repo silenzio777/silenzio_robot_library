@@ -134,3 +134,29 @@ colcon build --cmake-args -DGGML_CUDA=ON -DONNX_GPU=ON -DCMAKE_CUDA_ARCHITECTURE
 ```
 > [!NOTE]
 > Build Ok
+
+### Usage:
+Run Silero for VAD and Whisper for STT:
+
+```
+cd ~/ros2_ws && source install/setup.bash
+ros2 launch whisper_bringup whisper.launch.py
+```
+Add the parameter silero_vad_use_cuda:=True to use Silero with CUDA.
+
+### Demos:
+Send a goal action to listen:
+
+```
+cd ~/ros2_ws && source install/setup.bash
+ros2 action send_goal /whisper/listen whisper_msgs/action/STT "{}"
+```
+
+Or try the example of a whisper client:
+```
+cd ~/ros2_ws && source install/setup.bash
+ros2 run whisper_demos whisper_demo_node
+```
+
+> [!NOTE]
+> Run Ok
