@@ -24,10 +24,10 @@ colcon build --cmake-args -DGGML_CUDA=ON # add this for CUDA
 > [!NOTE]
 > Build, Run Ok
 
-
+________
 
 ## Jetson Orin NX
-________
+
 ### Install llama_ros:
 https://github.com/mgonzs13/llama_ros
 
