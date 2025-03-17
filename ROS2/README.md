@@ -203,8 +203,10 @@ silenzio@jetsonnx:~/ros2_ws$ ros2 launch whisper_bringup whisper.launch.py siler
 [silero_vad_node-2] [INFO] [1742238626.872484008] [whisper.silero_vad_node]: Speech ends...
 [whisper_server_node-1] [INFO] [1742238626.914057816] [whisper.whisper_node]: Transcribing
 [silero_vad_node-2] [INFO] [1742238626.914381698] [whisper.silero_vad_node]: SileroVAD disabled
+# >>>>>>>>>>>>>>>>>>>>>>>
 [whisper_server_node-1] [INFO] [whisper.cpp:transcribe:100] [00:00:00.000 --> 00:00:30.000]:  1, 2, 3, 4, 5, and we'll see you next time.
 [whisper_server_node-1] [INFO] [1742238630.156849971] [whisper.whisper_node]: Text heard: 1, 2, 3, 4, 5, and we'll see you next time.
+# <<<<<<<<<<<<<<<<<<<<<<<
 [silero_vad_node-2] [INFO] [1742238630.157555562] [whisper.silero_vad_node]: SileroVAD already disabled
 
 
@@ -223,7 +225,9 @@ Goal accepted with ID: 600e26843eb44e0ba567733de4290df2
 
 Result:
     transcription:
+  # >>>>>>>>>>>>>>>>>>>>>>>
   text: 1, 2, 3, 4, 5, and we'll see you next time.
+  # <<<<<<<<<<<<<<<<<<<<<<<
   audio_time: 2.0
   transcription_time: 3.242791175842285
 
