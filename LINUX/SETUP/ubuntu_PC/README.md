@@ -21,13 +21,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 sudo add-apt-repository universe
 
+sudo apt update
+
 sudo apt-get install chromium-browser
 
 sudo apt-get install python3-pip
 
-sudo apt install curl
-
-sudo apt install git
+sudo apt install curl git wget nano
 
 ```
 ### NVidia driver:
@@ -37,6 +37,7 @@ sudo apt-get install dbus-x11
 sudo apt update && sudo apt upgrade
 
 sudo apt install nvidia-driver-550
+
 $ nvidia-smi
 Fri Mar  7 19:41:25 2025       
 +-----------------------------------------------------------------------------------------+
@@ -49,8 +50,7 @@ Fri Mar  7 19:41:25 2025
 |   0  NVIDIA GeForce GTX 1050 Ti     Off |   00000000:01:00.0  On |                  N/A |
 |  0%   49C    P0             N/A /   72W |     182MiB /   4096MiB |      0%      Default |
 |                                         |                        |                  N/A |
-+-----------------------------------------+------------------------+----------------------+
-                                                                                         
++-----------------------------------------+------------------------+----------------------+                                                     
 +-----------------------------------------------------------------------------------------+
 | Processes:                                                                              |
 |  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
@@ -66,7 +66,7 @@ Fri Mar  7 19:41:25 2025
 ```
 sudo apt install vino
 
-gsettings set org.gnome.Vino vnc-password $(echo -n 'mypasswd'|base64)    
+gsettings set org.gnome.Vino vnc-password $(echo -n 'mypasswd'|base64)
 
 gsettings set org.gnome.Vino authentication-methods "['vnc']" 
 
@@ -95,6 +95,7 @@ reboot
 /usr/lib/vino/vino-server
 ## WORK
 ```
+
 ### Jtop:
 ```
 sudo pip3 install jetson-stats
@@ -105,17 +106,17 @@ sudo systemctl restart jtop.service
 
 terminator -e 'exec jtop'
 ```
-
+### Nvitop:
 ```
-
 https://github.com/XuehaiPan/nvitop?tab=readme-ov-file
-## install:
 
+## install:
+cd ~/lib
 git clone --depth=1 https://github.com/XuehaiPan/nvitop.git
 cd nvitop
 pip3 install .
 
-## run: python3 -m nvitop
+## run: python3 -m ~/lib/nvitop
 ___
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
