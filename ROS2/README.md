@@ -209,6 +209,16 @@ silenzio@jetsonnx:~/ros2_ws$ ros2 launch whisper_bringup whisper.launch.py siler
 # <<<<<<<<<<<<<<<<<<<<<<<
 [silero_vad_node-2] [INFO] [1742238630.157555562] [whisper.silero_vad_node]: SileroVAD already disabled
 
+##T2:
+cd ~/ros2_ws && source install/setup.bash
+
+silenzio@jetsonnx:~/ros2_ws$ ros2 run whisper_demos whisper_demo_node
+[INFO] [1742239101.550514904] [whisper_demo_node]: SPEAK
+[INFO] [1742239109.887262607] [whisper_demo_node]: I hear: 2, 12, 86, 14, 16, process.
+[INFO] [1742239109.888455063] [whisper_demo_node]: Audio time: 3.0
+[INFO] [1742239109.889415735] [whisper_demo_node]: Transcription time: 2.6296744346618652
+
+or
 
 ##T2:
 cd ~/ros2_ws && source install/setup.bash
