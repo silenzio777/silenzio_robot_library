@@ -12,6 +12,86 @@
 _____
 
 ### INSTALL:
+
+```
+$ python3
+Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+
+sudo apt-get install chromium-browser
+
+sudo apt-get install python3-pip
+
+sudo apt install curl
+
+sudo apt install git
+
+sudo apt-get install dbus-x11
+
+sudo apt update && sudo apt upgrade
+
+sudo apt install nvidia-driver-550
+```
+
+```
+$ nvidia-smi
+Fri Mar  7 19:41:25 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.120                Driver Version: 550.120        CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce GTX 1050 Ti     Off |   00000000:01:00.0  On |                  N/A |
+|  0%   49C    P0             N/A /   72W |     182MiB /   4096MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A      1878      G   /usr/lib/xorg/Xorg                             47MiB |
+|    0   N/A  N/A      2027      G   /usr/bin/gnome-shell                          131MiB |
++-----------------------------------------------------------------------------------------+
+```
+
+```
+sudo apt install vino
+
+gsettings set org.gnome.Vino vnc-password $(echo -n 'mypasswd'|base64)    
+
+gsettings set org.gnome.Vino authentication-methods "['vnc']" 
+
+gsettings set org.gnome.Vino require-encryption false    
+
+gsettings set org.gnome.Vino prompt-enabled false
+
+## RUN:
+/usr/lib/vino/vino-server    
+
+## ERROR:
+X11 is not detected
+
+## FIX:
+Disabling Wayland
+Wayland is an alternative to the xorg windows system. One day, it will be terrific. For now, it does not work with x11vnc or other important applications like TeamViewer.
+
+sudo nano /etc/gdm3/custom.conf
+ 
+# Uncomment the line below to force the login screen to use Xorg
+WaylandEnable=false
+
+reboot
+
+## RUN:
+/usr/lib/vino/vino-server
+## WORK
+```
+
 ```
 
 https://github.com/XuehaiPan/nvitop?tab=readme-ov-file
