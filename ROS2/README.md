@@ -24,12 +24,10 @@ colcon build --cmake-args -DGGML_CUDA=ON # add this for CUDA
 ```
 > [!NOTE]
 > Build, Run Ok
+____
 
-
-
-### Install llama_ros:
+### Install whisper_ros:
 https://github.com/mgonzs13/whisper_ros
-
 
 ### Installation:
 To run whisper_ros with CUDA, first, you must install the CUDA Toolkit. To run SileroVAD with ONNX and CUDA, you must install the cuDNN.
@@ -116,6 +114,8 @@ colcon build --cmake-args -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=87
 > [!NOTE]
 > Run Ok
 
+_____
+
 ### Install whisper_ros:
 https://github.com/mgonzs13/whisper_ros
 
@@ -132,3 +132,5 @@ rosdep install --from-paths src --ignore-src -r -y
 ## colcon build --cmake-args -DGGML_CUDA=ON -DONNX_GPU=ON # To use CUDA on Whisper and on Silero, respectively
 colcon build --cmake-args -DGGML_CUDA=ON -DONNX_GPU=ON -DCMAKE_CUDA_ARCHITECTURES=87
 ```
+> [!NOTE]
+> Build Ok
