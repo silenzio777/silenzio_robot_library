@@ -136,6 +136,10 @@ sudo make install
 ### Setup:
 sudo nano $HOME/.config/btop/btop.conf
 
+Add lines:
+shown_boxes = "proc cpu mem net gpu0"
+custom_gpu_name0 = "gpu0"
+
 ### Run:
 /usr/local/bin/btop
 
