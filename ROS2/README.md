@@ -10,7 +10,9 @@ cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-### Add this line to file: /home/silenzio/ros2_ws/src/llama_ros/llama_ros/CMakeLists.txt
+### Add this line to file: 
+/home/silenzio/ros2_ws/src/llama_ros/llama_ros/CMakeLists.txt
+
 ```
 option(LLAMA_CUDA "llama: use CUDA" ON)
 add_compile_definitions(GGML_USE_CUDA)
