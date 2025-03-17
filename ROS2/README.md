@@ -113,8 +113,22 @@ https://github.com/jetsonhacks/buildLibrealsense2TX/issues/13
 colcon build --cmake-args -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=87
 ```
 
-
-
-
 > [!NOTE]
->
+> Run Ok
+
+### Install whisper_ros:
+https://github.com/mgonzs13/whisper_ros
+
+
+Installation
+To run whisper_ros with CUDA, first, you must install the CUDA Toolkit. To run SileroVAD with ONNX and CUDA, you must install the cuDNN.
+
+```
+cd ~/ros2_ws/src
+git clone https://github.com/mgonzs13/audio_common.git
+git clone https://github.com/mgonzs13/whisper_ros.git
+cd ~/ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
+## colcon build --cmake-args -DGGML_CUDA=ON -DONNX_GPU=ON # To use CUDA on Whisper and on Silero, respectively
+colcon build --cmake-args -DGGML_CUDA=ON -DONNX_GPU=ON -DCMAKE_CUDA_ARCHITECTURES=87
+```
