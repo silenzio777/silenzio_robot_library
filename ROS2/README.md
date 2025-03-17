@@ -58,7 +58,7 @@ Run Silero for VAD and Whisper for STT:
 
 ```
 cd ~/ros2_ws && source install/setup.bash
-ros2 launch whisper_bringup whisper.launch.py
+ros2 launch whisper_bringup whisper.launch.py silero_vad_use_cuda:=True
 ```
 Add the parameter silero_vad_use_cuda:=True to use Silero with CUDA.
 
