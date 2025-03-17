@@ -1,3 +1,19 @@
+## Ubuntu PC
+________
+### Install llama_ros:
+
+```
+cd ~/ros2_ws/src
+git clone https://github.com/mgonzs13/llama_ros.git
+pip3 install -r llama_ros/requirements.txt
+cd ~/ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --cmake-args -DGGML_CUDA=ON # add this for CUDA
+```
+> [!NOTE]
+> Build Ok
+> Run Ok
+
 
 ## Jetson Orin NX
 ________
