@@ -11,8 +11,8 @@ rosdep install --from-paths src --ignore-src -r -y
 colcon build --cmake-args -DGGML_CUDA=ON # add this for CUDA
 ```
 > [!NOTE]
-> Build Ok
-> Run Ok
+> Build, Run Ok
+
 
 
 ## Jetson Orin NX
