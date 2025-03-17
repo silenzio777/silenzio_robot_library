@@ -32,7 +32,8 @@ sudo apt install curl git wget nano
 ```
 ### NVidia driver:
 ```
-sudo apt-get install dbus-x11
+
+sudo apt-get install dbus-x11 zlib1g
 
 sudo apt update && sudo apt upgrade
 
