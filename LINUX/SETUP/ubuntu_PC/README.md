@@ -123,7 +123,25 @@ python3 -m ~/lib/nvitop
 ```
 ### Btop:
 ```
-sudo snap install btop
+#sudo snap install btop
+#sudo snap purge btop
+
+### Install btop:
+
+cd ~/lib
+git clone https://github.com/aristocratos/btop.git && cd btop
+make
+sudo make install
+
+### Setup:
+sudo nano $HOME/.config/btop/btop.conf
+
+### Run:
+/usr/local/bin/btop
+
+### btop.sh file:
+#!/bin/bash
+terminator -e 'exec /usr/local/bin/btop' --geometry=1300x800
 ```
 
 ### CUDA and cuDNN:
