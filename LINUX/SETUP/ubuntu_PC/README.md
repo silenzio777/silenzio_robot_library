@@ -116,8 +116,13 @@ git clone --depth=1 https://github.com/XuehaiPan/nvitop.git
 cd nvitop
 pip3 install .
 
-## run: python3 -m ~/lib/nvitop
-___
+## run:
+nvitop
+python3 -m ~/lib/nvitop
+```
+
+### CUDA and cuDNN:
+```
 
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
 CUDA Toolkit Installer
@@ -145,7 +150,7 @@ pip3 install PyGLM psutil matplotlib IPython scikit-learn pandas imageio
 
 ```
 
-### CHECK:
+### Check:
 ```
 silenzio@ubuntuPC:/lib$ python3
 Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
@@ -182,9 +187,7 @@ _____
 
 ```
 nano ~/.bashrc
-```
 
-```
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 export conda_enable='' #'false'
@@ -202,17 +205,11 @@ if [ -n "$conda_enable" ]; then
 fi
     unset __conda_setup
 # <<< conda initialize <<<
-```
 
-```
 source ~/.bashrc
-```
 
-```
 (base) silenzio@ubuntuPC:~$ conda activate pt
-```
 
-```
 (pt) silenzio@ubuntuPC:~$ pip3 show torch
 Name: torch
 Version: 1.10.1+cu111
@@ -236,13 +233,11 @@ License: BSD
 Location: /home/silenzio/miniconda3/envs/pt/lib/python3.6/site-packages
 Requires: numpy, pillow, torch
 Required-by: 
-```
-```
+
 (pt) silenzio@ubuntuPC:~$ python3
 Python 3.6.13 |Anaconda, Inc.| (default, Jun  4 2021, 14:25:59) 
 [GCC 7.5.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
-
 
 >>> import torch
 >>> import torch; torch.cuda.is_available();torch.__version__
