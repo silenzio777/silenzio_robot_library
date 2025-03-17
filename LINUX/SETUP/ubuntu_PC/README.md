@@ -11,13 +11,15 @@
 - OpemCV: 4.5.4 with CUDA: No
 _____
 
-### INSTALL:
+### System setup:
 
 ```
 $ python3
 Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
+
+sudo add-apt-repository universe
 
 sudo apt-get install chromium-browser
 
@@ -27,14 +29,14 @@ sudo apt install curl
 
 sudo apt install git
 
+```
+### NVidia driver:
+```
 sudo apt-get install dbus-x11
 
 sudo apt update && sudo apt upgrade
 
 sudo apt install nvidia-driver-550
-```
-
-```
 $ nvidia-smi
 Fri Mar  7 19:41:25 2025       
 +-----------------------------------------------------------------------------------------+
@@ -58,6 +60,8 @@ Fri Mar  7 19:41:25 2025
 |    0   N/A  N/A      2027      G   /usr/bin/gnome-shell                          131MiB |
 +-----------------------------------------------------------------------------------------+
 ```
+
+### Vino server:
 
 ```
 sudo apt install vino
@@ -90,6 +94,16 @@ reboot
 ## RUN:
 /usr/lib/vino/vino-server
 ## WORK
+```
+### Jtop:
+```
+sudo pip3 install jetson-stats
+
+$ jtop
+The jtop.service is not active. Please run:
+sudo systemctl restart jtop.service
+
+terminator -e 'exec jtop'
 ```
 
 ```
