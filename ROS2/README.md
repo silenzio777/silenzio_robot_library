@@ -10,7 +10,7 @@ cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-### Add this line to file: 
+### Add this lines of code to file: 
 /home/silenzio/ros2_ws/src/llama_ros/llama_ros/CMakeLists.txt
 
 ```
