@@ -4,6 +4,26 @@
 - [llama_ros](#install-llama-ros)<br/>
 - [whisper_ros](#install-whisper-ros)<br/>
 
+
+```
+nano ~/.bashrc
+Add this lines:
+
+## CUDA
+export CUDACXX=/usr/local/cuda-12.6/bin/nvcc
+
+## ROS2
+source /opt/ros/humble/setup.bash
+export _colcon_cd_root=/opt/ros/humble/
+source /usr/share/colcon_cd/function/colcon_cd.sh
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export TURTLEBOT3_MODEL=waffle
+export CMAKE_MODULE_PATH=/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
+
+source ~/.bashrc
+```
+
+
 ### Install gazebo-classic:
 
 ##https://github.com/gazebosim/gazebo-classic/issues/3236
