@@ -14,7 +14,7 @@ sudo apt-get install libgazebo-dev
 
 
 
-### Install llama_ros:
+### [Install llama_ros](#install-llama-ros):
 https://github.com/mgonzs13/llama_ros
 
 To run llama_ros with CUDA, first, you must install the CUDA Toolkit. Then, you can compile llama_ros with --cmake-args -DGGML_CUDA=ON to enable CUDA support.
