@@ -1,8 +1,8 @@
 ## Jetson Orin NX
 
 ### INSTALL:
-- [Llama_ros](install_llama_ros)<br/>
-- [Whisper_ros](Install_whisper_ros)<br/>
+- [Llama_ros](install-llama-ros)<br/>
+- [Whisper_ros](Install-whisper-ros)<br/>
 
 ### Install gazebo-classic:
 
