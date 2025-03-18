@@ -12,8 +12,17 @@
 sudo apt-get install libgazebo-dev
 sudo ldconfig
 
-silenzio@jetsonnx:~/ros2_ws$ dpkg -L libgazebo-dev  | grep gazebo-config.cmake
+dpkg -L libgazebo-dev  | grep gazebo-config.cmake
 /usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
+
+export CMAKE_MODULE_PATH=/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
+
+colcon build
+
+cd ~/ros2_ws
+wget https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_ros_pkgs.repos
+
+
 
 ```
 
