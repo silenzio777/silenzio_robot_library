@@ -1,8 +1,8 @@
 ## Jetson Orin NX
 
 ### INSTALL:
-- [Llama_ros](#install-llama-ros)<br/>
-- [Whisper_ros](#install-whisper-ros)<br/>
+- [Llama_ros](install-llama-ros)<br/>
+- [Whisper_ros](install-whisper-ros)<br/>
 
 ### Install gazebo-classic:
 
@@ -47,7 +47,7 @@ colcon build --cmake-args -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=87
 
 _____
 
-### Install whisper_ros:
+### Install whisper_ros:(#install-whisper-ros)
 https://github.com/mgonzs13/whisper_ros
 
 
