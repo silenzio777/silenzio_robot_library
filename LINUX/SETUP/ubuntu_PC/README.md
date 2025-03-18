@@ -235,6 +235,7 @@ apt install python3-colcon-cd
 nano ~/.bashrc
 add this:
 ...
+## ROS2
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=/usr/local/lib/python3.10/site-packages/:$PYTHONPATH
 export ROS_DISTRO=humble
@@ -244,6 +245,10 @@ export PYTHONPATH=$PYTHONPATH:/usr/local/lib
 source /opt/ros/humble/setup.bash
 export _colcon_cd_root=/opt/ros/humble/
 source /usr/share/colcon_cd/function/colcon_cd.sh
+
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export TURTLEBOT3_MODEL=waffle
+
 
 ```
 
