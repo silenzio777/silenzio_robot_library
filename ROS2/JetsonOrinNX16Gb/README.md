@@ -19,6 +19,7 @@ export CMAKE_MODULE_PATH=/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.c
 
 colcon build
 
+### https://classic.gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros
 cd ~/ros2_ws
 wget https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_ros_pkgs.repos
 
