@@ -228,6 +228,23 @@ ros2 run demo_nodes_cpp talker
 #T2:
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_py listener
+
+
+apt install python3-colcon-cd
+
+nano ~/.bashrc
+add this:
+...
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/usr/local/lib/python3.10/site-packages/:$PYTHONPATH
+export ROS_DISTRO=humble
+export ROS_PYTHON_VERSION=/usr/bin/python3
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib
+
+source /opt/ros/humble/setup.bash
+export _colcon_cd_root=/opt/ros/humble/
+source /usr/share/colcon_cd/function/colcon_cd.sh
+
 ```
 
 _____
