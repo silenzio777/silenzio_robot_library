@@ -6,9 +6,14 @@
 
 ### Install gazebo-classic:
 
-https://github.com/gazebosim/gazebo-classic/issues/3236
+##https://github.com/gazebosim/gazebo-classic/issues/3236
 ```
+## FIX:
 sudo apt-get install libgazebo-dev
+
+silenzio@jetsonnx:~/ros2_ws$ dpkg -L libgazebo-dev  | grep gazebo-config.cmake
+/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
+
 ```
 
 
