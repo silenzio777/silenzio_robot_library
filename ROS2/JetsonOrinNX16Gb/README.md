@@ -42,8 +42,7 @@ colcon build
 Summary: 8 packages finished [12min 56s]
   4 packages had stderr output: gazebo_msgs gazebo_plugins gazebo_ros turtlebot3_gazebo
 
-...
-
+## BULD ok
 
 ```
 
