@@ -1,5 +1,18 @@
 ## Jetson Orin NX
 
+
+- [llama_ros](install_llama_ros)<br/>
+- [Ubuntu Setup and Commands](LINUX/README.md)<br/>
+
+### Install llama_ros:
+
+
+https://github.com/gazebosim/gazebo-classic/issues/3236
+
+
+
+
+
 ### Install llama_ros:
 https://github.com/mgonzs13/llama_ros
 
