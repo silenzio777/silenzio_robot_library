@@ -22,6 +22,26 @@ colcon build
 cd ~/ros2_ws
 wget https://raw.githubusercontent.com/ros-simulation/gazebo_ros_pkgs/ros2/gazebo_ros_pkgs.repos
 
+vcs import src < gazebo_ros_pkgs.repos
+E.
+=== src/gazebo_ros_pkgs (git) ===
+Cloning into '.'...
+=== src/vision_opencv (git) ===
+Path already exists and contains a different repository
+
+vcs custom --args checkout numble
+EEEEEEEEEEEEEE
+=== ./build/llama_cpp_vendor/_deps/llama-src (git) ===
+error: pathspec 'numble' did not match any file(s) known to git
+=== ./build/llama_hfhub_vendor/_deps/hfhub-src (git) ===
+error: pathspec 'numble' did not match any file(s) known to git
+
+colcon build
+
+Summary: 8 packages finished [12min 56s]
+  4 packages had stderr output: gazebo_msgs gazebo_plugins gazebo_ros turtlebot3_gazebo
+
+...
 
 
 ```
