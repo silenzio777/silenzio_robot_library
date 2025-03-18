@@ -1,14 +1,15 @@
 ## Jetson Orin NX
 
+### INSTALL:
+- [Llama_ros](install_llama_ros)<br/>
+- [Whisper_ros](Install_whisper_ros)<br/>
 
-- [llama_ros](install_llama_ros)<br/>
-- [Ubuntu Setup and Commands](LINUX/README.md)<br/>
-
-### Install llama_ros:
-
+### Install gazebo-classic:
 
 https://github.com/gazebosim/gazebo-classic/issues/3236
-
+```
+sudo apt-get install libgazebo-dev
+```
 
 
 
