@@ -11,8 +11,9 @@ ______
 - [apt-cache search](#apt-cache-search)<br/>
 
 
-[source]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
+
 ### Text or GUI
+[source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
 
 Switching boot target to text
 The procedure is as follows to change into a text mode runlevel under systemd:
