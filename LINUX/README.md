@@ -3,10 +3,10 @@
 ______
 
 - [How to switch boot target to text or GUI in systemd Linux:](#text-or-gui)<br/>
+- [spci](#spci)<br/>
 
 
-
-### [source]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
+[source]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
 ### Text or GUI
 
 Switching boot target to text
