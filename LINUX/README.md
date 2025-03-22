@@ -14,6 +14,7 @@ ______
 
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
+[systemctl info](https://tokmakov.msk.ru/blog/item/464)
 
 ### To text mode:
 ```
