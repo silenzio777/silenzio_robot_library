@@ -53,9 +53,9 @@ sudo reboot
 
 
 ___________
-```
-spci
-```
+
+### spci
+
 ```
 0001:00:00.0 PCI bridge: NVIDIA Corporation Device 229e (rev a1)
 0001:01:00.0 Network controller: Realtek Semiconductor Co., Ltd. RTL8822CE 802.11ac PCIe Wireless Network Adapter
