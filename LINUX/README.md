@@ -2,7 +2,7 @@
 
 ______
 
-- [How to switch boot target to text or GUI in systemd Linux:](text_or_gui)<br/>
+- [How to switch boot target to text or GUI in systemd Linux:](#text-or-gui)<br/>
 
 
 
