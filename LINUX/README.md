@@ -15,6 +15,16 @@ ______
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
 
+### To text mode:
+```
+sudo systemctl isolate multi-user.target
+```
+
+### To grahics mode:
+```
+sudo systemctl isolate graphical.target
+```
+
 Switching boot target to text
 The procedure is as follows to change into a text mode runlevel under systemd:
 
