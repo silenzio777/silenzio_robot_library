@@ -4,6 +4,11 @@ ______
 
 - [How to switch boot target to text or GUI in systemd Linux:](#text-or-gui)<br/>
 - [spci](#spci)<br/>
+- [lsblk](#lsblk)<br/>
+- [lscpu](#lscpu)<br/>
+- [dmesg](#dmesg)<br/>
+- [dpkg](#dpkg)<br/>
+- [apt-cache search](#apt-cache-search)<br/>
 
 
 [source]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))
@@ -65,9 +70,9 @@ ___________
 0008:01:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 15)
 ```
 ___________
-```
-lsblk
-```
+
+### lsblk
+
 
 ```
 NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
@@ -93,9 +98,8 @@ nvme0n1p10 259:10   0    64M  0 part /boot/efi
 ...
 ```
 ___________
-```
-lscpu
-```
+
+### lscpu
 
 ```
 Architecture:            aarch64
@@ -139,8 +143,10 @@ Vulnerabilities:
   Tsx async abort:       Not affected
 ```
 ___________
-Interactive command. You can see the plug and unplug USB device for example:
 
+### dmesg
+
+Interactive command. You can see the plug and unplug USB device for example:
 ```
 sudo dmesg -wT
 ```
@@ -179,6 +185,8 @@ tmpfs            8015648       3312        8012336         1%     /dev/shm
 ___________
 Search in libs:
 
+### dpkg
+
 ```
 dpkg -l | grep "libre*"
 ```
@@ -186,6 +194,8 @@ dpkg -l | grep "libre*"
 > i librest-0.7-0:arm64 0.8.1-1.1build2
 
 ___________
+
+### apt-cache search
 Apt search:
 
 ```
