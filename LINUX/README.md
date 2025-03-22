@@ -1,6 +1,9 @@
 ### Ubuntu 22.04 commands:
 
+______
+
 ### How to switch boot target to text or GUI in systemd Linux:
+### https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/
 
 Switching boot target to text
 The procedure is as follows to change into a text mode runlevel under systemd:
