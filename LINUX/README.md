@@ -151,7 +151,11 @@ To show all installed unit files use 'systemctl list-unit-files'.
 ```
 nmcli dev wifi
 ```
-
+```
+IN-USE  BSSID        SSID    MODE   CHAN   RATE        SIGNAL  BARS  SECURITY  
+XX:XX:XX:XX:XX:XX    Plate   Infra  1      405 Mbit/s  97      |\/   WPAX
+...
+```
 ___________
 
 ### spci
