@@ -135,6 +135,7 @@ _____________
 ## Ubuntu PC:
 ```
 nano ~/.ros/cyclonedds.xml
+export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 ```
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -170,6 +171,7 @@ nano ~/.ros/cyclonedds.xml
 ## Jetson NX system:
 ```
 nano ~/.ros/cyclonedds.xml
+export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 ```
 
 ```
@@ -206,6 +208,7 @@ nano ~/.ros/cyclonedds.xml
 ## Jetson NX docker:
 ```
 nano ~/.ros/cyclonedds_foxy.xml
+export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
 ```
 
 ```
