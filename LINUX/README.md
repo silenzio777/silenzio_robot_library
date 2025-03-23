@@ -151,6 +151,7 @@ To show all installed unit files use 'systemctl list-unit-files'.
 ```
 nmcli dev wifi
 ```
+
 ___________
 
 ### spci
