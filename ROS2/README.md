@@ -1,7 +1,7 @@
 
 - [JetsonOrin NX](JetsonOrinNX16Gb/README.md)<br/>
 - [UbuntuPC](UbuntuPC)<br/>
-- [DDSConfig](DDSConfig)<br/>
+- [DDSConfig](ddsconfig)<br/>
 
 
 
