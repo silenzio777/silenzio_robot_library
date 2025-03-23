@@ -65,6 +65,8 @@ ros2 run csi_cam_opencv imsubs
 __________
 
 ### DDSConfig:
+- [source link](https://gist.github.com/robosam2003/d5fcfaf4bfd55298d86c1460cb7fc60c)<br/>
+
 
 # Configuring Cyclone DDS for Wifi + Ethernet connection on an Enterprise Network (for ROS2)
 
@@ -125,3 +127,114 @@ devices in the network
 ```
 
 Now, even on an enterprise network, you can communicate with ROS2 between wifi and ethernet based devices. Enjoy /:) 
+
+
+_____________
+
+
+## Ubuntu PC:
+```
+nano ~/.ros/cyclonedds.xml
+```
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https:>
+    <Domain Id="any">
+        <General>
+            <Interfaces>
+                <NetworkInterface autodetermine="true" priority="default" />
+            </Interfaces>
+            <AllowMulticast>false</AllowMulticast>
+            <MaxMessageSize>65500B</MaxMessageSize>
+        </General>
+        <Discovery>
+            <EnableTopicDiscoveryEndpoints>true</EnableTopicDiscoveryEndpoints>
+        <ParticipantIndex>auto</ParticipantIndex>
+        <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
+            <Peers>
+                <Peer Address="192.168.3.100"/>
+                <Peer Address="192.168.2.37"/>
+                <!--Peer Address="172.17.0.1"/-->
+            </Peers>
+        </Discovery>
+        <Internal>
+            <Watermarks>
+                <WhcHigh>500kB</WhcHigh>
+            </Watermarks>
+        </Internal>
+    </Domain>
+</CycloneDDS>
+
+```
+
+## Jetson NX system:
+```
+nano ~/.ros/cyclonedds.xml
+```
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="h>
+    <Domain Id="any">
+        <General>
+            <Interfaces>
+                <NetworkInterface autodetermine="true" priority="default" />
+            </Interfaces>
+            <!--NetworkInterfaceAddress>lo</NetworkInterfaceAddress-->
+            <AllowMulticast>false</AllowMulticast>
+            <MaxMessageSize>65500B</MaxMessageSize>
+        </General>
+        <Discovery>
+            <EnableTopicDiscoveryEndpoints>true</EnableTopicDiscoveryEndpoints>
+        <ParticipantIndex>auto</ParticipantIndex>
+        <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
+            <Peers>
+                <Peer Address="192.168.2.37"/>
+                <Peer Address="192.168.3.100"/>
+                <!--Peer Address="172.17.0.1"/-->
+            </Peers>
+        </Discovery>
+        <Internal>
+            <Watermarks>
+                <WhcHigh>500kB</WhcHigh>
+            </Watermarks>
+        </Internal>
+    </Domain>
+</CycloneDDS>
+```
+
+## Jetson NX docker:
+```
+nano ~/.ros/cyclonedds_foxy.xml
+```
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLoca>
+    <Domain Id="any">
+        <General>
+            <!--Interfaces>
+                <NetworkInterface autodetermine="true" priority="default" />
+            </Interfaces-->
+            <!--NetworkInterfaceAddress>lo</NetworkInterfaceAddress-->
+            <AllowMulticast>false</AllowMulticast>
+            <MaxMessageSize>65500B</MaxMessageSize>
+        </General>
+        <Discovery>
+                <!--EnableTopicDiscoveryEndpoints>true</EnableTopicDiscoveryEndpoints-->
+        <ParticipantIndex>auto</ParticipantIndex>
+        <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
+            <Peers>
+                <!--Peer Address="192.168.2.37"/-->
+                <Peer Address="192.168.3.100"/>
+                <Peer Address="172.17.0.1"/>
+            </Peers>
+        </Discovery>
+        <Internal>
+            <Watermarks>
+                <WhcHigh>500kB</WhcHigh>
+            </Watermarks>
+        </Internal>
+    </Domain>
+
+```
