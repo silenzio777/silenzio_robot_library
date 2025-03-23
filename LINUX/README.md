@@ -324,3 +324,37 @@ XX/tcp   open  ssh
 ..
 XX/tcp open  vnc
 ```
+
+___________
+### internal ip address:
+```
+ifconfig -a
+```
+```
+eth0   link encap:Ethernet  HWaddr 00:06:4f:4a:66:f0
+    BROADCAST MULTICAST  MTU:1500  Metric:1
+    RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+    TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+    collisions:0 txqueuelen:1000
+    RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+eth1   link encap:Ethernet  HWaddr 00:16:ec:05:c8:9c 
+    BROADCAST MULTICAST  MTU:1500  Metric:1
+    RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+    TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+    collisions:0 txqueuelen:1000
+    RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+lo     Link encap:Local Loopback
+    inet addr 127.0.0.1  Mask:255.0.0.0
+    inet6 addr:  ::1/128 Scope:Host
+    UP LOOPBACK RUNNING MTU:65536  Metric:1
+    RX packets:1800 errors:0 dropped:0 overruns:0 frame:0
+    Tx packets:1800 errors:0 dropped:0 overruns:0 carrier:0
+    collisions:0 txqueuelen:0
+    RX bytes:143896 (143.b KB)  TX bytes:143896 (143.8 KB)
+```
+
+```
+hostname -I
+```
