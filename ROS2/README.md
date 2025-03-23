@@ -132,7 +132,7 @@ Now, even on an enterprise network, you can communicate with ROS2 between wifi a
 _____________
 
 
-## Ubuntu PC ROS2 noetic:
+## Ubuntu PC ROS2 humble:
 ```
 nano ~/.ros/cyclonedds.xml
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
@@ -168,7 +168,7 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 
 ```
 
-## Jetson NX ROS2 noetic:
+## Jetson NX ROS2 humble:
 ```
 nano ~/.ros/cyclonedds.xml
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
