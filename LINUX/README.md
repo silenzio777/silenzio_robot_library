@@ -10,7 +10,7 @@ ______
 - [dmesg](#dmesg)<br/>
 - [dpkg](#dpkg)<br/>
 - [apt-cache search](#apt-cache-search)<br/>
-
+- [nmap](#nmap)<br/>
 
 
 ### Text or GUI
@@ -309,7 +309,8 @@ python3-gflags - implementation of the Google command line flags module - Python
 python3-typeshed - collection of library stubs for Python, with static types
 ros-cmake-modules - Robot OS CMake Modules
 ```
-
+___________
+### nmap:
 ```
 nmap 192.168.x.x
 ```
