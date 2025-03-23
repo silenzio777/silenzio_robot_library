@@ -205,7 +205,7 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 </CycloneDDS>
 ```
 
-## Jetson NX docker:
+## Jetson NX ROS2 foxy docker:
 ```
 nano ~/.ros/cyclonedds_foxy.xml
 export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
