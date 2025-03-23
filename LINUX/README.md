@@ -308,9 +308,12 @@ libgflags2.2 - commandline flags module for C++ (shared library)
 python3-gflags - implementation of the Google command line flags module - Python 3.x
 python3-typeshed - collection of library stubs for Python, with static types
 ros-cmake-modules - Robot OS CMake Modules
-Copy
+```
+
+```
 nmap 192.168.x.x
-Copy
+```
+```
 Starting Nmap 7.80 ( https://nmap.org ) at 2025-02-26 22:50 XXX
 Nmap scan report for <machinename> (192.168.x.x)
 Host is up (0.00024s latency).
