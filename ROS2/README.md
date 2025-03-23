@@ -1,7 +1,7 @@
 
 - [JetsonOrin NX](JetsonOrinNX16Gb/README.md)<br/>
 - [UbuntuPC](UbuntuPC)<br/>
-- [DDSConfig](ddsconfig)<br/>
+- [DDSConfig](#ddsconfig)<br/>
 
 
 
@@ -64,7 +64,7 @@ ros2 run csi_cam_opencv imsubs
 ```
 __________
 
-### DDSConfig
+### DDSConfig:
 
 # Configuring Cyclone DDS for Wifi + Ethernet connection on an Enterprise Network (for ROS2)
 
