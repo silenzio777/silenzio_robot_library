@@ -191,8 +191,8 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
         <ParticipantIndex>auto</ParticipantIndex>
         <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
             <Peers>
-                <Peer Address="192.168.2.37"/>
-                <Peer Address="192.168.3.100"/>
+                <Peer Address="192.168.PC.IP"/>
+                <Peer Address="192.168.JN.IP"/>
                 <!--Peer Address="172.17.0.1"/-->
             </Peers>
         </Discovery>
@@ -228,8 +228,8 @@ export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
         <ParticipantIndex>auto</ParticipantIndex>
         <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
             <Peers>
-                <!--Peer Address="192.168.2.37"/-->
-                <Peer Address="192.168.3.100"/>
+                <Peer Address="192.168.PC.IP"/>
+                <Peer Address="192.168.JN.IP"/>
                 <Peer Address="172.17.0.1"/>
             </Peers>
         </Discovery>
