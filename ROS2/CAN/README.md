@@ -3,9 +3,26 @@
 - [nmap](#nmap)<br/>
 
 
-https://docs.odriverobotics.com/v/latest/guides/ros-package.html
+### Install CAN on Jetson Orin NX:
+```
+sudo apt-get install can-utils
 
-### Verify these messages are working properly with::
+sudo modprobe can
+
+sudo modprobe can_raw
+
+sudo modprobe mttcan
+```
+
+### Start interface:
+```
+sudo ip link set can0 up type can bitrate 500000 dbitrate 1000000 berr-reporting on fd on
+```
+
+
+
+
+### Verify these messages are working properly with:
 
 ```
 candump can0 -xct z -n 10
@@ -17,6 +34,8 @@ python3 -m can.viewer -c "can0" -i "socketcan".
 
 
 ### Installing the ros_odrive Package:
+[Source link](#[nmap](https://docs.odriverobotics.com/v/latest/guides/ros-package.html))<br/>
+
 
 1. Clone the official ros_odrive repository into the src folder of your ROS2 workspace.
 ```
