@@ -50,9 +50,7 @@ RUN apt-get update && \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-```
 
-```
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 RUN sudo rosdep init && rosdep update
