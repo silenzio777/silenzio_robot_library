@@ -36,7 +36,10 @@ source ./install/setup.bash
 ```
 ros2 launch odrive_can example_launch.yaml
 ```
-You should now have a ROS node running that is ready to relay commands and telemetry between other ROS nodes and the ODrive.
+> [!NOTE]
+> You should now have a ROS node running that is ready to relay commands and telemetry between other ROS nodes and the ODrive.
+
+
 
 
 
