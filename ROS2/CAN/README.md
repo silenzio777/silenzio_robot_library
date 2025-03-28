@@ -1,9 +1,10 @@
-### CAN interface setup:
-
-- [test](#test)<br/>
-
-
 ### Install CAN on Jetson Orin NX:
+
+- [CAN interface setup](#can-interface-setup)<br/>
+- [Installing the ros_odrive Package](#installing-the-ros-odrive-package)<br/>
+
+
+### CAN interface setup:
 ```
 sudo apt-get install can-utils
 
