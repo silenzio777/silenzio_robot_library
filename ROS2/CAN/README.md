@@ -9,7 +9,8 @@ https://docs.odriverobotics.com/v/latest/guides/ros-package.html
 
 ```
 candump can0 -xct z -n 10
-
+```
+```
 python3 -m can.viewer -c "can0" -i "socketcan".
 
 ```
