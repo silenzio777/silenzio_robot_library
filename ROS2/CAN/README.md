@@ -19,8 +19,75 @@ sudo modprobe mttcan
 sudo ip link set can0 up type can bitrate 500000 dbitrate 1000000 berr-reporting on fd on
 ```
 
+### Check can interface
+```
+ifconfig
+```
+
+```
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### Display CAN statistics:
+```
+ip -details -statistics link show can0
+```
+```
+2: can0: <NOARP,UP,LOWER_UP,ECHO> mtu 72 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can  promiscuity 0 minmtu 0 maxmtu 0 
+    can <LOOPBACK,BERR-REPORTING,FD> state ERROR-WARNING (berr-counter tx 118 rx 0) restart-ms 0 
+	  bitrate 500000 sample-point 0.870 
+	  tq 20 prop-seg 43 phase-seg1 43 phase-seg2 13 sjw 1
+	  mttcan: tseg1 2..255 tseg2 0..127 sjw 1..127 brp 1..511 brp-inc 1
+	  dbitrate 1000000 dsample-point 0.720 
+	  dtq 40 dprop-seg 8 dphase-seg1 9 dphase-seg2 7 dsjw 1
+	  mttcan: dtseg1 1..31 dtseg2 0..15 dsjw 1..15 dbrp 1..15 dbrp-inc 1
+	  clock 50000000 
+	  re-started bus-errors arbit-lost error-warn error-pass bus-off
+	  0          1134813    0          1          1          0         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 parentbus platform parentdev c310000.mttcan 
+    RX:  bytes packets  errors dropped  missed   mcast           
+       9078560 1134825 1134813       0       0       0 
+    TX:  bytes packets  errors dropped carrier collsns           
+            40      10       0       4       0       0 
+```
 
 
+### To perform a loopback test
+
+1. Short the Tx and Rx pins of the Jetson carrier board`s CAN0.
+2. Enable the CAN drivers. (See Kernel Drivers for more information.)
+
+```
+sudo ip link set can0 down
+sudo ip link set can0 type can bitrate 500000 loopback on
+sudo ip link set can0 up
+candump can0 &
+```
+```
+[4] 10509
+```
+
+### Send test commnd:
+```
+cansend can0 123#abcdabcd
+```
+
+### Show smthng like this:
+```
+jetson@ubuntu:~$   can0  RX - -  123   [4]  AB CD AB CD
+  can0  TX - -  123   [4]  AB CD AB CD
+  can0  123   [4]  AB CD AB CD
+  can0  RX - -  123   [4]  AB CD AB CD
+  can0  123   [4]  AB CD AB CD
+  can0  TX - -  123   [4]  AB CD AB CD
+  can0  RX - -  123   [4]  AB CD AB CD
+  can0  TX - -  123   [4]  AB CD AB CD
+```
 
 ### Verify these messages are working properly with:
 
