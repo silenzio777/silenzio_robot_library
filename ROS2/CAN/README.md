@@ -20,7 +20,7 @@ python3 -m can.viewer -c "can0" -i "socketcan".
 
 1. Clone the official ros_odrive repository into the src folder of your ROS2 workspace.
 ```
-~/ros2_ws$ cd src/
+cd ~/ros2_ws/src/
 git clone https://github.com/odriverobotics/ros_odrive.git
 ```
 
