@@ -124,6 +124,14 @@ source ./install/setup.bash
 ```
 ros2 launch odrive_can example_launch.yaml
 ```
+```
+silenzio@jetsonnx:~/ros2_ws$ ros2 launch odrive_can example_launch.yaml
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-03-28-16-36-54-398518-jetsonnx-167569
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [odrive_can_node-1]: process started with pid [167604]
+[odrive_can_node-1] [INFO] [1743169014.693833715] [odrive_axis0.can_node]: node_id: 0
+[odrive_can_node-1] [INFO] [1743169014.694022072] [odrive_axis0.can_node]: interface: can0
+```
 
 You should now have a ROS node running that is ready to relay commands and telemetry between other ROS nodes and the ODrive.
 
