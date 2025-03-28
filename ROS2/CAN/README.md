@@ -170,7 +170,6 @@ Full list of axis_requested_state codes: AxisState
 ```
 ros2 topic pub /odrive_axis0/control_message odrive_can/msg/ControlMessage "{control_mode: 2, input_mode: 1, input_pos: 0.0, input_vel: 1.0, input_torque: 0.0}"
 ```
-[Source link](https://docs.odriverobotics.com/v/latest/guides/ros-package.html)<br/>
 
 [Full list of control_mode codes: ControlMode](https://docs.odriverobotics.com/v/latest/fibre_types/com_odriverobotics_ODrive.html#ODrive.Controller.ControlMode)<br/>
 
