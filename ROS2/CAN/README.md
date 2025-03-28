@@ -59,6 +59,8 @@ source ./install/setup.bash
 
 ```
 ros2 topic echo /odrive_axis0/controller_status
+```
+```
 ros2 topic echo /odrive_axis0/odrive_status
 ```
 3. Request a new state. For example to request CLOSED_LOOP_CONTROL (8):
