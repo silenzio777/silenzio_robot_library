@@ -1,6 +1,6 @@
 ### CAN interface setup:
 
-- [nmap](#nmap)<br/>
+- [test](#test)<br/>
 
 
 ### Install CAN on Jetson Orin NX:
@@ -34,7 +34,7 @@ python3 -m can.viewer -c "can0" -i "socketcan".
 
 
 ### Installing the ros_odrive Package:
-[Source link](#[https://docs.odriverobotics.com/v/latest/guides/ros-package.html])<br/>
+[Source link](https://docs.odriverobotics.com/v/latest/guides/ros-package.html)<br/>
 
 
 1. Clone the official ros_odrive repository into the src folder of your ROS2 workspace.
