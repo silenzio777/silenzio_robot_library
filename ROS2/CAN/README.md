@@ -186,5 +186,5 @@ POSITION_CONTROL= 3 (0x3)
 Uses the inner torque loop, the velocity control loop, and the outer position control loop. Use input_pos to command desired position, input_vel to command velocity feed-forward, and input_torque for torque feed-forward.
 
 
-Full list of input_mode codes: InputMode
+Full list of input_mode codes: InputMode 
 
