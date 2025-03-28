@@ -160,6 +160,7 @@ ros2 topic echo /odrive_axis0/controller_status
 ros2 topic echo /odrive_axis0/odrive_status
 ```
 3. Request a new state. For example to request CLOSED_LOOP_CONTROL (8):
+
 ```
 ros2 service call /odrive_axis0/request_axis_state odrive_can/srv/AxisState "{axis_requested_state: 8}"
 ```
@@ -169,7 +170,21 @@ Full list of axis_requested_state codes: AxisState
 ```
 ros2 topic pub /odrive_axis0/control_message odrive_can/msg/ControlMessage "{control_mode: 2, input_mode: 1, input_pos: 0.0, input_vel: 1.0, input_torque: 0.0}"
 ```
-Full list of control_mode codes: ControlMode
+### Full list of control_mode codes: ControlMode
+
+classODrive.Controller.ControlMode
+VOLTAGE_CONTROL= 0 (0x0)
+Note: This mode is not used internally. For voltage-only FOC, use MotorType.GIMBAL
+
+TORQUE_CONTROL= 1 (0x1)
+Uses only the inner torque control loop. Use input_torque to command desired torque. Note the setting config.motor.torque_constant. Note the setting enable_torque_mode_vel_limit.
+
+VELOCITY_CONTROL= 2 (0x2)
+Uses both the inner torque control loop and the velocity control loop. Use input_vel to command desired velocity, and input_torque.
+
+POSITION_CONTROL= 3 (0x3)
+Uses the inner torque loop, the velocity control loop, and the outer position control loop. Use input_pos to command desired position, input_vel to command velocity feed-forward, and input_torque for torque feed-forward.
+
 
 Full list of input_mode codes: InputMode
 
