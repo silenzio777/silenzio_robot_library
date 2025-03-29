@@ -21,6 +21,7 @@ colcon build
 rqt_graph
 
 ros2 topic list
+ros2 topic list -t
 
 ros2 topic echo odom --no-arr
 
