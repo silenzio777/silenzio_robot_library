@@ -100,7 +100,7 @@ You can also start the simulation navigation and slam together by using:
 ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
 
-<img src="rqt_screenshot.png" title="TIAGo" width="1000">
+
 
 <img src="Frontal_Base-omni.png" title="TIAGo" width="300">
 
@@ -112,6 +112,6 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navi
 
 <img src="Screenshot 2025-03-29 at 18.13.06.png" title="TIAGo" width="300">
 
-<img src="ArchitectureDiagram.png" title="TIAGo" width="300">
+<img src="ArchitectureDiagram.png" title="TIAGo" width="1000">
 
-
+<img src="rqt_screenshot.png" title="TIAGo" width="1000">
