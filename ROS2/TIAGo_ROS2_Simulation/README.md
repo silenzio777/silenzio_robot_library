@@ -100,6 +100,8 @@ Launching rviz2
 ```
 ros2 launch tiago_moveit_config moveit_rviz.launch.py
 ```
+### Ubuntu PC: work with errors...
+
 
 Using MoveIt 2 API. For further information see MoveIt 2 Tutorials
 https://moveit.picknik.ai/humble/doc/tutorials/tutorials.html
