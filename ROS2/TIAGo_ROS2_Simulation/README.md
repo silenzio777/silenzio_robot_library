@@ -188,10 +188,11 @@ ___
 https://github.com/ros-teleop/teleop_tools
 
 ```
+## sudo apt-get install ros-${ROS_DISTRO}-teleop-twist-joy
 sudo apt install ros-${ROS_DISTRO}-teleop-tools
 ```
 
-sudo apt-get install ros-${ROS_DISTRO}-teleop-twist-joy
+## sudo apt-get install ros-${ROS_DISTRO}-teleop-twist-joy
 
 ___
 ```
