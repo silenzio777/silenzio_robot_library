@@ -1,6 +1,6 @@
 ## TIAGo ROS 2 Simulation
 
-(https://github.com/silenzio777/silenzio_robot_library/blob/main/ROS2/TIAGo_ROS2_Simulation/tiago.png)
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/silenzio777/silenzio_robot_library/blob/main/ROS2/TIAGo_ROS2_Simulation/tiago.png)
 
 ## This repository contains the launch files to simulate the TIAGo robot in ROS 2.
 https://github.com/pal-robotics/tiago_simulation/tree/humble-devel
