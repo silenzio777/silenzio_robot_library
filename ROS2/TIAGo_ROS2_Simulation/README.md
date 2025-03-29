@@ -135,5 +135,6 @@ colcon build
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_description show.launch.py
 ```
+<img src="omni_base_description.png" title="omni_base_description" width="300">
 
 ### Ubuntu PC: launch OK
