@@ -1,13 +1,9 @@
-![Screenshot 2025-03-29 at 18 13 06](https://github.com/user-attachments/assets/4a782ab5-2966-4de5-8d0e-34e993c6a0ed)### TIAGO OMNI Base ROS 2 Simulation
+
 https://github.com/pal-robotics/omni_base_simulation/tree/humble-devel
 
 This repository contains the launch files to simulate the TIAGo OMNI Base robot in ROS 2.
 
 <img src="omni_base.png" title="TIAGo" width="300">
-
-![logitech-joystick_](https://github.com/user-attachments/assets/d49f3f61-0efc-470f-a5ad-7671fb7bec73)
-
-
 
 TIAGo OMNI Base
 
@@ -100,3 +96,14 @@ You can also start the simulation navigation and slam together by using:
 ```
 ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
+
+<img src="Frontal_Base-omni.png" title="TIAGo" width="300">
+
+<img src="Back_base-omni.png" title="TIAGo" width="300">
+
+<img src="Connector.png" title="TIAGo" width="300">
+
+<img src="user_panel_numbers.png" title="TIAGo" width="300">
+
+
+![logitech-joystick_](https://github.com/user-attachments/assets/d49f3f61-0efc-470f-a5ad-7671fb7bec73)
