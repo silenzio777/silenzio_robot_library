@@ -156,8 +156,6 @@ source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_bringup omni_base_bringup.launch.py
 ```
 
-ros2 launch omni_base_description robot_state_publisher.launch.py
-
 
 ```
 ...
@@ -197,8 +195,6 @@ sudo apt install ros-${ROS_DISTRO}-teleop-tools
 ```
 
 ros2 run turtlebot3_teleop teleop_keyboard
-
-ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /input_joy/cmd_vel:=/cmd_vel
 ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/input_joy/cmd_vel
 
 
@@ -216,3 +212,30 @@ ros2 launch omni_base_bringup joystick_teleop.launch.py
 ```
 
 <img src="logitech-joystick.png" title="TIAGo" width="300">
+________
+
+
+### T1:
+```
+ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/input_joy/cmd_vel
+```
+```
+/input_joy/cmd_vel
+```
+
+### T2:
+```
+ros2 launch omni_base_description robot_state_publisher.launch.py
+```
+```
+/joint_states
+/parameter_events
+/robot_description
+```
+
+### T3:
+```
+ros2 launch omni_base_bringup omni_base_bringup.launch.py
+```
+
+
