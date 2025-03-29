@@ -32,7 +32,7 @@ sudo rosdep install --from-paths src -y --ignore-src
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 ```
-### Ubuntu PC: BUILD OK
+### Ubuntu PC: build OK
 
 ### Finally, before running any application you have to source the workspace
 ```
@@ -45,4 +45,5 @@ Launch gazebo simulation:
 ```
 ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True [arm_type:=no-arm]
 ```
+### Ubuntu PC: launch OK
 
