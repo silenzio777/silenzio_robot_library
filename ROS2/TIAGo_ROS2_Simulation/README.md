@@ -24,7 +24,7 @@ vcs import --input https://raw.githubusercontent.com/pal-robotics/tiago_tutorial
 ```
 sudo rosdep init
 rosdep update
-sudo rosdep install --from-paths src -y --ignore-src
+rosdep install --from-paths src -y --ignore-src
 ```
 
 ### Source the environment and build
