@@ -235,6 +235,14 @@ ros2 launch omni_base_description robot_state_publisher.launch.py
 
 ### T3:
 ```
+ros2 topic pub /mobile_base_controller/cmd_vel_unstamped geometry_msgs/msg/Twist '{linear: {x: 0.5}, angular: {z: 0}}' -r5
+```
+```
+/mobile_base_controller/cmd_vel_unstamped
+```
+
+### T4:
+```
 ros2 launch omni_base_bringup omni_base_bringup.launch.py
 ```
 ```
@@ -266,4 +274,5 @@ ros2 launch omni_base_bringup omni_base_bringup.launch.py
 /rosout
 /diagnostics
 ```
+
 
