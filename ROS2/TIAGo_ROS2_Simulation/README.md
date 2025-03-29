@@ -1,8 +1,5 @@
 ## TIAGo ROS 2 Simulation
 
-```
-(https://github.com/silenzio777/silenzio_robot_library/blob/main/ROS2/TIAGo_ROS2_Simulation/tiago.png)
-```
 <img src="tiago.png" title="TIAGo" width="300">
 
 ## This repository contains the launch files to simulate the TIAGo robot in ROS 2.
