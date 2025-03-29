@@ -61,6 +61,9 @@ ros2 run py_pubsub subscriber_member_function
 ros2 run csi_cam_opencv impub
 ros2 run csi_cam_opencv imsubs
 
+sudo apt install ros-${ROS_DISTRO}-rqt*
+sudo apt install ros-humble-moveit
+
 ```
 __________
 
