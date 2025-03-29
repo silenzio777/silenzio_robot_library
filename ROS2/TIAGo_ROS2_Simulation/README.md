@@ -155,6 +155,10 @@ ros2 launch omni_base_controller_configuration default_controllers.launch.py
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_bringup omni_base_bringup.launch.py
 ```
+
+ros2 launch omni_base_description robot_state_publisher.launch.py
+
+
 ```
 ...
 [spawner-2] [INFO] [1743243747.291694892] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
@@ -191,6 +195,12 @@ https://github.com/ros-teleop/teleop_tools
 ## sudo apt-get install ros-${ROS_DISTRO}-teleop-twist-joy
 sudo apt install ros-${ROS_DISTRO}-teleop-tools
 ```
+
+ros2 run turtlebot3_teleop teleop_keyboard
+
+ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /input_joy/cmd_vel:=/cmd_vel
+ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/input_joy/cmd_vel
+
 
 ___
 ```
