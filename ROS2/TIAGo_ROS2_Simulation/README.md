@@ -155,3 +155,39 @@ ros2 launch omni_base_bringup omni_base_bringup.launch.py
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_bringup twist_mux.launch.py
 ```
+```
+INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-03-29-13-24-50-387891-ubuntuPC-20187
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [twist_mux-1]: process started with pid [20188]
+[INFO] [twist_marker-2]: process started with pid [20190]
+[INFO] [joystick_relay.py-3]: process started with pid [20192]
+[twist_mux-1] [INFO] [1743243890.517509691] [twist_mux]: Topic handler 'topics.assisted_teleop' subscribed to topic 'assisted_vel': timeout = 0.500000s , priority = 200.
+[twist_mux-1] [INFO] [1743243890.518017684] [twist_mux]: Topic handler 'topics.docking' subscribed to topic 'docking_vel': timeout = 0.500000s , priority = 210.
+[twist_mux-1] [INFO] [1743243890.518139111] [twist_mux]: Topic handler 'topics.joystick' subscribed to topic 'joy_vel': timeout = 0.500000s , priority = 100.
+[twist_mux-1] [INFO] [1743243890.518278258] [twist_mux]: Topic handler 'topics.keyboard' subscribed to topic 'key_vel': timeout = 0.500000s , priority = 90.
+[twist_mux-1] [INFO] [1743243890.518413948] [twist_mux]: Topic handler 'topics.navigation' subscribed to topic 'cmd_vel': timeout = 0.500000s , priority = 10.
+[twist_mux-1] [INFO] [1743243890.518554289] [twist_mux]: Topic handler 'topics.rviz' subscribed to topic 'rviz_joy_vel': timeout = 0.500000s , priority = 100.
+[twist_mux-1] [INFO] [1743243890.518651837] [twist_mux]: Topic handler 'topics.webgui_joystick' subscribed to topic 'tab_vel': timeout = 0.500000s , priority = 100.
+[twist_mux-1] [INFO] [1743243890.518781756] [twist_mux]: Topic handler 'locks.assisted_teleop' subscribed to topic 'assisted_teleop_priority': timeout = None , priority = 200.
+[twist_mux-1] [INFO] [1743243890.518951526] [twist_mux]: Topic handler 'locks.charging' subscribed to topic 'power/is_charging': timeout = None , priority = 210.
+[twist_mux-1] [INFO] [1743243890.519099946] [twist_mux]: Topic handler 'locks.joystick' subscribed to topic 'joy_priority': timeout = None , priority = 100.
+```
+___
+### Install teleop_tools:
+https://github.com/ros-teleop/teleop_tools
+
+```
+sudo apt install ros-${ROS_DISTRO}-teleop-tools
+```
+___
+```
+source ~/tiago_public_ws/install/setup.bash
+ros2 launch omni_base_bringup joystick_teleop.launch.py
+```
+```
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-03-29-13-31-20-954467-ubuntuPC-21337
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [joy_teleop-1]: process started with pid [21338]
+[INFO] [joy_linux_node-2]: process started with pid [21340]
+[joy_linux_node-2] [ERROR] [1743244281.017400552] [joystick]: Couldn't open joystick /dev/joystick. Will retry every second.
+```
