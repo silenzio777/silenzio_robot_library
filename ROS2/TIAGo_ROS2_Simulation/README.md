@@ -32,8 +32,7 @@ sudo rosdep install --from-paths src -y --ignore-src
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 ```
-## BUILD OK
-
+### Ubuntu PC: BUILD OK
 
 ### Finally, before running any application you have to source the workspace
 ```
