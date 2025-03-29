@@ -5,6 +5,8 @@ This repository contains the launch files to simulate the TIAGo OMNI Base robot 
 
 <img src="omni_base.png" title="TIAGo" width="300">
 
+[Omnidirectional mobile base - PAL OS 24.9 documentation.pdf](Omnidirectional mobile base - PAL OS 24.9 documentation.pdf)
+
 TIAGo OMNI Base
 
 Setup
