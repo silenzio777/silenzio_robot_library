@@ -237,5 +237,33 @@ ros2 launch omni_base_description robot_state_publisher.launch.py
 ```
 ros2 launch omni_base_bringup omni_base_bringup.launch.py
 ```
+```
+/cmd_vel
+/input_joy/cmd_vel
+/joy_vel
+/key_vel
+/tab_vel
+/assisted_teleop_priority
+/assisted_vel
 
+/docking_vel
+
+/joint_states
+/joy_priority
+
+/marker
+/mobile_base_controller/cmd_vel_unstamped
+
+/power/is_charging
+/robot_description
+/rviz_joy_vel
+
+/text_marker
+
+/parameter_events
+/tf
+/tf_static
+/rosout
+/diagnostics
+```
 
