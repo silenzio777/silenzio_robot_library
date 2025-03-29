@@ -88,6 +88,7 @@ You can start the SLAM and navigation in simulation by using
 ```
 ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
+### Ubuntu PC: launch OK
 
 ### Simulation + MoveIt 2
 To launch TIAGo simulation with MoveIt 2 you can use
