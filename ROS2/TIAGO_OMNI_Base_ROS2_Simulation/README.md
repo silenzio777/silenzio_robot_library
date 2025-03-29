@@ -3,6 +3,8 @@ https://github.com/pal-robotics/omni_base_simulation/tree/humble-devel
 
 This repository contains the launch files to simulate the TIAGo OMNI Base robot in ROS 2.
 
+<img src="omni_base.png" title="TIAGo" width="300">
+
 TIAGo OMNI Base
 
 Setup
