@@ -125,14 +125,17 @@ https://github.com/pal-robotics/omni_base_robot/tree/humble-devel
 cd ~/tiago_public_ws/src
 git clone https://github.com/pal-robotics/omni_base_robot.git
 ```
+
 ### Build
 ```
 colcon build
 ```
+
 ### Launch
 ```
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_description show.launch.py
 ```
+<img src="omni_base_description.png" title="TIAGo" width="300">
 
 _Ubuntu PC: launch OK_
