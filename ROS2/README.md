@@ -62,6 +62,15 @@ ros2 run csi_cam_opencv impub
 ros2 run csi_cam_opencv imsubs
 
 sudo apt install ros-${ROS_DISTRO}-rqt*
+rqt
+ros2 run <plugin_name> <plugin_name>  # i.e. ros2 run rqt_graph rqt_graph
+ros2 run rqt_console rqt_console
+ros2 run rqt_reconfigure rqt_reconfigure
+ros2 run rqt_image_view rqt_image_view
+ros2 run rqt_graph rqt_graph
+ros2 run rqt_tf_tree rqt_tf_tree
+ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
+
 sudo apt install ros-humble-moveit
 
 ```
