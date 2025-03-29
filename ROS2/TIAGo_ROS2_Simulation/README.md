@@ -34,7 +34,7 @@ rosdep install --from-paths src -y --ignore-src
 source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 ```
-### Ubuntu PC: build OK
+**Ubuntu PC: build OK
 
 ### Finally, before running any application you have to source the workspace
 ```
@@ -47,7 +47,7 @@ Launch gazebo simulation:
 ```
 ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True [arm_type:=no-arm]
 ```
-### Ubuntu PC: launch OK
+**Ubuntu PC: launch OK
 
 ### You can launch gazebo simulation using PAL office gazebo world by executing:
 ```
@@ -73,8 +73,7 @@ With rviz2:
 By using Navigation 2 API. For further information see Navigation 2 Tutorials
 https://navigation.ros.org/tutorials/index.html
 
-### Ubuntu PC: launch OK
-
+**Ubuntu PC: launch OK
 
 ### Simulation + Navigation 2
 You can also start the simulation and navigation together by using
@@ -88,7 +87,7 @@ You can start the SLAM and navigation in simulation by using
 ```
 ros2 launch tiago_gazebo tiago_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
-### Ubuntu PC: launch OK
+**Ubuntu PC: launch OK
 
 ### Simulation + MoveIt 2
 To launch TIAGo simulation with MoveIt 2 you can use
@@ -101,7 +100,7 @@ Launching rviz2
 ```
 ros2 launch tiago_moveit_config moveit_rviz.launch.py
 ```
-### Ubuntu PC: work with errors...
+**Ubuntu PC: work with errors...
 
 
 Using MoveIt 2 API. For further information see MoveIt 2 Tutorials
@@ -135,6 +134,5 @@ colcon build
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_description show.launch.py
 ```
-<img src="omni_base_description.png" title="omni_base_description" width="300">
 
-### Ubuntu PC: launch OK
+Ubuntu PC: launch OK
