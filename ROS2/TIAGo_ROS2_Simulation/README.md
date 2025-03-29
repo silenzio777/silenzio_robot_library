@@ -115,3 +115,25 @@ ros2 launch tiago_gazebo tiago_gazebo.launch.py navigation:=True moveit:=True is
 ```
 To use private simulation you can avoid to set is_public_sim argument.
 
+
+_______
+
+### Install omni_base_robot
+https://github.com/pal-robotics/omni_base_robot/tree/humble-devel
+
+### Install 
+```
+cd ~/tiago_public_ws/src
+git clone https://github.com/pal-robotics/omni_base_robot.git
+```
+### Build
+```
+colcon build
+```
+### Launch
+```
+source ~/tiago_public_ws/install/setup.bash
+ros2 launch omni_base_description show.launch.py
+```
+
+### Ubuntu PC: launch OK
