@@ -220,8 +220,19 @@ ________
 ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/input_joy/cmd_vel
 ```
 ```
+ros2 topic list
 /input_joy/cmd_vel
 ```
+```
+ros2 service list
+/teleop_keyboard/describe_parameters
+/teleop_keyboard/get_parameter_types
+/teleop_keyboard/get_parameters
+/teleop_keyboard/list_parameters
+/teleop_keyboard/set_parameters
+/teleop_keyboard/set_parameters_atomically
+```
+
 
 ### T2:
 ```
@@ -275,5 +286,15 @@ ros2 launch omni_base_bringup omni_base_bringup.launch.py
 /rosout
 /diagnostics
 ```
+
+https://github.com/pal-robotics/omni_base_navigation
+git clone https://github.com/pal-robotics/omni_base_navigation.git
+
+git clone https://github.com/pal-robotics/omni_base_simulation.git
+
+
+
+### 
+https://github.com/pal-robotics/omni_base_simulation/tree/humble-devel
 
 
