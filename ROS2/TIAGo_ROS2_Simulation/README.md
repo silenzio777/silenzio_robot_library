@@ -139,3 +139,16 @@ ros2 launch omni_base_description show.launch.py
 <img src="omni_base_description.png" title="TIAGo" width="300">
 
 _Ubuntu PC: launch OK_
+
+
+
+```
+source ~/tiago_public_ws/install/setup.bash
+ros2 launch omni_base_bringup omni_base_bringup.launch.py
+```
+```
+...
+[spawner-2] [INFO] [1743243747.291694892] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-1] [INFO] [1743243747.297165716] [spawner_mobile_base_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-3] [INFO] [1743243747.345740690] [spawner_imu_sensor_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+```
