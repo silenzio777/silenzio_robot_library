@@ -205,4 +205,4 @@ ros2 launch omni_base_bringup joystick_teleop.launch.py
 [joy_linux_node-2] [ERROR] [1743244281.017400552] [joystick]: Couldn't open joystick /dev/joystick. Will retry every second.
 ```
 
-<img src="logitech-joystick" title="TIAGo" width="300">
+<img src="logitech-joystick.png" title="TIAGo" width="300">
