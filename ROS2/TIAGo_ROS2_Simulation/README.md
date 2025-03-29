@@ -140,6 +140,17 @@ ros2 launch omni_base_description show.launch.py
 
 _Ubuntu PC: launch OK_
 
+
+```
+source ~/tiago_public_ws/install/setup.bash
+ros2 launch omni_base_description robot_state_publisher.launch.py
+```
+
+```
+source ~/tiago_public_ws/install/setup.bash
+ros2 launch omni_base_controller_configuration default_controllers.launch.py
+```
+
 ```
 source ~/tiago_public_ws/install/setup.bash
 ros2 launch omni_base_bringup omni_base_bringup.launch.py
@@ -191,3 +202,5 @@ ros2 launch omni_base_bringup joystick_teleop.launch.py
 [INFO] [joy_linux_node-2]: process started with pid [21340]
 [joy_linux_node-2] [ERROR] [1743244281.017400552] [joystick]: Couldn't open joystick /dev/joystick. Will retry every second.
 ```
+
+
