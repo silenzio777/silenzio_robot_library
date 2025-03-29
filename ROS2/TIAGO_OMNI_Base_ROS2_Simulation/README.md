@@ -105,5 +105,7 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navi
 
 <img src="user_panel_numbers.png" title="TIAGo" width="300">
 
+<img src="Screenshot 2025-03-29 at 18.13.06.png" title="TIAGo" width="300">
 
-![logitech-joystick_](https://github.com/user-attachments/assets/d49f3f61-0efc-470f-a5ad-7671fb7bec73)
+
+
