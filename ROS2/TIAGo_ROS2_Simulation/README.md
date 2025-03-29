@@ -1,5 +1,7 @@
 ## TIAGo ROS 2 Simulation
-https://github.com/pal-robotics/tiago_simulation/blob/humble-devel/doc/media/tiago.png
+
+(tiago.png)
+
 ## This repository contains the launch files to simulate the TIAGo robot in ROS 2.
 https://github.com/pal-robotics/tiago_simulation/tree/humble-devel
 
