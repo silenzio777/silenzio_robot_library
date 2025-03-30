@@ -23,6 +23,8 @@ rqt_graph
 ros2 topic list
 ros2 topic list -t
 
+ros2 topic info /cmd_vel -v
+
 ros2 topic echo odom --no-arr
 
 ros2 run tf2_tools view_frames
