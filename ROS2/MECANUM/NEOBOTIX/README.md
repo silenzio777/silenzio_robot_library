@@ -86,9 +86,8 @@ Subscribes:
   - This topic contains data such as the position, velocity, and effort of each joint.
 
 
-```
+_______
 <img src="Mecanum-Roboter-MPO-500-Hauptansicht.jpg" title="neo_mpo_500-2" width="300">
 <img src="Mecanum-Roboter-MPO-500-Ansicht-A-b.jpg" title="neo_mpo_500-2" width="300">
 <img src="Mecanum-Roboter-MPO-500-Ansicht-B-b.jpg" title="neo_mpo_500-2" width="300">
-
 <img src="csm_Mecanum-Roboter-MPO-500-Abmasse-b_d9edc08c36.jpg" title="neo_mpo_500-2" width="600">
