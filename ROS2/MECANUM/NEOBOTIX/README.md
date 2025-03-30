@@ -40,6 +40,22 @@ ros2 launch neo_mpo_500-2 navigation.launch.py
 
 .... "package 'neo_nav2_bringup' not found,
 ```
+
+### neo_kinematics_mecanum2
+```
+ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
+ros2 topic list
+/cmd_vel
+/drives/joint_states
+/drives/joint_trajectory
+/odom
+/parameter_events
+/rosout
+/tf
+```
+
+
+```
 <img src="Mecanum-Roboter-MPO-500-Hauptansicht.jpg" title="neo_mpo_500-2" width="300">
 <img src="Mecanum-Roboter-MPO-500-Ansicht-A-b.jpg" title="neo_mpo_500-2" width="300">
 <img src="Mecanum-Roboter-MPO-500-Ansicht-B-b.jpg" title="neo_mpo_500-2" width="300">
