@@ -28,7 +28,7 @@ neo_srvs2
 neo_msgs2
 ```
 
-### Lounch:
+### Launch:
 ```
 ros2 launch neo_mpo_500-2 rviz.launch.py
 
