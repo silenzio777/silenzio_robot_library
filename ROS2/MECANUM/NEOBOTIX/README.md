@@ -65,10 +65,10 @@ ros2 topic list -t
 
 Publishes:
 
-- /tf (tf2_msgs/msg/TFMessage)
+- **/tf (tf2_msgs/msg/TFMessage)**
   - Populates the topic with the transformation of base frame with respect to odom
 
-- /odom (nav_msgs/msg/odometery)
+- **/odom (nav_msgs/msg/odometery)**
   - The odometry topic that publishes the robot’s state information, including position, orientation, and velocity. This topic is typically used for localization and navigation purposes, allowing other nodes to understand the robot’s movement within its environment.
 
 - /drives/joint_trajectory (trajectory_msg/msg/joint_trajectory)
