@@ -1,6 +1,10 @@
 ### Neobotix neo_mpo_500-2
 
-![Roboter-MPO-500-Hauptansicht-Render](https://github.com/user-attachments/assets/5c61112e-7108-472b-a371-56d8b5e80b54)
+<img src="Roboter-MPO-500-Hauptansicht-Render.jpg" title="TIAGo" width="300">
+
+
+
+
 
 
 ### neo_kinematics_mecanum2
@@ -36,3 +40,8 @@ ros2 launch neo_mpo_500-2 navigation.launch.py
 
 .... "package 'neo_nav2_bringup' not found,
 ```
+<img src="Mecanum-Roboter-MPO-500-Hauptansicht.jpg" title="TIAGo" width="300">
+<img src="Mecanum-Roboter-MPO-500-Ansicht-A-b.jpg" title="TIAGo" width="300">
+<img src="Mecanum-Roboter-MPO-500-Ansicht-B-b.jpg" title="TIAGo" width="300">
+
+<img src="csm_Mecanum-Roboter-MPO-500-Abmasse-b_d9edc08c36.png" title="TIAGo" width="600">
