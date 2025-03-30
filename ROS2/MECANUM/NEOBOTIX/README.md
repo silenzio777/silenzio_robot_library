@@ -1,5 +1,8 @@
 ### Neobotix neo_mpo_500-2
 
+![Roboter-MPO-500-Hauptansicht-Render](https://github.com/user-attachments/assets/5c61112e-7108-472b-a371-56d8b5e80b54)
+
+
 ### neo_kinematics_mecanum2
 
 https://neobotix-docs.de/ros/packages/neo_kinematics_mecanum2.html#neo-kinematics-mecanum
