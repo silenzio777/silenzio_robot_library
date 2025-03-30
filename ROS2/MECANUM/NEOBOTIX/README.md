@@ -68,7 +68,7 @@ ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/cmd_vel
 
 ### T2:
 ```
-ros2 topic echo /cmd_vel --no-arr
+rqt
 ```
 
 ### T3:
