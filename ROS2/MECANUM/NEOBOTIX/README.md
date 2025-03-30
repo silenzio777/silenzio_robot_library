@@ -40,7 +40,7 @@ ros2 launch neo_mpo_500-2 navigation.launch.py
 
 .... "package 'neo_nav2_bringup' not found,
 ```
-
+______________
 ### neo_kinematics_mecanum2
 ```
 ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
@@ -52,7 +52,34 @@ ros2 topic list
 /parameter_events
 /rosout
 /tf
+
+ros2 topic list -t
+/cmd_vel             [geometry_msgs/msg/Twist]
+/drives/joint_states [sensor_msgs/msg/JointState]
+/drives/joint_trajectory [trajectory_msgs/msg/JointTrajectory]
+/odom                 [nav_msgs/msg/Odometry]
+
 ```
+
+neo_mecanum_node
+
+Publishes:
+
+** /tf (tf2_msgs/msg/TFMessage)
+Populates the topic with the transformation of base frame with respect to odom
+/odom (nav_msgs/msg/odometery)
+The odometry topic that publishes the robot’s state information, including position, orientation, and velocity. This topic is typically used for localization and navigation purposes, allowing other nodes to understand the robot’s movement within its environment.
+/drives/joint_trajectory (trajectory_msg/msg/joint_trajectory)
+The joint trajectory topic that publishes commands for the robot’s joints to follow a specified trajectory. This topic is used to control the movements of the robot’s joints by providing a series of waypoints that define the desired positions, velocities over time.
+Estimated based on the cartesian velocity commands
+Subscribes:
+
+/cmd_vel (geometry_msgs/msg/TwistStamped)
+The velocity command topic that subscribes velocity commands for the robot from the neo_teleop2 node.
+This topic includes linear and angular velocities that control the robot’s movement in the x, y directions and as well as the rotation.
+/drives/joint_states (sensor_msgs/msg/JointState)
+The joint states topic that subscribes the state information of the robot’s joints from the neo_relayboard_node.
+This topic contains data such as the position, velocity, and effort of each joint.
 
 
 ```
