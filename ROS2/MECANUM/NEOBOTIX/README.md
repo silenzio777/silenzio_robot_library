@@ -61,6 +61,28 @@ ros2 topic list -t
 
 ```
 
+### T1:
+```
+ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/cmd_vel
+```
+
+### T2:
+```
+ros2 topic echo /cmd_vel --no-arr
+```
+
+### T3:
+```
+ros2 launch neo_mpo_500-2 rviz.launch.py
+```
+
+### T4:
+```
+ros2 launch neo_mpo_500-2 bringup.launch.py
+```
+
+
+
 ### neo_mecanum_node
 
 Publishes:
