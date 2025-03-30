@@ -81,6 +81,10 @@ ros2 launch neo_mpo_500-2 rviz.launch.py
 ros2 launch neo_mpo_500-2 bringup.launch.py
 ```
 
+### T0:
+```
+ros2 launch neo_mpo_500-2 demo.launch.py
+```
 
 
 ### neo_mecanum_node
