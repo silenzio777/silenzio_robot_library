@@ -260,6 +260,7 @@ export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
 
 ### turtlebot3 turtlebot3_teleop teleop_keyboard
 
+teleop_keyboard node cannot be launched from a launch file, including .launch.py. If you try doing that, you will get an error (in Linux) termios.error: (25, 'Inappropriate ioctl for device').
 ```
 silenzio@ubuntuPC:~/ros2_ws$ ros2 launch omni key_teleop.launch.py
 [INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-03-31-14-38-16-258718-ubuntuPC-5551
