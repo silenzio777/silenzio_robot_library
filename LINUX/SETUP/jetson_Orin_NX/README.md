@@ -64,3 +64,9 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export TURTLEBOT3_MODEL=waffle
 export CMAKE_MODULE_PATH=/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
 ```
+
+
+<img src="../jtop_JetsonNX.png" title="mecanum" width="600">
+
+<img src="../btop_JetsonNX.png" title="mecanum" width="1000">
+
