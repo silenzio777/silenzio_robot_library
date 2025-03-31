@@ -3,7 +3,7 @@
 
 Mecanum Drive is a type of drive train which uses special wheels called Mecanum wheels, and in which each of the robot’s 4 wheels can rotate independently. The cool thing about Mecanum drive is that, since the wheels are straight but have slanted rollers, the robot can move in any direction.
 
-../../_images/mecanum.png
+<img src="mecanum.webp" title="mecanum" width="300">
 
 Since the wheels have slanted rollers, by turning the wheels against each other, the robot can move in any direction. Unlike tank drive, which can only move forwards, move backwards, and turn, a mecanum drive can not only move forward, backward, and turn, but it can also move left, right, or in any angle by modifying the motor power.
 
