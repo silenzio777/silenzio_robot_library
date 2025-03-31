@@ -3,10 +3,6 @@
 <img src="Roboter-MPO-500-Hauptansicht-Render.jpg" title="neo_mpo_500-2" width="300">
 
 
-
-
-
-
 ### neo_kinematics_mecanum2
 
 https://neobotix-docs.de/ros/packages/neo_kinematics_mecanum2.html#neo-kinematics-mecanum
@@ -82,6 +78,7 @@ ros2 launch neo_mpo_500-2 rviz.launch.py
 ros2 launch neo_mpo_500-2 bringup.launch.py
 ```
 
+______
 
 
 ### T1:
@@ -99,7 +96,7 @@ ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
 ros2 launch neo_mpo_500-2 demo.launch.py
 ```
 
-### T3:
+### T4:
 ```
 ros2 launch neo_mpo_500-2 demo.launch.py
 ```
