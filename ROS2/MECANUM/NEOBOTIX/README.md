@@ -78,30 +78,6 @@ ros2 launch neo_mpo_500-2 rviz.launch.py
 ros2 launch neo_mpo_500-2 bringup.launch.py
 ```
 
-______
-
-
-### T1:
-```
-ros2 run omni key_teleop
-```
-
-### T2:
-```
-ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
-```
-
-### T3:
-```
-ros2 launch neo_mpo_500-2 demo.launch.py
-```
-
-### T4:
-```
-ros2 launch neo_mpo_500-2 demo.launch.py
-```
-
-
 
 ### neo_mecanum_node
 
@@ -127,7 +103,28 @@ Subscribes:
   - The joint states topic that subscribes the state information of the robot’s joints from the neo_relayboard_node.
   - This topic contains data such as the position, velocity, and effort of each joint.
 
+______
 
+
+### T1:
+```
+ros2 run omni key_teleop
+```
+
+### T2:
+```
+ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
+```
+
+### T3:
+```
+ros2 launch neo_mpo_500-2 demo.launch.py
+```
+
+### T4:
+```
+ros2 launch neo_mpo_500-2 demo.launch.py
+```
 _______
 <img src="Mecanum-Roboter-MPO-500-Hauptansicht.jpg" title="neo_mpo_500-2" width="300">
 <img src="Mecanum-Roboter-MPO-500-Ansicht-A-b.jpg" title="neo_mpo_500-2" width="300">
