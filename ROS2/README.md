@@ -256,3 +256,42 @@ export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
     </Domain>
 
 ```
+
+### turtlebot3/turtlebot3_teleop/teleop_keyboard.py
+
+```
+silenzio@ubuntuPC:~/ros2_ws$ ros2 launch omni key_teleop.launch.py
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-03-31-14-38-16-258718-ubuntuPC-5551
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [key_teleop-1]: process started with pid [5552]
+[key_teleop-1] Traceback (most recent call last):
+[key_teleop-1]   File "/home/silenzio/ros2_ws/install/omni/lib/omni/key_teleop", line 33, in <module>
+[key_teleop-1]     sys.exit(load_entry_point('omni==0.0.0', 'console_scripts', 'key_teleop')())
+[key_teleop-1]   File "/home/silenzio/ros2_ws/install/omni/lib/python3.10/site-packages/omni/key_teleop.py", line 141, in main
+[key_teleop-1]     settings = termios.tcgetattr(sys.stdin)
+[key_teleop-1] termios.error: (25, 'Inappropriate ioctl for device')
+[ERROR] [key_teleop-1]: process has died [pid 5552, exit code 1, cmd '/home/silenzio/ros2_ws/install/omni/lib/omni/key_teleop --ros-args -r __node:=key_teleop'].
+```
+The error above because teleop_keyboard.py needs direct access to TTY STDIN device in order to capture keyboard strokes.
+### Fix:
+
+```
+silenzio@ubuntuPC:~/ros2_ws$ ros2 run omni key_teleop
+
+Control Your TurtleBot3!
+---------------------------
+Moving around:
+        w
+   a    s    d
+        x
+
+w/x : increase/decrease linear velocity (Burger : ~ 0.22, Waffle and Waffle Pi : ~ 0.26)
+a/d : increase/decrease angular velocity (Burger : ~ 2.84, Waffle and Waffle Pi : ~ 1.82)
+
+space key, s : force stop
+
+CTRL-C to quit
+```
+
+
+
