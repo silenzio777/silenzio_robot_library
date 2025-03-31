@@ -107,7 +107,8 @@ sudo systemctl restart jtop.service
 
 terminator -e 'exec jtop'
 ```
-jtop_UbuntuPC
+<img src="../jtop_UbuntuPC.png" title="mecanum" width="300">
+
 
 ### Nvitop:
 ```
