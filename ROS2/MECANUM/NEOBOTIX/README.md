@@ -63,7 +63,8 @@ ros2 topic list -t
 
 ### T1:
 ```
-ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/cmd_vel
+## ros2 run turtlebot3_teleop teleop_keyboard --ros-args -r /cmd_vel:=/cmd_vel
+ros2 run omni key_teleop
 ```
 
 ### T2:
@@ -81,10 +82,28 @@ ros2 launch neo_mpo_500-2 rviz.launch.py
 ros2 launch neo_mpo_500-2 bringup.launch.py
 ```
 
-### T0:
+
+
+### T1:
+```
+ros2 run omni key_teleop
+```
+
+### T2:
+```
+ros2 launch neo_kinematics_mecanum2 test_setup.launch.py
+```
+
+### T3:
 ```
 ros2 launch neo_mpo_500-2 demo.launch.py
 ```
+
+### T3:
+```
+ros2 launch neo_mpo_500-2 demo.launch.py
+```
+
 
 
 ### neo_mecanum_node
