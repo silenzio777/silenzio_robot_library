@@ -107,7 +107,7 @@ sudo systemctl restart jtop.service
 
 terminator -e 'exec jtop'
 ```
-<img src="../jtop_UbuntuPC.png" title="mecanum" width="300">
+<img src="../jtop_UbuntuPC.png" title="mecanum" width="1000">
 
 
 ### Nvitop:
@@ -124,7 +124,8 @@ pip3 install .
 nvitop
 python3 -m ~/lib/nvitop
 ```
-nvitop_UbuntuPC
+<img src="../nvitop_UbuntuPC.png" title="mecanum" width="1000">
+
 
 ### Btop:
 ```
@@ -152,7 +153,7 @@ custom_gpu_name0 = "gpu0"
 #!/bin/bash
 terminator -e 'exec /usr/local/bin/btop' --geometry=1300x800
 ```
-btop_UbuntuPC
+<img src="../btop_UbuntuPC.png" title="mecanum" width="1000">
 
 
 ### CUDA and cuDNN:
