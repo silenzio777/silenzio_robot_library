@@ -65,9 +65,9 @@ export TURTLEBOT3_MODEL=waffle
 export CMAKE_MODULE_PATH=/usr/lib/aarch64-linux-gnu/cmake/gazebo/gazebo-config.cmake
 ```
 
-<img src="../btop_JetsonNX.png" title="mecanum" width="800">
+<img src="../btop_JetsonNX.png" title="jtop_JetsonNX" width="800">
 </br>
 </br>
-<img src="../jtop_JetsonNX.png" title="mecanum" width="1000">
+<img src="../jtop_JetsonNX.png" title="btop_JetsonNX" width="1000">
 </br>
 </br>
