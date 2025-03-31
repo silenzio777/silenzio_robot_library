@@ -107,6 +107,8 @@ sudo systemctl restart jtop.service
 
 terminator -e 'exec jtop'
 ```
+jtop_UbuntuPC
+
 ### Nvitop:
 ```
 https://github.com/XuehaiPan/nvitop?tab=readme-ov-file
@@ -121,6 +123,8 @@ pip3 install .
 nvitop
 python3 -m ~/lib/nvitop
 ```
+nvitop_UbuntuPC
+
 ### Btop:
 ```
 #sudo snap install btop
@@ -147,6 +151,8 @@ custom_gpu_name0 = "gpu0"
 #!/bin/bash
 terminator -e 'exec /usr/local/bin/btop' --geometry=1300x800
 ```
+btop_UbuntuPC
+
 
 ### CUDA and cuDNN:
 ```
