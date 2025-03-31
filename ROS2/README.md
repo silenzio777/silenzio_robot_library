@@ -2,7 +2,7 @@
 - [JetsonOrin NX](JetsonOrinNX16Gb/README.md)<br/>
 - [UbuntuPC](UbuntuPC)<br/>
 - [DDSConfig](#ddsconfig)<br/>
-- [teleop_keyboard](#turtlebot3-turtlebot3-teleop-teleop-keyboard-py)<br/>
+- [teleop_keyboard](#turtlebot3_turtlebot3_teleop_teleop_keyboard_py)<br/>
 
 
 
@@ -258,7 +258,7 @@ export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
 
 ```
 
-### turtlebot3/turtlebot3_teleop/teleop_keyboard.py
+### turtlebot3 turtlebot3_teleop teleop_keyboard.py
 
 ```
 silenzio@ubuntuPC:~/ros2_ws$ ros2 launch omni key_teleop.launch.py
