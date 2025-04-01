@@ -34,3 +34,21 @@ ____
 ### ros2_navigation_stvl
 ROS2-based navigation and mapping package using Nav2 and STVL plugin.</br>
 https://github.com/mich-pest/ros2_navigation_stvl
+
+
+
+_________
+### linorobot2
+https://github.com/linorobot/linorobot2
+
+linorobot2 is a ROS2 implementation of the linorobot package for building custom robots with 2WD, 4WD, or Mecanum drive configurations. This package provides launch files for Nav2 integration and includes a complete simulation pipeline in Gazebo.
+
+
+
+___________
+### Using VIO to Augment Robot Odometry
+
+https://docs.nav2.org/tutorials/docs/integrating_vio.html
+
+This tutorial highlights how to setup Visual-Inerial Odometry (VIO) into a Nav2 and ROS 2 based robotics system to augment robot odometry.
+
