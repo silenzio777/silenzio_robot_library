@@ -32,6 +32,8 @@ ros2 run tf2_tools view_frames
 
 ros2 topic hz /camera/color/image_raw
 
+ros2 doctor --report | grep middleware
+
 
 ## PACKAGES:
 
