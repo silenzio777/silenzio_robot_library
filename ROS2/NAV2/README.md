@@ -77,6 +77,7 @@ qos_depth will set the QoS depth throughout the driver. Set this to 3-5 for all 
 
 Thus, make the following parameter updates to the zed_wrapper’s default parameters:
 
+```
 pos_tracking:
     publish_tf: false # Disables odom -> base_link TF transformation
     publish_map_tf: true # Disables map -> odom TF transformation
@@ -88,3 +89,9 @@ pos_tracking:
     path_max_count: 30
     qos_depth: 5
 
+```
+
+Optionally, remap the zed odom topic to a topic that isn’t reserved or commonly used by other systems. In your ZED launch file add to the node / launch file:
+```
+remappings=[('odom', 'camera_odom')]
+```
