@@ -101,7 +101,7 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navi
 ```
 
 
-
+_________
 <img src="Frontal_Base-omni.png" title="TIAGo" width="300">
 
 <img src="Back_base-omni.png" title="TIAGo" width="300">
