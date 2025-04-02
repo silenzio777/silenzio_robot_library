@@ -115,3 +115,34 @@ ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navi
 <img src="rqt_screenshot.png" title="TIAGo" width="1000">
 
 <img src="ArchitectureDiagram.png" title="TIAGo" width="1000">
+
+________
+
+
+
+
+### Tiago Simulation
+
+Custom install:
+
+System Specs
+
+- Ubuntu 22.04
+- Gazebo Classic 11
+- ROS 2 Humble
+
+Cloned tiago_simulation humble branch:
+```
+git clone https://github.com/ros-controls/ros2_control.git -b humble
+git clone https://github.com/ros-controls/gazebo_ros2_control.git -b humble
+git clone https://github.com/pal-robotics/pal_hey5.git -b humble-devel
+git clone https://github.com/ros-perception/vision_msgs.git -b ros2
+git clone https://github.com/pal-robotics/play_motion2.git -b humble-devel
+git clone https://github.com/PickNikRobotics/launch_param_builder.git
+git clone https://github.com/pal-robotics/pal_urdf_utils.git -b humble-devel
+```
+
+Launch Tiago robot simulation in Gazebo Classic:
+```
+ros2 launch tiago_gazebo tiago_gazebo.launch.py arm:=no-arm
+```
