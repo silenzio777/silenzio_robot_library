@@ -89,12 +89,15 @@ Executables:
 The package comes with the teleop_node that republishes sensor_msgs/msg/Joy messages as scaled geometry_msgs/msg/Twist messages. The message type can be changed to geometry_msgs/msg/TwistStamped by the publish_stamped_twist parameter.
 
 Subscribed Topics:
+```
 - joy (sensor_msgs/msg/Joy)
    - Joystick messages to be translated to velocity commands.
- 
+ ```
 Published Topics:
+```
 - cmd_vel (geometry_msgs/msg/Twist or geometry_msgs/msg/TwistStamped)
    - Command velocity messages arising from Joystick commands.
+```
 
 Install:
 ```
@@ -111,6 +114,7 @@ ros2 launch teleop_twist_joy teleop-launch.py joy_config:='xbox'
 Note: this launch file also launches the joy node so do not run it separately.
 
 Arguments
+```
 - joy_config (string, default: 'ps3')
    - Config file to use
 - joy_dev (string, default: '0')
@@ -119,6 +123,7 @@ Arguments
    - Path to config files
 - publish_stamped_twist (bool, default: false)
   - Whether to publish geometry_msgs/msg/TwistStamped for command velocity messages.
+```
 
 _____
 
