@@ -89,15 +89,14 @@ Executables:
 The package comes with the teleop_node that republishes sensor_msgs/msg/Joy messages as scaled geometry_msgs/msg/Twist messages. The message type can be changed to geometry_msgs/msg/TwistStamped by the publish_stamped_twist parameter.
 
 Subscribed Topics:
-```
 - joy (sensor_msgs/msg/Joy)
    - Joystick messages to be translated to velocity commands.
- ```
+ 
 Published Topics:
-```
+
 - cmd_vel (geometry_msgs/msg/Twist or geometry_msgs/msg/TwistStamped)
    - Command velocity messages arising from Joystick commands.
-```
+
 
 Install:
 ```
