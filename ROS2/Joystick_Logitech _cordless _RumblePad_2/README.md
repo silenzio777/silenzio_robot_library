@@ -140,6 +140,58 @@ ros2 launch teleop_twist_joy teleop-launch.py
 [joy_node-1] [INFO] [1743594128.367290685] [joy_node]: Opened joystick: Logitech Cordless RumblePad 2.  deadzone: 0.300000
 ```
 
+Create file /opt/ros/humble/share/teleop_twist_joy/config/lg.config.yaml
+```
+# Logitech Cordless RumblePad 2
+teleop_twist_joy_node:
+  ros__parameters:
+    axis_linear:  # Forward/Back
+      x: -1
+      y: 1
+    scale_linear:
+      y: 1.0
+    scale_linear_turbo:
+      y: 1.5
+
+    axis_angular:  # Twist
+      yaw: 0
+    scale_angular:
+      yaw: 1.0
+    scale_angular_turbo:
+      yaw: 1.0
+    enable_button: 8  # Trigger
+    enable_turbo_button: 10  # Button 2 aka thumb button
+    require_enable_button: false
+```
+
+Run:
+
+T1:
+
+```
+ros2 launch teleop_twist_joy teleop-launch.py
+```
+
+```
+ros2 topic echo /cmd_vel
+```
+```
+---
+linear:
+  x: 0.0
+  y: -0.3235190808773041
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.10786767303943634
+```
+
+
+
+
+
+
 _____
 
 
