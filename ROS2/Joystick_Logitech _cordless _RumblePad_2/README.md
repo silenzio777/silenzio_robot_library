@@ -112,7 +112,7 @@ ros2 launch teleop_twist_joy teleop-launch.py joy_config:='xbox'
 ```
 Note: this launch file also launches the joy node so do not run it separately.
 
-Arguments
+Arguments:
 
 - joy_config (string, default: 'ps3')
    - Config file to use
@@ -123,22 +123,8 @@ Arguments
 - publish_stamped_twist (bool, default: false)
   - Whether to publish geometry_msgs/msg/TwistStamped for command velocity messages.
 
-```
-ros2 launch teleop_twist_joy teleop-launch.py
-```
-```
-[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-02-14-42-07-983166-ubuntuPC-12895
-[INFO] [launch]: Default logging verbosity is set to INFO
-[INFO] [joy_node-1]: process started with pid [12896]
-[INFO] [teleop_node-2]: process started with pid [12898]
-[teleop_node-2] [INFO] [1743594128.044209146] [TeleopTwistJoy]: Teleop enable button 8.
-[teleop_node-2] [INFO] [1743594128.044247914] [TeleopTwistJoy]: Turbo on button 10.
-[teleop_node-2] [INFO] [1743594128.044254996] [TeleopTwistJoy]: Linear axis x on 1 at scale 0.700000.
-[teleop_node-2] [INFO] [1743594128.044263386] [TeleopTwistJoy]: Turbo for linear axis x is scale 1.500000.
-[teleop_node-2] [INFO] [1743594128.044271126] [TeleopTwistJoy]: Angular axis yaw on 0 at scale 0.400000.
-[teleop_node-2] [INFO] [1743594128.044277060] [TeleopTwistJoy]: Turbo for angular axis yaw is scale 1.000000.
-[joy_node-1] [INFO] [1743594128.367290685] [joy_node]: Opened joystick: Logitech Cordless RumblePad 2.  deadzone: 0.300000
-```
+
+### RUN:
 
 Create file /opt/ros/humble/share/teleop_twist_joy/config/lg.config.yaml
 ```
@@ -164,12 +150,25 @@ teleop_twist_joy_node:
     require_enable_button: false
 ```
 
-Run:
+### Launch node:
 
 T1:
 
 ```
 ros2 launch teleop_twist_joy teleop-launch.py
+```
+
+```
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-02-15-32-04-071407-ubuntuPC-14596
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [joy_node-1]: process started with pid [14597]
+[INFO] [teleop_node-2]: process started with pid [14599]
+[teleop_node-2] [INFO] [1743597124.133094962] [TeleopTwistJoy]: Turbo on button 10.
+[teleop_node-2] [INFO] [1743597124.133129732] [TeleopTwistJoy]: Linear axis y on 1 at scale 1.000000.
+[teleop_node-2] [INFO] [1743597124.133136544] [TeleopTwistJoy]: Turbo for linear axis y is scale 1.500000.
+[teleop_node-2] [INFO] [1743597124.133140089] [TeleopTwistJoy]: Angular axis yaw on 0 at scale 1.000000.
+[teleop_node-2] [INFO] [1743597124.133143190] [TeleopTwistJoy]: Turbo for angular axis yaw is scale 1.000000.
+[joy_node-1] [INFO] [1743597124.448226776] [joy_node]: Opened joystick: Logitech Cordless RumblePad 2.  deadzone: 0.20000
 ```
 
 ```
