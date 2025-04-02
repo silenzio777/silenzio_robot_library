@@ -71,6 +71,12 @@ buttons:
 - 0
 ---
 ```
+_____
+### Joy2Twist
+
+Dockerized ROS node allowing control of ROS-powered mobile robots with Logitech F710 gamepad. Joy2Twist node is converting sensor_msgs/Joy message to geometry_msgs/Twist or geometry_msgs/TwistStamped in order to provide velocity commands for the mobile robot. Therefore this package is compliant (but not supported by Husarion) with any other gamepad controller which is able to publish the sensor_msgs/Joy message.
+
+https://github.com/husarion/joy2twist
 
 
 
