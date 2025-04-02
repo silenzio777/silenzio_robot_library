@@ -78,6 +78,8 @@ Dockerized ROS node allowing control of ROS-powered mobile robots with Logitech 
 
 https://github.com/husarion/joy2twist
 
+<img src="gamepad-legend-panther.png" title="gamepad-legend-panther.png" width="1100">
+
 
 
 
