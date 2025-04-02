@@ -123,6 +123,22 @@ Arguments
 - publish_stamped_twist (bool, default: false)
   - Whether to publish geometry_msgs/msg/TwistStamped for command velocity messages.
 
+```
+ros2 launch teleop_twist_joy teleop-launch.py
+```
+```
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-02-14-42-07-983166-ubuntuPC-12895
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [joy_node-1]: process started with pid [12896]
+[INFO] [teleop_node-2]: process started with pid [12898]
+[teleop_node-2] [INFO] [1743594128.044209146] [TeleopTwistJoy]: Teleop enable button 8.
+[teleop_node-2] [INFO] [1743594128.044247914] [TeleopTwistJoy]: Turbo on button 10.
+[teleop_node-2] [INFO] [1743594128.044254996] [TeleopTwistJoy]: Linear axis x on 1 at scale 0.700000.
+[teleop_node-2] [INFO] [1743594128.044263386] [TeleopTwistJoy]: Turbo for linear axis x is scale 1.500000.
+[teleop_node-2] [INFO] [1743594128.044271126] [TeleopTwistJoy]: Angular axis yaw on 0 at scale 0.400000.
+[teleop_node-2] [INFO] [1743594128.044277060] [TeleopTwistJoy]: Turbo for angular axis yaw is scale 1.000000.
+[joy_node-1] [INFO] [1743594128.367290685] [joy_node]: Opened joystick: Logitech Cordless RumblePad 2.  deadzone: 0.300000
+```
 
 _____
 
