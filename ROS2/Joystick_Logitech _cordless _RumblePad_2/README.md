@@ -85,22 +85,40 @@ https://github.com/ros2/teleop_twist_joy/tree/humble
 The purpose of this package is to provide a generic facility for tele-operating Twist-based ROS 2 robots with a standard joystick. It converts joy messages to velocity commands.
 This node provides no rate limiting or autorepeat functionality. It is expected that you take advantage of the features built into joy for this.
 
-Install:
-```
-sudo apt-get install ros-$ROS_DISTRO-teleop-twist-joy
-```
-
 Executables:
 The package comes with the teleop_node that republishes sensor_msgs/msg/Joy messages as scaled geometry_msgs/msg/Twist messages. The message type can be changed to geometry_msgs/msg/TwistStamped by the publish_stamped_twist parameter.
 
 Subscribed Topics:
 - joy (sensor_msgs/msg/Joy)
- - Joystick messages to be translated to velocity commands.
+   - Joystick messages to be translated to velocity commands.
  
 Published Topics:
 - cmd_vel (geometry_msgs/msg/Twist or geometry_msgs/msg/TwistStamped)
- - Command velocity messages arising from Joystick commands.
+   - Command velocity messages arising from Joystick commands.
 
+Install:
+```
+sudo apt-get install ros-$ROS_DISTRO-teleop-twist-joy
+```
+
+Run:
+A launch file has been provided which has three arguments which can be changed in the terminal or via your own launch file. To configure the node to match your joystick a config file can be used. There are several common ones provided in this package (atk3, ps3-holonomic, ps3, xbox, xd3), located here: https://github.com/ros2/teleop_twist_joy/tree/humble/config.
+
+PS3 is default, to run for another config (e.g. xbox) use this:
+```
+ros2 launch teleop_twist_joy teleop-launch.py joy_config:='xbox'
+```
+Note: this launch file also launches the joy node so do not run it separately.
+
+Arguments
+- joy_config (string, default: 'ps3')
+   - Config file to use
+- joy_dev (string, default: '0')
+   - Joystick device to use
+- config_filepath (string, default: '/opt/ros/<rosdistro>/share/teleop_twist_joy/config/' + LaunchConfig('joy_config') + '.config.yaml')
+   - Path to config files
+- publish_stamped_twist (bool, default: false)
+  - Whether to publish geometry_msgs/msg/TwistStamped for command velocity messages.
 
 _____
 
