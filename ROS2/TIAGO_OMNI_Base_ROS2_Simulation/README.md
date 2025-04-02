@@ -133,6 +133,12 @@ System Specs
 
 Cloned tiago_simulation humble branch:
 ```
+source /opt/ros/humble/setup.bash
+sudo apt update
+sudo apt install ros-humble-tiago-simulation
+```
+
+```
 git clone https://github.com/ros-controls/ros2_control.git -b humble
 git clone https://github.com/ros-controls/gazebo_ros2_control.git -b humble
 git clone https://github.com/pal-robotics/pal_hey5.git -b humble-devel
@@ -145,4 +151,7 @@ git clone https://github.com/pal-robotics/pal_urdf_utils.git -b humble-devel
 Launch Tiago robot simulation in Gazebo Classic:
 ```
 ros2 launch tiago_gazebo tiago_gazebo.launch.py arm:=no-arm
+```
+```
+ros2 run tiago_gazebo tiago_gazebo.launch.py
 ```
