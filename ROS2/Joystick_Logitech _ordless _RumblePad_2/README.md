@@ -2,6 +2,13 @@
 
 ## Ubuntu PC
 ```
+ls /dev/input/js0
+```
+```
+/dev/input/js0
+```
+
+```
 sudo dmesg
 ```
 ```
