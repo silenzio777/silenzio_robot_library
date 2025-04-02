@@ -1,5 +1,9 @@
 ### Logitech Cordless RumblePad 2 driver for ROS2 humble
 
+<img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
+
+<img src="LogitechCordlessRumblePad_2_back.png" title="LogitechCordlessRumblePad_2_front" width="585">
+
 ## Ubuntu PC
 ```
 ls /dev/input/js0
