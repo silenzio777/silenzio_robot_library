@@ -72,6 +72,7 @@ buttons:
 ---
 ```
 _____
+
 ### Joy2Twist
 
 Dockerized ROS node allowing control of ROS-powered mobile robots with Logitech F710 gamepad. Joy2Twist node is converting sensor_msgs/Joy message to geometry_msgs/Twist or geometry_msgs/TwistStamped in order to provide velocity commands for the mobile robot. Therefore this package is compliant (but not supported by Husarion) with any other gamepad controller which is able to publish the sensor_msgs/Joy message.
@@ -81,5 +82,35 @@ https://github.com/husarion/joy2twist
 <img src="gamepad-legend-panther.png" title="gamepad-legend-panther.png" width="1100">
 
 
+_________
 
+### Jetson NX
+```
+sudo dmesg
+```
+```
+...
+[ 1480.554675] usb 1-2.3: new low-speed USB device number 6 using tegra-xusb
+[ 1480.759887] input: Logitech Logitech Cordless RumblePad 2 as /devices/platform/bus@0/3610000.usb/usb1/1-2/1-2.3/1-2.3:1.0/0003:046D:C219.0002/input/input6
+[ 1480.760456] logitech 0003:046D:C219.0002: input,hidraw0: USB HID v1.10 Gamepad [Logitech Logitech Cordless RumblePad 2] on usb-3610000.usb-2.3/input0
+[ 1480.795047] logitech: probe of 0003:046D:C219.0002 failed with error -1
+```
 
+```
+sudo ls -la /dev/input/by-path/
+```
+```
+total 0
+drwxr-xr-x 2 root root  80 Jan  1  1970 .
+drwxr-xr-x 3 root root 160 Nov 21  2023 ..
+lrwxrwxrwx 1 root root   9 Jan  1  1970 platform-3510000.hda-event -> ../event4
+lrwxrwxrwx 1 root root   9 Nov 21  2023 platform-gpio-keys-event -> ../event0
+```
+
+```
+ros2 run joy joy_enumerate_devices
+```
+```
+ID : GUID                             : GamePad : Mapped : Joystick Device Name
+-------------------------------------------------------------------------------
+```
