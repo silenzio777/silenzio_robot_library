@@ -113,7 +113,7 @@ ros2 launch teleop_twist_joy teleop-launch.py joy_config:='xbox'
 Note: this launch file also launches the joy node so do not run it separately.
 
 Arguments
-```
+
 - joy_config (string, default: 'ps3')
    - Config file to use
 - joy_dev (string, default: '0')
@@ -122,7 +122,7 @@ Arguments
    - Path to config files
 - publish_stamped_twist (bool, default: false)
   - Whether to publish geometry_msgs/msg/TwistStamped for command velocity messages.
-```
+
 
 _____
 
