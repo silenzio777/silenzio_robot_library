@@ -114,3 +114,7 @@ ros2 run joy joy_enumerate_devices
 ID : GUID                             : GamePad : Mapped : Joystick Device Name
 -------------------------------------------------------------------------------
 ```
+### FIX:
+
+https://forums.developer.nvidia.com/t/logitech-f710-does-not-show-up-in-dev-input/292637/4
+
