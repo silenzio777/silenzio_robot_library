@@ -2,7 +2,7 @@
 
 <img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
 
-<img src="LogitechCordlessRumblePad_2_back.png" title="LogitechCordlessRumblePad_2_front" width="585">
+<img src="LogitechCordlessRumblePad_2_back.png" title="LogitechCordlessRumblePad_2_front" width="500">
 
 ## Ubuntu PC
 ```
