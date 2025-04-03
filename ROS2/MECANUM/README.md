@@ -7,9 +7,41 @@ ROS2 interface to I/O of an attached microcontroller
 Arduino Mega2560
 
 
+### Install:
+```
+cd ~/ros2_ws
+git clone https://github.com/openvmp/serial.git src/remote_serial
+```
+### Run:
+
+```
+ros2 run remote_serial remote_serial_standalone
+```
+
+```
+ros2 run remote_serial remote_serial_standalone \
+  --ros-args \
+  --remap serial:__node:=serial_com1 \
+  -p serial_is_remote:=false \
+  -p serial_prefix:=/serial/com1 \
+  -p serial_dev_name:=/dev/ttyS0 \
+  -p serial_baud_rate:=115200 \
+  -p serial_data:=8 \
+  -p serial_parity:=false \
+  -p serial_stop:=1 \
+  -p serial_flow_control:=true
+```
+
+
+
+
+
+
+
+______________________
 https://github.com/AnrdyShmrdy/ros2_serial_interface
 ROS2 Serial Interface
-__
+______________________
 
 https://github.com/RozaGkliva/ros2_serial
 Serial interface for ROS 2
