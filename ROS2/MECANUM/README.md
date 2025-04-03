@@ -12,5 +12,10 @@ https://github.com/hijimasa/omni_wheel_controller_sample
 
 
 _____
+BLDC drivers
+
+https://wiki.ros.org/Motor%20Controller%20Drivers
+
+https://github.com/chiprobotics/chip_bldc_driver
 
 https://github.com/silenzio777/ros_odrive_gim6010-8
