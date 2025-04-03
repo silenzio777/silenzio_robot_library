@@ -1,5 +1,27 @@
 ### LINKS
 
+### ROS2 Arduino
+
+https://robotics.stackexchange.com/questions/104890/ros2-humble-with-arduino-uno
+
+arduino mega 
+https://robotics.stackexchange.com/questions/63666/arduino-mega-and-rosserial-problem
+
+
+
+https://github.com/anasderkaoui/ROS2-and-Arduino-serial-communication
+
+https://github.com/ROBOTIS-GIT/ros2arduino
+
+https://github.com/erenkarakis/Aros2duino
+
+
+https://codefile.io/f/4IXZDzj67q
+
+
+______
+
+
 https://github.com/OPR-Project/OpenPlaceRecognition-ROS2
 
 
