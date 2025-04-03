@@ -267,9 +267,10 @@ sudo dmesg -wT
 [Wed Feb 26 00:25:01 2025] cpufreq: cpu0,cur:869000,set:1497600,delta:628600,set ndiv:117
 [Wed Feb 26 00:25:22 2025] cpufreq: cpu4,cur:1125000,set:1267200,delta:142200,set ndiv:99
 [Wed Feb 26 00:25:24 2025] cpufreq: cpu0,cur:1200000,set:1497600,delta:297600,set ndiv:117
-Interactive command. Show the available disk space:
+
 ```
 ___________
+Interactive command. Show the available disk space:
 ```
 watch -n1 df
 ```
