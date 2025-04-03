@@ -30,8 +30,9 @@ colcon build --packages-select remote_serial
 colcon build --packages-select remote_hardware_interface
 colcon build --packages-select remote_stepper_driver
 colcon build --packages-select remote_microcontroller
-
 ```
+
+sudo chmod 777 /dev/ttyTHS1
 
 
 
@@ -43,6 +44,26 @@ git clone https://github.com/openvmp/serial.git src/remote_serial
 ```
 
 ### Run:
+
+ros2 run remote_microcontroller remote_microcontroller_standalone \
+  --ros-args \
+  --remap serial:__node:=serial_com1 \
+  -p serial_is_remote:=false \
+  -p serial_prefix:=/serial/com1 \
+  -p serial_dev_name:=/dev/ttyS0 \
+  -p serial_baud_rate:=115200 \
+  -p serial_data:=8 \
+  -p serial_parity:=false \
+  -p serial_stop:=1 \
+  -p serial_flow_control:=true
+
+
+
+
+
+
+
+
 
 https://github.com/openvmp/serial/blob/main/README.md
 
