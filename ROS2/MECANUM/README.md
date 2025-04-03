@@ -97,4 +97,6 @@ https://automaticaddison.com/autonomous-docking-with-apriltags-using-nav2-ros-2-
 
 Autonomous Docking with AprilTags Using Nav2 – ROS 2 Jazzy
 
+https://github.com/automaticaddison/yahboom_rosmaster
+
 
