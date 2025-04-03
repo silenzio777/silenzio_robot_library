@@ -6,12 +6,26 @@ https://robotics.stackexchange.com/questions/104890/ros2-humble-with-arduino-uno
 
 arduino mega 
 https://robotics.stackexchange.com/questions/63666/arduino-mega-and-rosserial-problem
+https://github.com/ros-drivers/rosserial/issues/143
+https://robotics.stackexchange.com/questions/62758/rosserial-arduino-use-progmem-in-ros-lib
+
+The replacement for rosserial is micro-ROS
+or
+If you want to keep using ROS 1 rosserial without changing your firmware, it would make more sense to run a small ROS 1 master + an instance of ros1_bridge than to integrate message translation into any part of rosserial itself.
+
+https://github.com/ros-drivers/rosserial/issues/589
+
+Node MCU ESP8266 Support
+
 
 
 
 https://github.com/anasderkaoui/ROS2-and-Arduino-serial-communication
 
 https://github.com/ROBOTIS-GIT/ros2arduino
+
+https://github.com/strothmw/rosserial
+
 
 https://github.com/erenkarakis/Aros2duino
 
