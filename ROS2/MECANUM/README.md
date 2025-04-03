@@ -1,5 +1,23 @@
 ### LINKS
 
+https://github.com/OPR-Project/OpenPlaceRecognition-ROS2
+
+
+### 3D VOXEL:
+https://nvidia.github.io/MinkowskiEngine/overview.html
+
+https://github.com/NVIDIA/MinkowskiEngine/tree/master
+
+
+
+### 3D NN:
+https://habr.com/ru/articles/800949/
+
+
+
+
+### OMNI:
+
 https://github.com/nguyen-v/omnibot_ros2_control
 
 
