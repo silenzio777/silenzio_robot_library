@@ -16,7 +16,7 @@ git clone https://github.com/openvmp/actuator.git src/remote_actuator
 git clone https://github.com/openvmp/encoder.git src/remote_encoder
 git clone https://github.com/openvmp/switch.git src/remote_switch
 git clone https://github.com/openvmp/serial.git src/remote_serial
-git clone https://github.com/openvmp/remote_stepper_driver.git src/remote_stepper_driver
+git clone https://github.com/openvmp/remote_hardware_interface.git src/remote_hardware_interface
 git clone https://github.com/openvmp/stepper_driver src/remote_stepper_driver
 git clone https://github.com/openvmp/microcontroller.git src/remote_microcontroller
 ```
