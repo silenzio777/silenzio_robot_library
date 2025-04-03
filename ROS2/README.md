@@ -101,7 +101,7 @@ discovery to work properly in a unicast manner._
 ### ROS2 setup with Cyclone DDS
 - Install cyclonedds on your respective ros distro (replace `<ros-distro>` with your ros distribution, e.g. `humble`)
 ```
-sudo apt install ros-<ros-distro>-rmw-cyclonedds-cpp
+sudo apt install ros-$ROS_DISTRO-rmw-cyclonedds-cpp
 ```
 - Switch to cyclone as your ros2 rmw (robot middle ware). I recommend placing this command in your .bashrc, so that it's called every 
 time you launch your terminal.
