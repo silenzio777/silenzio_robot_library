@@ -14,6 +14,8 @@ https://github.com/NVIDIA/MinkowskiEngine/tree/master
 https://habr.com/ru/articles/800949/
 
 
+https://habr.com/ru/companies/innopolis/articles/653929/
+
 
 
 ### OMNI:
