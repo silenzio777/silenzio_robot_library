@@ -2,6 +2,12 @@
 
 ### ROS2 Arduino
 
+
+https://github.com/RozaGkliva/ros2_serial
+Serial interface for ROS 2
+-humble
+
+
 https://robotics.stackexchange.com/questions/104890/ros2-humble-with-arduino-uno
 
 arduino mega 
