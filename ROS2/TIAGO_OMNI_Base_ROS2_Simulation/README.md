@@ -103,6 +103,51 @@ You can also start the simulation navigation and slam together by using:
 ```
 ros2 launch omni_base_gazebo omni_base_gazebo.launch.py is_public_sim:=True navigation:=True slam:=True
 ```
+________
+### Topics:
+```
+/joy_vel
+/input_joy/cmd_vel
+/joy_priority
+/key_vel
+/cmd_vel
+
+/assisted_teleop_priority
+/assisted_vel
+
+/base_imu
+/imu_sensor_broadcaster/imu
+/imu_sensor_broadcaster/transition_event
+
+/diagnostics
+/docking_vel
+/dynamic_joint_states
+
+/robot_description
+/joint_state_broadcaster/transition_event
+/joint_states
+
+/marker
+/mobile_base_controller/cmd_vel_unstamped
+/mobile_base_controller/odom
+
+/performance_metrics
+/power/is_charging
+
+
+/rviz_joy_vel
+/tab_vel
+/text_marker
+
+
+
+/scan_front_raw
+/scan_rear_raw
+
+/tf
+/tf_static
+/clock
+```
 
 
 _________
