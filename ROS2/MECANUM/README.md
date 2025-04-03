@@ -43,8 +43,8 @@ cd ~/ros2_ws
 git clone https://github.com/openvmp/serial.git src/remote_serial
 ```
 
-### Run:
-
+### Run remote_microcontroller:
+```
 ros2 run remote_microcontroller remote_microcontroller_standalone \
   --ros-args \
   --remap serial:__node:=serial_com1 \
@@ -56,7 +56,7 @@ ros2 run remote_microcontroller remote_microcontroller_standalone \
   -p serial_parity:=false \
   -p serial_stop:=1 \
   -p serial_flow_control:=true
-
+```
 
 
 
