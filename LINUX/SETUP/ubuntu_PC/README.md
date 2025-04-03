@@ -242,8 +242,10 @@ ros2 run demo_nodes_cpp talker
 source /opt/ros/humble/setup.bash
 ros2 run demo_nodes_py listener
 
-
 apt install python3-colcon-cd
+
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+
 
 nano ~/.bashrc
 add this:
@@ -260,10 +262,46 @@ export _colcon_cd_root=/opt/ros/humble/
 source /usr/share/colcon_cd/function/colcon_cd.sh
 
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 export TURTLEBOT3_MODEL=waffle
-
+```
 
 ```
+nano ~/.ros/cyclonedds.xml
+
+Add this:
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https:>
+    <Domain Id="any">
+        <General>
+            <Interfaces>
+                <NetworkInterface autodetermine="true" priority="default" />
+            </Interfaces>
+            <AllowMulticast>false</AllowMulticast>
+            <MaxMessageSize>65500B</MaxMessageSize>
+        </General>
+        <Discovery>
+            <EnableTopicDiscoveryEndpoints>true</EnableTopicDiscoveryEndpoints>
+        <ParticipantIndex>auto</ParticipantIndex>
+        <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
+            <Peers>
+                <Peer Address="192.168.JN.IP"/>
+                <Peer Address="192.168.PC.IP"/>
+                <!--Peer Address="172.17.0.1"/-->
+            </Peers>
+        </Discovery>
+        <Internal>
+            <Watermarks>
+                <WhcHigh>500kB</WhcHigh>
+            </Watermarks>
+        </Internal>
+    </Domain>
+</CycloneDDS>
+
+```
+
+
 
 _____
 ### Conda Torch and Torchvision with GPU
