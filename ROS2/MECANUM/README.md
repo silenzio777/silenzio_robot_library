@@ -3,16 +3,48 @@
 ### ROS2 Arduino
 
 https://github.com/openvmp/microcontroller
-ROS2 interface to I/O of an attached microcontroller
-Arduino Mega2560
+
+ROS2 interface to I/O of an attached microcontroller ( Arduino Mega2560 )
+
+
 
 
 ### Install:
 ```
+mkdir src
+git clone https://github.com/openvmp/actuator.git src/remote_actuator
+git clone https://github.com/openvmp/encoder.git src/remote_encoder
+git clone https://github.com/openvmp/switch.git src/remote_switch
+git clone https://github.com/openvmp/serial.git src/remote_serial
+git clone https://github.com/openvmp/remote_stepper_driver.git src/remote_stepper_driver
+git clone https://github.com/openvmp/stepper_driver src/remote_stepper_driver
+git clone https://github.com/openvmp/microcontroller.git src/remote_microcontroller
+```
+### Build:
+```
+
+colcon build --packages-select remote_actuator
+colcon build --packages-select remote_encoder
+colcon build --packages-select remote_switch
+colcon build --packages-select remote_serial
+colcon build --packages-select remote_hardware_interface
+colcon build --packages-select remote_stepper_driver
+colcon build --packages-select remote_microcontroller
+
+```
+
+
+
+https://github.com/openvmp/microcontroller
+
+```
 cd ~/ros2_ws
 git clone https://github.com/openvmp/serial.git src/remote_serial
 ```
+
 ### Run:
+
+https://github.com/openvmp/serial/blob/main/README.md
 
 ```
 ros2 run remote_serial remote_serial_standalone
@@ -32,7 +64,25 @@ ros2 run remote_serial remote_serial_standalone \
   -p serial_flow_control:=true
 ```
 
+Here is an example of the configuration file for controlling a single servo:
 
+```
+pwm:
+  - channel: 0 # maps to pin 2 on Arduino Mega2560 and pin 3 on Arduino Uno
+    type: simple_pwm # fixed value, one of several supported types
+    name: actuator0 # this will be used to produce the node name, no need to match with any other values
+    prefix: /pwm0 # where to expose ROS2 interfaces
+    pwm_min: 0
+    pwm_max: 255
+```
+
+If this configuration file is used, then the following command can be used to control the servo motor:
+
+```
+ros2 topic pub /pwm0/pwm std_msgs/msg/UInt16 '{"data":150}'
+```
+
+__
 
 
 
