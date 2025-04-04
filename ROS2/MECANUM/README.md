@@ -1,6 +1,10 @@
 ### LINKS
 
 
+https://docs.clearpathrobotics.com/docs/ros/config/live
+sudo apt install ros-humble-clearpath-desktop ros-humble-clearpath-config-live
+
+
 https://docs.clearpathrobotics.com/docs/robots/indoor_robots/dingo/user_manual_dingo/
 
 https://github.com/clearpathrobotics/cpr-documentation
