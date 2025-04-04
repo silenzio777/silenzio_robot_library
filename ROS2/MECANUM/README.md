@@ -1,3 +1,5 @@
+https://github.com/agilexrobotics/limo_ros2
+
 ### LINKS
 
 
@@ -292,7 +294,9 @@ https://habr.com/ru/companies/innopolis/articles/653929/
 
 
 
-### OMNI:
+### MECANUM:
+
+https://github.com/agilexrobotics/limo_ros2
 
 https://github.com/nguyen-v/omnibot_ros2_control
 
