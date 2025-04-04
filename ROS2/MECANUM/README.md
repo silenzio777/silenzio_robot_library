@@ -1,5 +1,13 @@
 ### LINKS
 
+
+https://docs.clearpathrobotics.com/docs/robots/indoor_robots/dingo/user_manual_dingo/
+
+https://github.com/clearpathrobotics/cpr-documentation
+
+___
+
+
 http://www.clearpathrobotics.com/assets/guides/melodic/ros/Driving%20Husky%20with%20ROSSerial.html
 
 Driving Husky with ROSserial and an Arduino
