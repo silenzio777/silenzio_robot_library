@@ -74,20 +74,67 @@ _________
 
 
 
-https://github.com/ament/ament_lint.git
-sudo apt install ros-ament-lint
 
-
+```
 https://xicro-ros2.readthedocs.io/en/latest/abstract.html
 mkdir ~/xxx_ws
 mkdir ~/xxx_ws/src
 cd ~/xxx_ws/src      # cd to your workspace
+
+git clone -b humble https://github.com/ament/ament_lint.git
+colcon build
+
 mkdir Xicro          # create metapackage
 cd Xicro             # cd to metapackage
 git clone https://github.com/imchin/Xicro .
 cd ~/xxx_ws
+
 colcon build
+```
+
+### Build ok
+
+```
 source ~/xxx_ws/install/setup.bash
+```
+
+### Generating Firmware library:
+
+```
+ros2 run xicro_pkg generate_library.py -mcu_type arduino
+Get microcontroller.idmcu Done.
+Get ros.publisher Done.
+Get ros.srv_client Done.
+Get microcontroller.idmcu Done.
+Done load YAML srv_client.
+Get ros.srv_server Done.
+Get microcontroller.idmcu Done.
+...
+Get microcontroller.connection.type Done.
+Get microcontroller.connection.type Done.
+Get microcontroller.connection.type Done.
+.cpp Done.
+*******Create library arduino complete*******
+
+```
+
+### Generating Python Executable:
+
+```
+ros2 run xicro_pkg generate_xicro_node.py -mcu_type arduino
+Get microcontroller.idmcu Done.
+Get ros.subscriber Done.
+Get microcontroller.namespace Done.
+Get microcontroller.connection.type Done.
+gennerate import module connection Done.
+...
+Get microcontroller.connection.type Done.
+gennerate input argument Done.
+----------------------generate xicro_node.py Done----------------------
+Get microcontroller.namespace Done.
+Get microcontroller.idmcu Done.
+----------------------generate Entry_Point Done----------------------
+```
 
 
 
