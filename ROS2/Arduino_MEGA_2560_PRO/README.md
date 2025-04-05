@@ -71,3 +71,28 @@ sudo chmod a+rw /dev/ttyCH341USB0
 
 
 _________
+
+
+
+https://github.com/ament/ament_lint.git
+sudo apt install ros-ament-lint
+
+
+https://xicro-ros2.readthedocs.io/en/latest/abstract.html
+mkdir ~/xxx_ws
+mkdir ~/xxx_ws/src
+cd ~/xxx_ws/src      # cd to your workspace
+mkdir Xicro          # create metapackage
+cd Xicro             # cd to metapackage
+git clone https://github.com/imchin/Xicro .
+cd ~/xxx_ws
+colcon build
+source ~/xxx_ws/install/setup.bash
+
+
+
+
+
+
+
+
