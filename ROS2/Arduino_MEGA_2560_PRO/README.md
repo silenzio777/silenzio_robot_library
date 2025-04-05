@@ -22,7 +22,7 @@ ch341 linux serial driver
 
 https://github.com/WCHSoftGroup/ch341ser_linux
 
-[ch341ser_linux-main.zip](ROS2/Arduino_MEGA_2560_PRO/ch341ser_linux-main.zip)<br/>
+[ch341ser_linux-main.zip](/ch341ser_linux-main.zip)<br/>
 
 
 ```
