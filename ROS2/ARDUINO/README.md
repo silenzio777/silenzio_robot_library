@@ -1,8 +1,3 @@
-$ echo $(uname -r)
-5.15.148-tegra
-
-5.15.136-tegra
-
 
 ### Arduino Mega 2560 Pro setup on Jetson Orin NX
 
