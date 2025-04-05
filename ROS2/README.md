@@ -418,6 +418,7 @@ ros-humble-fogros2,ros-humble-ros2cli
   ros-humble-leo-fw,ros-humble-ros2cli
   ros-humble-lanelet2-examples,ros-humble-ros2cli
 ```
+
 ```
 sudo apt install ros-$ROS_DISTRO-ros2topic
 sudo apt install ros-$ROS_DISTRO-ros2action
@@ -426,6 +427,8 @@ sudo apt install ros-$ROS_DISTRO-ros2doctor
 sudo apt install ros-$ROS_DISTRO-ros2interface
 sudo apt install ros-$ROS_DISTRO-ros2lifecycle
 sudo apt install ros-$ROS_DISTRO-ros2multicast
-sudo apt install ros-$ROS_DISTRO-ros2security
-sudo apt install ros-$ROS_DISTRO-ros2testwtf
+...sudo apt install ros-$ROS_DISTRO-ros2security
+sudo apt install ros-$ROS_DISTRO-ros2test
+
+
 ```
