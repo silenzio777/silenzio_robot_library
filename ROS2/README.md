@@ -131,7 +131,13 @@ Commands:
 
   Call `ros2 <command> -h` for more detailed usage.
 ```
+```
+ros2 status
+usage: ros2 [-h] [--use-python-default-buffering] Call `ros2 <command> -h` for more detailed usage. ...
+ros2: error: argument Call `ros2 <command> -h` for more detailed usage.: invalid choice: 'status' (choose from 'action', 'bag', 'component', 'control', 'daemon', 'doctor', 'extension_points', 'extensions', 'interface', 'launch', 'lifecycle', 'llama', 'multicast', 'node', 'param', 'pkg', 'run', 'security', 'service', 'test', 'topic', 'wtf')
+```
 
+___________
 
 ## Jetson NX ROS2 humble:
 ```
@@ -368,4 +374,58 @@ CTRL-C to quit
 ```
 
 
+_______
+```
+apt-cache showpkg ros-humble-ros2cli
 
+Package: ros-humble-ros2cli
+Versions: 
+0.18.12-1jammy.20250326.001744 (/var/lib/apt/lists/packages.ros.org_ros2_ubuntu_dists_jammy_main_binary-arm64_Packages) (/var/lib/dpkg/status)
+ Description Language: 
+                 File: /var/lib/apt/lists/packages.ros.org_ros2_ubuntu_dists_jammy_main_binary-arm64_Packages
+                  MD5: 0cc181a105f94f9956a32747924d8891
+Reverse Depends: 
+
+ros-humble-fogros2,ros-humble-ros2cli
+  ros-humble-topic-tools,ros-humble-ros2cli
+  ros-humble-system-fingerprint,ros-humble-ros2cli
+  ros-humble-swri-cli-tools,ros-humble-ros2cli
+  ros-humble-sros2-cmake,ros-humble-ros2cli
+  ros-humble-sros2,ros-humble-ros2cli
+  ros-humble-ros2trace-analysis,ros-humble-ros2cli
+  ros-humble-ros2trace,ros-humble-ros2cli
+  ros-humble-ros2topic,ros-humble-ros2cli
+  ros-humble-ros2test,ros-humble-ros2cli
+  ros-humble-ros2service,ros-humble-ros2cli
+  ros-humble-ros2run,ros-humble-ros2cli
+  ros-humble-ros2pkg,ros-humble-ros2cli
+  ros-humble-ros2param,ros-humble-ros2cli
+  ros-humble-ros2nodl,ros-humble-ros2cli
+  ros-humble-ros2node,ros-humble-ros2cli
+  ros-humble-ros2multicast,ros-humble-ros2cli
+  ros-humble-ros2lifecycle,ros-humble-ros2cli
+  ros-humble-ros2launch,ros-humble-ros2cli
+  ros-humble-ros2interface,ros-humble-ros2cli
+  ros-humble-ros2doctor,ros-humble-ros2cli
+  ros-humble-ros2controlcli,ros-humble-ros2cli
+  ros-humble-ros2component,ros-humble-ros2cli
+  ros-humble-ros2cli-common-extensions,ros-humble-ros2cli
+  ros-humble-ros2caret,ros-humble-ros2cli
+  ros-humble-ros2bag,ros-humble-ros2cli
+  ros-humble-ros2action,ros-humble-ros2cli
+  ros-humble-ros2acceleration,ros-humble-ros2cli
+  ros-humble-nodl-to-policy,ros-humble-ros2cli
+  ros-humble-leo-fw,ros-humble-ros2cli
+  ros-humble-lanelet2-examples,ros-humble-ros2cli
+```
+```
+sudo apt install ros-$ROS_DISTRO-ros2topic
+sudo apt install ros-$ROS_DISTRO-ros2action
+sudo apt install ros-$ROS_DISTRO-ros2component
+sudo apt install ros-$ROS_DISTRO-ros2doctor
+sudo apt install ros-$ROS_DISTRO-ros2interface
+sudo apt install ros-$ROS_DISTRO-ros2lifecycle
+sudo apt install ros-$ROS_DISTRO-ros2multicast
+sudo apt install ros-$ROS_DISTRO-ros2security
+sudo apt install ros-$ROS_DISTRO-ros2testwtf
+```
