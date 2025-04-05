@@ -18,9 +18,13 @@ ls /dev/ttyCH34*
 
 STEP 1.
 
-ch341 linux serial driver
+Install ch341 linux serial driver
+
+Get here:
 
 https://github.com/WCHSoftGroup/ch341ser_linux
+
+Or here:
 
 [ch341ser_linux-main.zip](/ROS2/Arduino_MEGA_2560_PRO/ch341ser_linux-main.zip)<br/>
 
