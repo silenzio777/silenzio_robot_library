@@ -73,10 +73,13 @@ sudo chmod a+rw /dev/ttyCH341USB0
 _________
 
 
+## https://xicro-ros2.readthedocs.io/en/latest/abstract.html
+
+Coxsys Robotics and its researchers have developed the XICRO library as a communication tool between advanced software and robots. XICRO communicates through the ROS2 interface. XICRO libraries have been developed specifically for embedded systems, making efficient use of limited resources.
+
 
 
 ```
-https://xicro-ros2.readthedocs.io/en/latest/abstract.html
 mkdir ~/xxx_ws
 mkdir ~/xxx_ws/src
 cd ~/xxx_ws/src      # cd to your workspace
