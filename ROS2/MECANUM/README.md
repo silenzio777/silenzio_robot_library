@@ -30,14 +30,11 @@ ___
 
 
 
-### ROS2 Arduino
+## ROS2 Arduino
 
 https://github.com/openvmp/microcontroller
 
 ROS2 interface to I/O of an attached microcontroller ( Arduino Mega2560 )
-
-
-
 
 ### Install:
 ```
@@ -50,6 +47,7 @@ git clone https://github.com/openvmp/remote_hardware_interface.git src/remote_ha
 git clone https://github.com/openvmp/stepper_driver src/remote_stepper_driver
 git clone https://github.com/openvmp/microcontroller.git src/remote_microcontroller
 ```
+
 ### Build:
 ```
 
@@ -61,10 +59,13 @@ colcon build --packages-select remote_hardware_interface
 colcon build --packages-select remote_stepper_driver
 colcon build --packages-select remote_microcontroller
 ```
-
-sudo chmod 777 /dev/ttyTHS1
-
-
+```
+ls /dev/ttyCH34*
+/dev/ttyCH341USB0
+```
+```
+sudo chmod 777 /dev/ttyCH341USB0
+```
 
 https://github.com/openvmp/microcontroller
 
@@ -80,7 +81,7 @@ ros2 run remote_microcontroller remote_microcontroller_standalone \
   --remap serial:__node:=serial_com1 \
   -p serial_is_remote:=false \
   -p serial_prefix:=/serial/com1 \
-  -p serial_dev_name:=/dev/ttyS0 \
+  -p serial_dev_name:=/dev/ttyCH341USB0 \
   -p serial_baud_rate:=115200 \
   -p serial_data:=8 \
   -p serial_parity:=false \
