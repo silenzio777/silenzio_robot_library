@@ -82,6 +82,76 @@ sudo apt install ros-humble-moveit
 ```
 __________
 
+## Ubuntu PC ROS2 humble info:
+```
+dpkg -s ros-humble-ros2cli
+Package: ros-humble-ros2cli
+Status: install ok installed
+Priority: optional
+Section: misc
+Installed-Size: 205
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Architecture: amd64
+Version: 0.18.11-1jammy.20241128.015950
+Depends: python3-argcomplete, python3-importlib-metadata, python3-netifaces, python3-packaging, python3-pkg-resources, ros-humble-rclpy, ros-humble-ros-workspace
+Description: Framework for ROS 2 command line tools.
+```
+```
+ros2 --help
+usage: ros2 [-h] [--use-python-default-buffering] Call `ros2 <command> -h` for more detailed usage. ...
+
+ros2 is an extensible command-line tool for ROS 2.
+
+options:
+  -h, --help            show this help message and exit
+  --use-python-default-buffering
+                        Do not force line buffering in stdout and instead use the python default buffering, which might be affected by
+                        PYTHONUNBUFFERED/-u and depends on whatever stdout is interactive or not
+Commands:
+  action     Various action related sub-commands
+  bag        Various rosbag related sub-commands
+  component  Various component related sub-commands
+  control    Various control related sub-commands
+  daemon     Various daemon related sub-commands
+  doctor     Check ROS setup and other potential issues
+  interface  Show information about ROS interfaces
+  launch     Run a launch file
+  lifecycle  Various lifecycle related sub-commands
+  llama      
+  multicast  Various multicast related sub-commands
+  node       Various node related sub-commands
+  param      Various param related sub-commands
+  pkg        Various package related sub-commands
+  run        Run a package specific executable
+  security   Various security related sub-commands
+  service    Various service related sub-commands
+  test       Run a ROS2 launch test
+  topic      Various topic related sub-commands
+  wtf        Use `wtf` as alias to `doctor`
+
+  Call `ros2 <command> -h` for more detailed usage.
+```
+
+
+## Jetson NX ROS2 humble:
+```
+dpkg -s ros-humble-ros2cli
+Package: ros-humble-ros2cli
+Status: install ok installed
+Priority: optional
+Section: misc
+Installed-Size: 205
+Maintainer: Aditya Pande <aditya.pande@openrobotics.org>
+Architecture: arm64
+Version: 0.18.12-1jammy.20250326.001744
+Depends: python3-argcomplete, python3-importlib-metadata, python3-netifaces, python3-packaging, python3-pkg-resources, ros-humble-rclpy, ros-humble-ros-workspace
+Description: Framework for ROS 2 command line tools.
+```
+
+
+
+__________
+
 ### DDSConfig:
 - [source link](https://gist.github.com/robosam2003/d5fcfaf4bfd55298d86c1460cb7fc60c)<br/>
 
