@@ -108,7 +108,7 @@ ros2 run remote_serial remote_serial_standalone \
   --remap serial:__node:=serial_com1 \
   -p serial_is_remote:=false \
   -p serial_prefix:=/serial/com1 \
-  -p serial_dev_name:=/dev/ttyS0 \
+  -p serial_dev_name:=/dev/ttyCH341USB0 \
   -p serial_baud_rate:=115200 \
   -p serial_data:=8 \
   -p serial_parity:=false \
