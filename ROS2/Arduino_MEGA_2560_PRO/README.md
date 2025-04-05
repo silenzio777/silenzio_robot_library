@@ -32,13 +32,9 @@ sudo ldconfig
 
 STEP 2.
 
-For me it looks like the brltty driver is getting in the way. I don't have any sight problems myself and don't need a brail device. To fix I simply:
-
-```
-sudo apt-get autoremove brltty
-```
-
-And the next time I plugged in the ch340 it worked perfectly.
+~~For me it looks like the brltty driver is getting in the way. I don't have any sight problems myself and don't need a brail device. To fix I simply:~~
+~~sudo apt-get autoremove brltty~~
+~~And the next time I plugged in the ch340 it worked perfectly.~~
 
 ### WORK:
 ```
