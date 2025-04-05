@@ -45,6 +45,17 @@ And the next time I plugged in the ch340 it worked perfectly.
 ls /dev/ttyCH34*
 /dev/ttyCH341USB0
 ```
+```
+lsmod | grep ch34
+ch341                  28672  0
+```
+
+### Give acsess:
+```
+sudo usermod -a -G dialout silenzio
+sudo chmod a+rw /dev/ttyCH341USB0
+```
+
 
 
 _________
