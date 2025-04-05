@@ -99,7 +99,7 @@ ros2 run remote_microcontroller remote_microcontroller_standalone \
 https://github.com/openvmp/serial/blob/main/README.md
 
 ```
-ros2 run remote_serial remote_serial_standalone
+ros2 run remote_serial remote_serial_standalone 
 ```
 
 ```
@@ -113,7 +113,8 @@ ros2 run remote_serial remote_serial_standalone \
   -p serial_data:=8 \
   -p serial_parity:=false \
   -p serial_stop:=1 \
-  -p serial_flow_control:=true
+  -p serial_flow_control:=true \
+  -p microcontroller_config:=/home/silenzio/ros2_ws/src/remote_microcontroller/config/motors.yaml
 ```
 
 Here is an example of the configuration file for controlling a single servo:
