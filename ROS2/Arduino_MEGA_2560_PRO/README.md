@@ -30,10 +30,19 @@ sudo make install
 sudo ldconfig 
 ```
 
+```
+Type "sudo make load" or "sudo insmod ch341.ko" to load the driver dynamically
+Type "sudo make unload" or "sudo rmmod ch341.ko" to unload the driver
+Type "sudo make install" to make the driver work permanently
+Type "sudo make uninstall" to remove the driver
+```
+
 STEP 2.
 
 ~~For me it looks like the brltty driver is getting in the way. I don't have any sight problems myself and don't need a brail device. To fix I simply:~~
+
 ~~sudo apt-get autoremove brltty~~
+
 ~~And the next time I plugged in the ch340 it worked perfectly.~~
 
 ### WORK:
