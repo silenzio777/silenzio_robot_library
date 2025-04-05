@@ -43,23 +43,4 @@ ls /dev/ttyCH34*
 ```
 
 
-
-
-
-
 _________
-
-nanp nano /etc/udev/rules.d/99-usb-serial.rules
-
-https://nvidia-jetson.piveral.com/jetson-orin-nano/ch340-driver-not-detected-on-jetson-orin-nano/
-
-__
-Try the instructions given in this repo: https://github.com/WCHSoftGroup/ch341ser_linux
-
-It worked for me.
-
-__
-
-
-
-https://developer.nvidia.com/embedded/jetson-linux-r3643
