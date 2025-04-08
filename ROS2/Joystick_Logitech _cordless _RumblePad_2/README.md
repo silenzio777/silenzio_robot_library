@@ -186,9 +186,15 @@ angular:
   z: 0.10786767303943634
 ```
 
+____
 
 
+### Calibrate:
 
+1. Remove one battary
+2. Hold keys 6 and 8
+3. Put battary back
+Enjoy!
 
 _____
 _____
