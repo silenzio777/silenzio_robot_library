@@ -191,7 +191,7 @@ ____
 
 ### Calibrate:
 
-1. Remove one battary
+1. Remove one battery
 2. Hold keys 6 and 8
 3. Put battary back
 Enjoy!
