@@ -116,8 +116,6 @@ ros2 launch slam_toolbox online_async_launch.py
 
 _______
 
-### Graphics:
-
 rqt TF Tree and RViz2:
 
 <img src="Stella_odom_frame_01.png" title="" width="800">
