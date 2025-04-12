@@ -13,6 +13,8 @@ https://neobotix-docs.de/ros/packages/neo_kinematics_mecanum2.html#neo-kinematic
 git clone -b humble https://github.com/neobotix/neo_mpo_500-2
 
 git clone -b humble https://github.com/neobotix/neo_localization2
+
+git clone -b humble https://github.com/neobotix/neo_nav2_bringup
 ```
 
 ```
@@ -37,6 +39,9 @@ ros2 launch neo_mpo_500-2 mapping.launch.py
 ros2 launch neo_mpo_500-2 navigation.launch.py
 
 .... "package 'neo_nav2_bringup' not found,
+
+ros2 launch neo_nav2_bringup localization_neo.launch.py params_file:=/home/silenzio/ros2_ws/src/neo_nav2_bringup/config/navigation.yaml use_sim_time:=true map:=~/ros2_ws/neo_map.yaml namespace:=neo
+
 ```
 ______________
 ### neo_kinematics_mecanum2
