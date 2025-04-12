@@ -203,7 +203,7 @@ Output:
 <img src="8-distorted-vs-undistorted.gif" title="8-distorted-vs-undistorted" width="600">
 
 
-###Saving Parameters Using Pickle
+### Saving Parameters Using Pickle
 
 If you want to save the camera calibration parameters to a file, you can use a package like Pickle to do it. It will encode these parameters into a text file that you can later upload into a program.
 
