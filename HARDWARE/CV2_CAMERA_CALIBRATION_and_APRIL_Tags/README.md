@@ -203,17 +203,12 @@ Output:
 <img src="8-distorted-vs-undistorted.gif" title="8-distorted-vs-undistorted" width="600">
 
 
+###Saving Parameters Using Pickle
 
-Saving Parameters Using Pickle
 If you want to save the camera calibration parameters to a file, you can use a package like Pickle to do it. It will encode these parameters into a text file that you can later upload into a program.
 
 The three key parameters you want to make sure to save are mtx, dist, and optimal_camera_matrix.
 
-Here is a list of some tutorials on how to use Pickle:
-
-Datacamp 
-Python Central
-TutorialsPoint
 Assuming you have import pickle at the top of your program, the Python code for saving the parameters to a pickle file would be as follows:
 
 ### Save the camera calibration results.
