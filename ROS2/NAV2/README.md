@@ -13,8 +13,9 @@ T0:
 T1:
 ```
 sudo chmod a+rw /dev/ttyUSB0
+```
+```
 ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
-## ros2 run omni key_teleop
 ```
 
 ```
