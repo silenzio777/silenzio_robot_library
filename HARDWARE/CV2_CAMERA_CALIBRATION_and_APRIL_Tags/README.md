@@ -4,6 +4,8 @@
 
 https://csundergrad.science.uoit.ca/courses/cv-notes/notebooks/02-camera-calibration.html
 
+<img src="7_chessboard_input1_drawn_corners-1.jpg" title="7_chessboard_input1_drawn_corners-1" width="800">
+
 https://automaticaddison.com/how-to-perform-camera-calibration-using-opencv/
 
 draw_corners.py
