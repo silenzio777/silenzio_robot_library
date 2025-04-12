@@ -6,7 +6,6 @@ Stella_vslam_ros launch file:
 ~/ros2_ws/src/stella_vslam_ros/launch/slam.launch
 ```
 <?xml version="1.0"?>
-<!-- https://github.com/stella-cv/stella_vslam_ros/discussions/49 -->
 <launch>
     <node name="stella_vslam_ros" pkg="stella_vslam_ros" exec="run_slam" 
         args="--viewer none -v /home/silenzio/lib/stella_vslam/vocab/orb_vocab.fbow \
