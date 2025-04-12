@@ -11,6 +11,8 @@ https://neobotix-docs.de/ros/packages/neo_kinematics_mecanum2.html#neo-kinematic
 
 ```
 git clone -b humble https://github.com/neobotix/neo_mpo_500-2
+
+git clone -b humble https://github.com/neobotix/neo_localization2
 ```
 
 ```
