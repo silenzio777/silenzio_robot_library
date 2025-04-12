@@ -1,5 +1,18 @@
 ### CV2 Camera Calibration
 
+Install:
+
+```
+sudo apt install ros-$ROS_DISTRO-camera-calibration-parsers
+sudo apt install ros-$ROS_DISTRO-camera-info-manager
+sudo apt install ros-$ROS_DISTRO-launch-testing-ament-cmake
+```
+
+2- Image Pipeline need to be built from source in your workspace with:
+
+```
+git clone -b $ROS_DISTRO git@github.com:ros-perception/image_pipeline.git
+```
 
 Calibration resaults:
 
