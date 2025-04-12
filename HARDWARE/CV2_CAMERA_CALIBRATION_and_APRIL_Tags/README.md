@@ -6,6 +6,9 @@ Calibration resaults:
 ### SIC RP2 CAM calibration:
 
 ```
+ros2 run csi_cam_opencv impub
+```
+```
 ros2 run camera_calibration cameracalibrator   --size=9x6   --square=0.063   --approximate=0.3   --no-service-check   --ros-args --remap /image:=/jetson_front_csi_camera/color/image_raw
 ```
 
@@ -46,6 +49,10 @@ projection
 ____
 
 ### T265 fisheye calibration:
+
+```
+01_ROS2_T256_L515.sh
+```
 
 ```
 ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
