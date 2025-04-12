@@ -390,5 +390,14 @@ Using GPG (Better Alternative to OpenSSL)
 To Encrypt:
 
 ```
-gpg --output archive.zip.aes --symmetric --cipher-algo AES256 archive.zip
+gpg --no-symkey-cache --output archive.zip.aes --symmetric --cipher-algo AES256 archive.zip
 ```
+
+
+To Decrypt:
+
+```
+gpg --no-symkey-cache --output un_archive.zip --decrypt archive.zip.aes
+```
+
+Note: You will be prompted for a password when encrypting or decrypt. And use --no-symkey-cache flag for no cache.
