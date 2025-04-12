@@ -2,6 +2,8 @@
 
 [### https://docs.opencv.org/4.x/da/d0d/tutorial_camera_calibration_pattern.html](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html)
 
+https://csundergrad.science.uoit.ca/courses/cv-notes/notebooks/02-camera-calibration.html
+
 https://automaticaddison.com/how-to-perform-camera-calibration-using-opencv/
 
 draw_corners.py
