@@ -12,6 +12,7 @@ ______
 - [apt-cache search](#apt-cache-search)<br/>
 - [nmap](#nmap)<br/>
 - [openssl](#openssl)<br/>
+- [shutdown](#shutdown)<br/>
 
 ```
 echo $(uname -r)
@@ -401,6 +402,10 @@ gpg --no-symkey-cache --output un_archive.zip --decrypt archive.zip.aes
 ```
 
 Note: You will be prompted for a password when encrypting or decrypt. And use --no-symkey-cache flag for no cache.
+
+_______
+
+### shutdown
 
 ```
 sudo shutdown now
