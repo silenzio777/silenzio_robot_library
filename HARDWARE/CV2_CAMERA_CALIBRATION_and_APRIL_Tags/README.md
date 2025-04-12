@@ -243,7 +243,55 @@ undistorted_image = cv2.undistort(distorted_image, mtx, dist, None,
 That’s it for this tutorial. Hope you enjoyed it. Now you know how to calibrate a camera using OpenCV. 
 
 
+_________
 
+Start the camera calibration node
+
+```
+ros2 run camera_calibration cameracalibrator --size 7x9 --square 0.02 --ros-args -r image:=/my_camera/image_raw -p camera:=/my_camera
+```
+
+```
+Camera Name:
+
+-c, --camera_name
+        name of the camera to appear in the calibration file
+
+Chessboard Options:
+
+You must specify one or more chessboards as pairs of --size and--square options.
+
+  -p PATTERN, --pattern=PATTERN
+                    calibration pattern to detect - 'chessboard','circles', 'acircles','charuco'
+  -s SIZE, --size=SIZE
+                    chessboard size as NxM, counting interior corners (e.g. a standard chessboard is 7x7)
+  -q SQUARE, --square=SQUARE
+                    chessboard square size in meters
+
+ROS Communication Options:
+
+ --approximate=APPROXIMATE
+                    allow specified slop (in seconds) when pairing images from unsynchronized stereo cameras
+ --no-service-check
+                    disable check for set_camera_info services at startup
+
+Calibration Optimizer Options:
+
+ --fix-principal-point
+                    fix the principal point at the image center
+ --fix-aspect-ratio
+                    enforce focal lengths (fx, fy) are equal
+ --zero-tangent-dist
+                    set tangential distortion coefficients (p1, p2) to
+                    zero
+ -k NUM_COEFFS, --k-coefficients=NUM_COEFFS
+                    number of radial distortion coefficients to use (up to
+                    6, default 2)
+ --disable_calib_cb_fast_check
+                    uses the CALIB_CB_FAST_CHECK flag for findChessboardCorners
+
+     This will open a calibration window which highlight the checkerboard.
+```    
 _________
 
 ### SIC RP2 CAM calibration:
@@ -294,4 +342,39 @@ ____
 ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
 ```
 
+```
+# mono fisheye calibration...
+D = [-1.279184603802619, 7.004177587070426, 0.06870312612960383, -9.177440127251367]
+K = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 1.0]
+R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 0.0, 1.0, 0.0]
+# None
+# oST version 5.0 parameters
+
+[image]
+width
+848
+
+height
+800
+
+[narrow_stereo]
+camera matrix
+372.563849 -3.544970 422.824856
+0.000000 374.973801 399.304877
+0.000000 0.000000 1.000000
+
+distortion
+-1.279185 7.004178 0.068703 -9.177440
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+372.563849 -3.544970 422.824856 0.000000
+0.000000 374.973801 399.304877 0.000000
+0.000000 0.000000 1.000000 0.000000
+```
 
