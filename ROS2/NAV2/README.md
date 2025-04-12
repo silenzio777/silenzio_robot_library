@@ -78,12 +78,14 @@ _______
 ### Run:
 
 UbuntuPC:
+
 T0:
 ```
 ros2 launch teleop_twist_joy teleop-launch.py
 ```
 
 Jetson NX:
+
 T0:
 ```
 01_ROS2_T256_L515.sh
