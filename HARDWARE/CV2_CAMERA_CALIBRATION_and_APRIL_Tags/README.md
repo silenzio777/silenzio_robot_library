@@ -11,7 +11,8 @@ sudo apt install ros-$ROS_DISTRO-launch-testing-ament-cmake
 Image Pipeline need to be built from source in your workspace with:
 
 ```
-git clone -b $ROS_DISTRO git@github.com:ros-perception/image_pipeline.git
+## git clone -b $ROS_DISTRO git@github.com:ros-perception/image_pipeline.git
+sudo apt install ros--$ROS_DISTRO-image-pipeline
 ```
 
 ### SIC RP2 CAM calibration:
