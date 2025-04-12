@@ -11,6 +11,7 @@ ______
 - [dpkg](#dpkg)<br/>
 - [apt-cache search](#apt-cache-search)<br/>
 - [nmap](#nmap)<br/>
+- [openssl](#openssl)<br/>
 
 ```
 echo $(uname -r)
@@ -363,4 +364,31 @@ lo     Link encap:Local Loopback
 
 ```
 hostname -I
+```
+_______
+
+### openssl
+
+https://tombuntu.com/index.php/2007/12/12/simple-file-encryption-with-openssl/
+
+
+To encrypt a file:
+```
+openssl aes-256-cbc -a -salt -in archive.zip -out archive.zip.aes
+```
+
+To decrypted it:
+```
+openssl aes-256-cbc -d -a -in archive.zip.aes -out archive_.zip
+```
+
+
+### V2:
+
+Using GPG (Better Alternative to OpenSSL)
+
+To Encrypt:
+
+```
+gpg --output archive.zip.aes --symmetric --cipher-algo AES256 archive.zip
 ```
