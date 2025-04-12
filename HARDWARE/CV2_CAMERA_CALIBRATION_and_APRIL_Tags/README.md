@@ -1,5 +1,148 @@
 ### CV2 Camera Calibration
 
+
+Calibration resaults:
+
+### SIC RP2 CAM calibration:
+
+```
+ros2 run camera_calibration cameracalibrator   --size=9x6   --square=0.063   --approximate=0.3   --no-service-check   --ros-args --remap /image:=/jetson_front_csi_camera/color/image_raw
+```
+
+```
+# mono pinhole calibration...
+
+D = [0.1578327214445654, -0.31228448969274547, -0.004277685212480875, -0.0038573507607313805, 0.0]
+K = [681.2772836567025, 0.0, 308.08227260269973, 0.0, 678.7950823271467, 176.7595391584504, 0.0, 0.0, 1.0]
+R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P = [695.9062991168455, 0.0, 306.2003672195955, 0.0, 0.0, 694.515625018195, 175.61119399379365, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+# oST version 5.0 parameters
+[image]
+width
+640
+height
+360
+[narrow_stereo]
+
+camera matrix
+681.277284 0.000000 308.082273
+0.000000 678.795082 176.759539
+0.000000 0.000000 1.000000
+
+distortion
+0.157833 -0.312284 -0.004278 -0.003857 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+695.906299 0.000000 306.200367 0.000000
+0.000000 694.515625 175.611194 0.000000
+0.000000 0.000000 1.000000 0.000000
+```
+____
+
+### T265 fisheye calibration:
+
+```
+ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
+```
+
+```
+# mono fisheye calibration...
+D = [-1.279184603802619, 7.004177587070426, 0.06870312612960383, -9.177440127251367]
+K = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 1.0]
+R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 0.0, 1.0, 0.0]
+# None
+# oST version 5.0 parameters
+
+[image]
+width
+848
+
+height
+800
+
+[narrow_stereo]
+camera matrix
+372.563849 -3.544970 422.824856
+0.000000 374.973801 399.304877
+0.000000 0.000000 1.000000
+
+distortion
+-1.279185 7.004178 0.068703 -9.177440
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+372.563849 -3.544970 422.824856 0.000000
+0.000000 374.973801 399.304877 0.000000
+0.000000 0.000000 1.000000 0.000000
+```
+
+_____
+
+
+### Options:
+
+Start the camera calibration node:
+
+```
+ros2 run camera_calibration cameracalibrator --size 7x9 --square 0.02 --ros-args -r image:=/my_camera/image_raw -p camera:=/my_camera
+```
+
+```
+Camera Name:
+
+-c, --camera_name
+        name of the camera to appear in the calibration file
+
+Chessboard Options:
+
+You must specify one or more chessboards as pairs of --size and--square options.
+
+  -p PATTERN, --pattern=PATTERN
+                    calibration pattern to detect - 'chessboard','circles', 'acircles','charuco'
+  -s SIZE, --size=SIZE
+                    chessboard size as NxM, counting interior corners (e.g. a standard chessboard is 7x7)
+  -q SQUARE, --square=SQUARE
+                    chessboard square size in meters
+
+ROS Communication Options:
+
+ --approximate=APPROXIMATE
+                    allow specified slop (in seconds) when pairing images from unsynchronized stereo cameras
+ --no-service-check
+                    disable check for set_camera_info services at startup
+
+Calibration Optimizer Options:
+
+ --fix-principal-point
+                    fix the principal point at the image center
+ --fix-aspect-ratio
+                    enforce focal lengths (fx, fy) are equal
+ --zero-tangent-dist
+                    set tangential distortion coefficients (p1, p2) to
+                    zero
+ -k NUM_COEFFS, --k-coefficients=NUM_COEFFS
+                    number of radial distortion coefficients to use (up to
+                    6, default 2)
+ --disable_calib_cb_fast_check
+                    uses the CALIB_CB_FAST_CHECK flag for findChessboardCorners
+
+     This will open a calibration window which highlight the checkerboard.
+```    
+
+______
+
+
 [### https://docs.opencv.org/4.x/da/d0d/tutorial_camera_calibration_pattern.html](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html)
 
 https://csundergrad.science.uoit.ca/courses/cv-notes/notebooks/02-camera-calibration.html
@@ -241,140 +384,4 @@ undistorted_image = cv2.undistort(distorted_image, mtx, dist, None,
 ```
 
 That’s it for this tutorial. Hope you enjoyed it. Now you know how to calibrate a camera using OpenCV. 
-
-
-_________
-
-Start the camera calibration node
-
-```
-ros2 run camera_calibration cameracalibrator --size 7x9 --square 0.02 --ros-args -r image:=/my_camera/image_raw -p camera:=/my_camera
-```
-
-```
-Camera Name:
-
--c, --camera_name
-        name of the camera to appear in the calibration file
-
-Chessboard Options:
-
-You must specify one or more chessboards as pairs of --size and--square options.
-
-  -p PATTERN, --pattern=PATTERN
-                    calibration pattern to detect - 'chessboard','circles', 'acircles','charuco'
-  -s SIZE, --size=SIZE
-                    chessboard size as NxM, counting interior corners (e.g. a standard chessboard is 7x7)
-  -q SQUARE, --square=SQUARE
-                    chessboard square size in meters
-
-ROS Communication Options:
-
- --approximate=APPROXIMATE
-                    allow specified slop (in seconds) when pairing images from unsynchronized stereo cameras
- --no-service-check
-                    disable check for set_camera_info services at startup
-
-Calibration Optimizer Options:
-
- --fix-principal-point
-                    fix the principal point at the image center
- --fix-aspect-ratio
-                    enforce focal lengths (fx, fy) are equal
- --zero-tangent-dist
-                    set tangential distortion coefficients (p1, p2) to
-                    zero
- -k NUM_COEFFS, --k-coefficients=NUM_COEFFS
-                    number of radial distortion coefficients to use (up to
-                    6, default 2)
- --disable_calib_cb_fast_check
-                    uses the CALIB_CB_FAST_CHECK flag for findChessboardCorners
-
-     This will open a calibration window which highlight the checkerboard.
-```    
-_________
-
-### SIC RP2 CAM calibration:
-
-```
-ros2 run camera_calibration cameracalibrator   --size=9x6   --square=0.063   --approximate=0.3   --no-service-check   --ros-args --remap /image:=/jetson_front_csi_camera/color/image_raw
-```
-
-```
-# mono pinhole calibration...
-
-D = [0.1578327214445654, -0.31228448969274547, -0.004277685212480875, -0.0038573507607313805, 0.0]
-K = [681.2772836567025, 0.0, 308.08227260269973, 0.0, 678.7950823271467, 176.7595391584504, 0.0, 0.0, 1.0]
-R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
-P = [695.9062991168455, 0.0, 306.2003672195955, 0.0, 0.0, 694.515625018195, 175.61119399379365, 0.0, 0.0, 0.0, 1.0, 0.0]
-
-# oST version 5.0 parameters
-[image]
-width
-640
-height
-360
-[narrow_stereo]
-
-camera matrix
-681.277284 0.000000 308.082273
-0.000000 678.795082 176.759539
-0.000000 0.000000 1.000000
-
-distortion
-0.157833 -0.312284 -0.004278 -0.003857 0.000000
-
-rectification
-1.000000 0.000000 0.000000
-0.000000 1.000000 0.000000
-0.000000 0.000000 1.000000
-
-projection
-695.906299 0.000000 306.200367 0.000000
-0.000000 694.515625 175.611194 0.000000
-0.000000 0.000000 1.000000 0.000000
-```
-____
-
-### T265 fisheye calibration:
-
-```
-ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
-```
-
-```
-# mono fisheye calibration...
-D = [-1.279184603802619, 7.004177587070426, 0.06870312612960383, -9.177440127251367]
-K = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 1.0]
-R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
-P = [372.56384901671333, -3.544969729686833, 422.8248561176381, 0.0, 0.0, 374.9738009281779, 399.3048769653474, 0.0, 0.0, 0.0, 1.0, 0.0]
-# None
-# oST version 5.0 parameters
-
-[image]
-width
-848
-
-height
-800
-
-[narrow_stereo]
-camera matrix
-372.563849 -3.544970 422.824856
-0.000000 374.973801 399.304877
-0.000000 0.000000 1.000000
-
-distortion
--1.279185 7.004178 0.068703 -9.177440
-
-rectification
-1.000000 0.000000 0.000000
-0.000000 1.000000 0.000000
-0.000000 0.000000 1.000000
-
-projection
-372.563849 -3.544970 422.824856 0.000000
-0.000000 374.973801 399.304877 0.000000
-0.000000 0.000000 1.000000 0.000000
-```
 
