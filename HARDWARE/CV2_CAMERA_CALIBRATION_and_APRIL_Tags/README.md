@@ -242,3 +242,56 @@ undistorted_image = cv2.undistort(distorted_image, mtx, dist, None,
 
 That’s it for this tutorial. Hope you enjoyed it. Now you know how to calibrate a camera using OpenCV. 
 
+
+
+_________
+
+### SIC RP2 CAM calibration:
+
+```
+ros2 run camera_calibration cameracalibrator   --size=9x6   --square=0.063   --approximate=0.3   --no-service-check   --ros-args --remap /image:=/jetson_front_csi_camera/color/image_raw
+```
+
+```
+# mono pinhole calibration...
+
+D = [0.1578327214445654, -0.31228448969274547, -0.004277685212480875, -0.0038573507607313805, 0.0]
+K = [681.2772836567025, 0.0, 308.08227260269973, 0.0, 678.7950823271467, 176.7595391584504, 0.0, 0.0, 1.0]
+R = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P = [695.9062991168455, 0.0, 306.2003672195955, 0.0, 0.0, 694.515625018195, 175.61119399379365, 0.0, 0.0, 0.0, 1.0, 0.0]
+
+# oST version 5.0 parameters
+[image]
+width
+640
+height
+360
+[narrow_stereo]
+
+camera matrix
+681.277284 0.000000 308.082273
+0.000000 678.795082 176.759539
+0.000000 0.000000 1.000000
+
+distortion
+0.157833 -0.312284 -0.004278 -0.003857 0.000000
+
+rectification
+1.000000 0.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 0.000000 1.000000
+
+projection
+695.906299 0.000000 306.200367 0.000000
+0.000000 694.515625 175.611194 0.000000
+0.000000 0.000000 1.000000 0.000000
+```
+____
+
+### T265 fisheye calibration:
+
+```
+ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
+```
+
+
