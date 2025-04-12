@@ -62,11 +62,10 @@ Run the code.
 
 Here is the output:
 
-7_chessboard_input1_drawn_corners-1.jpg
+<img src="7_chessboard_input1_drawn_corners-1.jpg" title="7_chessboard_input1_drawn_corners-1" width="800">
+
 
 camera_calibration.py
-
-
 ```
 # Author: Addison Sears-Collins
 # https://automaticaddison.com
@@ -201,7 +200,8 @@ main()
 
 Output:
 
-8-distorted-vs-undistorted.gif
+<img src="8-distorted-vs-undistorted.gif" title="8-distorted-vs-undistorted" width="600">
+
 
 
 Saving Parameters Using Pickle
