@@ -13,5 +13,5 @@ The apriltag_node executable can be launched with topic remappings and a configu
 ros2 run apriltag_ros apriltag_node --ros-args \
     -r image_rect:=/camera/image \
     -r camera_info:=/camera/camera_info \
-    --params-file `ros2 pkg prefix apriltag_ros`/share/apriltag_ros/cfg/tags_36h11.yaml
+    --params-file /home/silenzio/ros2_ws/install/share/apriltag_ros/cfg/tags_36h11.yaml
 ```
