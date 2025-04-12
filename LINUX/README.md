@@ -401,3 +401,7 @@ gpg --no-symkey-cache --output un_archive.zip --decrypt archive.zip.aes
 ```
 
 Note: You will be prompted for a password when encrypting or decrypt. And use --no-symkey-cache flag for no cache.
+
+```
+sudo shutdown now
+```
