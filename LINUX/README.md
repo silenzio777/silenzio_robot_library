@@ -367,7 +367,7 @@ hostname -I
 ```
 _______
 
-### openssl
+### V1: openssl
 
 https://tombuntu.com/index.php/2007/12/12/simple-file-encryption-with-openssl/
 
@@ -383,9 +383,7 @@ openssl aes-256-cbc -d -a -in archive.zip.aes -out archive_.zip
 ```
 
 
-### V2:
-
-Using GPG (Better Alternative to OpenSSL)
+### V2: Using GPG (Better Alternative to OpenSSL)
 
 To Encrypt:
 
