@@ -372,12 +372,12 @@ _______
 https://tombuntu.com/index.php/2007/12/12/simple-file-encryption-with-openssl/
 
 
-To encrypt a file:
+To Encrypt:
 ```
 openssl aes-256-cbc -a -salt -in archive.zip -out archive.zip.aes
 ```
 
-To decrypted it:
+To Decrypt:
 ```
 openssl aes-256-cbc -d -a -in archive.zip.aes -out archive_.zip
 ```
