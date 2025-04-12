@@ -28,27 +28,26 @@ Stella_vslam_ros launch file:
 /home/silenzio/ros2_ws/src/omni/launch/stella_slam.launch.py
 ```
 ...
-            od3 = TransformStamped()
-            od3.header.frame_id = 'odom'
-            od3.child_frame_id = 'odom_frame'
+        od3 = TransformStamped()
+        od3.header.frame_id = 'odom'
+        od3.child_frame_id = 'odom_frame'
 
-            od2 = TransformStamped()
-            od2.header.frame_id = 'stella_odom_frame' 
-            od2.child_frame_id = 'base_footprint' 
+        od2 = TransformStamped()
+        od2.header.frame_id = 'stella_odom_frame' 
+        od2.child_frame_id = 'base_footprint' 
 
-            od1 = TransformStamped()
-            od1.header.frame_id = 'cam_link'
-            od1.child_frame_id = 'T265_link'
-            
-            #od4 = TransformStamped()
-            #od4.header.frame_id = 'cam_link'
-            #od4.child_frame_id = 'L515_link'
+        od1 = TransformStamped()
+        od1.header.frame_id = 'cam_link'
+        od1.child_frame_id = 'T265_link'
+        
+        #od4 = TransformStamped()
+        #od4.header.frame_id = 'cam_link'
+        #od4.child_frame_id = 'L515_link'
 
-            od0 = TransformStamped()
-            od0.header.frame_id = 'base_link' #was 'scan_link'
-            od0.child_frame_id = 'base_scan' #was 'laser'
+        od0 = TransformStamped()
+        od0.header.frame_id = 'base_link' #was 'scan_link'
+        od0.child_frame_id = 'base_scan' #was 'laser'
 ...
-
         try:
             while rclpy.ok():
                 rclpy.spin_once(self)                
