@@ -97,9 +97,12 @@ sudo chmod a+rw /dev/ttyUSB0
 ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 ```
 
+T2:
 ```
 03_stella_RVIZ_omni.sh
 ```
+
+T3:
 ```
 04_stella_SLAM.sh
 ```
