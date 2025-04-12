@@ -45,8 +45,8 @@ Stella_vslam_ros launch file:
         #od4.child_frame_id = 'L515_link'
 
         od0 = TransformStamped()
-        od0.header.frame_id = 'base_link' #was 'scan_link'
-        od0.child_frame_id = 'base_scan' #was 'laser'
+        od0.header.frame_id = 'base_link'
+        od0.child_frame_id = 'base_scan'
 ...
         try:
             while rclpy.ok():
