@@ -22,5 +22,5 @@ ros2 run apriltag_ros apriltag_node --ros-args -r image_rect:=/T265/fisheye1/ima
 
 
 ```
-ros2 run apriltag_ros apriltag_node --ros-args -r image_rect:=/T265/fisheye1/image_raw/compressed -r camera_info:=/T265/fisheye1/camera_info --params-file /home/silenzio/ros2_ws/src/apriltag_ros/cfg/tags_36h11.yaml
+ros2 run apriltag_ros apriltag_node --ros-args -r image_rect:=/jetson_front_csi_camera/color/image_raw -r camera_info:=/jetson_front_csi_camera/camera_info --params-file /home/silenzio/ros2_ws/src/apriltag_ros/cfg/tags_36h11.yaml
 ```
