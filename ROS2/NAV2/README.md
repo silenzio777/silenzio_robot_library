@@ -119,10 +119,14 @@ _______
 
 ### Graphics:
 
+rqt TF Tree and RVIZ2:
+
 <img src="Stella_odom_frame_01.png" title="" width="800">
 
+rqt TF Tree 
 <img src="Stella_odom_tf_tree.png" title="" width="1000">
 
+rqt node Graph
 <img src="Stella_odom_nodes.png" title="" width="1000">
 
 
