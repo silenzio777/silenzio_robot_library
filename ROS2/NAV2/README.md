@@ -1,3 +1,10 @@
+
+### Setup:
+
+
+<img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
+
+
 UbuntuPC:
 T0:
 ```
