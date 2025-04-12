@@ -62,7 +62,7 @@ Run the code.
 
 Here is the output:
 
-pic
+7_chessboard_input1_drawn_corners-1.jpg
 
 camera_calibration.py
 
@@ -201,7 +201,8 @@ main()
 
 Output:
 
-pic 
+8-distorted-vs-undistorted.gif
+
 
 Saving Parameters Using Pickle
 If you want to save the camera calibration parameters to a file, you can use a package like Pickle to do it. It will encode these parameters into a text file that you can later upload into a program.
