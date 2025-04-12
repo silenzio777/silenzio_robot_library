@@ -1,6 +1,6 @@
 ### CV2 Camera Calibration
 
-Install:
+Install requirements:
 
 ```
 sudo apt install ros-$ROS_DISTRO-camera-calibration-parsers
@@ -8,15 +8,15 @@ sudo apt install ros-$ROS_DISTRO-camera-info-manager
 sudo apt install ros-$ROS_DISTRO-launch-testing-ament-cmake
 ```
 
-2- Image Pipeline need to be built from source in your workspace with:
+Image Pipeline need to be built from source in your workspace with:
 
 ```
 git clone -b $ROS_DISTRO git@github.com:ros-perception/image_pipeline.git
 ```
 
-Calibration resaults:
-
 ### SIC RP2 CAM calibration:
+
+Start calibration:
 
 ```
 ros2 run csi_cam_opencv impub
@@ -24,6 +24,10 @@ ros2 run csi_cam_opencv impub
 ```
 ros2 run camera_calibration cameracalibrator   --size=9x6   --square=0.063   --approximate=0.3   --no-service-check   --ros-args --remap /image:=/jetson_front_csi_camera/color/image_raw
 ```
+
+Calibration resaults:
+
+camera_RP2_info.ini
 
 ```
 # mono pinhole calibration...
@@ -63,6 +67,8 @@ ____
 
 ### T265 fisheye calibration:
 
+Start calibration:
+
 ```
 01_ROS2_T256_L515.sh
 ```
@@ -70,6 +76,10 @@ ____
 ```
 ros2 run camera_calibration cameracalibrator --size=9x6 --square=0.063 --approximate=0.3 --no-service-check --ros-args --remap /image:=/T265/fisheye1/image_raw
 ```
+
+Calibration resaults:
+
+camera_T265_info.ini
 
 ```
 # mono fisheye calibration...
