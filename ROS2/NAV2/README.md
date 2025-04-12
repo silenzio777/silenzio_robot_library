@@ -2,7 +2,7 @@
 ### Setup:
 
 
-<img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
+
 
 
 UbuntuPC:
@@ -41,6 +41,13 @@ T5:
 ```
 ros2 launch slam_toolbox online_async_launch.py
 ```
+
+
+<img src="Stella_odom_frame_01.png" title="" width="800">
+
+<img src="Stella_odom_tf_tree.png" title="" width="1000">
+
+<img src="Stella_odom_nodes.png" title="" width="1000">
 
 
 
