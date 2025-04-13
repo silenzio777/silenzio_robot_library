@@ -23,6 +23,7 @@ git clone https://github.com/Taeyoung96/OctoMap-ROS2.git
 ```
 ### Build:
 
+
 ```
 colcon build --packages-select octomap_msgs octomap_ros
 ```
@@ -93,6 +94,7 @@ source install/setup.bash
 ```
 
 ### Run:
+point_cloud_xyz_node
 
 T1:
 ```
@@ -108,7 +110,8 @@ ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:
 
 ![Screenshot 2025-04-13 at 20 27 53](https://github.com/user-attachments/assets/2260d6be-408a-4a36-bded-b1c21e57cb87)
 
-or 
+### Run:
+point_cloud_xyzrgb_node
 
 T1:
 ```
@@ -125,5 +128,8 @@ T2:
 ros2 run image_transport republish raw in:=/camera/color/image_raw raw out:=/rgb/image_rect_color
 ```
 
+### Work:
+
+![Screenshot 2025-04-13 at 21 04 26](https://github.com/user-attachments/assets/668418f7-0ea1-4af5-adb8-08474526f91a)
 
 _____________
