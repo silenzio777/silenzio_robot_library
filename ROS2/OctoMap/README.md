@@ -105,10 +105,9 @@ T2:
 ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
 ```
 
-T2:
+T3:
 ```
 ros2 run image_transport republish raw in:=/camera/depth/camera_info raw out:=/camera_info
-
 ```
 
 _____________
