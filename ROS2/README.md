@@ -469,7 +469,7 @@ A simple coverter node (rviz2d_from_string_node) is provided which can covert st
 
 A launch file which runs this node and sets the parameters may look something like:
 
-```
+``` py 
 from launch import LaunchDescription
 from launch_ros.actions import Node
 
