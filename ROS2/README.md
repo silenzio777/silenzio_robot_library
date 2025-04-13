@@ -501,6 +501,6 @@ Screenshot showing the PieChartDisplay, a circular gauge
 <img src="screenshot_PieChartDisplay.png" title="" width="313">
 
 
-The PieChartDisplay is a rather boring pie chart, as it only displays a single value. PieChartDisplay and "Circular Gauge" are used synonymously in this package. The gauge allows displaying a std_msgs/Float32 - https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg
+The PieChartDisplay is a rather boring pie chart, as it only displays a single value. PieChartDisplay and "Circular Gauge" are used synonymously in this package. The gauge allows displaying a - [std_msgs/Float32]( https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg)
 
 Formatting and positioning, as well as setting the maximum value is only possible in the display options inside rviz.
