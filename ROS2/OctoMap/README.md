@@ -1,6 +1,8 @@
 
 ## OctoMap-ROS2
 
+https://github.com/Taeyoung96/OctoMap-ROS2
+
 ### Environment setting
 - ROS2 humble
 - PCL
@@ -32,7 +34,7 @@ colcon build
 ```
 
 ### Run:
-
+___
 ```
 ros2 launch fast_lio velodyne.launch.py
 ```
@@ -50,4 +52,22 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 [octomap_server_node-1] [INFO] [1744560598.479580164] [octomap_server]: Publishing latched (single publish will take longer, all topics are prepared)
 [octomap_server_node-1] [WARN] [1744560598.495300750] [octomap_server]: Nothing to publish, octree is empty
 [octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
+```
+___
+
+You need to run the 3D Mapping package (ex. FAST_LIO_ROS2) at the same time.
+
+On the FAST-LIO2 terminal,
+```
+ros2 launch fast_lio velodyne.launch.py
+```
+For this docker container,
+
+```
+ros2 launch octomap_server octomap_mapping.launch.xml
+```
+
+Map save
+```
+ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
 ```
