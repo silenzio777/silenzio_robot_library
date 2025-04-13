@@ -113,12 +113,11 @@ or
 T1:
 ```
 ros2 run depth_image_proc point_cloud_xyzrgb_node --ros-args -r /camera_info:=/camera/depth/camera_info -r /rgb/camera_info:=/camera/color/camera_info
-
 ```
 
 T2:
 ```
-ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
+ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/depth_registered/image_rect
 ```
 
 T2:
