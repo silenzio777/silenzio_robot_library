@@ -433,6 +433,7 @@ sudo apt install ros-$ROS_DISTRO-ros2test
 
 ### rviz_2d_overlay_plugins:
 
+screenshot_vel_overlay.png
 
 Install the plugin:
 ```
@@ -497,7 +498,7 @@ ros2 topic pub /chatter std_msgs/String "data: Hello world"
 ### Circular Gauge Overlay
 Screenshot showing the PieChartDisplay, a circular gauge
 
-pic
+screenshot_PieChartDisplay.png
 
 The PieChartDisplay is a rather boring pie chart, as it only displays a single value. PieChartDisplay and "Circular Gauge" are used synonymously in this package. The gauge allows displaying a std_msgs/Float32 - https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg
 
