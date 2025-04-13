@@ -429,6 +429,23 @@ sudo apt install ros-$ROS_DISTRO-ros2lifecycle
 sudo apt install ros-$ROS_DISTRO-ros2multicast
 ...sudo apt install ros-$ROS_DISTRO-ros2security
 sudo apt install ros-$ROS_DISTRO-ros2test
-
-
 ```
+
+### rviz_2d_overlay_plugins:
+
+
+Install the plugin:
+```
+sudo apt install ros-humble-rviz-2d-overlay-plugins
+```
+
+Then publish a message: 
+
+this for text overlay: 
+https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/blob/main/rviz_2d_overlay_msgs/msg/OverlayText.msg
+
+this for gauge overlay: 
+
+https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg)
+
+then select the topics in rviz
