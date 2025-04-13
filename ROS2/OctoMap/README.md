@@ -53,7 +53,7 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 [octomap_server_node-1] [WARN] [1744560598.495300750] [octomap_server]: Nothing to publish, octree is empty
 [octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
 ```
-___
+
 
 You need to run the 3D Mapping package (ex. FAST_LIO_ROS2) at the same time.
 
@@ -71,3 +71,39 @@ Map save
 ```
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
 ```
+_____________
+
+
+### Install image_pipeline:
+[https://github.com/ros-perception/image_pipeline/tree/humble](https://github.com/ros-perception/image_pipeline/tree/humble)
+
+To convert L515 RGBD data to PointCloud2
+
+```
+cd ~/ros2_ws/src
+
+git clone -b humble https://github.com/ros-perception/image_pipeline
+```
+```
+colcon build --packages-select depth_image_proc
+```
+```
+source install/setup.bash
+```
+
+### Run:
+
+T1:
+```
+ros2 run depth_image_proc point_cloud_xyz_node
+```
+
+
+T2:
+```
+ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
+```
+
+ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
+
+_____________
