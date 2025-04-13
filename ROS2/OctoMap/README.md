@@ -99,6 +99,13 @@ T1:
 ros2 run depth_image_proc point_cloud_xyz_node --ros-args -r /camera_info:=/camera/depth/camera_info
 ```
 
+or 
+
+T1:
+```
+ros2 run depth_image_proc point_cloud_xyzrgb_node --ros-args -r /camera_info:=/camera/depth/camera_info
+```
+
 
 T2:
 ```
@@ -108,8 +115,6 @@ ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:
 T3:
 ```
 ros2 run image_transport republish raw in:=/camera/depth/camera_info raw out:=/camera_info
-
-
 ```
 ### Work:
 
