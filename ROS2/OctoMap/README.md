@@ -71,6 +71,7 @@ Map save
 ```
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
 ```
+
 _____________
 
 
@@ -104,6 +105,10 @@ T2:
 ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
 ```
 
-ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
+T2:
+```
+ros2 run image_transport republish raw in:=/camera/depth/camera_info raw out:=/camera_info
+
+```
 
 _____________
