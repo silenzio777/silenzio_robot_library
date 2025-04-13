@@ -446,6 +446,6 @@ https://github.com/teamspatzenhirn/rviz_2d_overlay_plugins/blob/main/rviz_2d_ove
 
 this for gauge overlay: 
 
-https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg)
+https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg
 
 then select the topics in rviz
