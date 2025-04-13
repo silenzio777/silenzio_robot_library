@@ -24,8 +24,30 @@ git clone https://github.com/Taeyoung96/OctoMap-ROS2.git
 ```
 colcon build --packages-select octomap_msgs octomap_ros
 ```
-
+```
+source install/setup.bash
+```
 ```
 colcon build
 ```
 
+### Run:
+
+```
+ros2 launch fast_lio velodyne.launch.py
+```
+Error:
+```
+Package 'fast_lio' not found:...
+```
+
+```
+ros2 launch octomap_server octomap_mapping.launch.xml
+
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-13-19-09-58-032111-jetsonnx-87161
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [octomap_server_node-1]: process started with pid [87186]
+[octomap_server_node-1] [INFO] [1744560598.479580164] [octomap_server]: Publishing latched (single publish will take longer, all topics are prepared)
+[octomap_server_node-1] [WARN] [1744560598.495300750] [octomap_server]: Nothing to publish, octree is empty
+[octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
+```
