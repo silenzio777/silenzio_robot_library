@@ -99,24 +99,32 @@ T1:
 ros2 run depth_image_proc point_cloud_xyz_node --ros-args -r /camera_info:=/camera/depth/camera_info
 ```
 
+T2:
+```
+ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
+```
+
+### Work:
+
+![Screenshot 2025-04-13 at 20 27 53](https://github.com/user-attachments/assets/2260d6be-408a-4a36-bded-b1c21e57cb87)
+
 or 
 
 T1:
 ```
-ros2 run depth_image_proc point_cloud_xyzrgb_node --ros-args -r /camera_info:=/camera/depth/camera_info
-```
+ros2 run depth_image_proc point_cloud_xyzrgb_node --ros-args -r /camera_info:=/camera/depth/camera_info -r /rgb/camera_info:=/camera/color/camera_info
 
+```
 
 T2:
 ```
 ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:=/image_rect
 ```
 
-T3:
+T2:
 ```
-ros2 run image_transport republish raw in:=/camera/depth/camera_info raw out:=/camera_info
+ros2 run image_transport republish raw in:=/camera/color/image_raw raw out:=/rgb/image_rect_color
 ```
-### Work:
 
-![Screenshot 2025-04-13 at 20 27 53](https://github.com/user-attachments/assets/2260d6be-408a-4a36-bded-b1c21e57cb87)
+
 _____________
