@@ -189,8 +189,7 @@ _____________
 ### Docker Install: 
 
 
-file Dockerfile_ros2_22_04
-
+file "Dockerfile_ros2_22_04":
 ```
 #FROM osrf/ros:humble-desktop
 FROM  arm64v8/ros:humble-ros-base-jammy
@@ -250,3 +249,24 @@ docker build -t ov_$VERSION -f Dockerfile_$VERSION .
 ```
 
 
+### Run:
+cd ~/ros2_ws/src
+```
+nano ~/.bashrc # add to the bashrc file
+xhost + &> /dev/null
+export DOCKER_CATKINWS=/home/silenzio/ros2_ws
+export DOCKER_DATASETS=/home/silenzio/_dataset/ov
+
+alias ov_docker="docker run -it --net=host --gpus all \
+    --env=\"NVIDIA_DRIVER_CAPABILITIES=all\" --env=\"DISPLAY\" \
+    --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
+    --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
+    --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
+source ~/.bashrc # after you save and exit
+```
+
+```
+ov_docker ov_ros2_22_04 bash
+ov_docker ov_ros2_22_04 ros2
+ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
+```
