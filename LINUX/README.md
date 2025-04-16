@@ -421,7 +421,7 @@ Note: You will be prompted for a password when encrypting or decrypt. And use --
 ______
 
 
-### uninstall package build from source
+### Uninstall package build from source
 
 Q: If I build a package from source how can I uninstall or remove completely?
 
