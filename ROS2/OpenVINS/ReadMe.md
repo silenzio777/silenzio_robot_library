@@ -189,19 +189,17 @@ _____________
 ### Docker Install: 
 
 
+
 file "Dockerfile_ros2_22_04":
 ```
-#FROM osrf/ros:humble-desktop
-FROM  arm64v8/ros:humble-ros-base-jammy
-
+## https://github.com/dusty-nv/jetson-containers/tree/master/packages/robots/ros
+FROM dustynv/ros:humble-ros-base-l4t-r36.2.0
 # =========================================================
 # =========================================================
-
 # Are you are looking for how to use this docker file?
 #   - https://docs.openvins.com/dev-docker.html
 #   - https://docs.docker.com/get-started/
 #   - http://wiki.ros.org/docker/Tutorials/Docker
-
 # =========================================================
 # =========================================================
 
