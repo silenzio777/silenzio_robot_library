@@ -415,6 +415,38 @@ gpg --no-symkey-cache --output un_archive.zip --decrypt archive.zip.aes
 
 Note: You will be prompted for a password when encrypting or decrypt. And use --no-symkey-cache flag for no cache.
 
+
+______
+
+
+### Q: If I build a package from source how can I uninstall or remove completely?
+
+### A: [### ](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
+
+Usually you can just use:
+```
+make uninstall
+```
+or
+```
+sudo make uninstall
+```
+if the app was installed as root.
+
+
+But this will work only if the developer of the package has taken care of making a good uninstall rule.
+You can also try to get a look at the steps used to install the software by running:
+
+```
+make -n install
+```
+And then try to reverse those steps manually.
+
+In the future to avoid that kind of problems try to use checkinstall instead of make install whenever possible (AFAIK always unless you want to keep both the compiled and a packaged version at the same time). It will create and install a deb file that you can then uninstall using your favorite package manager.
+
+make clean usually cleans the building directories, it doesn't uninstall the package. It's used when you want to be sure that the whole thing is compiled, not just the changed files.
+
+
 _______
 
 ### shutdown
