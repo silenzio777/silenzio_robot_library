@@ -42,14 +42,15 @@ ov_docker ov_ros2_22_04 ros2
 ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
 ```
 
-### ROS1 build:
+### ROS2 build:
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
 colcon build --event-handlers console_cohesion+
 ```
 
-### ROS1 run:
+### ROS2 run:
+Test:
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
