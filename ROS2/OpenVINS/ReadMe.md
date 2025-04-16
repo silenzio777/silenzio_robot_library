@@ -75,7 +75,7 @@ ros2 bag play /datasets/V1_01_easy/V1_01_easy.db3
 ```
 ### Work:
 
-<img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
+<img src="OpenVINS _01.png" title="OpenVINS _01" width="1000">
 
 ```
 ros2 topic echo  /cam0/image_raw
