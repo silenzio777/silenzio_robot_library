@@ -12,7 +12,9 @@ ______
 - [apt-cache search](#apt-cache-search)<br/>
 - [nmap](#nmap)<br/>
 - [openssl](#openssl)<br/>
+- [uninstall package build from source](#uninstall-package-build-from-source)<br/>
 - [shutdown](#shutdown)<br/>
+
 
 ```
 echo $(uname -r)
@@ -419,9 +421,12 @@ Note: You will be prompted for a password when encrypting or decrypt. And use --
 ______
 
 
-### Q: If I build a package from source how can I uninstall or remove completely?
+### uninstall package build from source
 
-### A: [### ](https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely)
+Q: If I build a package from source how can I uninstall or remove completely?
+
+A: 
+https://askubuntu.com/questions/87111/if-i-build-a-package-from-source-how-can-i-uninstall-or-remove-completely
 
 Usually you can just use:
 ```
