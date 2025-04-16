@@ -20,6 +20,8 @@ https://docs.openvins.com/gs-tutorial.html
 https://drive.google.com/file/d/1LFrdiMU6UBjtFfXPHzjJ4L7iDIXcdhvh/view?usp=drive_link
 ```
 
+Unarchive it to: /home/silenzio/_dataset/ov/V1_01_easy/V1_01_easy.db3
+
 ### Run:
 
 ```
