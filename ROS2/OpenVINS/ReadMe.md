@@ -56,6 +56,13 @@ cd catkin_ws
 source install/setup.bash
 ros2 run ov_eval plot_trajectories none src/open_vins/ov_data/sim/udel_gore.txt
 ros2 run ov_msckf run_simulation src/open_vins/config/rpng_sim/estimator_config.yaml
+
+
+ros2 run ov_msckf run_simulation src/open_vins/config/euroc_mav/kalibr_imu_chain.yaml
+
+ros2 run ov_msckf run_simulation src/open_vins/config/euroc_mav/estimator_config.yaml
+
+
 ```
 
 
