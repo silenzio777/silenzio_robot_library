@@ -39,7 +39,7 @@ source ~/.bashrc # after you save and exit
 ```
 ov_docker ov_ros2_22_04 bash
 ov_docker ov_ros2_22_04 ros2
-v_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
+ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
 ```
 
 ### ROS1 build:
@@ -55,14 +55,22 @@ ov_docker ov_ros2_22_04 bash
 cd catkin_ws
 source install/setup.bash
 ros2 run ov_eval plot_trajectories none src/open_vins/ov_data/sim/udel_gore.txt
+ros2 run ov_eval plot_trajectories none src/open_vins/ov_data/sim/euroc_V1_01_easy.txt
 ros2 run ov_msckf run_simulation src/open_vins/config/rpng_sim/estimator_config.yaml
-
-
-ros2 run ov_msckf run_simulation src/open_vins/config/euroc_mav/kalibr_imu_chain.yaml
-
-ros2 run ov_msckf run_simulation src/open_vins/config/euroc_mav/estimator_config.yaml
-
-
+ros2 run ov_msckf run_simulation src/open_vins/config/kaist_vio/estimator_config.yaml
 ```
 
+
+### T0:
+```
+ov_docker ov_ros2_22_04 bash
+cd catkin_ws
+ros2 launch ov_msckf subscribe.launch.py config:=euroc_mav
+```
+
+### T1:
+```
+ov_docker ov_ros2_22_04 bash
+ros2 bag play /datasets/V1_01_easy/V1_01_easy.db3
+```
 
