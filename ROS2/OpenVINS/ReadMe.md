@@ -96,3 +96,41 @@ step: 752
 data:
 - 148
 ```
+
+### T265 online demo:
+
+### T0:
+```
+ov_docker ov_ros2_22_04 bash
+cd catkin_ws
+ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
+```
+
+```
+ros2 topic list
+/ov_msckf/loop_depth
+/ov_msckf/loop_depth_colored
+/ov_msckf/loop_extrinsic
+/ov_msckf/loop_feats
+/ov_msckf/loop_intrinsics
+/ov_msckf/loop_pose
+/ov_msckf/odomimu
+/ov_msckf/pathgt
+/ov_msckf/pathimu
+/ov_msckf/points_aruco
+/ov_msckf/points_msckf
+/ov_msckf/points_sim
+/ov_msckf/points_slam
+/ov_msckf/posegt
+/ov_msckf/poseimu
+/ov_msckf/trackhist
+/parameter_events
+
+/t265/fisheye1/image_raw
+/t265/fisheye2/image_raw
+/t265/imu
+
+/rosout
+/tf
+
+```
