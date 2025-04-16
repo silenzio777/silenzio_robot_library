@@ -171,6 +171,8 @@ In file included from /home/silenzio/ros2_ws/src/open_vins/ov_init/src/ceres/Sta
 ```
 
 ### Fix:
+https://github.com/rpng/open_vins/issues/421
+
 https://github.com/rpng/open_vins/issues/385
 
 
@@ -187,36 +189,43 @@ _____________
 ## Jetson Orin NX:
 
 ### Docker Install: 
-
-
+https://github.com/dusty-nv/jetson-containers/tree/master/packages/robots/ros
 
 file "Dockerfile_ros2_22_04":
+
 ```
-## https://github.com/dusty-nv/jetson-containers/tree/master/packages/robots/ros
+#FROM osrf/ros:humble-desktop
+#FROM  arm64v8/ros:humble-ros-base-jammy
 FROM dustynv/ros:humble-ros-base-l4t-r36.2.0
+
 # =========================================================
 # =========================================================
+
 # Are you are looking for how to use this docker file?
 #   - https://docs.openvins.com/dev-docker.html
 #   - https://docs.docker.com/get-started/
 #   - http://wiki.ros.org/docker/Tutorials/Docker
+
 # =========================================================
 # =========================================================
 
 # Dependencies we use, catkin tools is very good build system
 # Also some helper utilities for fast in terminal edits (nano etc)
-RUN apt update && apt install -y nano git libeigen3-dev
+RUN apt update && apt install -y nano git libeigen3-dev libboost-system1.74-dev 
 
 # Ceres solver install and setup
-RUN sudo apt-get install -y cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev libceres-dev
-# ENV CERES_VERSION="2.0.0"
-# RUN git clone https://ceres-solver.googlesource.com/ceres-solver && \
-#     cd ceres-solver && \
-#     git checkout tags/${CERES_VERSION} && \
-#     mkdir build && cd build && \
-#     cmake .. && \
-#     make -j$(nproc) install && \
-#     rm -rf ../../ceres-solver
+RUN sudo apt-get install -y cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev 
+
+## libceres-dev
+
+ENV CERES_VERSION="2.0.0"
+RUN git clone https://ceres-solver.googlesource.com/ceres-solver && \
+     cd ceres-solver && \
+     git checkout tags/${CERES_VERSION} && \
+     mkdir build && cd build && \
+     cmake .. && \
+     make -j$(nproc) install && \
+     rm -rf ../../ceres-solver
 
 # Seems this has Python 3.10 installed on it...
 RUN apt-get update && apt-get install -y python3-dev python3-matplotlib python3-numpy python3-psutil python3-tk
@@ -236,6 +245,7 @@ RUN ( \
 RUN useradd -m user && yes password | passwd user
 RUN usermod -s /bin/bash user
 CMD ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config_test_clion"]
+
 ```
 
 ```
@@ -246,6 +256,10 @@ export VERSION=ros2_22_04 # which docker file version you want (ROS1 vs ROS2 and
 docker build -t ov_$VERSION -f Dockerfile_$VERSION .
 ```
 
+### Build:
+```
+docker build -t ov_$VERSION -f Dockerfile_$VERSION .
+```
 
 ### Run:
 cd ~/ros2_ws/src
@@ -255,8 +269,9 @@ xhost + &> /dev/null
 export DOCKER_CATKINWS=/home/silenzio/ros2_ws
 export DOCKER_DATASETS=/home/silenzio/_dataset/ov
 
-alias ov_docker="docker run -it --net=host --gpus all \
-    --env=\"NVIDIA_DRIVER_CAPABILITIES=all\" --env=\"DISPLAY\" \
+alias ov_docker="docker run -it --net=host  \
+    --rm --runtime=nvidia --gpus all \
+    --env=\"DISPLAY\" \
     --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
     --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
     --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
