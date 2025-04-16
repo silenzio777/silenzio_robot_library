@@ -317,6 +317,18 @@ python3-gflags - implementation of the Google command line flags module - Python
 python3-typeshed - collection of library stubs for Python, with static types
 ros-cmake-modules - Robot OS CMake Modules
 ```
+
+```
+sudo apt-get purge <PACKAGENAME>
+sudo apt-get purge $(apt-cache depends <PACKAGENAME> | awk '{ print $2 }' | tr '\n' ' ')
+sudo apt-get autoremove
+sudo apt-get update
+sudo apt-get check
+sudo apt-get -f install
+sudo apt-get autoclean
+Restart if needed
+```
+
 ___________
 ### nmap:
 ```
@@ -409,4 +421,5 @@ _______
 
 ```
 sudo shutdown now
+sudo shutdown -r now
 ```
