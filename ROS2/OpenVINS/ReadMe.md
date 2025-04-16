@@ -180,6 +180,8 @@ LocalParameterization has been removed, use Manifold instead.
 http://ceres-solver.org/version_history.html#id1
 
 You should install a version earlier than 2.2.0
+
+...
 _____________
 
 ## Jetson Orin NX:
