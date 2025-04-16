@@ -45,6 +45,8 @@ ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msck
 ```
 
 ### ROS2 build:
+
+UBUNTU PC:
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
@@ -134,3 +136,49 @@ ros2 topic list
 /tf
 
 ```
+_________________
+
+## Jetson Orin NX:
+
+### ROS2 Install: 
+
+```
+cd ~/ros2_ws/src
+git clone https://github.com/rpng/open_vins.git
+```
+
+
+### ROS2 build:
+
+```
+cd ~/ros2_ws/
+colcon build --event-handlers console_cohesion+
+```
+
+### Bulld error:
+```
+Finished <<< ov_core [3min 0s]
+Starting >>> ov_init
+Starting >>> ov_eval
+[Processing: ov_eval, ov_init]                                                                           
+--- output: ov_init
+...
+[ 56%] Building CXX object CMakeFiles/ov_init_lib.dir/src/sim/SimulatorInit.cpp.o
+In file included from /home/silenzio/ros2_ws/src/open_vins/ov_init/src/ceres/State_JPLQuatLocal.cpp:22:
+/home/silenzio/ros2_ws/src/open_vins/ov_init/src/ceres/State_JPLQuatLocal.h:32:64: error: expected class-name before `{` token
+   32 | class State_JPLQuatLocal : public ceres::LocalParameterization {
+...
+```
+
+### Fix:
+https://github.com/rpng/open_vins/issues/385
+
+
+This is due to a backwards incompatible change of ceres-solver.
+
+LocalParameterization has been removed, use Manifold instead.
+http://ceres-solver.org/version_history.html#id1
+
+You should install a version earlier than 2.2.0
+
+
