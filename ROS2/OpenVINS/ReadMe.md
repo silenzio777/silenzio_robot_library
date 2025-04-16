@@ -22,8 +22,8 @@ https://drive.google.com/file/d/1LFrdiMU6UBjtFfXPHzjJ4L7iDIXcdhvh/view?usp=drive
 
 ### Run:
 
+```
 nano ~/.bashrc # add to the bashrc file
-
 xhost + &> /dev/null
 export DOCKER_CATKINWS=/home/silenzio/ws/catkin_ws_ov
 export DOCKER_DATASETS=/home/silenzio/_dataset/ov
@@ -34,7 +34,22 @@ alias ov_docker="docker run -it --net=host --gpus all \
     --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
     --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
 source ~/.bashrc # after you save and exit
+```
 
-
+```
+ov_docker ov_ros1_20_04 bash
 ov_docker ov_ros2_22_04 ros2
 v_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
+```
+
+### ROS1 build & run:
+
+```
+cd catkin_ws
+colcon build --event-handlers console_cohesion+
+source install/setup.bash
+ros2 run ov_eval plot_trajectories none src/open_vins/ov_data/sim/udel_gore.txt
+ros2 run ov_msckf run_simulation src/open_vins/config/rpng_sim/estimator_config.yaml
+```
+
+
