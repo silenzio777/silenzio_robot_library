@@ -73,4 +73,23 @@ ros2 launch ov_msckf subscribe.launch.py config:=euroc_mav
 ov_docker ov_ros2_22_04 bash
 ros2 bag play /datasets/V1_01_easy/V1_01_easy.db3
 ```
+### Work:
 
+<img src="LogitechCordlessRumblePad_2_front.png" title="LogitechCordlessRumblePad_2_front" width="461">
+
+```
+ros2 topic echo  /cam0/image_raw
+---
+header:
+  stamp:
+    sec: 1403715291
+    nanosec: 812143000
+  frame_id: cam0
+height: 480
+width: 752
+encoding: mono8
+is_bigendian: 0
+step: 752
+data:
+- 148
+```
