@@ -105,6 +105,7 @@ data:
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
+source install/setup.bash
 ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
 ```
 
@@ -271,10 +272,12 @@ export DOCKER_DATASETS=/home/silenzio/_dataset/ov
 
 alias ov_docker="docker run -it --net=host  \
     --rm --runtime=nvidia --gpus all \
+    --rm -v /usr/local/lib/opencv4:/usr/local/lib/opencv4 \
     --env=\"DISPLAY\" \
     --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
     --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
     --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
+
 source ~/.bashrc # after you save and exit
 ```
 
@@ -282,4 +285,14 @@ source ~/.bashrc # after you save and exit
 ov_docker ov_ros2_22_04 bash
 ov_docker ov_ros2_22_04 ros2
 ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msckf/launch/display_ros2.rviz
+```
+
+### T265 online demo:
+
+### T0:
+```
+ov_docker ov_ros2_22_04 bash
+cd catkin_ws
+source install/setup.bash
+ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
 ```
