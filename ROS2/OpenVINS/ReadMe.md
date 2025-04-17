@@ -163,6 +163,7 @@ git clone https://github.com/rpng/open_vins.git
 cd ~/ros2_ws/
 ## colcon build --event-handlers console_cohesion+
 colcon build --cmake-args -DOpenCV_DIR=/usr/local/lib/cmake/opencv4 --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval
+colcon build --cmake-args --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval
 ```
 
 
@@ -216,8 +217,23 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCERES_USE_CUDA=ON -
 make -j7
 
 sudo make install
+...
+-- Up-to-date: /usr/local/include
+-- Up-to-date: /usr/local/include/ceres
+-- Up-to-date: /usr/local/include/ceres/internal
+-- Installing: /usr/local/include/ceres/internal/config.h
+-- Installing: /usr/local/include/ceres/internal/export.h
+-- Old export file "/usr/local/lib/cmake/Ceres/CeresTargets.cmake" will be replaced.  Removing files [/usr/local/lib/cmake/Ceres/CeresTargets-release.cmake].
+-- Installing: /usr/local/lib/cmake/Ceres/CeresTargets.cmake
+-- Installing: /usr/local/lib/cmake/Ceres/CeresTargets-release.cmake
+-- Installing: /usr/local/lib/cmake/Ceres/CeresConfig.cmake
+-- Installing: /usr/local/lib/cmake/Ceres/CeresConfigVersion.cmake
+-- Installing: /usr/local/lib/libceres.so.2.1.0
+-- Installing: /usr/local/lib/libceres.so.3
+-- Set non-toolchain portion of runtime path of "/usr/local/lib/libceres.so.2.1.0" to ""
+-- Installing: /usr/local/lib/libceres.so
 
-ldconfig
+sudo ldconfig
 ```
 
 
