@@ -199,7 +199,7 @@ You should install a version earlier than 2.2.0
 ...
 
 ------------------------------------------------------------------------------------------
-### ceres-solver Install UBUNTU 22 Jetson Orin NX
+### Ubuntu 22 Jetson Orin NX: Install Ceres-solver 2.1.0 
 ------------------------------------------------------------------------------------------
 http://ceres-solver.org/installation.html
 
