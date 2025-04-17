@@ -272,7 +272,7 @@ export DOCKER_DATASETS=/home/silenzio/_dataset/ov
 
 alias ov_docker="docker run -it --net=host  \
     --rm --runtime=nvidia --gpus all \
-    --rm -v /usr/local/lib/libopencv_imgcodecs.so.410:/usr/local/lib/libopencv_imgcodecs.so.410 \
+    --rm -v /usr/local/lib:/usr/local/lib \
     --env=\"DISPLAY\" \
     --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
     --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
@@ -280,6 +280,8 @@ alias ov_docker="docker run -it --net=host  \
 
 source ~/.bashrc # after you save and exit
 ```
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 
 ```
 ov_docker ov_ros2_22_04 bash
