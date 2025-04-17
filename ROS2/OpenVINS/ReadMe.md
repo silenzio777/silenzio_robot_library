@@ -198,21 +198,21 @@ You should install a version earlier than 2.2.0
 
 ...
 
-_____________
-
 ------------------------------------------------------------------------------------------
 ### ceres-solver Install UBUNTU 22 Jetson Orin NX
 ------------------------------------------------------------------------------------------
 http://ceres-solver.org/installation.html
 
+```
 wget http://ceres-solver.org/ceres-solver-2.1.0.tar.gz
 tar zxf ceres-solver-2.2.0.tar.gz
 mkdir ceres-bin
 cd ceres-bin
+```
 
-
+```
 cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON -DCERES_USE_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES="87" -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda -DCMAKE_CUDA_COMPILER=/usr/local/cuda-12.6/bin/nvcc -DCUDA_ARCH_BIN="87" -DCUDA_ARCH_PTX=""
-
+```
 
 
 _____________
