@@ -290,6 +290,24 @@ alias ov_docker="docker run -it --net=host  \
     --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
     --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
 
+alias ov_docker="docker run -it --net=host  \
+    --rm --runtime=nvidia --gpus all \
+    --rm -v /usr/local/lib/cmake/opencv4:/usr/local/lib/cmake/opencv4 \
+    --env=\"DISPLAY\" \
+    --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
+    --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
+    --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
+
+
+alias ov_docker="docker run -it --net=host  \
+    --rm --runtime=nvidia --gpus all \
+    --env=\"DISPLAY\" \
+    --env=\"QT_X11_NO_MITSHM=1\" --volume=\"/tmp/.X11-unix:/tmp/.X11-unix:rw\" \
+    --mount type=bind,source=$DOCKER_CATKINWS,target=/catkin_ws \
+    --mount type=bind,source=$DOCKER_DATASETS,target=/datasets $1"
+
+
+
 source ~/.bashrc # after you save and exit
 ```
 
