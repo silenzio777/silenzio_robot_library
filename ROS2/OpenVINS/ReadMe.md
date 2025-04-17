@@ -137,6 +137,14 @@ ros2 topic list
 /tf
 
 ```
+
+```
+cd ~/ws/catkin_ws_ov/
+source install/setup.bash
+
+```
+
+
 _________________
 
 ## Jetson Orin NX:
@@ -153,8 +161,12 @@ git clone https://github.com/rpng/open_vins.git
 
 ```
 cd ~/ros2_ws/
-colcon build --event-handlers console_cohesion+
+## colcon build --event-handlers console_cohesion+
+colcon build --cmake-args -DOpenCV_DIR=/usr/local/lib/cmake/opencv4 --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval
 ```
+
+
+
 
 ### Bulld error:
 ```
@@ -290,8 +302,14 @@ ov_docker ov_ros2_22_04 ros2 run rviz2 rviz2 -d /catkin_ws/src/open_vins/ov_msck
 ```
 
 ### T265 online demo:
-
 ### T0:
+```
+01_ROS2_T256_L515.sh
+
+```
+
+
+### T1:
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
