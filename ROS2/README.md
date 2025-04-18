@@ -102,6 +102,31 @@ Arguments (pass arguments as '<name>:=<value>'):
         Use simulation (Gazebo) clock if true
         (default: 'True')
 ```
+
+If we want to see the coordinate transformation from one link to another, we can type the following command. For example, what is the position and orientation of the front caster wheel relative to the base_link of the robot?
+
+The syntax is:
+```
+ros2 run tf2_ros tf2_echo <parent frame> <child frame>
+```
+We open a terminal window, and type:
+```
+ros2 run tf2_ros tf2_echo base_link front_caster
+```
+Here is the output. With respect to the base_link reference frame, the front caster wheel is located at (x=0.217 meters, y=0 meters, and z=-0.1 meters).
+```
+At time 0.0
+- Translation: [0.217, 0.000, -0.100]
+- Rotation: in Quaternion [0.000, 0.000, 0.000, 1.000]
+- Rotation: in RPY (radian) [0.000, -0.000, 0.000]
+- Rotation: in RPY (degree) [0.000, -0.000, 0.000]
+- Matrix:
+  1.000  0.000  0.000  0.217
+  0.000  1.000  0.000  0.000
+  0.000  0.000  1.000 -0.100
+  0.000  0.000  0.000  1.000
+```
+
 __________
 
 ## Ubuntu PC ROS2 humble info:
