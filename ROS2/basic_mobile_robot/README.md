@@ -28,9 +28,11 @@ touch __init__.py
 
 cd cd ~/ros2_ws
 colcon build
-```
+
+...
 Finished <<< two_wheeled_robot [0.80s]
 Finished <<< basic_mobile_robot [1.39s]
+```
 
 
 ## Setup gazebo sim worlds:
