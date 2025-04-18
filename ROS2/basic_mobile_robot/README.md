@@ -179,11 +179,11 @@ ros2 launch slam_toolbox online_async_launch.py
 
 <img src="https://github.com/user-attachments/assets/8bd70c5a-f11f-4510-a654-996533488453" title="" width="800">
 
-
-
-
 ```
 ros2 topic list
+```
+
+```
 /basic_mobile_bot_gps/vel
 /clicked_point
 /clock
