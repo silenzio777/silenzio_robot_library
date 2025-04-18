@@ -10,6 +10,9 @@
 nano ~/.bashrc
 source ~/.bashrc
 
+echo $ROS_DISTRO
+echo $ROS_DOMAIN_ID
+
 source /opt/ros/$ROS_DISTRO/setup.bash
 source /opt/ros/humble/setup.bash
 cd ~/ros2_ws && source install/setup.bash
@@ -17,6 +20,10 @@ cd ~/ros2_ws && source install/setup.bash
 colcon_cd
 
 colcon build
+
+ros2 run ... ...
+
+ros2 launch ... ...
 
 rqt_graph
 
