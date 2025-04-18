@@ -1,16 +1,15 @@
-\
+## How to:
 
-### how to ROS2
+### automaticaddison
 https://automaticaddison.com/
-
 
 ### Sensor Fusion Using the Robot Localization Package – ROS 2
 https://automaticaddison.com/sensor-fusion-using-the-robot-localization-package-ros-2/
+not work - galactic
 
 
 ### The Ultimate Guide to the ROS 2 Navigation Stack – Foxy
 https://automaticaddison.com/the-ultimate-guide-to-the-ros-2-navigation-stack/
-
 
 
 _______________
