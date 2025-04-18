@@ -77,7 +77,30 @@ ros2 run rqt_tf_tree rqt_tf_tree
 ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 
 sudo apt install ros-humble-moveit
+```
 
+By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
+```
+ros2 launch -s basic_mobile_robot basic_mobile_bot_v1.launch.py
+Arguments (pass arguments as '<name>:=<value>'):
+    'model':
+        Absolute path to robot urdf file
+        (default: '/home/silenzio/ros2_ws/install/basic_mobile_robot/share/basic_mobile_robot/models/basic_mobile_bot_v1.urdf')
+    'rviz_config_file':
+        Full path to the RVIZ config file to use
+        (default: '/home/silenzio/ros2_ws/install/basic_mobile_robot/share/basic_mobile_robot/rviz/urdf_config.rviz')
+    'gui':
+        Flag to enable joint_state_publisher_gui
+        (default: 'True')
+    'use_robot_state_pub':
+        Whether to start the robot state publisher
+        (default: 'True')
+    'use_rviz':
+        Whether to start RVIZ
+        (default: 'True')
+    'use_sim_time':
+        Use simulation (Gazebo) clock if true
+        (default: 'True')
 ```
 __________
 
