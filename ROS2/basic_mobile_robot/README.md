@@ -3,6 +3,7 @@
 
 https://automaticaddison.com/set-up-the-odometry-for-a-simulated-mobile-robot-in-ros-2/
 
+```
 sudo apt-get install ros-humble-rqt-robot-steering
 sudo apt install ros-humble-robot-localization
 
@@ -15,11 +16,15 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/silenzio/ros2_ws/src/basic_mob
 cd ~/ros2_ws/src/basic_mobile_robot/worlds/basic_mobile_bot_world
 
 gazebo smalltown.world
+```
 
 ## Work
 
 
 basic_mobile_robot
 
-
+### T0:
 rqt_robot_steering
+
+### T1:
+
