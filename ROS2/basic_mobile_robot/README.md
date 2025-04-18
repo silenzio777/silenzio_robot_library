@@ -177,7 +177,7 @@ ros2 launch slam_toolbox online_async_launch.py
 
 ![Screenshot 2025-04-18 at 16 38 00](https://github.com/user-attachments/assets/a9b503ed-55ab-4b58-b086-6c3f2d8c0228)
 
-<img src="https://github.com/user-attachments/assets/8bd70c5a-f11f-4510-a654-996533488453" title="" width="1000">
+<img src="https://github.com/user-attachments/assets/8bd70c5a-f11f-4510-a654-996533488453" title="" width="800">
 
 
 
