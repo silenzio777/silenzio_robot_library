@@ -216,6 +216,7 @@ ros2 topic list
 ```
 
 ### T3:
+
 NAV2
 ```
 ros2 launch nav2_bringup navigation_launch.py map:=~/ros2_ws/my_map.yaml
