@@ -80,3 +80,66 @@ source /usr/share/gazebo/setup.sh
 ```
 ## Work
 
+```
+ros2 launch basic_mobile_robot basic_mobile_bot_v2.launch.py
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-18-15-29-40-908911-ubuntuPC-26561
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [26564]
+[INFO] [gzclient-2]: process started with pid [26566]
+[INFO] [robot_state_publisher-3]: process started with pid [26568]
+[INFO] [rviz2-4]: process started with pid [26570]
+[robot_state_publisher-3] [INFO] [1744979382.951591034] [robot_state_publisher]: got segment base_footprint
+[robot_state_publisher-3] [INFO] [1744979382.951703492] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-3] [INFO] [1744979382.951730271] [robot_state_publisher]: got segment drivewhl_l_link
+[robot_state_publisher-3] [INFO] [1744979382.951739750] [robot_state_publisher]: got segment drivewhl_r_link
+[robot_state_publisher-3] [INFO] [1744979382.951748669] [robot_state_publisher]: got segment front_caster
+[robot_state_publisher-3] [INFO] [1744979382.951757113] [robot_state_publisher]: got segment gps_link
+[robot_state_publisher-3] [INFO] [1744979382.951765661] [robot_state_publisher]: got segment imu_link
+[rviz2-4] [INFO] [1744979383.479351603] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [INFO] [1744979383.479463954] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-4] [INFO] [1744979383.576192334] [rviz2]: Stereo is NOT SUPPORTED
+[gzserver-1] [INFO] [1744979384.922026056] [basic_mobile_bot_diff_drive]: Wheel pair 1 separation set to [0.520000m]
+[gzserver-1] [INFO] [1744979384.922291892] [basic_mobile_bot_diff_drive]: Wheel pair 1 diameter set to [0.280000m]
+[gzserver-1] [INFO] [1744979384.922741144] [basic_mobile_bot_diff_drive]: Subscribed to [/cmd_vel]
+[gzserver-1] [INFO] [1744979384.923923677] [basic_mobile_bot_diff_drive]: Advertise odometry on [/wheel/odometry]
+[gzserver-1] [INFO] [1744979384.931956198] [basic_mobile_bot_joint_state]: Going to publish joint [drivewhl_l_joint]
+[gzserver-1] [INFO] [1744979384.931990944] [basic_mobile_bot_joint_state]: Going to publish joint [drivewhl_r_joint]
+
+```
+
+
+```
+ros2 topic echo /wheel/odometry  --no-arr
+
+---
+header:
+  stamp:
+    sec: 138
+    nanosec: 686000000
+  frame_id: odom
+child_frame_id: base_footprint
+pose:
+  pose:
+    position:
+      x: 0.026669722806629808
+      y: 0.0019291823795402117
+      z: 0.23998762884056996
+    orientation:
+      x: -7.769214135659952e-07
+      y: 2.840117738975622e-05
+      z: 0.002572573943476475
+      w: 0.9999966905225612
+  covariance: '<array type: double[36]>'
+twist:
+  twist:
+    linear:
+      x: 0.00023296327200423965
+      y: 1.326383204530475e-05
+      z: 0.0
+    angular:
+      x: 0.0
+      y: 0.0
+      z: -3.879842268297591e-05
+  covariance: '<array type: double[36]>'
+
+```
