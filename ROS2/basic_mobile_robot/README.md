@@ -146,3 +146,67 @@ twist:
 
 ```
 
+## Run:
+
+
+### T0:
+```
+ros2 launch teleop_twist_joy teleop-launch.py
+```
+
+### T1:
+```
+ros2 launch basic_mobile_robot basic_mobile_bot_v4.launch.py
+[INFO] [launch]: All log files can be found below /home/silenzio/.ros/log/2025-04-18-16-29-07-627956-ubuntuPC-34961
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gzserver-1]: process started with pid [34963]
+[INFO] [gzclient-2]: process started with pid [34965]
+[INFO] [ekf_node-3]: process started with pid [34967]
+[INFO] [robot_state_publisher-4]: process started with pid [34969]
+[INFO] [rviz2-5]: process started with pid [34971]
+...
+```
+
+### T2:
+```
+ros2 launch slam_toolbox online_async_launch.py
+```
+
+![Screenshot 2025-04-18 at 16 41 38](https://github.com/user-attachments/assets/f70a2fc1-9576-480a-aded-cb8007017681)
+
+```
+ros2 topic list
+/basic_mobile_bot_gps/vel
+/clicked_point
+/clock
+/cmd_vel
+/diagnostics
+/gps/fix
+/imu/data
+/initialpose
+/joint_states
+/joy
+/joy/set_feedback
+/map
+/map_metadata
+/map_updates
+/odometry/filtered
+/parameter_events
+/performance_metrics
+/pose
+/robot_description
+/rosout
+/scan
+/set_pose
+/slam_toolbox/feedback
+/slam_toolbox/graph_visualization
+/slam_toolbox/scan_visualization
+/slam_toolbox/update
+/tf
+/tf_static
+/wheel/odometry
+```
+
+
+
+
