@@ -10,7 +10,6 @@ https://drive.google.com/drive/folders/1134y69OYI7JzXF9H2B_IV4VztaCAzzPj?usp=sha
 https://drive.google.com/drive/folders/1VrgqtETVSuheNITop0MXDy4BY3U8IphQ?usp=sharing
 
 
-
 ```
 sudo apt-get install ros-humble-rqt-robot-steering
 sudo apt install ros-humble-robot-localization
@@ -46,6 +45,7 @@ gazebo smalltown.world
 
 ## Work
 ![Screenshot 2025-04-18 at 14 46 39](https://github.com/user-attachments/assets/17570915-2f15-40a7-831d-ebc47945e2c7)
+
 _________
 
 ```
@@ -54,7 +54,12 @@ ros2 topic info /wheel/odometry
 ```
 
 ### T0:
+```
 rqt_robot_steering
+```
 
 ### T1:
-
+```
+cd ~/ros2_ws && source install/setup.bash
+ros2 launch basic_mobile_robot basic_mobile_bot_v2.launch.py
+```
