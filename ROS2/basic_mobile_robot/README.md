@@ -48,8 +48,6 @@ gazebo smalltown.world
 ## Work
 ![Screenshot 2025-04-18 at 14 46 39](https://github.com/user-attachments/assets/17570915-2f15-40a7-831d-ebc47945e2c7)
 
-
-<img src="https://github.com/user-attachments/assets/17570915-2f15-40a7-831d-ebc47945e2c7" title="" width="1200">
 _________
 
 ```
@@ -173,8 +171,7 @@ ros2 launch basic_mobile_robot basic_mobile_bot_v4.launch.py
 ```
 ros2 launch slam_toolbox online_async_launch.py
 ```
-
-![Screenshot 2025-04-18 at 16 41 38](https://github.com/user-attachments/assets/f70a2fc1-9576-480a-aded-cb8007017681)
+<img src="https://github.com/user-attachments/assets/f70a2fc1-9576-480a-aded-cb8007017681" title="" width="1200">
 
 ```
 ros2 topic list
