@@ -220,7 +220,7 @@ NAV2
 ```
 ros2 launch nav2_bringup navigation_launch.py map:=~/ros2_ws/my_map.yaml
 ```
-![Screenshot 2025-04-18 at 17 01 55](https://github.com/user-attachments/assets/8afaa159-da52-45e9-9996-8805b9d3ee06)
 
+![Screenshot 2025-04-18 at 17 04 35](https://github.com/user-attachments/assets/be2b632c-7bd3-42f5-b41f-71625f00f46d)
 
 
