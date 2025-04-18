@@ -18,10 +18,14 @@ sudo apt install ros-humble-robot-localization
 source /opt/ros/humble/setup.bash
 cd ~/ros2_ws && source install/setup.bash
 
+cd cd ~/ros2_ws
+colcon build
+```
+Finished <<< two_wheeled_robot [0.80s]
+Finished <<< basic_mobile_robot [1.39s]
 
-
-
-
+```
+cd ~/ros2_ws && source install/setup.bash
 
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/silenzio/ros2_ws/src/two_wheeled_robot/models
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/silenzio/ros2_ws/src/basic_mobile_robot/models
