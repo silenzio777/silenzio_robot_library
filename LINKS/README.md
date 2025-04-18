@@ -12,6 +12,10 @@ not work - galactic
 https://automaticaddison.com/the-ultimate-guide-to-the-ros-2-navigation-stack/
 
 
+### How to Publish Wheel Encoder Tick Data Using ROS 1 and Arduino
+https://automaticaddison.com/how-to-publish-wheel-encoder-tick-data-using-ros-and-arduino/
+
+
 _______________
 
 ###  Self-Driving Cars with ROS and Autoware
