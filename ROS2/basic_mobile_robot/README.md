@@ -63,3 +63,20 @@ rqt_robot_steering
 cd ~/ros2_ws && source install/setup.bash
 ros2 launch basic_mobile_robot basic_mobile_bot_v2.launch.py
 ```
+### Error:
+
+```
+[gzclient-2] gzclient: /usr/include/boost/smart_ptr/shared_ptr.hpp:728: typename boost::detail::sp_member_access<T>::type boost::shared_ptr<T>::operator->() const [with T = gazebo::rendering::Camera; typename boost::detail::sp_member_access<T>::type = gazebo::rendering::Camera*]: Assertion `px != 0' failed.
+[ERROR] [gzclient-2]: process has died [pid 26331, exit code -6, cmd 'gzclient --gui-client-plugin=libgazebo_ros_eol_gui.so'].
+```
+
+### Fix:
+
+I had same problem in ros2 Humble.
+Sourcing . /usr/share/gazebo/setup.sh solved my problem.
+
+```
+source /usr/share/gazebo/setup.sh
+```
+## Work
+
