@@ -1,4 +1,20 @@
 
+
+### how to ROS2
+https://automaticaddison.com/
+
+
+### Sensor Fusion Using the Robot Localization Package – ROS 2
+https://automaticaddison.com/sensor-fusion-using-the-robot-localization-package-ros-2/
+
+
+### The Ultimate Guide to the ROS 2 Navigation Stack – Foxy
+https://automaticaddison.com/the-ultimate-guide-to-the-ros-2-navigation-stack/
+
+
+
+_______________
+
 ###  Self-Driving Cars with ROS and Autoware
 
 https://github.com/t-thanh/autoware2020-course/tree/master
@@ -37,5 +53,15 @@ _______________
 
 ### NDT-based localization
 https://habr.com/ru/articles/901300/
+
+_______________
+
+
+https://github.com/automaticaddison/mycobot_ros2/tree/jazzy
+
+### mycobot_ros2
+OS ROS_2
+
+This repository contains ROS 2 packages for simulating and controlling the myCobot robotic arm using ROS 2 Control and MoveIt 2. It provides support for Gazebo simulation and visualization in RViz. Gazebo simulation also includes simulated 3D point cloud data from the depth camera (RGBD) sensor plugin for vision.
 
 _______________
