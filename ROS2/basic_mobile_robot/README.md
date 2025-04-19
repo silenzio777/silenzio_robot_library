@@ -411,7 +411,7 @@ _______
 
 ## Jetsn Orin NX
 
-### T265 as odom source:
+### T265 as odom source, LDS lidar as scan source:
 
 ```
 ros2 topic echo /t265/pose/sample
