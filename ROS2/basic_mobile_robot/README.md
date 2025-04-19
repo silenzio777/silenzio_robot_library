@@ -49,11 +49,121 @@ gazebo smalltown.world
 ![Screenshot 2025-04-18 at 14 46 39](https://github.com/user-attachments/assets/17570915-2f15-40a7-831d-ebc47945e2c7)
 
 _________
+```
+ros2 topic list
+```
+```
+/basic_mobile_bot_gps/vel
+/clock
+/cmd_vel
+/gps/fix
+/imu/data
+/joint_states
+/parameter_events
+/rosout
+/scan
+/tf
+/tf_static
+/wheel/odometry
+```
 
 ```
-ros2 topic info /imu/data
-ros2 topic info /wheel/odometry
+ros2 topic echo /wheel/odometry
 ```
+```
+---
+header:
+  stamp:
+    sec: 128
+    nanosec: 10000000
+  frame_id: odom <<<<<<<<----------
+child_frame_id: base_footprint
+pose:
+  pose:
+    position:
+      x: 0.02441921691747031
+      y: 0.0018134250499734017
+      z: 0.23998762789650288
+    orientation:
+      x: -7.403960886581067e-07
+      y: 2.820512818694179e-05
+      z: 0.0025158213575046232
+      w: 0.9999968349184009
+  covariance:
+  - 1.0e-05
+```
+
+
+```
+ros2 topic echo /imu/data
+```
+```
+---
+header:
+  stamp:
+    sec: 242
+    nanosec: 880000000
+  frame_id: imu_link <<<<<<<-------
+orientation:
+  x: -8.010266040970521e-07
+  y: 2.818959237384517e-05
+  z: 0.0031263367730648916
+  w: 0.9999951125996001
+orientation_covariance:
+- 0.0
+```
+```
+ros2 topic echo /scan
+```
+```
+---
+header:
+  stamp:
+    sec: 737
+    nanosec: 800000000
+  frame_id: lidar_link <<<<<<<------
+angle_min: -3.141590118408203
+angle_max: 3.141590118408203
+angle_increment: 0.052799832075834274
+time_increment: 0.0
+scan_time: 0.0
+range_min: 0.30000001192092896
+range_max: 15.0
+ranges:
+- .inf
+```
+
+```
+ros2 node list
+```
+```
+/basic_mobile_bot_diff_drive <<<<<<<------
+/basic_mobile_bot_gps
+/basic_mobile_bot_joint_state <<<<<<<------
+/imu/basic_mobile_bot_imu
+/rqt_gui_py_node_5668
+/scan
+```
+
+
+
+### And we have:
+
+TOPICS:
+
+/wheel/odometry <-- frame_id: odom 
+
+/imu/data <-- frame_id: imu_link 
+
+/scan  <--  frame_id: lidar_link
+
+
+NODES:
+
+/basic_mobile_bot_joint_state 
+/basic_mobile_bot_diff_drive
+________
+
 
 ### T0:
 ```
