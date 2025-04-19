@@ -168,7 +168,7 @@ NODES:
 
 <img src="Gazebo_NodeGraph.png" title="" width="800">
 
-<img src="Gazebo_TopicMonitor.png" title="" width="800">
+<img src="Gazebo_TopicMonitor.png" title="" width="1200">
 
 ________
 
