@@ -146,28 +146,28 @@ ros2 node list
 ```
 
 
-
 ### And we have:
 
 TOPICS and FRAMES:
 
+```
 /wheel/odometry <-- frame_id: odom 
 
 /imu/data <-- frame_id: imu_link 
 
 /scan  <--  frame_id: lidar_link
-
+```
 
 NODES:
-
+```
 /basic_mobile_bot_joint_state  <<<----- 'drivewhl_l_joint', 'drivewhl_r_joint'
 
 /basic_mobile_bot_diff_drive
+```
 
 <img src="Gazebo_NodeGraph.png" title="" width="800">
 
 <img src="Gazebo_TopicMonitor.png" title="" width="800">
-
 
 ________
 
