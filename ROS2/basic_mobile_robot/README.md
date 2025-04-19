@@ -466,6 +466,13 @@ ranges:
             child_frame_id: t265_pose_frame
 /scan             frame_id: base_scan
 ```
+### Run:
+```
+01_ROS2_T256_L515.sh
+05_t265_RVIZ_omni.sh
+ros2 launch slam_toolbox online_async_launch.py
+ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
+```
 
 <img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
 
