@@ -462,9 +462,9 @@ ranges:
 ```
 
 ```
- /t265/pose/sample frame_id: odom_frame
-             child_frame_id: t265_pose_frame
-/scan              frame_id:   base_scan
+/t265/pose/sample frame_id: odom_frame
+            child_frame_id: t265_pose_frame
+/scan             frame_id: base_scan
 ```
 
 <img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
