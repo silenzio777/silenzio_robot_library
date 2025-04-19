@@ -508,7 +508,7 @@ pose:
   - 0.0
 ```
 
-frame_id:       stella_map_frame
+frame_id:       stella_map_frame 
 child_frame_id: stella_camera_frame
 
 
