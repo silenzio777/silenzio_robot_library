@@ -253,7 +253,7 @@ os2 launch realsense2_camera rs_launch.py camera_name:=t265  enable_pose:=false
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
-source install/setup.bash
+source install/setup.bash 
 ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
 ```
 
@@ -296,3 +296,8 @@ pose:
 
 /ov_msckf/poseimu frame_id: global
             child_frame_id: imu
+
+
+/t265/pose/sample frame_id: odom_frame
+            child_frame_id: t265_pose_frame
+            
