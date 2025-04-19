@@ -160,8 +160,11 @@ TOPICS and FRAMES:
 
 NODES:
 
-/basic_mobile_bot_joint_state 
+/basic_mobile_bot_joint_state  <<<----- 'drivewhl_l_joint', 'drivewhl_r_joint'
+
 /basic_mobile_bot_diff_drive
+
+
 ________
 
 
