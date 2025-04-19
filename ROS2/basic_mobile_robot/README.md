@@ -439,7 +439,7 @@ pose:
   - 0.1
 ```
 
-### LDS lidar as scan source:
+LDS lidar topic:
 ```
 ros2 topic echo /scan
 ```
