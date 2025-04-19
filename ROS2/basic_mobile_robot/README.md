@@ -146,7 +146,7 @@ ros2 node list
 ```
 
 
-### And we have:
+### UbuntiPC + gazebo sim:
 
 TOPICS and FRAMES:
 
@@ -154,9 +154,9 @@ TOPICS and FRAMES:
 /wheel/odometry <-- frame_id: odom
                     child_frame_id: base_footprint
 
-/imu/data <-- frame_id: imu_link 
-
 /scan  <--  frame_id: lidar_link
+
+/imu/data <-- frame_id: imu_link 
 ```
 
 NODES:
@@ -208,25 +208,9 @@ ros2 launch basic_mobile_robot basic_mobile_bot_v2.launch.py
 [INFO] [gzclient-2]: process started with pid [26566]
 [INFO] [robot_state_publisher-3]: process started with pid [26568]
 [INFO] [rviz2-4]: process started with pid [26570]
-[robot_state_publisher-3] [INFO] [1744979382.951591034] [robot_state_publisher]: got segment base_footprint
-[robot_state_publisher-3] [INFO] [1744979382.951703492] [robot_state_publisher]: got segment base_link
-[robot_state_publisher-3] [INFO] [1744979382.951730271] [robot_state_publisher]: got segment drivewhl_l_link
-[robot_state_publisher-3] [INFO] [1744979382.951739750] [robot_state_publisher]: got segment drivewhl_r_link
-[robot_state_publisher-3] [INFO] [1744979382.951748669] [robot_state_publisher]: got segment front_caster
-[robot_state_publisher-3] [INFO] [1744979382.951757113] [robot_state_publisher]: got segment gps_link
-[robot_state_publisher-3] [INFO] [1744979382.951765661] [robot_state_publisher]: got segment imu_link
-[rviz2-4] [INFO] [1744979383.479351603] [rviz2]: Stereo is NOT SUPPORTED
-[rviz2-4] [INFO] [1744979383.479463954] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
-[rviz2-4] [INFO] [1744979383.576192334] [rviz2]: Stereo is NOT SUPPORTED
-[gzserver-1] [INFO] [1744979384.922026056] [basic_mobile_bot_diff_drive]: Wheel pair 1 separation set to [0.520000m]
-[gzserver-1] [INFO] [1744979384.922291892] [basic_mobile_bot_diff_drive]: Wheel pair 1 diameter set to [0.280000m]
-[gzserver-1] [INFO] [1744979384.922741144] [basic_mobile_bot_diff_drive]: Subscribed to [/cmd_vel]
-[gzserver-1] [INFO] [1744979384.923923677] [basic_mobile_bot_diff_drive]: Advertise odometry on [/wheel/odometry]
-[gzserver-1] [INFO] [1744979384.931956198] [basic_mobile_bot_joint_state]: Going to publish joint [drivewhl_l_joint]
-[gzserver-1] [INFO] [1744979384.931990944] [basic_mobile_bot_joint_state]: Going to publish joint [drivewhl_r_joint]
+...
 
 ```
-
 
 ```
 ros2 topic echo /wheel/odometry  --no-arr
@@ -265,7 +249,6 @@ twist:
 ```
 
 ## Run:
-
 
 ### T0:
 ```
@@ -416,3 +399,74 @@ ros2 topic list
 /wheel/odometry
 ```
 
+_______
+
+
+## Jetsn Orin NX
+
+### T265 as odom source:
+
+```
+ros2 topic echo /t265/pose/sample
+```
+```
+---
+header:
+  stamp:
+    sec: 1745075839
+    nanosec: 817063936
+  frame_id: odom_frame
+child_frame_id: t265_pose_frame
+pose:
+  pose:
+    position:
+      x: -0.0045028007589280605
+      y: 0.048994045704603195
+      z: -0.0012390041956678033
+    orientation:
+      x: 0.021951068192720413
+      y: -0.034401506185531616
+      z: 0.11598795652389526
+      w: 0.9924119710922241
+  covariance:
+  - 0.1
+```
+
+### LDS lidar as scan source:
+```
+ros2 topic echo /scan
+```
+```
+---
+header:
+  stamp:
+    sec: 1745076095
+    nanosec: 599573599
+  frame_id: base_scan
+angle_min: 0.0
+angle_max: 6.2657318115234375
+angle_increment: 0.01745329238474369
+time_increment: 0.0005592841189354658
+scan_time: 0.20134228467941284
+range_min: 0.11999999731779099
+range_max: 3.5
+ranges:
+- 2.9860000610351562
+```
+
+ /t265/pose/sample frame_id: odom_frame
+
+/scan              frame_id:   base_scan
+
+### UbuntiPC + gazebo sim:
+
+TOPICS and FRAMES:
+
+```
+/wheel/odometry <-- frame_id: odom
+                    child_frame_id: base_footprint
+
+/scan  <--  frame_id: lidar_link
+
+/imu/data <-- frame_id: imu_link 
+```
