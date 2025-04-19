@@ -264,3 +264,35 @@ rviz2
 
 ### Work on Jetson Orin NX
 
+_________
+## open_vins
+
+### open_vins topics:
+
+```
+ros2 topic echo /ov_msckf/poseimu
+```
+```
+---
+header:
+  stamp:
+    sec: 1745090475
+    nanosec: 571621180
+  frame_id: global
+pose:
+  pose:
+    position:
+      x: 0.016779041972254168
+      y: 0.04588799576898281
+      z: 0.0044552041103211445
+    orientation:
+      x: 0.3915636577023765
+      y: -0.5394562164027045
+      z: -0.5922423486211437
+      w: 0.452674157701681
+  covariance:
+  - 0.002532857846588113
+```
+
+/ov_msckf/poseimu frame_id: global
+            child_frame_id: imu
