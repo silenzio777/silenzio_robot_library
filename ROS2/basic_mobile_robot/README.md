@@ -164,6 +164,10 @@ NODES:
 
 /basic_mobile_bot_diff_drive
 
+<img src="Gazebo_NodeGraph.png" title="" width="800">
+
+<img src="Gazebo_TopicMonitor.png" title="" width="800">
+
 
 ________
 
