@@ -151,7 +151,8 @@ ros2 node list
 TOPICS and FRAMES:
 
 ```
-/wheel/odometry <-- frame_id: odom 
+/wheel/odometry <-- frame_id: odom
+                    child_frame_id: base_footprint
 
 /imu/data <-- frame_id: imu_link 
 
