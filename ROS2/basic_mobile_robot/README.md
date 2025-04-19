@@ -477,3 +477,38 @@ ros2 launch slam_toolbox online_async_launch.py
 <img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
 
 
+
+_______
+## stella_vslam
+
+### stella_vslam topic:
+```
+ros2 topic echo /camera_pose
+```
+```
+---
+header:
+  stamp:
+    sec: 1745088589
+    nanosec: 887057152
+  frame_id: stella_map_frame
+child_frame_id: stella_camera_frame
+pose:
+  pose:
+    position:
+      x: -0.00011862979223376254
+      y: -0.013625124665398239
+      z: 0.00042249777017410275
+    orientation:
+      x: -0.007770759725628478
+      y: -0.0017324991882209902
+      z: -0.06525467075630256
+      w: 0.997836881300915
+  covariance:
+  - 0.0
+```
+
+frame_id:       stella_map_frame
+child_frame_id: stella_camera_frame
+
+
