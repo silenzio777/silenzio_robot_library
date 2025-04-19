@@ -36,10 +36,17 @@ Finished <<< basic_mobile_robot [1.39s]
 
 
 ## Setup gazebo sim worlds:
+Add this to ~/.bashrc: 
+```
+nano ~/.bashrc
+```
 ```
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/silenzio/ros2_ws/src/two_wheeled_robot/models
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/silenzio/ros2_ws/src/basic_mobile_robot/models
+source /usr/share/gazebo/setup.sh
+```
 
+```
 cd ~/ros2_ws/src/basic_mobile_robot/worlds/basic_mobile_bot_world
 
 gazebo smalltown.world
