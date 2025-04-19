@@ -27,7 +27,7 @@ cd ~/ros2_ws/two_wheeled_robot/two_wheeled_robot
 touch __init__.py
 
 cd cd ~/ros2_ws
-colcon build
+colcon build --packages-select basic_mobile_robot
 
 ...
 Finished <<< two_wheeled_robot [0.80s]
