@@ -461,19 +461,12 @@ ranges:
 - 2.9860000610351562
 ```
 
+```
  /t265/pose/sample frame_id: odom_frame
-
+             child_frame_id: t265_pose_frame
 /scan              frame_id:   base_scan
-
-### UbuntiPC + gazebo sim:
-
-TOPICS and FRAMES:
-
 ```
-/wheel/odometry <-- frame_id: odom
-                    child_frame_id: base_footprint
 
-/scan  <--  frame_id: lidar_link
+<img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
 
-/imu/data <-- frame_id: imu_link 
-```
+
