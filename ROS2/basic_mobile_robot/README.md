@@ -466,6 +466,7 @@ ranges:
             child_frame_id: t265_pose_frame
 /scan             frame_id: base_scan
 ```
+
 ### Run:
 ```
 01_ROS2_T256_L515.sh
@@ -508,7 +509,13 @@ pose:
   - 0.0
 ```
 
-frame_id:       stella_map_frame 
-child_frame_id: stella_camera_frame
+
+/camera_pose      frame_id: stella_map_frame 
+            child_frame_id: stella_camera_frame
+
+
+/t265/pose/sample frame_id: odom_frame
+            child_frame_id: t265_pose_frame
+
 
 
