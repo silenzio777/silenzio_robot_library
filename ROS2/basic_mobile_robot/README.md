@@ -149,7 +149,7 @@ ros2 node list
 
 ### And we have:
 
-TOPICS:
+TOPICS and FRAMES:
 
 /wheel/odometry <-- frame_id: odom 
 
