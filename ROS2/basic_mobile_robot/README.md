@@ -474,7 +474,7 @@ ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 05_t265_RVIZ_omni.sh
 ros2 launch slam_toolbox online_async_launch.py
 ```
-
+### Work:
 <img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
 
  
@@ -509,13 +509,22 @@ pose:
   - 0.0
 ```
 
-
+```
 /camera_pose      frame_id: stella_map_frame 
             child_frame_id: stella_camera_frame
+```
+### Run:
+```
+01_ROS2_T256_L515.sh
+   cd /foxy/t265_l515_v4_0_4_ws
+   . install/local_setup.bash
+   export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
+   ros2 launch realsense2_camera rs_launch.py camera_name:=T265 enable_pose:=false
 
-
-/t265/pose/sample frame_id: odom_frame
-            child_frame_id: t265_pose_frame
-
-
-
+ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
+03_stella_RVIZ_omni.sh
+04_stella_SLAM.sh
+ros2 launch slam_toolbox online_async_launch_param.py
+```
+### Work:
+<img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
