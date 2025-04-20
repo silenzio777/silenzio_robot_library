@@ -52,7 +52,7 @@ cd ~/ros2_ws/src/basic_mobile_robot/worlds/basic_mobile_bot_world
 gazebo smalltown.world
 ```
 
-## Work
+## Works
 ![Screenshot 2025-04-18 at 14 46 39](https://github.com/user-attachments/assets/17570915-2f15-40a7-831d-ebc47945e2c7)
 
 _________
@@ -205,7 +205,7 @@ Sourcing . /usr/share/gazebo/setup.sh solved my problem.
 ```
 source /usr/share/gazebo/setup.sh
 ```
-## Work
+## Works
 
 ```
 ros2 launch basic_mobile_robot basic_mobile_bot_v2.launch.py
@@ -474,7 +474,7 @@ ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 05_t265_RVIZ_omni.sh
 ros2 launch slam_toolbox online_async_launch.py
 ```
-### Work:
+### Works:
 <img src="T265_SLAM_toolbox_TF_Tree.png" title="" width="1200">
 
  
@@ -569,5 +569,5 @@ ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 04_stella_SLAM.sh
 ros2 launch slam_toolbox online_async_launch_param.py
 ```
-### Work:
+### Works:
 <img src="Stella_vslam_toolbox_TF_Tree.png" title="" width="1200">
