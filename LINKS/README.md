@@ -89,3 +89,10 @@ There are a number of plugin interfaces for users to create their own custom app
 
 This file can be found and edited under sphinx_docs/plugins/index.rst. For tutorials on creating your own plugins, please see Writing a New Costmap2D Plugin, Writing a New Behavior Tree Plugin, Writing a New Controller Plugin, Writing a New Planner Plugin, Writing a New Behavior Plugin, or Writing a New Navigator Plugin.
 
+_______________
+
+### Spatio-Temporal Voxel Layer
+
+https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/humble
+
+This is a drop in replacement for the voxel_grid voxel representation of the environment. This package does a number of things to improve on the voxel grid package and extend the capabilities offered to the users, under a LGPL v2.1 license. Developed and maintained by Steven Macenski at Simbe Robotics.
