@@ -78,7 +78,7 @@ ros2 launch ov_msckf subscribe.launch.py config:=euroc_mav
 ov_docker ov_ros2_22_04 bash
 ros2 bag play /datasets/V1_01_easy/V1_01_easy.db3
 ```
-### Work:
+### Works:
 
 <img src="OpenVINS _01.png" title="OpenVINS _01" width="1000">
 
@@ -262,7 +262,7 @@ ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
 rviz2
 ```
 
-### Work on Jetson Orin NX
+### Works on Jetson Orin NX
 
 _________
 ## open_vins
