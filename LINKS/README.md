@@ -77,3 +77,15 @@ OS ROS_2
 This repository contains ROS 2 packages for simulating and controlling the myCobot robotic arm using ROS 2 Control and MoveIt 2. It provides support for Gazebo simulation and visualization in RViz. Gazebo simulation also includes simulated 3D point cloud data from the depth camera (RGBD) sensor plugin for vision.
 
 _______________
+
+
+
+### Navigation Plugins
+
+https://docs.nav2.org/plugins/index.html
+
+
+There are a number of plugin interfaces for users to create their own custom applications or algorithms with. Namely, the costmap layer, planner, controller, behavior tree, and behavior plugins. A list of all known plugins are listed here below for ROS 2 Navigation. If you know of a plugin, or you have created a new plugin, please consider submitting a pull request with that information.
+
+This file can be found and edited under sphinx_docs/plugins/index.rst. For tutorials on creating your own plugins, please see Writing a New Costmap2D Plugin, Writing a New Behavior Tree Plugin, Writing a New Controller Plugin, Writing a New Planner Plugin, Writing a New Behavior Plugin, or Writing a New Navigator Plugin.
+
