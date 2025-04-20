@@ -513,6 +513,53 @@ pose:
 /camera_pose      frame_id: stella_map_frame 
             child_frame_id: stella_camera_frame
 ```
+### Setup:
+
+file slam.launch:
+```
+<?xml version="1.0"?>
+<!-- https://github.com/stella-cv/stella_vslam_ros/discussions/49 -->
+<launch>
+
+    <node name="stella_vslam_ros" pkg="stella_vslam_ros" exec="run_slam" 
+        args="--viewer none -v /home/silenzio/lib/stella_vslam/vocab/orb_vocab.fbow \
+        -c /home/silenzio/lib/stella_vslam/example/tum_vi/T265_mono.yaml \
+        -map-db /home/silenzio/ros2_ws/src/omni/map/stella_vslam/map.msg \
+        --ros-args -p use_sim_time:=false \
+        --ros-args -p publish_tf:=true \
+        --ros-args -p odom_frame:=odom \
+        --ros-args -p camera_frame:=stella_camera_frame \
+        --ros-args -p map_frame:=map
+
+        " output="screen">
+     <remap from="/camera/image_raw" to="/T265/fisheye1/image_raw"/>
+     <remap from="/stella_vslam_ros/camera_pose" to="/camera_pose"/>
+
+    </node>
+
+</launch>
+```
+
+file mapper_params_online_async.yaml:
+```
+slam_toolbox:
+  ros__parameters:
+    # Plugin params
+    solver_plugin: solver_plugins::CeresSolver
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    ceres_loss_function: None
+    # ROS Parameters
+    odom_frame: map # odom
+    map_frame: stb_map # map
+    base_frame: base_footprint
+    scan_topic: /scan
+    use_map_saver: true
+    mode: mapping #localization mapping
+```
+
 ### Run:
 ```
 01_ROS2_T256_L515.sh
