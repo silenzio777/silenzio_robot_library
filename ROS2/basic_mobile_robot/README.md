@@ -559,6 +559,7 @@ slam_toolbox:
 ### Run:
 ```
 01_ROS2_T256_L515.sh
+   #
    cd /foxy/t265_l515_v4_0_4_ws
    . install/local_setup.bash
    export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
