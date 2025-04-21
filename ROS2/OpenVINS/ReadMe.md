@@ -263,7 +263,7 @@ rviz2
 ```
 
 ### Works on Jetson Orin NX
-
+ 
 _________
 ## open_vins
 
@@ -294,10 +294,37 @@ pose:
   - 0.002532857846588113
 ```
 
+```
 /ov_msckf/poseimu frame_id: global
             child_frame_id: imu
-
+```
 
 /t265/pose/sample frame_id: odom_frame
             child_frame_id: t265_pose_frame
             
+### Setup:
+
+### Run:
+
+### T0:
+```
+01_ROS2_T256_L515.sh
+#
+    cd /foxy/t265_l515_v4_0_4_ws
+    . install/local_setup.bash
+    export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
+    ros2 launch realsense2_camera rs_launch.py camera_name:=t265  enable_pose:=false
+```
+
+### T1:
+```
+ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
+```
+
+### T2:
+```
+rviz2
+```
+
+
+### Works:
