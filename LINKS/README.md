@@ -96,3 +96,52 @@ _______________
 https://github.com/SteveMacenski/spatio_temporal_voxel_layer/tree/humble
 
 This is a drop in replacement for the voxel_grid voxel representation of the environment. This package does a number of things to improve on the voxel grid package and extend the capabilities offered to the users, under a LGPL v2.1 license. Developed and maintained by Steven Macenski at Simbe Robotics.
+
+
+_________
+
+
+### ROS2 CAN Package
+
+https://docs.odriverobotics.com/v/latest/guides/ros-package.html
+_________
+
+
+### mecanum_drive — Mecanum-Drive Controller
+
+This package implements ROS nodes to control and monitor a mecanum-drive robot.
+
+
+https://gitlab.control.lth.se/robotlab/mecanum_drive
+
+______________
+
+### mecanum_drive — Mecanum-Drive Controller
+
+This package implements ROS nodes to control and monitor a mecanum-drive robot.
+
+https://github.com/dudasdavid/mecanum_drive
+________
+
+
+### ros2_control_demo_example_17
+
+https://github.com/Juliaj/ros2_control_demos/tree/async_controller/example_17
+
+
+MecanumWheelBot uses
+
+In this example, we illustrate key concepts of the ros2_control framework, particularly the controller manager, asynchronous controllers, and asynchronous hardware interfaces. MecanumWheelBot is a simple mobile base using 4 mecanum wheels.
+
+Find the documentation in doc/userdoc.rst or on control.ros.org.
+
+________
+
+### yahboom_rosmaster
+ROS_2 
+
+Automatic Addison support for the ROSMASTER X3 mecanum wheel robot robot by Yahboom - ROS 2
+
+https://github.com/automaticaddison/yahboom_rosmaster
+
+
