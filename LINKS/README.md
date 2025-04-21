@@ -192,6 +192,13 @@ STT
 
 ______
 
+
+### mgonzs13 Miguel Ángel González Santamarta
+https://github.com/mgonzs13
+
+Ph.D. at Universidad de León. Research in Robotics and Artificial Intelligence.
+______
+
 ### YASMIN (Yet Another State MachINe)
 
 YASMIN is a project focused on implementing robot behaviors using Finite State Machines (FSM). It is available for ROS 2, Python and C++.
@@ -200,5 +207,57 @@ YASMIN is a project focused on implementing robot behaviors using Finite State M
 https://github.com/uleroboticsgroup/yasmin
 
 
+______
 
 
+### yolo_ros
+
+https://github.com/mgonzs13/yolo_ros?tab=readme-ov-file
+
+ROS 2 wrap for YOLO models from Ultralytics to perform object detection and tracking, instance segmentation, human pose estimation and Oriented Bounding Box (OBB). There are also 3D versions of object detection, including instance segmentation, and human pose estimation based on depth images.
+
+
+______
+
+
+### DetectorNode
+ROS 2 interface to darknet, an open source neural network library.
+
+This node can run object detectors like YOLO v3 or YOLO v7 on images and video streams.
+
+https://github.com/ros2/openrobotics_darknet_ros
+
+
+______
+
+
+### n8n - Secure Workflow Automation for Technical Teams
+
+Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
+
+https://github.com/n8n-io/n8n
+
+
+______
+
+### Autoware - the world's leading open-source software project for autonomous driving
+
+https://github.com/autowarefoundation/autoware
+
+
+______
+
+### Jetson Zoo
+
+https://elinux.org/Jetson_Zoo
+
+This page contains instructions for installing various open source add-on packages and frameworks on NVIDIA Jetson, in addition to a collection of DNN models for inferencing.
+
+______
+
+
+https://silenceoverflow.github.io/Awesome-SLAM/
+
+A curated list of SLAM resources
+
+______
