@@ -188,3 +188,17 @@ The creation of a new action is presented in this section. This way, navigation 
 NAVIGATION
 TTS
 STT
+
+
+______
+
+### YASMIN (Yet Another State MachINe)
+
+YASMIN is a project focused on implementing robot behaviors using Finite State Machines (FSM). It is available for ROS 2, Python and C++.
+
+
+https://github.com/uleroboticsgroup/yasmin
+
+
+
+
