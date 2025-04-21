@@ -126,7 +126,10 @@ ________
 
 ### ros2_control_demo_example_17
 
+https://control.ros.org/humble/doc/ros2_controllers/mecanum_drive_controller/doc/userdoc.html
+
 https://github.com/Juliaj/ros2_control_demos/tree/async_controller/example_17
+
 
 
 MecanumWheelBot uses
@@ -145,3 +148,43 @@ Automatic Addison support for the ROSMASTER X3 mecanum wheel robot robot by Yahb
 https://github.com/automaticaddison/yahboom_rosmaster
 
 
+
+______
+
+### ROS2 Package for ODrive
+
+https://github.com/nguyen-v/ros_odrive_gim6010-8
+
+This repository contains ROS2 packages for the ODrive motor controller:
+
+
+______
+
+### whisper_ros
+
+https://github.com/mgonzs13/whisper_ros?tab=readme-ov-file#usage
+
+This repository provides a set of ROS 2 packages to integrate whisper.cpp into ROS 2 using audio_common 4.0.5. Besides, silero-vad is used to perform VAD (Voice Activity Detection).
+
+______
+
+### llama_ros
+
+https://github.com/mgonzs13/llama_ros?tab=readme-ov-file#llava_ros
+
+
+This repository provides a set of ROS 2 packages to integrate llama.cpp into ROS 2. Using the llama_ros packages, you can easily incorporate the powerful optimization capabilities of llama.cpp into your ROS 2 projects by running GGUF-based LLMs and VLMs. You can also use features from llama.cpp such as GBNF grammars and modify LoRAs in real-time.
+
+______
+
+### MERLIN 2 (MachinEd Ros 2 pLanINg) for ROS 2
+
+MERLIN 2 (MachinEd Ros pLanINg)
+
+https://github.com/MERLIN2-ARCH/merlin2
+
+The creation of a new action is presented in this section. This way, navigation action is presented in PDDL, MERLIN2 and MERLIN2 state machine.
+
+NAVIGATION
+TTS
+STT
