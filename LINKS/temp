@@ -1,0 +1,62 @@
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+from trajectory_msgs.msg import JointTrajectory
+import serial
+
+class DriveControllerTimer(Node):
+    def __init__(self):
+        super().__init__('drive_controller_timer')
+
+        # Подписка на траектории
+        self.subscription = self.create_subscription(
+            JointTrajectory,
+            '/drives/joint_trajectory',
+            self.joint_trajectory_callback,
+            10)
+
+        # Публикация состояний
+        self.joint_state_pub = self.create_publisher(JointState, '/joint_states', 10)
+
+        # Serial порт
+        self.serial_port = serial.Serial('/dev/ttyUSB0', baudrate=115200, timeout=0.1)
+
+        # Последние состояния
+        self.latest_joint_states = JointState()
+
+        # Таймер для регулярной публикации JointStates
+        self.create_timer(0.02, self.publish_joint_states)  # 50Hz = 0.02с
+
+    def joint_trajectory_callback(self, msg):
+        for point in msg.points:
+            velocities = point.velocities
+            processed_velocities = self.process_velocities(velocities)
+            self.send_to_robot(processed_velocities)
+
+            # Обновляем последнее состояние для публикации
+            self.latest_joint_states.velocity = processed_velocities
+            self.latest_joint_states.header.stamp = self.get_clock().now().to_msg()
+            self.latest_joint_states.name = msg.joint_names
+
+    def process_velocities(self, velocities):
+        # Здесь можешь вставить свою обработку
+        return velocities
+
+    def send_to_robot(self, velocities):
+        data_str = ','.join([str(v) for v in velocities]) + '\n'
+        self.serial_port.write(data_str.encode())
+
+    def publish_joint_states(self):
+        # Просто публикуем последнее известное состояние
+        self.joint_state_pub.publish(self.latest_joint_states)
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = DriveControllerTimer()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+  
