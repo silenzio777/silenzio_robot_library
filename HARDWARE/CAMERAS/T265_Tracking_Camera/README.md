@@ -2,6 +2,23 @@
 # T265 Tracking Camera
 
 
+Нашел в интертете решение проблемы:
+
+Disable/enable USB ports on ORIN NX programmatically
+SOLVED
+Is there a way to cut off power to Orin NX USB port then reenable it with some command like below:
+
+sudo sh -c "echo 141a0000.pcie > /sys/bus/platform/drivers/tegra194-pcie/unbind"
+sudo sh -c "echo 141a0000.pcie > /sys/bus/platform/drivers/tegra194-pcie/bind"
+
+Find the PCIe card to which the USB is connected. In my case `141a0000.pcie`. The above command will turn the power supply to the PCIe card off and then on thereby making my T265 tracker camera detectable.
+
+
+Как найти "PCIe card to which the USB is connected"?
+141a0000.pcie - к которому подключена камера?
+
+
+
 
 ### First start problem:
 
@@ -165,6 +182,16 @@ echo '1-2.2' | sudo tee /sys/bus/usb/drivers/usb/bind
 tee: /sys/bus/usb/drivers/usb/bind: No such device
 
 
+
+
+lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 10000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 10000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 480M
+    |__ Port 2: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 4: Dev 5, If 0, Class=Vendor Specific Class, Driver=usb_ch341, 12M
+    |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
 
 
 
