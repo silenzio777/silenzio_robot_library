@@ -32,31 +32,6 @@ sleep 1
 echo 1 | sudo tee /sys/bus/usb/devices/2-3/authorized
 ```
 
-Немного не понял... 
-У меня Т265 через lsusb отобразилась как :
-Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265
-
-Это значит мне нужно найти путь как:
-readlink -f /sys/bus/usb/devices/2-3
-Верно?
-Но эта команда выдает мне тоже самое:
-/sys/bus/usb/devices/2-3
-
-
-echo 0 | sudo tee /sys/bus/usb/devices/2-3/authorized
-выдает:
-tee: /sys/bus/usb/devices/2-3/authorized: No such file or directory
-0
-
-
-
-echo 1 | sudo tee /sys/bus/usb/devices/2-3/remove
-выдает:
-tee: /sys/bus/usb/devices/2-3/remove: No such file or directory
-1
-
-
-
 /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 10000M
     |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 10000M
         |__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 5000M
@@ -131,6 +106,16 @@ echo '2-1.2' | sudo tee /sys/bus/usb/drivers/usb/bind
 
 Если всё отработает без ошибок — ты восстановишь T265, и она будет работать без перетыкания!
 
+sudo apt install tree
+
+tree -d -L 2 /sys/bus/usb/devices/ | grep 2-1.2
+выдала:
+2-1:1.0 -> ../../../devices/platform/bus@0/3610000.usb/usb2/2-1/2-1:1.0
+
+
+echo 1 | sudo tee /sys/bus/usb/devices/2-1.2/remove
+sleep 1
+echo '2-1.2' | sudo tee /sys/bus/usb/drivers/usb/bind
 
 
 
