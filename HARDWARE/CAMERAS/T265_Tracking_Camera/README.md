@@ -21,6 +21,57 @@ Find the PCIe card to which the USB is connected. In my case `141a0000.pcie`. Th
 
 ### First start problem:
 
+
+### First run, clean system:
+
+lsusb
+...
+Bus 001 Device 004: ID 03e7:2150 Intel Myriad VPU [Movidius Neural Compute Stick]
+...
+
+lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 10000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 10000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 480M
+    |__ Port 2: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 2: Dev 4, If 0, Class=Vendor Specific Class, Driver=, 480M
+    |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
+
+### After detach / attach:
+
+lsusb 
+Bus 002 Device 002: ID 2109:0822 VIA Labs, Inc. USB3.1 Hub             
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:c822 Realtek Semiconductor Corp. Bluetooth Radio 
+Bus 001 Device 008: ID 03e7:2150 Intel Myriad VPU [Movidius Neural Compute Stick] <<<<<--------
+Bus 001 Device 002: ID 2109:2822 VIA Labs, Inc. USB2.0 Hub             
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+rs-fw-update -l
+
+Connected devices:
+1) Name: Intel RealSense T265, serial number: 905312111138, update serial number: unknown, firmware version: 0.2.0.951, USB type: 3.1
+
+lsusb 
+Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265 <<<<<--------
+Bus 002 Device 002: ID 2109:0822 VIA Labs, Inc. USB3.1 Hub             
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:c822 Realtek Semiconductor Corp. Bluetooth Radio 
+Bus 001 Device 002: ID 2109:2822 VIA Labs, Inc. USB2.0 Hub             
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+silenzio@jetsonnx:~/ros2_ws$ lsusb -t
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 10000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 10000M
+        |__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 480M
+    |__ Port 2: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+    |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
+
+
+
 Find USB-device:
 Put in T265 and run:
 ```
@@ -149,6 +200,10 @@ echo 1 | sudo tee /sys/bus/usb/devices/1-2.2/remove
 sleep 1
 echo '1-2.2' | sudo tee /sys/bus/usb/drivers/usb/bind
 ```
+_________
+
+
+
 
 
 
@@ -370,10 +425,57 @@ echo 141a0000.pcie | sudo tee /sys/bus/platform/drivers/tegra194-pcie/bind
 
 
 
+sudo dmesg
+
+536.314350] usb 1-2.2: new high-speed USB device number 4 using tegra-xusb
+[  543.087144] usb 1-2.2: USB disconnect, device number 4
 
 
+========================
+
+## after this:
+
+echo 1 | sudo tee /sys/bus/usb/devices/1-2.2/remove
 
 
+sudo ls /sys/bus/usb/drivers/usb* -ll
+/sys/bus/usb/drivers/usb:
+total 0
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 1-2 -> ../../../../devices/platform/bus@0/3610000.usb/usb1/1-2
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 1-3 -> ../../../../devices/platform/bus@0/3610000.usb/usb1/1-3
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 2-1 -> ../../../../devices/platform/bus@0/3610000.usb/usb2/2-1
+--w------- 1 root root 4096 Apr 23 23:56 bind
+--w------- 1 root root 4096 Feb 20 16:24 uevent
+--w------- 1 root root 4096 Apr 23 23:56 unbind
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 usb1 -> ../../../../devices/platform/bus@0/3610000.usb/usb1
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 usb2 -> ../../../../devices/platform/bus@0/3610000.usb/usb2
+
+/sys/bus/usb/drivers/usbfs:
+total 0
+--w------- 1 root root 4096 Apr 23 23:56 bind
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 module -> ../../../../module/usbcore
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 new_id
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 remove_id
+--w------- 1 root root 4096 Feb 20 16:24 uevent
+--w------- 1 root root 4096 Apr 23 23:56 unbind
+
+/sys/bus/usb/drivers/usbhid:
+total 0
+--w------- 1 root root 4096 Apr 23 23:56 bind
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 module -> ../../../../module/usbhid
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 new_id
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 remove_id
+--w------- 1 root root 4096 Feb 20 16:24 uevent
+--w------- 1 root root 4096 Apr 23 23:56 unbind
+
+/sys/bus/usb/drivers/usb-storage:
+total 0
+--w------- 1 root root 4096 Apr 23 23:56 bind
+lrwxrwxrwx 1 root root    0 Apr 23 23:56 module -> ../../../../module/usb_storage
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 new_id
+-rw-r--r-- 1 root root 4096 Apr 23 23:56 remove_id
+--w------- 1 root root 4096 Feb 20 16:24 uevent
+--w------- 1 root root 4096 Apr 23 23:56 unbind
 
 
 ____________
