@@ -21,22 +21,120 @@ Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Cam
 ```
 readlink -f /sys/bus/usb/devices/2-3
 ```
+
 ```
 /sys/bus/usb/devices/2-3
 ```
 
+```
 echo 0 | sudo tee /sys/bus/usb/devices/2-3/authorized
 sleep 1
 echo 1 | sudo tee /sys/bus/usb/devices/2-3/authorized
+```
+
+Немного не понял... 
+У меня Т265 через lsusb отобразилась как :
+Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265
+
+Это значит мне нужно найти путь как:
+readlink -f /sys/bus/usb/devices/2-3
+Верно?
+Но эта команда выдает мне тоже самое:
+/sys/bus/usb/devices/2-3
+
+
+echo 0 | sudo tee /sys/bus/usb/devices/2-3/authorized
+выдает:
+tee: /sys/bus/usb/devices/2-3/authorized: No such file or directory
+0
+
+
+
+echo 1 | sudo tee /sys/bus/usb/devices/2-3/remove
+выдает:
+tee: /sys/bus/usb/devices/2-3/remove: No such file or directory
+1
+
+
+
+/:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 10000M
+    |__ Port 1: Dev 2, If 0, Class=Hub, Driver=hub/4p, 10000M
+        |__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 5000M
+/:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=tegra-xusb/4p, 480M
+    |__ Port 2: Dev 2, If 0, Class=Hub, Driver=hub/4p, 480M
+        |__ Port 4: Dev 4, If 0, Class=Vendor Specific Class, Driver=usb_ch341, 12M
+        |__ Port 3: Dev 5, If 0, Class=Vendor Specific Class, Driver=ftdi_sio, 12M
+    |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
+    |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
+
+
+|__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 5000M
+
+
+— это, почти наверняка, и есть твоя Realsense T265, потому что:
+
+Driver пустой (подтверждает, что устройство не до конца загрузилось),
+
+Class=Vendor Specific Class (T265 — нестандартное устройство),
+
+5000M — это USB 3.0 (T265 поддерживает USB 3.0),
+
+висит на Bus 02, Port 1.2.
+
+🔍 Что делать дальше?
+Ты ищешь путь в /sys/bus/usb/devices/, соответствующий вот этой схеме:
+
+2-1.2
+
+Где:
+
+2 — номер USB-шины (Bus 02),
+
+1.2 — порт 1 хаба + порт 2 внутри него.
+
+✅ Проверь существование узла:
+
+```
+ls /sys/bus/usb/devices/2-1.2
+```
+```
+2-1.2:1.0            bDeviceClass     bMaxPower           descriptors  driver       manufacturer  quirks     speed      version
+authorized           bDeviceProtocol  bNumConfigurations  dev          ep_00        maxchild      removable  subsystem
+avoid_reset_quirk    bDeviceSubClass  bNumInterfaces      devnum       idProduct    port          remove     tx_lanes
+bcdDevice            bmAttributes     busnum              devpath      idVendor     power         rx_lanes   uevent
+bConfigurationValue  bMaxPacketSize0  configuration       devspec      ltm_capable  product       serial     urbnum
+```
+```
+cat /sys/bus/usb/devices/2-1.2/idVendor
+```
+```
+8087
+```
+```
+silenzio@jetsonnx:~/ros2_ws$ cat /sys/bus/usb/devices/2-1.2/idProduct
+```
+```
+0b37
+```
+
+Должно быть:
+
+idVendor = 8087
+idProduct = 0b37
+
+Теперь сброс устройства:
+```
+echo 1 | sudo tee /sys/bus/usb/devices/2-1.2/remove
+sleep 1
+echo '2-1.2' | sudo tee /sys/bus/usb/drivers/usb/bind
+```
+
+Если всё отработает без ошибок — ты восстановишь T265, и она будет работать без перетыкания!
 
 
 
 
-
-
-
-
-
+____________
 
 The **Intel® RealSense™ Tracking Camera T265** includes two greyscale cameras with fisheye lens, an IMU, and an Intel® Movidius™ Myriad™ 2 VPU. All of the V‑SLAM algorithms run directly on the VPU, allowing for very low latency and extremely efficient power consumption (1.5W).
 
