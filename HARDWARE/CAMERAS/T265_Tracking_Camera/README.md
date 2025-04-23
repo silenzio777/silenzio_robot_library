@@ -5,10 +5,8 @@
 
 ### First start problem:
 
-
-
-. Найди USB-устройство
-Вставь T265 и выполни в терминале:
+Find USB-device:
+Put in T265 and run:
 ```
 lsusb
 ```
@@ -16,7 +14,6 @@ lsusb
 ```
 Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265
 ```
-Обрати внимание на Bus и Device. Допустим, это Bus 001 и Device 004.
 
 ```
 readlink -f /sys/bus/usb/devices/2-3
@@ -42,8 +39,9 @@ echo 1 | sudo tee /sys/bus/usb/devices/2-3/authorized
     |__ Port 3: Dev 3, If 0, Class=Wireless, Driver=btusb, 12M
     |__ Port 3: Dev 3, If 1, Class=Wireless, Driver=btusb, 12M
 
-
+```
 |__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=, 5000M
+```
 
 
 — это, почти наверняка, и есть твоя Realsense T265, потому что:
@@ -111,11 +109,225 @@ sudo apt install tree
 tree -d -L 2 /sys/bus/usb/devices/ | grep 2-1.2
 выдала:
 2-1:1.0 -> ../../../devices/platform/bus@0/3610000.usb/usb2/2-1/2-1:1.0
+__________
 
+lsusb
+```
+Bus 002 Device 002: ID 2109:0822 VIA Labs, Inc. USB3.1 Hub             
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:c822 Realtek Semiconductor Corp. Bluetooth Radio 
+Bus 001 Device 006: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+Bus 001 Device 005: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
+Bus 001 Device 004: ID 03e7:2150 Intel Myriad VPU [Movidius Neural Compute Stick]
+Bus 001 Device 002: ID 2109:2822 VIA Labs, Inc. USB2.0 Hub             
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
 
-echo 1 | sudo tee /sys/bus/usb/devices/2-1.2/remove
+```
+./t265find.sh
+/sys/bus/usb/devices/1-2.2
+```
+
+```
+echo 1 | sudo tee /sys/bus/usb/devices/1-2.2/remove
 sleep 1
-echo '2-1.2' | sudo tee /sys/bus/usb/drivers/usb/bind
+echo '1-2.2' | sudo tee /sys/bus/usb/drivers/usb/bind
+```
+
+
+
+
+Все оказалось сложнее:
+При перезагрузке Т265 видно как:
+lsusb
+...
+Bus 001 Device 004: ID 03e7:2150 Intel Myriad VPU [Movidius Neural Compute Stick]
+...
+
+Его удалось отключить командой:
+echo 1 | sudo tee /sys/bus/usb/devices/1-2.2/remove
+1
+Но теперь его не видно:
+lsusb
+Bus 002 Device 002: ID 2109:0822 VIA Labs, Inc. USB3.1 Hub             
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 003: ID 0bda:c822 Realtek Semiconductor Corp. Bluetooth Radio 
+Bus 001 Device 006: ID 1a86:7523 QinHeng Electronics CH340 serial converter
+Bus 001 Device 005: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
+Bus 001 Device 002: ID 2109:2822 VIA Labs, Inc. USB2.0 Hub             
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+Как его включить?
+
+echo '1-2.2' | sudo tee /sys/bus/usb/drivers/usb/bind
+1-2.2
+Пишет:
+tee: /sys/bus/usb/drivers/usb/bind: No such device
+
+
+
+
+
+
+Port 2: 0503 power highspeed enable connect [03e7:2150 Movidius Ltd. Movidius MA2X5X 03e72150]
+
+
+Запустил:
+sudo uhubctl -l 1-2 -p 2 -a off
+Current status for hub 2-1 [2109:0822 VIA Labs, Inc. USB3.1 Hub, USB 3.20, 4 ports, ppps]
+  Port 2: 02a0 power 5gbps Rx.Detect
+Sent power off request
+New status for hub 2-1 [2109:0822 VIA Labs, Inc. USB3.1 Hub, USB 3.20, 4 ports, ppps]
+  Port 2: 00a0 off
+Current status for hub 1-2 [2109:2822 VIA Labs, Inc. USB2.0 Hub, USB 2.10, 4 ports, ppps]
+  Port 2: 0503 power highspeed enable connect [03e7:2150 Movidius Ltd. Movidius MA2X5X 03e72150]
+Sent power off request
+New status for hub 1-2 [2109:2822 VIA Labs, Inc. USB2.0 Hub, USB 2.10, 4 ports, ppps]
+  Port 2: 0000 off
+  
+silenzio@jetsonnx:~/lib/uhubctl$ sudo uhubctl -l 1-2 -p 2 -a on
+Current status for hub 2-1 [2109:0822 VIA Labs, Inc. USB3.1 Hub, USB 3.20, 4 ports, ppps]
+  Port 2: 00a0 off
+Sent power on request
+New status for hub 2-1 [2109:0822 VIA Labs, Inc. USB3.1 Hub, USB 3.20, 4 ports, ppps]
+  Port 2: 02a0 power 5gbps Rx.Detect
+Current status for hub 1-2 [2109:2822 VIA Labs, Inc. USB2.0 Hub, USB 2.10, 4 ports, ppps]
+  Port 2: 0000 off
+Sent power on request
+New status for hub 1-2 [2109:2822 VIA Labs, Inc. USB2.0 Hub, USB 2.10, 4 ports, ppps]
+  Port 2: 0101 power connect [03e7:2150]
+
+
+lsusb -v -d 8087:0b37
+
+Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               3.10
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0         9
+  idVendor           0x8087 Intel Corp.
+  idProduct          0x0b37 
+  bcdDevice           ff.ff
+  iManufacturer           1 Intel(R) Corporation
+  iProduct                2 Intel(R) RealSense(TM) Tracking Camera T265
+  iSerial                 3 905312111138
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+    wTotalLength       0x0060
+    bNumInterfaces          1
+    bConfigurationValue     1
+    iConfiguration          0 
+    bmAttributes         0x80
+      (Bus Powered)
+    MaxPower              504mA
+    Interface Descriptor:
+      bLength                 9
+      bDescriptorType         4
+      bInterfaceNumber        0
+      bAlternateSetting       0
+      bNumEndpoints           6
+      bInterfaceClass       255 Vendor Specific Class
+      bInterfaceSubClass      0 
+      bInterfaceProtocol      0 
+      iInterface              4 Bulk Data
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x01  EP 1 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               0
+        bMaxBurst              15
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x81  EP 1 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               0
+        bMaxBurst              15
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x02  EP 2 OUT
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               0
+        bMaxBurst              15
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x82  EP 2 IN
+        bmAttributes            2
+          Transfer Type            Bulk
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               0
+        bMaxBurst              15
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x03  EP 3 OUT
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               1
+        bMaxBurst               0
+      Endpoint Descriptor:
+        bLength                 7
+        bDescriptorType         5
+        bEndpointAddress     0x83  EP 3 IN
+        bmAttributes            3
+          Transfer Type            Interrupt
+          Synch Type               None
+          Usage Type               Data
+        wMaxPacketSize     0x0400  1x 1024 bytes
+        bInterval               1
+        bMaxBurst               0
+Binary Object Store Descriptor:
+  bLength                 5
+  bDescriptorType        15
+  wTotalLength       0x0016
+  bNumDeviceCaps          2
+  USB 2.0 Extension Device Capability:
+    bLength                 7
+    bDescriptorType        16
+    bDevCapabilityType      2
+    bmAttributes   0x00000006
+      BESL Link Power Management (LPM) Supported
+  SuperSpeed USB Device Capability:
+    bLength                10
+    bDescriptorType        16
+    bDevCapabilityType      3
+    bmAttributes         0x00
+    wSpeedsSupported   0x000e
+      Device can operate at Full Speed (12Mbps)
+      Device can operate at High Speed (480Mbps)
+      Device can operate at SuperSpeed (5Gbps)
+    bFunctionalitySupport   1
+      Lowest fully-functional device speed is Full Speed (12Mbps)
+    bU1DevExitLat          10 micro seconds
+    bU2DevExitLat          32 micro seconds
+Device Status:     0x0000
+  (Bus Powered)
 
 
 
