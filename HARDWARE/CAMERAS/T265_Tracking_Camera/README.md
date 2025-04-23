@@ -216,7 +216,12 @@ Bus 001 Device 004: ID 03e7:2150 Intel Myriad VPU [Movidius Neural Compute Stick
 ...
 
 Его удалось отключить командой:
+
 echo 1 | sudo tee /sys/bus/usb/devices/1-2.2/remove
+
+echo '1-2.2' | sudo tee /sys/bus/usb/devices/1-2.2/remove
+
+echo '1-2.2' | sudo tee /sys/bus/usb/drivers/usb/unbind
 1
 Но теперь его не видно:
 lsusb
@@ -432,6 +437,23 @@ sudo dmesg
 
 
 ========================
+## fresh start:
+
+udo ls /sys/bus/usb/drivers/usb* -ll
+[sudo] password for silenzio: 
+/sys/bus/usb/drivers/usb:
+total 0
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 1-2 -> ../../../../devices/platform/bus@0/3610000.usb/usb1/1-2
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 1-2.2 -> ../../../../devices/platform/bus@0/3610000.usb/usb1/1-2/1-2.2
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 1-3 -> ../../../../devices/platform/bus@0/3610000.usb/usb1/1-3
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 2-1 -> ../../../../devices/platform/bus@0/3610000.usb/usb2/2-1
+--w------- 1 root root 4096 Apr 24 00:01 bind
+--w------- 1 root root 4096 Feb 20 16:24 uevent
+--w------- 1 root root 4096 Apr 24 00:01 unbind
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 usb1 -> ../../../../devices/platform/bus@0/3610000.usb/usb1
+lrwxrwxrwx 1 root root    0 Apr 24 00:01 usb2 -> ../../../../devices/platform/bus@0/3610000.usb/usb2
+
+
 
 ## after this:
 
