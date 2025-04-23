@@ -1,6 +1,43 @@
 
 # T265 Tracking Camera
 
+
+
+### First start problem:
+
+
+
+. Найди USB-устройство
+Вставь T265 и выполни в терминале:
+```
+lsusb
+```
+
+```
+Bus 002 Device 003: ID 8087:0b37 Intel Corp. Intel(R) RealSense(TM) Tracking Camera T265
+```
+Обрати внимание на Bus и Device. Допустим, это Bus 001 и Device 004.
+
+```
+readlink -f /sys/bus/usb/devices/2-3
+```
+```
+/sys/bus/usb/devices/2-3
+```
+
+echo 0 | sudo tee /sys/bus/usb/devices/2-3/authorized
+sleep 1
+echo 1 | sudo tee /sys/bus/usb/devices/2-3/authorized
+
+
+
+
+
+
+
+
+
+
 The **Intel® RealSense™ Tracking Camera T265** includes two greyscale cameras with fisheye lens, an IMU, and an Intel® Movidius™ Myriad™ 2 VPU. All of the V‑SLAM algorithms run directly on the VPU, allowing for very low latency and extremely efficient power consumption (1.5W).
 
 RealSense SDK currently supports T265 on Windows and Linux as well as via our ROS wrapper.
