@@ -260,8 +260,10 @@ https://silenceoverflow.github.io/Awesome-SLAM/
 
 A curated list of SLAM resources
 
+
 ______
 
+https://bluebotics.com/vda-5050-explained-agv-communication-standard/
 
-robot_disassembly
-
+WHAT IS VDA 5050?
+VDA 5050 is a standardized interface for AGV communication. Specifically, this standard concerns the communication between AGVs (often called Fahrerloser Transportsysteme/Transportfahrzeuge (FTS) in Germany) and a master control (in other words, a fleet management software program).
