@@ -24,8 +24,16 @@ ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 
 T2:
 ```
+ros2 launch omni slam.launch.py mode:=map stp_config:=t265
+```
+```
+ros2 launch omni slam.launch.py mode:=map stp_config:=stella_vslam
+```
+```
 ros2 launch omni slam.launch.py mode:=map stp_config:=open_vins
 ```
+
+
 
 T3:
 ```
