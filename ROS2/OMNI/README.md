@@ -51,8 +51,8 @@ And fill the field ot name "flat" as exapmple:
 Save Map: flat
 Serialize map:flat
 Deserialize map:flat
-Push this 3 buttons.
 ```
+Push this 3 buttons.
 
 Map will be save at files :
 ```
