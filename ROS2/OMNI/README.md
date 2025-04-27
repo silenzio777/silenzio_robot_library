@@ -63,16 +63,13 @@ ros2 launch omni slam.launch.py mode:=local stp_config:=stella_vslam
 ros2 launch omni slam.launch.py mode:=local stp_config:=open_vins
 ```
 
+### Launch navigation with saved map:
 
-T4:
+T3:
 ```
 ros2 launch nav2_bringup navigation_launch.py map:=/home/silenzio/ros2_ws/src/omni/maps/flat_map.yaml
 ```
 
-T5:
-```
-ros2 launch slam_toolbox online_async_launch.py
-```
 
 
 
