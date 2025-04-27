@@ -48,9 +48,9 @@ ros2 run nav2_map_server map_saver_cli -f /home/silenzio/ros2_ws/src/omni/maps/f
 In RVIZ2 open "SlamToolboxPlugin" panel. 
 And fill the field ot name "flat" as exapmple:
 ```
-Save Map: flat
-Serialize map:flat
-Deserialize map:flat
+Save Map: /home/silenzio/ros2_ws/src/omni/maps/flat
+Serialize map:/home/silenzio/ros2_ws/src/omni/maps/flat
+Deserialize map:/home/silenzio/ros2_ws/src/omni/maps/flat
 ```
 Push this 3 buttons.
 
@@ -61,7 +61,7 @@ flat.yaml
 flat.data
 flat.posegraph
 ```
-in current dir /home/silenzio/ros2_ws/src/omni/maps/flat_map
+in dir /home/silenzio/ros2_ws/src/omni/maps/flat
 
 _______
 
