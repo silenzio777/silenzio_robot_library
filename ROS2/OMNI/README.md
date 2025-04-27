@@ -1,11 +1,14 @@
-### Run:
+## Run:
 
 UbuntuPC:
+
+### teleop
 
 T0:
 ```
 ros2 launch teleop_twist_joy teleop-launch.py
 ```
+_______
 
 Jetson NX:
 
@@ -34,14 +37,18 @@ ros2 launch omni slam.launch.py mode:=map stp_config:=stella_vslam
 ```
 ros2 launch omni slam.launch.py mode:=map stp_config:=open_vins
 ```
+_______
 
-### save map:
+### Save map:
 
 T3:
 ```
-ros2 run nav2_map_server map_saver_cli -f ~/andino_map
+ros2 run nav2_map_server map_saver_cli -f /home/silenzio/ros2_ws/src/omni/maps/flat_map
 ```
 
+Map will be save at files "flat_map.pgm" and "flat_map.yaml" in dir /home/silenzio/ros2_ws/src/omni/maps/flat_map
+
+_______
 
 ### Localization mode:
 
