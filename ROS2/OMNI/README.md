@@ -2,7 +2,7 @@
 
 UbuntuPC:
 
-### teleop
+### Joystick teleop
 
 T0:
 ```
