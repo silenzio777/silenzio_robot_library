@@ -46,11 +46,13 @@ T3:
 ros2 run nav2_map_server map_saver_cli -f /home/silenzio/ros2_ws/src/omni/maps/flat_map
 ```
 In RVIZ2 open "SlamToolboxPlugin" panel. 
-And fill the field ot name "flat" as exapmple: 
+And fill the field ot name "flat" as exapmple:
+```
 Save Map: flat
 Serialize map:flat
 Deserialize map:flat
 Push this 3 buttons.
+```
 
 Map will be save at files :
 ```
