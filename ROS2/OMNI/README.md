@@ -1,5 +1,8 @@
 ## Run:
 
+
+### UbuntuPC as RVIZ2 host:
+
 UbuntuPC:
 
 ### Joystick teleop
@@ -40,8 +43,9 @@ ros2 run omni mecanum_wheel_driver
 
 
 
-
 _______
+
+### Jetson NX as RVIZ2 host:
 
 Jetson NX:
 
