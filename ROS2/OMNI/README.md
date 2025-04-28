@@ -5,9 +5,7 @@
 
 UbuntuPC:
 
-### Joystick teleop
-
-T0:
+T0 Joystick teleop:
 ```
 ros2 launch teleop_twist_joy teleop-launch.py
 ```
