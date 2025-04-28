@@ -5,7 +5,7 @@
 
 UbuntuPC:
 
-- T0:
+T0:
 ```
 ros2 launch teleop_twist_joy teleop-launch.py
 ```
