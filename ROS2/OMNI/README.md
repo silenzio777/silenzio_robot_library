@@ -38,6 +38,12 @@ T2:
 ros2 run omni mecanum_wheel_driver
 ```
 
+T3:
+```
+ros2 launch omni amcl_localization.launch.py
+```
+
+
 
 
 
