@@ -267,3 +267,23 @@ https://bluebotics.com/vda-5050-explained-agv-communication-standard/
 
 WHAT IS VDA 5050?
 VDA 5050 is a standardized interface for AGV communication. Specifically, this standard concerns the communication between AGVs (often called Fahrerloser Transportsysteme/Transportfahrzeuge (FTS) in Germany) and a master control (in other words, a fleet management software program).
+
+
+_____
+
+https://turtlebot.github.io/turtlebot4-user-manual/tutorials/turtlebot4_navigator.html
+
+The TurtleBot 4 Navigator is a Python node that adds on to the Nav2 Simple Commander. It includes TurtleBot 4 specific features such as docking and undocking, as well as easy to use methods for navigating.
+
+The TurtleBot 4 is a ROS 2-based mobile robot intended for education and research. The TurtleBot 4 is capable of mapping the robot's surroundings, navigating autonomously, running AI models on its camera, and more.
+
+It uses a Create® 3 as the base platform, and builds on it with the TurtleBot 4 shell and User Interface (UI) board. Inside the shell sits a Raspberry Pi 4B which runs the TurtleBot 4 software.
+
+
+Large Language Model Integration
+This example demonstrates an integration between the OpenAI Chat Completions API and the Turtlebot 4, substantially inspired by the ‘Code as Policies: Language Model Programs for Embodied Control' (Liang et al.) research.
+
+It demonstrates how an Large Language Model (LLM) can be ‘taught' how to use the Turtlebot 4 Navigation API with only a few examples, and also shows how an LLM can easily bridge natural language commands to API calls without an intermediate parsing step.
+
+Before using this as the basis for a product, please consult the substantial list of caveats found in the original paper! :smile:
+
