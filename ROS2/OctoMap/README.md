@@ -159,6 +159,10 @@ PointCloud2
 T0:
 01_ROS2_T256_L515.sh
 ```
+cd foxy/
+docker run --net host --privileged -it --rm -v /dev:/dev --device-cgroup-rule "c 81:* rmw" --device-cgroup-rule "c 189:* rmw" -v ~/foxy:/foxy -v ~/.ros:/.ros foxy_ls_ubi_20_04_lsv_2_50_0 bash
+```
+```
 # cd /foxy/t265_l515_v4_0_4_ws
 # . install/local_setup.bash
 # export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
