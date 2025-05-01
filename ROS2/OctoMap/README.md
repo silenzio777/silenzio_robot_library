@@ -174,8 +174,9 @@ rviz2
 
 <img src="PointCloud2_rviz2.png" title="PointCloud2_rviz2" width="1000">
 
-<img src="PointCloud2_rqt.png" title="PointCloud2_rqt" width="800">
+</br>
 
+<img src="PointCloud2_rqt.png" title="PointCloud2_rqt" width="1000">
 
 
 rs_launch.py:
