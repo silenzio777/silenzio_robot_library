@@ -287,3 +287,37 @@ It demonstrates how an Large Language Model (LLM) can be ‘taught' how to use t
 
 Before using this as the basis for a product, please consult the substantial list of caveats found in the original paper! :smile:
 
+
+
+_______
+
+https://en-m-wikipedia-org.translate.goog/wiki/Scott_Hassan?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=wapp
+
+https://en-m-wikipedia-org.translate.goog/wiki/Willow_Garage?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=wapp
+
+https://en-m-wikipedia-org.translate.goog/wiki/Clearpath_Robotics?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=wapp
+
+Clearpath Robotics, Inc. (also known as Clearpath) was founded in 2009 by a group of four University of Waterloo graduates, and remains headquartered in Waterloo Region, Canada. The original goal of Clearpath was to streamline field robotics research for universities and private corporations, but the company has since expanded and is now also manufacturing and selling the OTTO line of self-driving vehicles for industrial environments.
+
+
+_______
+
+
+https://www.open3d.org/docs/release/tutorial/geometry/pointcloud.html
+
+
+This tutorial demonstrates basic usage of a point cloud.
+
+Visualize point cloud
+The first part of the tutorial reads a point cloud and visualizes it.
+
+______
+
+
+
+https://theairlab.org/tartanslamseries/
+
+The goal of this series is to expand the understanding of those both new and experienced with SLAM. Sessions will include research talks, as well as introductions to various themes of SLAM and thought provoking open-ended discussions. This is the inaugural series in the lineup of events aiming to foster fun, provocative discussions on robotics.
+
+You can add the schedule to your Google calendar here or iCal here.
+
