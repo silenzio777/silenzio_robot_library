@@ -96,6 +96,15 @@ source install/setup.bash
 ### Run:
 point_cloud_xyz_node
 
+T0:
+```
+01_ROS2_T256_L515.sh
+# cd /foxy/t265_l515_v4_0_4_ws
+# . install/local_setup.bash
+# export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
+# ros2 launch realsense2_camera rs_launch.py rgb_camera.profile:=640x480x30
+```
+
 T1:
 ```
 ros2 run depth_image_proc point_cloud_xyz_node --ros-args -r /camera_info:=/camera/depth/camera_info
@@ -112,6 +121,15 @@ ros2 run image_transport republish raw in:=/camera/depth/image_rect_raw raw out:
 
 ### Run:
 point_cloud_xyzrgb_node
+
+T0:
+```
+01_ROS2_T256_L515.sh
+# cd /foxy/t265_l515_v4_0_4_ws
+# . install/local_setup.bash
+# export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
+# ros2 launch realsense2_camera rs_launch.py rgb_camera.profile:=640x480x30
+```
 
 T1:
 ```
