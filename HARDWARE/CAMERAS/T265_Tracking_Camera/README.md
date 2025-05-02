@@ -1,6 +1,36 @@
 
 # T265 Tracking Camera
 
+
+https://github.com/mvp/uhubctl/issues/258
+
+
+I've tested this on the jetson nano development board (B01 version).
+
+My results:
+
+bus 2-1 is the usb3.0 bus corresponding to the 4 ports on the dev kit.
+...
+bus 2-1 port 1 can disable the VBUS of all the 2-1 ports.
+bus 2-1 ports 2-4 do not disable the VBUS.
+When plugging in another (unsupported) hub (anker https://www.amazon.com/gp/product/B07L32B9C2) to any port on bus 2-1, VBUS can no longer be disabled on bus 2-1.
+
+--
+
+It did not work for me. I had to do this instead
+echo '2-1' |sudo tee /sys/bus/usb/drivers/usb/unbind"
+
+Edited:
+Actually, now uhubctl -l 2-1 -p 1 -a 0 is working on my jetson nano. I did not get what I changed.
+
+What I am looking for is single port power switching that apparently Nano does not allow that due to the fact that all USB ports are ganged with each other as in raspberry pis. Any solution for that is appreciated.
+
+
+
+
+_________
+
+
 Давай еще раз вернемся к найденому мной в интертете решению проблемыв:
 
 Disable/enable USB ports on ORIN NX programmatically: SOLVED
