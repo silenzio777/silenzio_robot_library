@@ -56,10 +56,12 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 <img src="Omni_OctoMap_rviz2.png" title="Omni_OctoMap_rviz2" width="1000">
 
 
-Map save
+Map save:
 ```
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/omni/maps/octomaps/omap --ros-args --remap map:=/projected_map
 ```
+Create "omap.pgm" and "omap.yaml"
+
 
 __________
 
