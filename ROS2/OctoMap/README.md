@@ -161,7 +161,7 @@ configurable_parameters = [{'name': 'camera_name',                  'default': '
 
 _____________
 
-## DepthCloud not work (old interface):
+## DepthCloud (bad work, old interface, no alling depth to color):
 ### Install image_pipeline:
 [https://github.com/ros-perception/image_pipeline/tree/humble](https://github.com/ros-perception/image_pipeline/tree/humble)
 
