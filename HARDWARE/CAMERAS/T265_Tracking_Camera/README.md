@@ -25,9 +25,14 @@ Actually, now uhubctl -l 2-1 -p 1 -a 0 is working on my jetson nano. I did not g
 
 What I am looking for is single port power switching that apparently Nano does not allow that due to the fact that all USB ports are ganged with each other as in raspberry pis. Any solution for that is appreciated.
 
+--
+https://github.com/mvp/uhubctl
 
+uhubctl is utility to control USB power per-port on smart USB hubs. Smart hub is defined as one that implements per-port power switching.
 
+--
 
+https://github.com/IntelRealSense/librealsense/issues/4408
 _________
 
 
