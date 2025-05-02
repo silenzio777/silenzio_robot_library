@@ -58,7 +58,7 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 
 Map save
 ```
-ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
+ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/omni/maps/octomaps/omap --ros-args --remap map:=/projected_map
 ```
 
 __________
