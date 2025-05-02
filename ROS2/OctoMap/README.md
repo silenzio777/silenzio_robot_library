@@ -53,6 +53,9 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 [octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
 ```
 
+<img src="Omni_OctoMap_rviz2.png" title="Omni_OctoMap_rviz2" width="1000">
+
+
 Map save
 ```
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
