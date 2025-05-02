@@ -74,9 +74,8 @@ ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:
 ```
 
 
-
+## PointCloud2
 ### Run:
-PointCloud2
 
 T0:
 01_ROS2_T256_L515.sh
