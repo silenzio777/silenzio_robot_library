@@ -36,14 +36,12 @@ colcon build
 
 ### Run:
 ___
-```
-ros2 launch fast_lio velodyne.launch.py
-```
-Error:
-```
-Package 'fast_lio' not found:...
-```
 
+T0:
+```
+01_ROS2_T256_L515.sh
+```
+T1:
 ```
 ros2 launch octomap_server octomap_mapping.launch.xml
 
@@ -55,24 +53,12 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 [octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
 ```
 
-
-You need to run the 3D Mapping package (ex. FAST_LIO_ROS2) at the same time.
-
-On the FAST-LIO2 terminal,
-```
-ros2 launch fast_lio velodyne.launch.py
-```
-For this docker container,
-
-``` 
-ros2 launch octomap_server octomap_mapping.launch.xml
-```
-
 Map save
 ```
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/src/ --ros-args --remap map:=/projected_map
 ```
 
+__________
 
 ## PointCloud2
 ### Run:
