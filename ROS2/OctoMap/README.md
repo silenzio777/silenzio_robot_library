@@ -53,7 +53,7 @@ ros2 launch octomap_server octomap_mapping.launch.xml
 [octomap_server_node-1] [WARN] [1744560598.495430163] [octomap_server]: Could not open file
 ```
 
-<img src="Omni_OctoMap_rviz2.png" title="Omni_OctoMap_rviz2" width="1000">
+<img src="Omni_OctoMap_rviz2_01.png" title="Omni_OctoMap_rviz2_01" width="1000">
 
 
 Map save:
