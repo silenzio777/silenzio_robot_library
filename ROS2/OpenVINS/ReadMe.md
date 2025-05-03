@@ -302,8 +302,10 @@ pose:
 
 /t265/pose/sample frame_id: odom_frame
             child_frame_id: t265_pose_frame
-            
-### Setup:
+
+__________
+
+## Setup T265 only:
 
 ### Run:
 
@@ -315,6 +317,35 @@ pose:
     . install/local_setup.bash
     export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
     ros2 launch realsense2_camera rs_launch.py camera_name:=t265 enable_pose:=false enable_gyro:=true enable_accel:=true
+```
+
+### T1:
+```
+ros2 launch ov_msckf subscribe.launch.py config:=rs_t265
+```
+
+### T2:
+```
+rviz2
+```
+
+
+### Works:
+
+__________
+
+## Setup T265 + L515:
+
+### Run:
+
+### T0:
+```
+01_ROS2_T256_L515.sh
+#
+    cd /foxy/t265_l515_v4_0_4_ws
+    . install/local_setup.bash
+    export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml    
+    ros2 launch realsense2_camera rs_l515_and_t265_launch.py enable_pose:=false enable_gyro:=true enable_accel:=true
 ```
 
 ### T1:
