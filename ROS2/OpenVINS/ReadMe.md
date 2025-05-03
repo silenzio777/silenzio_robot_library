@@ -70,6 +70,7 @@ ros2 run ov_msckf run_simulation src/open_vins/config/kaist_vio/estimator_config
 ```
 ov_docker ov_ros2_22_04 bash
 cd catkin_ws
+. install/local_setup.bash
 ros2 launch ov_msckf subscribe.launch.py config:=euroc_mav
 ```
 
@@ -313,7 +314,7 @@ pose:
     cd /foxy/t265_l515_v4_0_4_ws
     . install/local_setup.bash
     export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
-    ros2 launch realsense2_camera rs_launch.py camera_name:=t265  enable_pose:=false
+    ros2 launch realsense2_camera rs_launch.py camera_name:=t265 enable_pose:=false enable_gyro:=true enable_accel:=true
 ```
 
 ### T1:
