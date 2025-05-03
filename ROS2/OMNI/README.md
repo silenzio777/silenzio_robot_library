@@ -126,6 +126,13 @@ T3:
 ros2 launch nav2_bringup navigation_launch.py map:=/home/silenzio/ros2_ws/src/omni/maps/flat.yaml
 ```
 
+### Octomap:
+
+T4:
+```
+ros2 launch octomap_server octomap_omni_mapping.launch.xml
+```
+
 
 
 
