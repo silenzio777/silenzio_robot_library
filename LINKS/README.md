@@ -321,3 +321,16 @@ The goal of this series is to expand the understanding of those both new and exp
 
 You can add the schedule to your Google calendar here or iCal here.
 
+_______
+
+
+https://hello-robot.com/stretch-3-product
+
+Leverage the Power of ROS 2
+
+A Pure Python Experience
+
+https://github.com/hello-robot/stretch_body
+
+
+___
