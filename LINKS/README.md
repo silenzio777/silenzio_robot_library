@@ -366,3 +366,16 @@ This package aims at analysing the functionalities provided by ROS2 Navigation2 
 The whole package is based on Linorobot2 Package. This software component has been developed by the following contributors:
 
 ___
+
+https://habr.com/ru/articles/751626/
+
+1 авг 2023 в 14:14
+AI доступный каждому разработчику
+___
+
+
+https://github.com/iit-DLSLab/Panoptic-SLAM
+
+Panoptic-SLAM: Visual SLAM in Dynamic Environments using Panoptic Segmentation
+This work presents Panoptic-SLAM, a visual SLAM system robust to dynamic environments, even in the presence of unknown objects. It uses panoptic segmentation to filter dynamic objects from the scene during the state estimation process. Panoptic-SLAM is based on ORB-SLAM3, a state-of-the-art SLAM system for static environments.
+
