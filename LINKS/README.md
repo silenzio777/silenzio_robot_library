@@ -323,6 +323,7 @@ You can add the schedule to your Google calendar here or iCal here.
 
 _______
 
+https://github.com/hello-robot
 
 https://hello-robot.com/stretch-3-product
 
@@ -334,3 +335,14 @@ https://github.com/hello-robot/stretch_body
 
 
 ___
+
+
+https://forums.developer.nvidia.com/t/development-of-a-meccannum-wheel-robot-using-ros2-nav2/230687
+
+Development of a Meccannum wheel robot using ROS2 NAV2
+___
+
+https://github.com/Ekumen-OS/andino/tree/humble
+
+Andino is a fully open-source diff drive robot designed for educational purposes and low-cost applications. It is fully integrated with ROS 2 and it is a great base platform to improve skills over the robotics field. With its open-source design, anyone can modify and customize the robot to suit their specific needs.
+
