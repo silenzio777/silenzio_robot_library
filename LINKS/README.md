@@ -437,3 +437,10 @@ Lidar-based Online Localisation and Colored Mesh Reconstruction ROS2/ROS1 Archit
 This repository contains a hybrid ROS2/ROS1 architecture for LiDAR based SLAM and real-time 3D colored mesh reconstruction using TSDF for ground exploration robots.
 
 _______
+
+
+https://github.com/naumovan/basicRL_workshop/tree/main
+
+Воркшоп по базовому Reinforcement Learning (RL)
+Добро пожаловать в репозиторий, посвящённый воркшопу по основам Reinforcement Learning (RL)! Здесь вы познакомитесь с ключевыми концепциями RL и получите практический опыт обучения RL-агента на примере Huggy.
+
