@@ -408,3 +408,29 @@ When executing the base.en model on NVIDIA Jetson Orin Nano, WhisperTRT runs ~3x
 
 WhisperTRT roughly mimics the API of the original Whisper model, making it easy to use.
 
+______
+
+https://github.com/ethz-asl/voxblox?tab=readme-ov-file
+https://voxblox.readthedocs.io/en/latest/index.html
+
+Voxblox is a volumetric mapping library based mainly on Truncated Signed Distance Fields (TSDFs). It varies from other SDF libraries in the following ways:
+
+CPU-only, can be run single-threaded or multi-threaded for some integrators
+Support for multiple different layer types (containing different types of voxels)
+Serialization using protobufs
+Different ways of handling weighting during merging
+Different ways of inserting pose information about scans
+Tight ROS integration (in voxblox_ros package)
+Easily extensible with whatever integrators you want
+Features an implementation of building Euclidean Signed Distance Fields (ESDFs, EDTs) directly from TSDFs.
+
+____
+
+
+https://github.com/onera/olcmr
+
+
+Lidar-based Online Localisation and Colored Mesh Reconstruction ROS2/ROS1 Architecture
+This repository contains a hybrid ROS2/ROS1 architecture for LiDAR based SLAM and real-time 3D colored mesh reconstruction using TSDF for ground exploration robots.
+
+_______
