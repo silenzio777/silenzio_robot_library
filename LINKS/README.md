@@ -379,3 +379,32 @@ https://github.com/iit-DLSLab/Panoptic-SLAM
 Panoptic-SLAM: Visual SLAM in Dynamic Environments using Panoptic Segmentation
 This work presents Panoptic-SLAM, a visual SLAM system robust to dynamic environments, even in the presence of unknown objects. It uses panoptic segmentation to filter dynamic objects from the scene during the state estimation process. Panoptic-SLAM is based on ORB-SLAM3, a state-of-the-art SLAM system for static environments.
 
+_____
+
+https://huggingface.co/coqui/XTTS-v2
+
+ⓍTTS is a Voice generation model that lets you clone voices into different languages by using just a quick 6-second audio clip. There is no need for an excessive amount of training data that spans countless hours.
+
+
+__
+https://github.com/coqui-ai/TTS
+
+TTS is a library for advanced Text-to-Speech generation.
+
+🚀 Pretrained models in +1100 languages.
+
+🛠️ Tools for training new models and fine-tuning existing models in any language.
+
+📚 Utilities for dataset analysis and curation.
+
+__
+
+https://github.com/NVIDIA-AI-IOT/whisper_trt?tab=readme-ov-file
+
+WhisperTRT
+This project optimizes OpenAI Whisper with NVIDIA TensorRT.
+
+When executing the base.en model on NVIDIA Jetson Orin Nano, WhisperTRT runs ~3x faster while consuming only ~60% the memory compared with PyTorch.
+
+WhisperTRT roughly mimics the API of the original Whisper model, making it easy to use.
+
