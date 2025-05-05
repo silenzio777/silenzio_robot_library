@@ -444,3 +444,49 @@ https://github.com/naumovan/basicRL_workshop/tree/main
 Воркшоп по базовому Reinforcement Learning (RL)
 Добро пожаловать в репозиторий, посвящённый воркшопу по основам Reinforcement Learning (RL)! Здесь вы познакомитесь с ключевыми концепциями RL и получите практический опыт обучения RL-агента на примере Huggy.
 
+____
+
+https://www.aivisonauto.com/product-category/auto-mobile-robots-amr/
+
+Adding intelligence to industrial warehousing and production
+
+Autonomous Mobile Robots for Smarter Automation
+
+
+_______
+
+
+https://github.com/IntelRealSense/realsense-ros/issues/1355
+
+T265 with wheel odometry guide and questions about grey areas #1355
+
+
+___
+
+https://github.com/tancik/fourier-feature-networks?tab=readme-ov-file
+
+Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains
+
+https://colab.research.google.com/github/tancik/fourier-feature-networks/blob/master/Demo.ipynb
+
+_____
+https://www.matthewtancik.com/learnit
+
+https://github.com/tancik/learnit
+
+Learned Initializations for Optimizing Coordinate-Based Neural Representations
+
+ 
+------
+
+https://pypi.org/project/pycolmap/
+
+PyCOLMAP exposes to Python most capabilities of the COLMAP Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline.
+
+
+https://colmap.github.io/#
+
+COLMAP is a general-purpose Structure-from-Motion (SfM) and Multi-View Stereo (MVS) pipeline with a graphical and command-line interface. It offers a wide range of features for reconstruction of ordered and unordered image collections. The software is licensed under the new BSD license. If you use this project for your research, please cite:___
+
+Sparse model 
+
