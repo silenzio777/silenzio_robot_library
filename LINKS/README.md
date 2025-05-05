@@ -348,6 +348,9 @@ Andino is a fully open-source diff drive robot designed for educational purposes
 
 ___
 
+https://github.com/Muhamedli/MEPhI_ROS2_drone
+___
+
 https://github.com/linorobot/linorobot2
 
 linorobot2 is a ROS2 implementation of the linorobot package for building custom robots with 2WD, 4WD, or Mecanum drive configurations. This package provides launch files for Nav2 integration and includes a complete simulation pipeline in Gazebo.
