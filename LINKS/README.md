@@ -346,3 +346,12 @@ https://github.com/Ekumen-OS/andino/tree/humble
 
 Andino is a fully open-source diff drive robot designed for educational purposes and low-cost applications. It is fully integrated with ROS 2 and it is a great base platform to improve skills over the robotics field. With its open-source design, anyone can modify and customize the robot to suit their specific needs.
 
+___
+
+https://github.com/linorobot/linorobot2
+
+linorobot2 is a ROS2 implementation of the linorobot package for building custom robots with 2WD, 4WD, or Mecanum drive configurations. This package provides launch files for Nav2 integration and includes a complete simulation pipeline in Gazebo.
+
+The software stack integrated in this package is hardware agnosticso users can switch between booting up the physical robot and spawning the virtual robot in Gazebo.
+
+___
