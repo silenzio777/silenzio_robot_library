@@ -355,3 +355,14 @@ linorobot2 is a ROS2 implementation of the linorobot package for building custom
 The software stack integrated in this package is hardware agnosticso users can switch between booting up the physical robot and spawning the virtual robot in Gazebo.
 
 ___
+
+
+https://github.com/mich-pest/ros2_navigation_stvl
+
+Navigation and 3D Mapping with ROS2
+University of Genoa A.Y. 2022/23, MSc Robotics Engineering
+
+This package aims at analysing the functionalities provided by ROS2 Navigation2 combined with the Spatio-Temporal Voxel Layer (STVL) plugin for sensor fusion and mapping.
+The whole package is based on Linorobot2 Package. This software component has been developed by the following contributors:
+
+___
