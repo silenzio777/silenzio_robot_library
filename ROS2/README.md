@@ -92,6 +92,7 @@ ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 
 sudo apt install ros-humble-moveit
 sudo apt install ros-$ROS_DISTRO-perception-pcl
+sudo apt install ros-humble-pcl-conversions ros-humble-pcl-ros
 
 ```
 
