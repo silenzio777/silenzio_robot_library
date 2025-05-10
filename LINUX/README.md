@@ -454,10 +454,11 @@ make clean usually cleans the building directories, it doesn't uninstall the pac
 
 ____
 
-Install `deb package:
+Install /deb/ package:
 
+Download filenane.deb package and install:
 ```
-sudo dpkg -i anydesk_6.4.3-1_amd64.deb
+sudo dpkg -i filenane.deb
 ```
 
 
