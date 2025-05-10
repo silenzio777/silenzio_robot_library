@@ -454,7 +454,7 @@ make clean usually cleans the building directories, it doesn't uninstall the pac
 
 ____
 
-Install /deb/ package:
+Install "deb" package:
 
 Download filenane.deb package and install:
 ```
