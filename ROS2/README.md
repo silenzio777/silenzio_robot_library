@@ -84,6 +84,7 @@ ros2 run rqt_tf_tree rqt_tf_tree
 ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 
 sudo apt install ros-humble-moveit
+sudo apt install ros-$ROS_DISTRO-perception-pcl
 ```
 
 By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
