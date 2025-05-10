@@ -461,6 +461,13 @@ Download filenane.deb package and install:
 sudo dpkg -i filenane.deb
 ```
 
+_______
+
+### reboot
+
+```
+sudo reboot
+```
 
 _______
 
