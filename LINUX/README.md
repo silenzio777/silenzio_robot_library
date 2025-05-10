@@ -5,7 +5,7 @@ ______
 - [How to switch boot target to text or GUI in systemd Linux:](#text-or-gui)<br/>
 - [WiFi show spots](#wifi-show-spots)<br/>
 - [spci](#spci)<br/>
-- [lsblk](#lsblk)<br/>
+- [lsblk](#lsblk)<br/> 
 - [lscpu](#lscpu)<br/>
 - [dmesg](#dmesg)<br/>
 - [dpkg](#dpkg)<br/>
