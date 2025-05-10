@@ -40,6 +40,13 @@ ros2 topic hz /camera/color/image_raw
 
 ros2 doctor --report | grep middleware
 
+ros2 pkg executables pcl_ros
+pcl_ros filter_crop_box_node
+pcl_ros filter_extract_indices_node
+pcl_ros filter_passthrough_node
+pcl_ros filter_project_inliers_node
+...
+
 
 ## PACKAGES:
 
@@ -85,6 +92,7 @@ ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 
 sudo apt install ros-humble-moveit
 sudo apt install ros-$ROS_DISTRO-perception-pcl
+
 ```
 
 By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
