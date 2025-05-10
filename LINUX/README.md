@@ -452,6 +452,15 @@ In the future to avoid that kind of problems try to use checkinstall instead of 
 make clean usually cleans the building directories, it doesn't uninstall the package. It's used when you want to be sure that the whole thing is compiled, not just the changed files.
 
 
+____
+
+Install /deb package:
+
+```
+sudo dpkg -i anydesk_6.4.3-1_amd64.deb
+```
+
+
 _______
 
 ### shutdown
