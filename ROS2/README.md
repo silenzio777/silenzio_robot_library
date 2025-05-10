@@ -483,7 +483,6 @@ sudo apt install ros-$ROS_DISTRO-ros2lifecycle
 sudo apt install ros-$ROS_DISTRO-ros2multicast
 sudo apt install ros-$ROS_DISTRO-ros2security
 sudo apt install ros-$ROS_DISTRO-ros2test
-sudo apt install ros-$ROS_DISTRO-perception-pcl
 ```
 
 ### rviz_2d_overlay_plugins:
