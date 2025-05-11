@@ -133,8 +133,30 @@ T4:
 ros2 launch octomap_server octomap_omni_mapping.launch.xml
 ```
 
+__________
 
 
+### Jetson NX as RVIZ2 host:
+
+Jetson NX:
+
+T0:
+```
+01_ROS2_T256_L515.sh
+```
+```
+cd /foxy/t265_l515_v4_0_4_ws
+. install/local_setup.bash
+export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
+ros2 launch realsense2_camera rs_l515_and_t265_launch.py
+```
+
+## SLAM mapping mide:
+
+T1:
+```
+ros2 launch omni slam.launch.py mode:=map stp_config:=t265
+```
 
 
 
