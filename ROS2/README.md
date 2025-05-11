@@ -34,6 +34,10 @@ ros2 topic info /cmd_vel -v
 
 ros2 topic echo odom --no-arr
 
+ros2 topic echo /L515/depth/color/points --flow-style
+
+ros2 topic echo /L515/depth/color/points --field header.stamp.sec
+
 ros2 run tf2_tools view_frames
 
 ros2 topic hz /camera/color/image_raw
