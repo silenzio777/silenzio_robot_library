@@ -97,7 +97,7 @@ ros2 run rqt_joint_trajectory_controller rqt_joint_trajectory_controller
 sudo apt install ros-humble-moveit
 sudo apt install ros-$ROS_DISTRO-perception-pcl
 sudo apt install ros-humble-pcl-conversions ros-humble-pcl-ros
-
+sudo apt install ros-humble-octomap-rviz-plugins
 ```
 
 By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
