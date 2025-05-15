@@ -168,15 +168,12 @@ ros2 run sound_play soundplay_node.py
 ```
 ros2 run sound_play say.py 'Hello my name is Omni'
 ```
-
+### Work: I can hear the voise in AC
 ```
+\###
 ros2 run audio_capture audio_capture
-```
-
 This node publish `audio_common_msgs/msg/AudioDataStamped` to topic `/audio`.
-
-### Create file "params.yaml" in "/home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml":
-```
+Create file "params.yaml" in "/home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml":
 whisper_node:
   ros__parameters:
     model_path: "/absolute/path/to/ggml-medium.bin"
@@ -185,18 +182,27 @@ whisper_node:
     audio_topic: "/audio"
     text_topic: "/speech_text"
     translate: false
-```
 
-### Run:
-```
 ### cd ~/ros2_ws && source install/setup.bash
 ### ros2 run whisper_ros whisper_node --ros-args --params-file /home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml
+
 ```
+
+## whisper_ros:
+
+### run:
 
 ## T0:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
+```
+ros2 launch whisper_bringup whisper.launch.py \
+  language:=ru \
+  model_path:=/home/silenzio/lib/whisper.cpp/models/ggml-small.bin \
+  translate:=false
+```
+
 >
 ```
 [whisper_server_node-1] 
@@ -223,6 +229,7 @@ ros2 launch whisper_bringup whisper.launch.py
 ```
 ros2 action send_goal /whisper/listen whisper_msgs/action/STT "{}"
 ```
+>
 ```
 Waiting for an action server to become available...
 Sending goal:
@@ -239,6 +246,22 @@ Result:
   transcription_time: 2.4785516262054443
 Goal finished with status: SUCCEEDED
 ```
+
+## T2:
+```
+ros2 run omni whisper_to_topic
+```
+>
+```
+[INFO] [1747329821.142150646] [whisper_to_topic]: Waiting for the Whisper action server...
+[INFO] [1747329821.143088631] [whisper_to_topic]: Sending goal to start recognition...
+[INFO] [1747329821.145836280] [whisper_to_topic]: Goal accepted. Waiting for result...
+[INFO] [1747329828.613853047] [whisper_to_topic]: Recognized text: This is a test.
+[INFO] [1747329828.614660723] [whisper_to_topic]: Published recognized text to /speech_text
+```
+
+
+### Topics, actions:
 ```
 ros2 interface show whisper_msgs/action/STT
 ```
@@ -255,4 +278,53 @@ Transcription transcription
 	float32 audio_time
 	float32 transcription_time
 ---
+```
+```
+ros2 action list
+```
+>
+```
+/whisper/listen
+silenzio@jetsonnx:~/ros2_ws$ ros2 action info /whisper/listen
+Action: /whisper/listen
+Action clients: 0
+Action servers: 1
+    //w/h/i/s/p/e/rwhisper_node
+```
+____
+
+### run:
+
+## T0:
+```
+ros2 launch whisper_bringup whisper.launch.py
+```
+```
+ros2 launch whisper_bringup whisper.launch.py \
+  language:=ru \
+  model_path:=/home/silenzio/lib/whisper.cpp/models/ggml-small.bin \
+  translate:=false
+```
+
+
+## T2:
+```
+ros2 run omni whisper_to_topic
+```
+>
+```
+[INFO] [1747329821.142150646] [whisper_to_topic]: Waiting for the Whisper action server...
+[INFO] [1747329821.143088631] [whisper_to_topic]: Sending goal to start recognition...
+[INFO] [1747329821.145836280] [whisper_to_topic]: Goal accepted. Waiting for result...
+[INFO] [1747329828.613853047] [whisper_to_topic]: Recognized text: This is a test.
+[INFO] [1747329828.614660723] [whisper_to_topic]: Published recognized text to /speech_text
+
+```
+```
+ros2 topic echo /speech_text
+```
+>
+```
+---
+data: This is a test.
 ```
