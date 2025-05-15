@@ -35,5 +35,19 @@ make -j$(nproc)
     "nvidia-tensorrt==10.0.1" \
     --extra-index-url https://download.pytorch.org/whl/cu121
 
-pip install whispercpp 
+pip install whispercpp librosa==0.10.1
 ```
+
+```
+cd ~/lib/whisper.cpp/models
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
+### wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-ru-q5_k_m.bin
+```
+```
+./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-small-ru-q5_k_m.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
+./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-medium.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
+
+```
+
+
+
