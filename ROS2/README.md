@@ -21,6 +21,8 @@ colcon_cd
 
 colcon build
 
+colcon build --packages-select omni
+
 ros2 run ... ...
 
 ros2 launch ... ...
