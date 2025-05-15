@@ -175,8 +175,7 @@ ros2 run audio_capture audio_capture
 
 This node publish `audio_common_msgs/msg/AudioDataStamped` to topic `/audio`.
 
-
-Create file "params.yaml" in "/home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml":
+### Create file "params.yaml" in "/home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml":
 ```
 whisper_node:
   ros__parameters:
@@ -190,6 +189,70 @@ whisper_node:
 
 ### Run:
 ```
-cd ~/ros2_ws && source install/setup.bash
-ros2 run whisper_ros whisper_node --ros-args --params-file /home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml
+### cd ~/ros2_ws && source install/setup.bash
+### ros2 run whisper_ros whisper_node --ros-args --params-file /home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml
+```
+
+## T0:
+```
+ros2 launch whisper_bringup whisper.launch.py
+```
+>
+```
+[whisper_server_node-1] 
+[whisper_server_node-1] [INFO] [1747326644.938892967] [whisper.whisper_node]: [whisper_node] Activated
+[silero_vad_node-2] [INFO] [1747326787.895219120] [whisper.silero_vad_node]: SileroVAD enabled
+[silero_vad_node-2] [INFO] [1747326800.241615510] [whisper.silero_vad_node]: Speech starts...
+[silero_vad_node-2] [INFO] [1747326801.809064114] [whisper.silero_vad_node]: Speech ends...
+[whisper_server_node-1] [INFO] [1747326801.865077706] [whisper.whisper_node]: Transcribing
+[silero_vad_node-2] [INFO] [1747326801.865480312] [whisper.silero_vad_node]: SileroVAD disabled
+[whisper_server_node-1] [INFO] [whisper.cpp:transcribe:100] [00:00:00.000 --> 00:00:30.000]:  1, 2, 3, 1, 2, 3, 4, 5
+[whisper_server_node-1] [INFO] [1747326804.437417008] [whisper.whisper_node]: Text heard: 1, 2, 3, 1, 2, 3, 4, 5
+[silero_vad_node-2] [INFO] [1747326804.438242572] [whisper.silero_vad_node]: SileroVAD already disabled
+[silero_vad_node-2] [INFO] [1747326818.142648843] [whisper.silero_vad_node]: SileroVAD enabled
+[silero_vad_node-2] [INFO] [1747326819.938180824] [whisper.silero_vad_node]: Speech starts...
+[silero_vad_node-2] [INFO] [1747326821.994006711] [whisper.silero_vad_node]: Speech ends...
+[whisper_server_node-1] [INFO] [1747326822.048060936] [whisper.whisper_node]: Transcribing
+[silero_vad_node-2] [INFO] [1747326822.048283952] [whisper.silero_vad_node]: SileroVAD disabled
+[whisper_server_node-1] [INFO] [whisper.cpp:transcribe:100] [00:00:00.000 --> 00:00:30.000]:  One, two, three, four, five, out for a walk.
+[whisper_server_node-1] [INFO] [1747326824.526614093] [whisper.whisper_node]: Text heard: One, two, three, four, five, out for a walk.
+[silero_vad_node-2] [INFO] [1747326824.527316774] [whisper.silero_vad_node]: SileroVAD already disabled
+```
+
+## T1:
+```
+ros2 action send_goal /whisper/listen whisper_msgs/action/STT "{}"
+```
+```
+Waiting for an action server to become available...
+Sending goal:
+     prompt: ''
+grammar_config:
+  grammar: ''
+  start_rule: ''
+  grammar_penalty: 100.0
+Goal accepted with ID: f78c2693359442879ac78eff4086804c
+Result:
+    transcription:
+  text: One, two, three, four, five, out for a walk.
+  audio_time: 2.0
+  transcription_time: 2.4785516262054443
+Goal finished with status: SUCCEEDED
+```
+```
+ros2 interface show whisper_msgs/action/STT
+```
+>
+```
+String prompt
+GrammarConfig grammar_config
+	string grammar              ""
+	string start_rule           ""
+	float64 grammar_penalty     100.0
+---
+Transcription transcription
+	string text
+	float32 audio_time
+	float32 transcription_time
+---
 ```
