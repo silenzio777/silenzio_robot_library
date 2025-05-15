@@ -94,7 +94,7 @@ system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEO
 main: processing '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'
  (176000 samples, 11.0 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = ru, task = transcribe, timestamps = 1 ...
 
-[00:00:00.000 --> 00:00:11.000]
+[00:00:00.000 --> 00:00:11.000] И так, мои дорогие американцы, запросите, что ваш страна может сделать для вас, запросите, что вы можете сделать для вашей страны.
 
 whisper_print_timings:     load time =  2303.32 ms
 whisper_print_timings:     fallbacks =   0 p /   0 h
