@@ -41,13 +41,77 @@ pip install whispercpp librosa==0.10.1
 ```
 cd ~/lib/whisper.cpp/models
 wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
-### wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-ru-q5_k_m.bin
 ```
+
 ```
 ./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-small-ru-q5_k_m.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
-./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-medium.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
+./build/bin/whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-medium.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav' -t 4
+```
+### Work:
+
+```
+whisper_init_from_file_with_params_no_state: loading model from '/home/silenzio/lib/whisper.cpp/models/ggml-medium.bin'
+whisper_init_with_params_no_state: use gpu    = 1
+whisper_init_with_params_no_state: flash attn = 0
+whisper_init_with_params_no_state: gpu_device = 0
+whisper_init_with_params_no_state: dtw        = 0
+ggml_cuda_init: GGML_CUDA_FORCE_MMQ:    no
+ggml_cuda_init: GGML_CUDA_FORCE_CUBLAS: no
+ggml_cuda_init: found 1 CUDA devices:
+  Device 0: Orin, compute capability 8.7, VMM: yes
+whisper_init_with_params_no_state: devices    = 2
+whisper_init_with_params_no_state: backends   = 2
+whisper_model_load: loading model
+whisper_model_load: n_vocab       = 51865
+whisper_model_load: n_audio_ctx   = 1500
+whisper_model_load: n_audio_state = 1024
+whisper_model_load: n_audio_head  = 16
+whisper_model_load: n_audio_layer = 24
+whisper_model_load: n_text_ctx    = 448
+whisper_model_load: n_text_state  = 1024
+whisper_model_load: n_text_head   = 16
+whisper_model_load: n_text_layer  = 24
+whisper_model_load: n_mels        = 80
+whisper_model_load: ftype         = 1
+whisper_model_load: qntvr         = 0
+whisper_model_load: type          = 4 (medium)
+whisper_model_load: adding 1608 extra tokens
+whisper_model_load: n_langs       = 99
+whisper_default_buffer_type: using device CUDA0 (Orin)
+whisper_model_load:    CUDA0 total size =  1533.14 MB
+whisper_model_load: model size    = 1533.14 MB
+whisper_backend_init_gpu: using CUDA0 backend
+whisper_init_state: kv self size  =   50.33 MB
+whisper_init_state: kv cross size =  150.99 MB
+whisper_init_state: kv pad  size  =    6.29 MB
+whisper_init_state: compute buffer (conv)   =   29.51 MB
+whisper_init_state: compute buffer (encode) =  170.15 MB
+whisper_init_state: compute buffer (cross)  =    7.72 MB
+whisper_init_state: compute buffer (decode) =   99.11 MB
+
+system_info: n_threads = 4 / 8 | AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | SSE3 = 0 | SSSE3 = 0 | VSX = 0 | COREML = 0 | OPENVINO = 0 | 
+
+main: processing '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'
+ (176000 samples, 11.0 sec), 4 threads, 1 processors, 5 beams + best of 5, lang = ru, task = transcribe, timestamps = 1 ...
+
+[00:00:00.000 --> 00:00:11.000]
+
+whisper_print_timings:     load time =  2303.32 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =    13.42 ms
+whisper_print_timings:   sample time =   179.33 ms /   199 runs (    0.90 ms per run)
+whisper_print_timings:   encode time =  1057.34 ms /     1 runs ( 1057.34 ms per run)
+whisper_print_timings:   decode time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:   batchd time =  1287.01 ms /   197 runs (    6.53 ms per run)
+whisper_print_timings:   prompt time =     0.00 ms /     1 runs (    0.00 ms per run)
+whisper_print_timings:    total time =  5124.30 ms
 
 ```
 
 
+
+
+```
+sudo apt install ros-humble-audio-common
+```
 
