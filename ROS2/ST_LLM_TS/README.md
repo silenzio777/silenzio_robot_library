@@ -105,13 +105,51 @@ whisper_print_timings:   decode time =     0.00 ms /     1 runs (    0.00 ms per
 whisper_print_timings:   batchd time =  1287.01 ms /   197 runs (    6.53 ms per run)
 whisper_print_timings:   prompt time =     0.00 ms /     1 runs (    0.00 ms per run)
 whisper_print_timings:    total time =  5124.30 ms
+```
+
+
+```
+lsusb
+...
+Bus 001 Device 006: ID 041e:324d Creative Technology, Ltd Sound Blaster Play! 3
+...
+```
+
+```
+### sudo apt install ros-humble-audio-common
+cd ~/ros2_ws/src
+gir clone -t ros2 https://github.com/ros-drivers/audio_common
+cd ..
+colcon build --packages-select audio_common
+```
+
+```
+ros2 run audio_common audio_capturer_node
 
 ```
 
 
-
+Make file "audio.repos":
+```
+repositories:
+  audio_common:
+    type: git
+    url: https://github.com/knorth55/audio_common.git
+    version: ros2-idl-bugfix
+  rosidl:
+    type: git
+    url: https://github.com/ros2/rosidl.git
+    version: 3.3.1
+  rosidl_python:
+    type: git
+    url: https://github.com/knorth55/rosidl_python.git
+    version: fix-141
+```
 
 ```
-sudo apt install ros-humble-audio-common
+cd ~/
+mkdir tmp_ws/src -p
+cd tmp_ws/src/
+ls
+vcs import < ~/audio.repos
 ```
-
