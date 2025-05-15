@@ -173,4 +173,4 @@ ros2 run sound_play say.py 'Hello my name is Omni'
 ros2 run audio_capture audio_capture
 ```
 
-This node publish audio_common_msgs/msg/AudioDataStamped to topic "/audio".
+This node publish `audio_common_msgs/msg/AudioDataStamped` to topic `/audio`.
