@@ -174,3 +174,22 @@ ros2 run audio_capture audio_capture
 ```
 
 This node publish `audio_common_msgs/msg/AudioDataStamped` to topic `/audio`.
+
+
+Create file "params.yaml" in "/home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml":
+```
+whisper_node:
+  ros__parameters:
+    model_path: "/absolute/path/to/ggml-medium.bin"
+    language: "ru"
+    beam_size: 5
+    audio_topic: "/audio"
+    text_topic: "/speech_text"
+    translate: false
+```
+
+### Run:
+```
+cd ~/ros2_ws && source install/setup.bash
+ros2 run whisper_ros whisper_node --ros-args --params-file /home/silenzio/ros2_ws/src/whisper_ros/config/params.yaml
+```
