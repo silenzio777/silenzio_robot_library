@@ -17,3 +17,23 @@ cmake .. \
     -DWHISPER_CUBLAS=OFF 
 make -j$(nproc)
 ```
+```
+[100%] Built target whisper-server
+```
+```
+./main --help | grep cuda  # Should be "--cuda"
+...empty...
+```
+
+```
+### python3 -m pip install --upgrade \
+    "sounddevice>=0.4.6" \
+    "numpy<1.26" \
+    "whispercpp==0.0.14" \
+    "librosa==0.10.1" \
+    "nvidia-cudnn-cu12==9.1.0.70" \
+    "nvidia-tensorrt==10.0.1" \
+    --extra-index-url https://download.pytorch.org/whl/cu121
+
+pip install whispercpp 
+```
