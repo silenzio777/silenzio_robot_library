@@ -127,7 +127,8 @@ colcon build --packages-select audio_common
 ros2 run audio_common audio_capturer_node
 
 ```
-
+### FIX:
+https://github.com/ros-drivers/audio_common/issues/227
 
 Make file "audio.repos":
 ```
@@ -151,5 +152,10 @@ cd ~/
 mkdir tmp_ws/src -p
 cd tmp_ws/src/
 ls
-vcs import < ~/audio.repos
+vcs import < audio.repos
+rosdep install --from-paths . -y -r -i
+colcon build
 ```
+
+
+
