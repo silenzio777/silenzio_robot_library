@@ -157,5 +157,14 @@ rosdep install --from-paths . -y -r -i
 colcon build
 ```
 
+## T0:
+```
+cd ~/tmp_ws/src
+ource install/setup.bash
+ros2 run sound_play soundplay_node.py
+```
 
-
+## T1:
+```
+ros2 run sound_play say.py 'Hello my name is Omni'
+```
