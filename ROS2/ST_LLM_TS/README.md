@@ -332,6 +332,25 @@ ______
 
 ## Step #2: ROS2-topic → (owner/guest):
 
+```
+pip install speechbrain
+```
+## T1:
+```
+ros2 launch whisper_bringup whisper.launch.py
+```
 
+## T2:
+```
+ros2 run omni whisper_to_topic
+```
 
+## T3:
+```
+ros2 run omni speaker_id_node
+```
 
+## T4:
+```
+ros2 run omni vad_audio_to_wav_node
+```
