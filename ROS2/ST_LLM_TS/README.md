@@ -3,7 +3,7 @@
 
 ROS2-nodes audio_capturer → whisper_ros → llama_ros → coqui_tts (in ROS2-node/script) → audio_player_node
 
-
+ 
 ```
 cd ~/lib
 git clone https://github.com/ggerganov/whisper.cpp
