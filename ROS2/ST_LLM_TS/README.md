@@ -188,7 +188,7 @@ whisper_node:
 
 ```
 
-## whisper_ros:
+## Step #1: Mic audio → audio_capturer → whisper_ros → ROS2-topic:
 
 ### run:
 
@@ -328,3 +328,10 @@ ros2 topic echo /speech_text
 ---
 data: This is a test.
 ```
+______
+
+## Step #2: ROS2-topic → (owner/guest):
+
+
+
+
