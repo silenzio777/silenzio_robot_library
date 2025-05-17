@@ -168,7 +168,7 @@ ros2 run sound_play soundplay_node.py
 ```
 ros2 run sound_play say.py 'Hello my name is Omni'
 ```
-### Work: I can hear the voise in AC
+### Work: I can hear the voice in AC
 ```
 \###
 ros2 run audio_capture audio_capture
