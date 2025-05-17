@@ -463,6 +463,24 @@ sudo dpkg -i filenane.deb
 
 _______
 
+### WAV file info:
+```
+soxi jfk.wav
+```
+
+```
+Input File     : 'jfk.wav'
+Channels       : 1
+Sample Rate    : 16000
+Precision      : 16-bit
+Duration       : 00:00:11.00 = 176000 samples ~ 825 CDDA sectors
+File Size      : 352k
+Bit Rate       : 256k
+Sample Encoding: 16-bit Signed Integer PCM
+```
+
+_______
+
 ### reboot
 
 ```
@@ -477,3 +495,5 @@ _______
 sudo shutdown now
 sudo shutdown -r now
 ```
+
+
