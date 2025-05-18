@@ -470,7 +470,7 @@ sudo apt install sox
 ```
 rec -c 1 -r 44100 audio.wav
 ```
-<Control-C> to stop
+`Control-C` to stop
 _______
 
 ### WAV file info:
