@@ -373,7 +373,9 @@ Install cargo - Rust compiler
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 > stable-aarch64-unknown-linux-gnu installed - rustc 1.87.0 (17067e9ac 2025-05-09)
+> 
 > Rust is installed now. Great!
+
 ```
 source $HOME/.cargo/env
 sudo apt install -y cmake protobuf-compiler libclang-dev
