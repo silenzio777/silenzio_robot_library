@@ -386,3 +386,12 @@ pip3 install setuptools_rust
 pip install --no-build-isolation sudachipy==0.6.7
 ```
 > Successfully installed sudachipy-0.6.7
+
+Install TTS without Japan voices
+```
+pip install TTS==0.22.0 \
+  --no-deps \
+  --global-option="--skip-ja" \
+  --extra-index-url https://download.pytorch.org/whl/cu121
+```
+>  Successfully installed TTS-0.22.0
