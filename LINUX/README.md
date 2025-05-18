@@ -460,7 +460,17 @@ Download filenane.deb package and install:
 ```
 sudo dpkg -i filenane.deb
 ```
+_______
 
+### Record audio by MIC to WAV file:
+
+```
+sudo apt install sox
+```
+```
+rec -c 1 -r 44100 audio.wav
+```
+<Control-C> to stop
 _______
 
 ### WAV file info:
