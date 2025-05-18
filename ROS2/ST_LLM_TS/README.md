@@ -488,6 +488,12 @@ Path to downloaded models: /home/silenzio/.local/share/tts
 ```
 tts --list_models
 ```
+### Get models: 
+
+https://huggingface.co/coqui/XTTS-v2/tree/main?clone=true
+
+git clone https://huggingface.co/coqui/XTTS-v2
+
 ### Get XTTS-v2 model (2Gb)
 ```
 ~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
