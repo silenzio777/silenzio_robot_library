@@ -358,7 +358,6 @@ ________________
 
 ## Step #2: ROS2-topic → LLM  → TTS:
 
-
 Install Rust on Ubuntu Using APT
 ```
 sudo apt update
@@ -381,3 +380,9 @@ source $HOME/.cargo/env
 sudo apt install -y cmake protobuf-compiler libclang-dev
 ```
 
+```
+export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=/usr/bin/aarch64-linux-gnu-gcc
+pip3 install setuptools_rust
+pip install --no-build-isolation sudachipy==0.6.7
+```
+> Successfully installed sudachipy-0.6.7
