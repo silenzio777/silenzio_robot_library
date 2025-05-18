@@ -3,7 +3,59 @@
 
 ROS2-nodes audio_capturer → whisper_ros → llama_ros → coqui_tts (in ROS2-node/script) → audio_player_node
 
- 
+### Sound system setup:
+```
+$ speaker-test -D sysdefault:CARD=S3 -c 2
+```
+```
+speaker-test 1.2.6
+
+Playback device is sysdefault:CARD=S3
+
+Stream parameters are 48000Hz, S16_LE, 2 channels
+Using 16 octaves of pink noise
+Rate set to 48000Hz (requested 48000Hz)
+Buffer size range from 2048 to 16384
+Period size range from 1024 to 1024
+Using max buffer size 16384
+Periods = 4
+was set period_size = 1024
+was set buffer_size = 16384
+ 0 - Front Left
+ 1 - Front Right
+Time per period = 5.640342
+ 0 - Front Left
+ 1 - Front Right
+...
+Control+C
+```
+
+```
+sudo apt install pulseaudio pavucontrol
+pulseaudio --start
+```
+
+```
+aplay -L | grep -E "sysdefault|hw|default"
+sysdefault
+default
+hw:CARD=S3,DEV=0
+plughw:CARD=S3,DEV=0
+sysdefault:CARD=S3
+```
+```
+sudo nano ~/.asoundrc:
+```
+
+```
+pcm.!default {
+    type plug
+    slave.pcm "hw:CARD=S3,DEV=0"  # your device from >aplay -L | grep -E "sysdefault|hw|default"<
+}
+```
+
+___
+
 ```
 cd ~/lib
 git clone https://github.com/ggerganov/whisper.cpp
