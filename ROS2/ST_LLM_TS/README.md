@@ -395,3 +395,17 @@ pip install TTS==0.22.0 \
   --extra-index-url https://download.pytorch.org/whl/cu121
 ```
 >  Successfully installed TTS-0.22.0
+
+Jetson Orin optimize:
+```
+export CARGO_BUILD_JOBS=2
+export MAX_JOBS=2
+```
+
+pip3 install coqpit anyascii trainer bangla bnnumerizer bnunicodenormalizer  einops encodec g2pkk hangul_romanize inflect jamo jieba nltk num2words pypinyin pysbd umap-learn unidecode
+
+pip3 install gruut spacy cython
+
+transformers
+
+
