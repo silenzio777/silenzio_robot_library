@@ -354,3 +354,25 @@ ros2 run omni speaker_id_node
 ```
 ros2 run omni vad_audio_to_wav_node
 ```
+________________
+
+## Step #2: ROS2-topic → LLM  → TTS:
+
+
+Install Rust on Ubuntu Using APT
+```
+sudo apt update
+
+sudo apt install rustc
+
+rustc -V
+```
+
+Install cargo - Rust compiler
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+
+sudo apt install -y cmake protobuf-compiler libclang-dev
+```
+
