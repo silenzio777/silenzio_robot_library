@@ -12,6 +12,30 @@ ____
 
 ### Current Hardware & Software Setup
 
+```
+silenzio@jetsonnx:~/ros2_ws/src/omni/omni$ neofetch
+            .-/+oossssoo+/-.               silenzio@jetsonnx 
+        `:+ssssssssssssssssss+:`           ----------------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.5 LTS aarch64 
+    .ossssssssssssssssssdMMMNysssso.       Host: NVIDIA Jetson Orin NX Engineering Reference Developer Kit Super 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 5.15.148-tegra 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 13 hours, 33 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 3711 (dpkg), 11 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.1.16 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 2560x1440 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 42.9 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru-dark [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: ARMv8 rev 1 (v8l) (8) @ 1.984GHz 
+    .ossssssssssssssssssdMMMNysssso.       Memory: 8251MiB / 15655MiB 
+      -+sssssssssssssssssyyyssss+-
+        `:+ssssssssssssssssss+:`                                   
+            .-/+oossssoo+/-.                                       
+```
+
 ### Dev-board: nVIDIA Jetson Orin NX 16GB
 
 Platform:
@@ -37,5 +61,3 @@ Hardware:
 - LAT: 36.4.3
 - Jetpack: 6.2
 
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
