@@ -432,10 +432,7 @@ Name format: type/language/dataset/model
 Path to downloaded models: /home/silenzio/.local/share/tts
 
 ```
-### WORK!
-```
-ros2 launch tts_bringup tts.launch.py device:="cuda"
-```
+
 ```
 tts --list_models
 ```
@@ -444,4 +441,17 @@ tts --list_models
 ~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
 git clone https://huggingface.co/coqui/XTTS-v2
 cp /XTTS-v2 .
+```
+```
+$tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2"--list_speaker_idxs
+```
+
+### WORK!
+### T1:
+```
+ros2 launch tts_bringup tts.launch.py device:="cuda"
+```
+### T2:
+```
+ros2 action send_goal /say audio_common_msgs/action/TTS "{'text': 'Alternatively, use esc then tab to move to the next interactive element on the page.', 'language': 'es'}"
 ```
