@@ -13,8 +13,8 @@ ____
 ### Current Hardware & Software Setup
 
 ```
-silenzio@jetsonnx:~/ros2_ws/src/omni/omni$ neofetch
-            .-/+oossssoo+/-.               silenzio@jetsonnx 
+?ipe.z3sd@bfewtsgn2e:$ neofetch
+            .-/+oossssoo+/-.               ?ipe.z3sd@bfewtsgn2e 
         `:+ssssssssssssssssss+:`           ----------------- 
       -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.5 LTS aarch64 
     .ossssssssssssssssssdMMMNysssso.       Host: NVIDIA Jetson Orin NX Engineering Reference Developer Kit Super 
