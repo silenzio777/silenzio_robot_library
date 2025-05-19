@@ -516,9 +516,11 @@ ros2 action send_goal /say audio_common_msgs/action/TTS "{'text': 'Alternatively
 
 
 <img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
-
+______
+STT only CPU_GPU:
 <img src="STT_CPU_GPU.png" title="" width="800">
-
+______
+STT+TTS CPU_GPU
 <img src="STT-TTS_CPU_GPU.png" title="" width="800">
-
+______
 <img src="STT-TTS_desctop.png" title="" width="1000">
