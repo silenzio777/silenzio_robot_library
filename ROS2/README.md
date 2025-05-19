@@ -44,6 +44,8 @@ ros2 run tf2_tools view_frames
 
 ros2 topic hz /camera/color/image_raw
 
+ros2 topic pub /say_text std_msgs/String "{data: 'Hello world!'}
+
 ros2 doctor --report | grep middleware
 
 ros2 pkg executables pcl_ros
