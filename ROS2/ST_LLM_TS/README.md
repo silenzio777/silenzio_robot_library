@@ -545,13 +545,13 @@ ____________
 <img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
 ____________
 
-STT only (whisper_ros + silero-vad) CPU_GPU:
+STT only (whisper_ros + silero-vad) GPU_CPU:
 
 <img src="STT_CPU_GPU.png" title="" width="800">
 
 ____________
 
-STT+TTS (whisper_ros + silero-vad + tts_ros) CPU_GPU
+STT+TTS (whisper_ros + silero-vad + tts_ros) GPU_CPU
 
 <img src="STT-TTS_CPU_GPU.png" title="" width="800">
 
