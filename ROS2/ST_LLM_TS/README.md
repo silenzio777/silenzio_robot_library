@@ -23,7 +23,7 @@ was set period_size = 1024
 was set buffer_size = 16384
  0 - Front Left
  1 - Front Right
-Time per period = 5.640342
+Time per period = 5.640342 
  0 - Front Left
  1 - Front Right
 ...
@@ -505,7 +505,7 @@ cp /XTTS-v2 .
 $tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2"--list_speaker_idxs
 ```
 
-### WORK!
+## works
 
 ## Step #2: ROS2-topic → (owner/guest):
 
