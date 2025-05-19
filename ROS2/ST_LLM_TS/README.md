@@ -519,7 +519,7 @@ ros2 action send_goal /say audio_common_msgs/action/TTS "{'text': 'Alternatively
 ```
 ____________
 
-### ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
+### ROS2-nodes audio_capturer → whisper_ros → >>> → tts_ros → audio_player_node:
 
 ###  T1:
 ```
@@ -545,13 +545,13 @@ ____________
 <img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
 ____________
 
-STT only CPU_GPU:
+STT only (whisper_ros + silero-vad) CPU_GPU:
 
 <img src="STT_CPU_GPU.png" title="" width="800">
 
 ____________
 
-STT+TTS CPU_GPU
+STT+TTS (whisper_ros + silero-vad + tts_ros) CPU_GPU
 
 <img src="STT-TTS_CPU_GPU.png" title="" width="800">
 
