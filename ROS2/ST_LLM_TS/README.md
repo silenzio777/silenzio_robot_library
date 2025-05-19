@@ -517,29 +517,7 @@ ros2 launch tts_bringup tts.launch.py
 ```
 ros2 action send_goal /say audio_common_msgs/action/TTS "{'text': 'Alternatively, use esc then tab to move to the next interactive element on the page.', 'language': 'es'}"
 ```
-
 ____________
-
-<img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
-____________
-
-STT only CPU_GPU:
-
-<img src="STT_CPU_GPU.png" title="" width="800">
-
-____________
-
-STT+TTS CPU_GPU
-
-<img src="STT-TTS_CPU_GPU.png" title="" width="800">
-
-____________
-
-<img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
-
-____________
-
-
 
 ### ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
 
@@ -561,3 +539,24 @@ ros2 run omni tts_action_client
 ```
 
 ## works!
+
+____________
+
+<img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
+____________
+
+STT only CPU_GPU:
+
+<img src="STT_CPU_GPU.png" title="" width="800">
+
+____________
+
+STT+TTS CPU_GPU
+
+<img src="STT-TTS_CPU_GPU.png" title="" width="800">
+
+____________
+
+<img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
+
+____________
