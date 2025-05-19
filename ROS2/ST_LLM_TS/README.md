@@ -540,7 +540,6 @@ ____________
 ____________
 
 
-## WORK!
 
 ### ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
 
@@ -561,3 +560,4 @@ ros2 launch tts_bringup tts.launch.py
 ros2 run omni tts_action_client
 ```
 
+## works!
