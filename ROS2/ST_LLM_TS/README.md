@@ -455,8 +455,9 @@ export MAX_JOBS=2
 ```
 ```
 ### pip3 install coqpit anyascii trainer bangla bnnumerizer bnunicodenormalizer  einops encodec g2pkk hangul_romanize inflect jamo jieba nltk num2words pypinyin pysbd umap-learn unidecode gruut spacy cython transformers
-```
 ### Not work...
+```
+
 
 ___
 ```
@@ -505,9 +506,12 @@ $tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2"--list_speaker_
 ```
 
 ### WORK!
+
+## Step #2: ROS2-topic → (owner/guest):
+
 ### T1:
 ```
-ros2 launch tts_bringup tts.launch.py device:="cuda"
+ros2 launch tts_bringup tts.launch.py
 ```
 ### T2:
 ```
@@ -532,3 +536,28 @@ STT+TTS CPU_GPU
 ____________
 
 <img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
+
+____________
+
+
+### WORK!
+
+## ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
+
+## T1:
+```
+ros2 launch whisper_bringup whisper.launch.py
+```
+
+### T2:
+
+```
+ros2 launch tts_bringup tts.launch.py
+```
+
+### T3:
+
+```
+ros2 run omni tts_action_client
+```
+
