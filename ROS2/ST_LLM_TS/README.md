@@ -540,11 +540,11 @@ ____________
 ____________
 
 
-### WORK!
+## WORK!
 
-## ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
+### ROS2-nodes audio_capturer → whisper_ros → >>> → coqui_tts (in ROS2-node/script) → audio_player_node:
 
-## T1:
+###  T1:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
