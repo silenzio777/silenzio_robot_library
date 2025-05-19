@@ -514,17 +514,21 @@ ros2 launch tts_bringup tts.launch.py device:="cuda"
 ros2 action send_goal /say audio_common_msgs/action/TTS "{'text': 'Alternatively, use esc then tab to move to the next interactive element on the page.', 'language': 'es'}"
 ```
 
+____________
+
 <img src="STT-ProcessDisplay.png" title="STT-ProcessDisplay" width="800">
-______
+____________
 
 STT only CPU_GPU:
 
 <img src="STT_CPU_GPU.png" title="" width="800">
-______
+
+____________
 
 STT+TTS CPU_GPU
 
 <img src="STT-TTS_CPU_GPU.png" title="" width="800">
-______
+
+____________
 
 <img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
