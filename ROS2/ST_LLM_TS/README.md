@@ -53,6 +53,25 @@ pcm.!default {
     slave.pcm "hw:CARD=S3,DEV=0"  # your device from >aplay -L | grep -E "sysdefault|hw|default"<
 }
 ```
+___
+```
+$ pactl list short sinks
+```
+```
+0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+1	alsa_output.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+```
+
+```
+$ pactl list short sources
+```
+```
+0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+1	alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	RUNNING
+2	alsa_output.platform-sound.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+3	alsa_input.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 48000Hz	SUSPENDED
+
+```
 
 ___
 
