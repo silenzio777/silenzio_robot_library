@@ -43,9 +43,12 @@ Time per period = 5.640342
  0 - Front Left
  1 - Front Right
 ...
-You should hear the noise from the AC left then AC right...
-Control+C
 ```
+
+> You should hear the noise from the AC left then AC right...
+> 
+> Control+C
+
 
 _________
 
