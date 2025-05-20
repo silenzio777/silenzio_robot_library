@@ -488,6 +488,34 @@ File Size      : 352k
 Bit Rate       : 256k
 Sample Encoding: 16-bit Signed Integer PCM
 ```
+_______
+
+### All net traffic:
+
+nload
+```
+sudo apt install nload
+nload wlp1s0
+```
+
+nethogs
+```
+sudo apt install nethogs
+sudo nethogs wlp1s0
+```
+
+iftop
+```
+sudo apt install iftop
+sudo iftop -i wlp1s0
+```
+
+wireshark
+```
+sudo apt install wireshark
+sudo tcpdump -i wlp1s0 -n
+```
+
 
 _______
 
