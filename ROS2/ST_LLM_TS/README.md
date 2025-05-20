@@ -644,6 +644,26 @@ ____________
 <img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
 
 ____________
+### nltk for sentence tokenizer:
+
+```
+$ python3
+Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nltk
+>>> nltk.download('punkt')
+[nltk_data] Downloading package punkt to /home/silenzio/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+True
+>>> nltk.download('punkt_tab')
+[nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/silenzio/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+True
+>>> exit()
+```
+
+____________
 
 
 ### ROS2-nodes audio_capturer → whisper_ros → LLM → tts_ros → audio_player_node:
