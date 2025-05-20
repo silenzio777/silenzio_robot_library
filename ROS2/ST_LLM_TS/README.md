@@ -57,7 +57,9 @@ _________
 ### Set USB Sound_Blaster_Play__3 as default Input Device and Output Device:
 
 > Output Device: Speakers - Sound Blaster Play! 3
+
 > Input Device: Microphone - Sound Blaster Play! 3
+
 
 ###  Test pulseaudio service:
 ```
@@ -67,6 +69,7 @@ systemctl --user status pulseaudio
 ```
 systemctl --user restart pulseaudio
 ```
+
 
 ```
 $ pactl list short sinks
@@ -116,6 +119,22 @@ WantedBy=multi-user.target
 sudo systemctl enable set_default_audio.service
 sudo systemctl start set_default_audio.service
 ```
+
+###  Check default device:
+```
+pactl get-default-sink
+```
+
+> alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.iec958-stereo
+
+```
+pactl get-default-source
+```
+
+> alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo
+
+
+
 
 ____________
 
