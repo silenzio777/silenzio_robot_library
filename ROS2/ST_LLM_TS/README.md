@@ -119,7 +119,7 @@ WantedBy=default.target
 ### Run systemd-service:
 ```
 systemctl --user enable set_default_audio.service
-systemctl --user start set_default_audio.service```
+systemctl --user start set_default_audio.service
 ```
 
 ###  Check default device:
