@@ -63,6 +63,10 @@ _________
 ```
 systemctl --user status pulseaudio
 ```
+###  If not active, restart:
+```
+systemctl --user restart pulseaudio
+```
 
 ```
 $ pactl list short sinks
@@ -112,7 +116,9 @@ WantedBy=multi-user.target
 sudo systemctl enable set_default_audio.service
 sudo systemctl start set_default_audio.service
 ```
+
 ____________
+
 
 ### Install whisper.cpp lib:
 
