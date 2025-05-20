@@ -56,8 +56,13 @@ pcm.!default {
 _________
 ### Set USB Sound_Blaster_Play__3 as default Input Device and Output Device:
 
-Output Device: Speakers - Sound Blaster Play! 3
-Input Device: Microphone - Sound Blaster Play! 3
+> Output Device: Speakers - Sound Blaster Play! 3
+> Input Device: Microphone - Sound Blaster Play! 3
+
+###  Test pulseaudio service:
+```
+systemctl --user status pulseaudio
+```
 
 ```
 $ pactl list short sinks
@@ -75,6 +80,7 @@ pactl list short sources
 ```
 sudo nano /usr/local/bin/set_default_audio.sh
 ```
+
 ```
 #!/bin/bash
 sleep 5  # Wait for PulseAudio loading...
@@ -88,8 +94,8 @@ sudo chmod +x /usr/local/bin/set_default_audio.sh
 ```
 sudo nano /etc/systemd/system/set_default_audio.service
 ```
-
-ini
+### Create systemd-service:
+```
 [Unit]
 Description=Set Default Audio Devices
 After=pulseaudio.service
@@ -100,13 +106,12 @@ ExecStart=/usr/local/bin/set_default_audio.sh
 
 [Install]
 WantedBy=multi-user.target
-3.4. Включите и запустите сервис:
-
-bash
+```
+### Run systemd-service:
+```
 sudo systemctl enable set_default_audio.service
 sudo systemctl start set_default_audio.service
-
-systemctl --user status pulseaudio
+```
 ____________
 
 ### Install whisper.cpp lib:
