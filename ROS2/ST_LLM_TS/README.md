@@ -3,7 +3,7 @@
 
 ROS2-nodes audio_capturer → whisper_ros → llama_ros → coqui_tts (in ROS2-node/script) → audio_player_node
 
-### Sound system setup:
+### Check sound system:
 
 ```
 lsusb
@@ -38,6 +38,7 @@ Control+C
 ```
 
 _________
+
 ### Set USB Sound Blaster Play 3 as default Input Device and Output Device:
 
 > Output Device: Speakers - Sound Blaster Play! 3
