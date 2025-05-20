@@ -646,7 +646,7 @@ ____________
 ____________
 
 
-### ROS2-nodes audio_capturer → whisper_ros → >>> → tts_ros → audio_player_node:
+### ROS2-nodes audio_capturer → whisper_ros → LLM → tts_ros → audio_player_node:
 
 ###  T1:
 ```
