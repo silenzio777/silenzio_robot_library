@@ -59,37 +59,57 @@ _________
 Output Device: Speakers - Sound Blaster Play! 3
 Input Device: Microphone - Sound Blaster Play! 3
 
-
 ```
 $ pactl list short sinks
-```
-```
-0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 1	alsa_output.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+2	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.iec958-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 ```
-> 0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo <<<<<<
+```
+pactl list short sources
+1	alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+2	alsa_output.platform-sound.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	RUNNING
+3	alsa_input.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	RUNNING
+4	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.iec958-stereo.monitor	module-alsa-card.c	s16le 2ch 48000Hz	SUSPENDED
+```
 
 ```
-$ pactl list short sources
+sudo nano /usr/local/bin/set_default_audio.sh
 ```
 ```
-0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
-1	alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	RUNNING
-2	alsa_output.platform-sound.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
-3	alsa_input.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 48000Hz	SUSPENDED
+#!/bin/bash
+sleep 5  # Wait for PulseAudio loading...
+pacmd set-default-sink "alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.iec958-stereo"
+pacmd set-default-source "alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo"
+```
+```
+sudo chmod +x /usr/local/bin/set_default_audio.sh
+```
 
 ```
-> 1	alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo <<<<<
+sudo nano /etc/systemd/system/set_default_audio.service
+```
 
-### PulseAudio setup:
-```
-nano ~/.config/pulse/default.pa
-```
-```
-set-default-sink alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo
-set-default-source alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo
-```
-___
+ini
+[Unit]
+Description=Set Default Audio Devices
+After=pulseaudio.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/set_default_audio.sh
+
+[Install]
+WantedBy=multi-user.target
+3.4. Включите и запустите сервис:
+
+bash
+sudo systemctl enable set_default_audio.service
+sudo systemctl start set_default_audio.service
+
+systemctl --user status pulseaudio
+____________
+
+### Install whisper.cpp lib:
 
 ```
 cd ~/lib
