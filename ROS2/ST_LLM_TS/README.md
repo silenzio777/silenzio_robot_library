@@ -31,26 +31,6 @@ You should hear the noise from the AC left then AC right...
 Control+C
 ```
 
-
-
-```
-aplay -L | grep -E "sysdefault|hw|default"
-sysdefault
-default
-hw:CARD=S3,DEV=0
-plughw:CARD=S3,DEV=0
-sysdefault:CARD=S3
-```
-```
-sudo nano ~/.asoundrc:
-```
-
-```
-pcm.!default {
-    type plug
-    slave.pcm "hw:CARD=S3,DEV=0"  # your device from >aplay -L | grep -E "sysdefault|hw|default"<
-}
-```
 _________
 ### Set USB Sound_Blaster_Play__3 as default Input Device and Output Device:
 
