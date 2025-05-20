@@ -646,6 +646,8 @@ ____________
 ____________
 ### nltk for sentence tokenizer:
 
+nltk.data download:
+
 ```
 $ python3
 Python 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0] on linux
