@@ -4,6 +4,14 @@
 ROS2-nodes audio_capturer → whisper_ros → llama_ros → coqui_tts (in ROS2-node/script) → audio_player_node
 
 ### Sound system setup:
+
+```
+lsusb
+...
+Bus 001 Device 006: ID 041e:324d Creative Technology, Ltd Sound Blaster Play! 3
+...
+```
+
 ```
 speaker-test -D sysdefault:CARD=S3 -c 2
 ```
@@ -169,7 +177,7 @@ wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
 ./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-small-ru-q5_k_m.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
 ./build/bin/whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-medium.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav' -t 4
 ```
-### Work:
+### Works:
 
 ```
 whisper_init_from_file_with_params_no_state: loading model from '/home/silenzio/lib/whisper.cpp/models/ggml-medium.bin'
@@ -231,13 +239,6 @@ whisper_print_timings:    total time =  5124.30 ms
 
 
 ```
-lsusb
-...
-Bus 001 Device 006: ID 041e:324d Creative Technology, Ltd Sound Blaster Play! 3
-...
-```
-
-```
 ### sudo apt install ros-humble-audio-common
 cd ~/ros2_ws/src
 gir clone -t ros2 https://github.com/ros-drivers/audio_common
@@ -247,7 +248,6 @@ colcon build --packages-select audio_common
 
 ```
 ros2 run audio_common audio_capturer_node
-
 ```
 ### FIX:
 https://github.com/ros-drivers/audio_common/issues/227
