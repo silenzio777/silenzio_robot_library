@@ -99,25 +99,27 @@ sudo chmod +x /usr/local/bin/set_default_audio.sh
 ```
 
 ```
-sudo nano /etc/systemd/system/set_default_audio.service
+mkdir -p ~/.config/systemd/user/
+nano ~/.config/systemd/user/set_default_audio.service
 ```
 ### Create systemd-service:
 ```
 [Unit]
 Description=Set Default Audio Devices
 After=pulseaudio.service
+Requires=pulseaudio.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/set_default_audio.sh
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 ```
 ### Run systemd-service:
 ```
-sudo systemctl enable set_default_audio.service
-sudo systemctl start set_default_audio.service
+systemctl --user enable set_default_audio.service
+systemctl --user start set_default_audio.service```
 ```
 
 ###  Check default device:
