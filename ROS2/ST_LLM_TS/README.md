@@ -14,13 +14,13 @@ Bus 001 Device 006: ID 041e:324d Creative Technology, Ltd Sound Blaster Play! 3
 ```
 aplay -L | grep -E "sysdefault|hw|default"
 ```
-
-> sysdefault
-> default
-> hw:CARD=S3,DEV=0
-> plughw:CARD=S3,DEV=0
-> sysdefault:CARD=S3
-
+```
+sysdefault
+default
+hw:CARD=S3,DEV=0
+plughw:CARD=S3,DEV=0
+sysdefault:CARD=S3
+```
 
 ```
 speaker-test -D sysdefault:CARD=S3 -c 2
