@@ -16,9 +16,13 @@ aplay -L | grep -E "sysdefault|hw|default"
 ```
 
 > sysdefault
+
 > default
+
 > hw:CARD=S3,DEV=0
+
 > plughw:CARD=S3,DEV=0
+
 > sysdefault:CARD=S3
 
 
