@@ -5,7 +5,7 @@ ROS2-nodes audio_capturer → whisper_ros → llama_ros → coqui_tts (in ROS2-n
 
 ### Sound system setup:
 ```
-$ speaker-test -D sysdefault:CARD=S3 -c 2
+speaker-test -D sysdefault:CARD=S3 -c 2
 ```
 ```
 speaker-test 1.2.6
@@ -72,7 +72,7 @@ systemctl --user restart pulseaudio
 
 
 ```
-$ pactl list short sinks
+pactl list short sinks
 1	alsa_output.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 2	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.iec958-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 ```
