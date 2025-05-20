@@ -61,6 +61,7 @@ $ pactl list short sinks
 0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 1	alsa_output.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
 ```
+> 0	alsa_output.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo <<<<<<
 
 ```
 $ pactl list short sources
@@ -72,6 +73,11 @@ $ pactl list short sources
 3	alsa_input.platform-sound.analog-stereo	module-alsa-card.c	s16le 2ch 48000Hz	SUSPENDED
 
 ```
+
+> 1	alsa_input.usb-Creative_Technology_Ltd_Sound_Blaster_Play__3_YDSB1730148001584Q-00.analog-stereo <<<<<
+
+
+
 
 ___
 
