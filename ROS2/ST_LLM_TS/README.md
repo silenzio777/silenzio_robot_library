@@ -31,10 +31,7 @@ You should hear the noise from the AC left then AC right...
 Control+C
 ```
 
-```
-sudo apt install pulseaudio pavucontrol
-pulseaudio --start
-```
+
 
 ```
 aplay -L | grep -E "sysdefault|hw|default"
@@ -66,6 +63,13 @@ _________
 ```
 systemctl --user status pulseaudio
 ```
+
+###  If not exist, install:
+```
+sudo apt install pulseaudio pavucontrol
+pulseaudio --start
+```
+
 ###  If not active, restart:
 ```
 systemctl --user restart pulseaudio
