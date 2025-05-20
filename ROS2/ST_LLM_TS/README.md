@@ -644,3 +644,29 @@ ____________
 <img src="STT-TTS_desctop.png" title="STT-TTS_desctop.png" width="1000">
 
 ____________
+
+
+### ROS2-nodes audio_capturer → whisper_ros → >>> → tts_ros → audio_player_node:
+
+###  T1:
+```
+ros2 launch whisper_bringup whisper.launch.py
+```
+
+### T2:
+
+```
+ros2 launch tts_bringup tts.launch.py
+```
+
+### T3:
+
+```
+ros2 run omni tts_action_client
+```
+
+### T4:
+
+```
+ros2 run omni llama_ros_chain
+```
