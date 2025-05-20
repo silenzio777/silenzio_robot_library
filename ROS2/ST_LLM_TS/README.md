@@ -9,9 +9,7 @@ speaker-test -D sysdefault:CARD=S3 -c 2
 ```
 ```
 speaker-test 1.2.6
-
 Playback device is sysdefault:CARD=S3
-
 Stream parameters are 48000Hz, S16_LE, 2 channels
 Using 16 octaves of pink noise
 Rate set to 48000Hz (requested 48000Hz)
@@ -32,7 +30,7 @@ Control+C
 ```
 
 _________
-### Set USB Sound_Blaster_Play__3 as default Input Device and Output Device:
+### Set USB Sound Blaster Play 3 as default Input Device and Output Device:
 
 > Output Device: Speakers - Sound Blaster Play! 3
 
