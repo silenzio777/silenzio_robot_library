@@ -127,7 +127,7 @@ systemctl --user enable set_default_audio.service
 systemctl --user start set_default_audio.service
 ```
 
-###  Check default device:
+### Check default device:
 ```
 pactl get-default-sink
 ```
@@ -295,14 +295,14 @@ rosdep install --from-paths . -y -r -i
 colcon build
 ```
 
-## T0:
+### T0:
 ```
 cd ~/tmp_ws/src
 ource install/setup.bash
 ros2 run sound_play soundplay_node.py
 ```
 
-## T1:
+### T1:
 ```
 ros2 run sound_play say.py 'Hello my name is Omni'
 ```
@@ -330,7 +330,7 @@ whisper_node:
 
 ### run:
 
-## T0:
+### T0:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
@@ -363,7 +363,7 @@ ros2 launch whisper_bringup whisper.launch.py \
 [silero_vad_node-2] [INFO] [1747326824.527316774] [whisper.silero_vad_node]: SileroVAD already disabled
 ```
 
-## T1:
+### T1:
 ```
 ros2 action send_goal /whisper/listen whisper_msgs/action/STT "{}"
 ```
@@ -385,7 +385,7 @@ Result:
 Goal finished with status: SUCCEEDED
 ```
 
-## T2:
+### T2:
 ```
 ros2 run omni whisper_to_topic
 ```
@@ -433,7 +433,7 @@ ____
 
 ### run:
 
-## T0:
+### T0:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
@@ -445,7 +445,7 @@ ros2 launch whisper_bringup whisper.launch.py \
 ```
 
 
-## T2:
+### T2:
 ```
 ros2 run omni whisper_to_topic
 ```
@@ -473,22 +473,22 @@ ______
 ```
 pip install speechbrain
 ```
-## T1:
+### T1:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
 
-## T2:
+### T2:
 ```
 ros2 run omni whisper_to_topic
 ```
 
-## T3:
+### T3:
 ```
 ros2 run omni speaker_id_node
 ```
 
-## T4:
+### T4:
 ```
 ros2 run omni vad_audio_to_wav_node
 ```
@@ -500,9 +500,7 @@ ________________
 Install Rust on Ubuntu Using APT
 ```
 sudo apt update
-
 sudo apt install rustc
-
 rustc -V
 ```
 
@@ -549,7 +547,7 @@ ___
 ```
 pip3 install coqui-tts==0.25.3
 ```
-### works
+### Works
 
 ```
 $ tts --list_models
@@ -596,12 +594,12 @@ Model dir:
 ~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
 ```
 
-Test:
+### Run:
 ```
 tts --text "Привет, мир!" --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --out_path /home/silenzio/.ros/speech.wav --speaker_idx "Damien Black" --language_idx "ru"
 ```
 
-## works
+### works
 
 ________________
 
@@ -635,7 +633,7 @@ ____________
 
 ### ROS2-nodes audio_capturer → whisper_ros → >>> → tts_ros → audio_player_node:
 
-###  T1:
+### T1:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
@@ -652,7 +650,7 @@ ros2 launch tts_bringup tts.launch.py
 ros2 run omni tts_action_client
 ```
 
-## works!
+### works!
 
 ____________
 
@@ -700,7 +698,7 @@ ____________
 
 ### ROS2-nodes audio_capturer → whisper_ros → LLM → tts_ros → audio_player_node:
 
-###  T1:
+### T1:
 ```
 ros2 launch whisper_bringup whisper.launch.py
 ```
