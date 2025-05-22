@@ -579,16 +579,21 @@ tts --list_models
 
 https://huggingface.co/coqui/XTTS-v2/tree/main?clone=true
 
-git clone https://huggingface.co/coqui/XTTS-v2
-
 ### Get XTTS-v2 model (2Gb)
 ```
-~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
+git clone https://huggingface.co/coqui/XTTS-v2
 git clone https://huggingface.co/coqui/XTTS-v2
 cp /XTTS-v2 .
 ```
+
+Or this way:
 ```
-$tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2"--list_speaker_idxs
+tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --list_speaker_idxs
+```
+
+Model dir:
+```
+~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
 ```
 
 ## works
