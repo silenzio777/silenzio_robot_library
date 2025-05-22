@@ -185,10 +185,13 @@ pip install whispercpp librosa==0.10.1
 ```
 cd ~/lib/whisper.cpp/models
 wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin
 ```
 
 ```
-./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-small-ru-q5_k_m.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
+./whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-large-v3-turbo-q5_0.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav'    -l ru    -t 4
 ./build/bin/whisper-cli -m /home/silenzio/lib/whisper.cpp/models/ggml-medium.bin   -f '/home/silenzio/lib/whisper.cpp/samples/jfk.wav' -t 4
 ```
 ### Works:
