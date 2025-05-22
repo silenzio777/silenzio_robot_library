@@ -597,7 +597,7 @@ Model dir:
 
 Test:
 ```
-tts --text "Привет, дружок!" --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --out_path /home/silenzio/.ros/speech.wav --speaker_idx "Damien Black" --language_idx "ru"
+tts --text "Привет, мир!" --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --out_path /home/silenzio/.ros/speech.wav --speaker_idx "Damien Black" --language_idx "ru"
 ```
 
 ## works
