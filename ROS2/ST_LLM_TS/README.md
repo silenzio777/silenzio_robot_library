@@ -492,6 +492,7 @@ ros2 run omni speaker_id_node
 ```
 ros2 run omni vad_audio_to_wav_node
 ```
+
 ________________
 
 ## Step #2: ROS2-topic → LLM  → TTS:
@@ -548,7 +549,7 @@ ___
 ```
 pip3 install coqui-tts==0.25.3
 ```
-### work
+### works
 
 ```
 $ tts --list_models
@@ -601,6 +602,23 @@ tts --text "Привет, мир!" --model_name "tts_models/multilingual/multi-d
 ```
 
 ## works
+
+________________
+
+### Install tts_ros:
+```
+cd ~/ros2_ws/src
+## git clone https://github.com/mgonzs13/audio_common.git
+git clone https://github.com/mgonzs13/tts_ros.git
+## pip3 install -r tts_ros/requirements.txt
+pip3 install pyaudio==0.2.14
+cd ~/ros2_ws
+## rosdep install --from-paths src --ignore-src -r -y
+colcon build --packages-select tts_ros tts_bringup
+cd ~/ros2_ws && source install/setup.bash
+```
+
+________________
 
 ## Step #2: ROS2-topic → (owner/guest):
 
