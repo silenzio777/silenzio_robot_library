@@ -541,9 +541,8 @@ export MAX_JOBS=2
 ```
 ```
 ### pip3 install coqpit anyascii trainer bangla bnnumerizer bnunicodenormalizer  einops encodec g2pkk hangul_romanize inflect jamo jieba nltk num2words pypinyin pysbd umap-learn unidecode gruut spacy cython transformers
-### Not work...
 ```
-
+### Not work...
 
 ___
 ```
@@ -594,6 +593,11 @@ tts --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --list_speaker_
 Model dir:
 ```
 ~/.local/share/tts/tts_models--multilingual--multi-dataset--xtts_v2
+```
+
+Test:
+```
+tts --text "Привет, дружок!" --model_name "tts_models/multilingual/multi-dataset/xtts_v2" --out_path /home/silenzio/.ros/speech.wav --speaker_idx "Damien Black" --language_idx "ru"
 ```
 
 ## works
