@@ -741,6 +741,7 @@ ollama run my-gemma
 ollama show gemma:4b --modelfile
 ```
 
+```
 ollama show gemma3:4b
 ```
 >  Model
@@ -755,6 +756,23 @@ ollama show gemma3:4b
     temperature    1                  
     top_k          64                 
     top_p          0.95               
+
+  License
+    Gemma Terms of Use                  
+    Last modified: February 21, 2024    
+```
+ollama show gemma2:2b
+```
+>  Model
+    architecture        gemma2    
+    parameters          2.6B      
+    context length      8192      
+    embedding length    2304      
+    quantization        Q4_0      
+
+  Parameters
+    stop    "<start_of_turn>"    
+    stop    "<end_of_turn>"      
 
   License
     Gemma Terms of Use                  
