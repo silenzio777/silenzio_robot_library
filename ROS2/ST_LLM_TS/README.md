@@ -720,3 +720,23 @@ ros2 run omni tts_action_client
 ```
 ros2 run omni llama_ros_chain
 ```
+
+__________
+
+### Create Ollama Modelfile:
+
+```
+FROM gemma:4b-gguf
+PARAMETER num_gpu 16 
+PARAMETER num_ctx 512  
+```
+
+```
+ollama create my-gemma -f Modelfile
+ollama run my-gemma
+```
+
+### Check model Modelfile:
+```
+ollama show gemma:4b --modelfile
+```
