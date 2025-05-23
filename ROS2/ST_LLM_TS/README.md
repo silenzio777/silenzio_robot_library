@@ -744,23 +744,25 @@ ollama show gemma:4b --modelfile
 ```
 ollama show gemma3:4b
 ```
-
->  Model
+```
+   Model 
     architecture        gemma3    
     parameters          4.3B      
     context length      131072    
     embedding length    2560      
     quantization        Q4_K_M    
 
->  Parameters
+   Parameters
     stop           "<end_of_turn>"    
     temperature    1                  
     top_k          64                 
     top_p          0.95               
 
->  License
+   License
     Gemma Terms of Use                  
-    Last modified: February 21, 2024    
+    Last modified: February 21, 2024
+```
+
 ```
 ollama show gemma2:2b
 ```
