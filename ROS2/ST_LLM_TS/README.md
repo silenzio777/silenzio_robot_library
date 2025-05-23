@@ -764,17 +764,19 @@ ollama show gemma3:4b
 ```
 ollama show gemma2:2b
 ```
->  Model
+```
+   Model
     architecture        gemma2    
     parameters          2.6B      
     context length      8192      
     embedding length    2304      
     quantization        Q4_0      
 
->  Parameters
+   Parameters
     stop    "<start_of_turn>"    
     stop    "<end_of_turn>"      
 
->  License
+   License
     Gemma Terms of Use                  
     Last modified: February 21, 2024    
+``` 
