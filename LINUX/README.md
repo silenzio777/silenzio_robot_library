@@ -569,6 +569,19 @@ Reading state information... Done
 sudo apt autoremove
 ```
 
+GUI app:
+
+```
+sudo apt install bleachbit
+sudo bleachbit
+```
+
+```
+sudo apt install stacer
+stacer
+```
+
+
 
 _______
 
