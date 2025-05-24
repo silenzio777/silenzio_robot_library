@@ -516,6 +516,20 @@ sudo apt install wireshark
 sudo tcpdump -i wlp1s0 -n
 ```
 
+_______
+
+### service check
+
+```
+systemctl list-units --type=service --state=running
+```
+```
+UNIT                LOAD   ACTIVE SUB     DESCRIPTION
+cron.service        loaded active running Regular background program processing daemon
+networkd-dispatcher loaded active running Dispatcher daemon for systemd-networkd
+...
+```
+
 
 _______
 
