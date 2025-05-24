@@ -530,6 +530,45 @@ networkd-dispatcher loaded active running Dispatcher daemon for systemd-networkd
 ...
 ```
 
+### Clean the system 
+
+```
+sudo apt clean
+sudo apt autoclean
+```
+
+Show logs:
+```
+journalctl --disk-usage
+Archived and active journals take up 24.0M in the file system.
+```
+
+Clean old logs:
+```
+sudo journalctl --vacuum-time=7d # Delete older then 7 days
+sudo journalctl --vacuum-size=500M # Delete bigger then 500 M
+```
+
+Clean user cache:
+```
+rm -rf ~/.cache/* 
+rm -rf ~/.cache/thumbnails/*
+```
+
+Apt autoremove check, before run "sudo apt autoremove":
+```
+sudo apt autoremove --dry-run
+
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 432 not upgraded.
+```
+
+```
+sudo apt autoremove
+```
+
 
 _______
 
