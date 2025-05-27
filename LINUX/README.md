@@ -581,6 +581,33 @@ sudo apt install stacer
 stacer
 ```
 
+______
+
+## Python submodule fix by hands.
+Install packet by localy, update the whisper.cpp and fix they CMakeLists.txt:
+
+```
+git clone https://github.com/carloscdias/whisper-cpp-python
+cd whisper-cpp-python
+```
+
+### update the whisper.cpp
+```
+git submodule update --init --recursive
+```
+
+### fix they CMakeLists.txt:
+```
+sed -i '1s/3.0/3.5/' vendor/whisper.cpp/CMakeLists.txt
+```
+
+### install python package from local copy:
+```
+pip install .
+```
+
+
+__________
 
 
 _______
