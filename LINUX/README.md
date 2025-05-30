@@ -608,8 +608,11 @@ pip install .
 
 
 __________
+### "git clone" a repo, including its submodules:
 
-
+```
+git clone --recurse-submodules -j8 https://github.com/OpenNMT/CTranslate2
+```
 _______
 
 ### reboot
