@@ -782,3 +782,25 @@ ollama show gemma2:2b
     Gemma Terms of Use                  
     Last modified: February 21, 2024    
 ``` 
+__________
+
+## Realtime streaming for long speech-to-text transcription (conversational_ai)
+
+### T1:
+``` 
+ros2 run conversational_ai audio_capture_node
+``` 
+
+### T2:
+``` 
+ros2 run conversational_ai vad_node
+``` 
+
+
+### T3:
+``` 
+ros2 run conversational_ai asr_node
+``` 
+
+
+
