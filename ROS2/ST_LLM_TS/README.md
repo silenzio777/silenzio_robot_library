@@ -821,7 +821,15 @@ cmake -DWITH_CUDA=ON -DWITH_MKL=OFF -DOPENMP_RUNTIME=COMP -DBUILD_TESTS=ON ..
 -- Generating done (0.1s)
 -- Build files have been written to: /home/silenzio/lib/CTranslate2/build
 
-make -j7 && make install
+sudo make -j7 && make install
+...
+[100%] Built target translator
+Install the project...
+-- Install configuration: "Release"
+-- Installing: /usr/local/lib/libctranslate2.so.4.6.0
+
+sudo cp /home/silenzio/lib/CTranslate2/build/libctranslate2.so.4.6.0 /usr/local/lib/
+sudo ldconfig
 
 
 ```
