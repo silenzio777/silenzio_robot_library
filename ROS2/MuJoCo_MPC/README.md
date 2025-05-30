@@ -59,3 +59,48 @@ cd bin
 ./mjpc
 ```
 ### Works on macOS!
+
+
+## Python API
+not tested...
+
+We provide a simple Python API for MJPC. This API is still experimental and expects some more experience from its users. For example, the correct usage requires that the model (defined in Python) and the MJPC task (i.e., the residual and transition functions defined in C++) are compatible with each other. Currently, the Python API does not provide any particular error handling for verifying this compatibility and may be difficult to debug without more in-depth knowledge about MuJoCo and MJPC.
+
+### Installation
+Prerequisites
+Build MJPC (see instructions above).
+
+Python 3.10
+
+(Optionally) Create a conda environment with Python 3.10:
+```
+conda create -n mjpc python=3.10
+conda activate mjpc
+```
+Install MuJoCo
+```
+pip install mujoco
+```
+Install API
+Next, change to the python directory:
+
+```
+cd python
+```
+Install the Python module:
+```
+python setup.py install
+```
+Test that installation was successful:
+```
+python "mujoco_mpc/agent_test.py"
+```
+Example scripts are found in python/mujoco_mpc/demos. For example from python/:
+```
+python mujoco_mpc/demos/agent/cartpole_gui.py
+```
+will run the MJPC GUI application using MuJoCo's passive viewer via Python.
+
+Python API Installation Issues
+If your installation fails or is terminated prematurely, we recommend deleting the MJPC build directory and starting from scratch as the build will likely be corrupted. Additionally, delete the files generated during the installation process from the python/ directory.
+
