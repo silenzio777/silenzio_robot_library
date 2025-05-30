@@ -801,6 +801,27 @@ ros2 run conversational_ai vad_node
 ``` 
 ros2 run conversational_ai asr_node
 ``` 
+_______
+
+## Faster-whisper install:
+
+https://github.com/SYSTRAN/faster-whisper
+
+```
+cd ~/lib
+git clone --recurse-submodules -j8  https://github.com/OpenNMT/CTranslate2
+cd CTranslate2/
+mkdir build
+cd build/
+
+cmake -DWITH_CUDA=ON -DWITH_MKL=OFF -DOPENMP_RUNTIME=COMP -DBUILD_TESTS=ON ..
+...
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter
+-- Configuring done (5.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/silenzio/lib/CTranslate2/build
+
+make -j7 && make install
 
 
-
+```
