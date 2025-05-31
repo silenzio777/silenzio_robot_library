@@ -143,7 +143,7 @@ Stop all docker containers:
 docker stop $(docker ps -aq)
 ```
 
-Agressive delete all docker build cache:
+Agressive delete all docker containers:
 ```
 docker system prune -a --volumes -f
 ```
