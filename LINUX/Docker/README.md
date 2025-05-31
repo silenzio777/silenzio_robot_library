@@ -281,9 +281,23 @@ sudo nano /etc/docker/daemon.json
 
 Добавьте:
 ```
-json
 {
   "data-root": "/mnt/SSD_BACKUP_512/docker"
+}
+```
+
+```
+cat /etc/docker/daemon.json
+```
+```
+{
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    },
+    "data-root": "/mnt/SSD_BACKUP_512/docker"
 }
 ```
 
@@ -291,3 +305,12 @@ json
 ```
 sudo systemctl start docker
 ```
+
+Check:
+```
+docker info | grep "Docker Root Dir"
+```
+
+> Docker Root Dir: /mnt/SSD_BACKUP_512/docker
+
+
