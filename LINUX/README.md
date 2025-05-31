@@ -652,6 +652,158 @@ df -h | grep sda2
 ls /mnt/SSD_BACKUP_512
 ```
 
+_____
+
+### Backup with Rsync:
+
+```
+mount | grep sda2
+```
+
+You should see:
+```
+/dev/sda2 on /mnt/SSD_BACKUP_512 type ext4 (rw,relatime)
+```
+
+2. Создание точки для бэкапа
+
+На SSD создадим отдельную папку для бэкапа (например, с текущей датой):
+
+```
+sudo mkdir -p /media/silenzio/de820c0d-4633-407e-a630-6ce97a3cab64/backup_$(date +%Y-%m-%d)
+sudo mkdir -p /mnt/SSD_BACKUP_512/backup_$(date +%Y-%m-%d)
+```
+
+3. Команда rsync для полного бэкапа
+Выполните следующую команду (важно! запускайте через sudo):
+
+bash
+sudo rsync -aAXHv --delete \
+--exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
+/ /media/silenzio/de820c0d-4633-407e-a630-6ce97a3cab64/backup_$(date +%Y-%m-%d)
+
+_______
+
+Отличный вопрос! Для создания полного, восстанавливаемого бэкапа системы на NVIDIA Jetson Orin NX (включая загрузчик, системные файлы и конфигурации) нужно учитывать особенности архитектуры ARM и специфику загрузки Jetson. Вот надежный метод:
+
+Полный бэкап системы Jetson Orin NX (с возможностью восстановления "как было")
+1. Бэкап загрузчика и таблицы разделов (критически важно!)
+bash
+sudo -i
+BACKUP_DIR="/mnt/SSD_BACKUP_512/full_system_backup_$(date +%Y%m%d)"
+mkdir -p $BACKUP_DIR
+
+# Сохраняем таблицу разделов
+sfdisk -d /dev/nvme0n1 > $BACKUP_DIR/partition_table_backup.txt
+
+# Сохраняем загрузочный сектор (MBR)
+dd if=/dev/nvme0n1 bs=512 count=1 of=$BACKUP_DIR/mbr_backup.bin
+
+# Сохраняем загрузчик (UEFI/TrustedOS разделы)
+dd if=/dev/nvme0n1p1 of=$BACKUP_DIR/bootloader_partition.img
+2. Бэкап корневой файловой системы
+bash
+rsync -aAXHv --delete \
+--exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/log/*"} \
+/ $BACKUP_DIR/rootfs
+3. Бэкап метаданных системы
+bash
+# Информация о блочных устройствах
+lsblk > $BACKUP_DIR/lsblk.txt
+
+# UUID разделов
+blkid > $BACKUP_DIR/blkid.txt
+
+# Список установленных пакетов
+dpkg --get-selections > $BACKUP_DIR/package_list.txt
+Восстановление системы из бэкапа (краткий алгоритм)
+Создать разделы на новом диске по сохраненной таблице (sfdisk /dev/nvme0n1 < partition_table_backup.txt)
+
+Восстановить загрузочный сектор: dd if=mbr_backup.bin of=/dev/nvme0n1
+
+Восстановить загрузчик: dd if=bootloader_partition.img of=/dev/nvme0n1p1
+
+Восстановить файловую систему: rsync -aAXHv rootfs/ /
+
+Обновить конфигурацию загрузчика: chroot / update-grub
+
+Особенности для NVIDIA Jetson
+Для полного восстановления Jetson вам дополнительно понадобится:
+
+Сохранить образы BSP:
+
+bash
+cp /boot/Image $BACKUP_DIR/
+cp /boot/initrd $BACKUP_DIR/
+cp -r /boot/dtb $BACKUP_DIR/
+Бэкап NVIDIA-specific разделов:
+
+bash
+dd if=/dev/nvme0n1p7 of=$BACKUP_DIR/APP_boot.img  # BOOT раздел
+dd if=/dev/nvme0n1p8 of=$BACKUP_DIR/APP_root.img  # ROOT раздел
+Автоматизированный скрипт для бэкапа
+Создайте файл /usr/local/bin/full_jetson_backup.sh:
+
+bash
+#!/bin/bash
+
+BACKUP_ROOT="/mnt/SSD_BACKUP_512"
+DATE=$(date +%Y%m%d)
+BACKUP_DIR="$BACKUP_ROOT/jetson_full_$DATE"
+
+mkdir -p $BACKUP_DIR/{boot,partitions}
+
+# 1. Backup partition table
+sfdisk -d /dev/nvme0n1 > $BACKUP_DIR/partition_table.sfdisk
+
+# 2. Backup critical partitions
+dd if=/dev/nvme0n1p1  of=$BACKUP_DIR/partitions/bootloader.img
+dd if=/dev/nvme0n1p7  of=$BACKUP_DIR/partitions/APP_boot.img
+dd if=/dev/nvme0n1p8  of=$BACKUP_DIR/partitions/APP_root.img
+
+# 3. Backup kernel and initrd
+cp /boot/Image $BACKUP_DIR/boot/
+cp /boot/initrd $BACKUP_DIR/boot/
+cp -r /boot/dtb $BACKUP_DIR/boot/
+
+# 4. Backup rootfs
+rsync -aAXH --info=progress2 --delete \
+--exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/log/*"} \
+/ $BACKUP_DIR/rootfs
+
+# 5. System metadata
+dpkg --get-selections > $BACKUP_DIR/installed_packages.txt
+lsblk > $BACKUP_DIR/disk_layout.txt
+
+echo "Full backup completed to $BACKUP_DIR"
+Сделайте исполняемым:
+
+bash
+sudo chmod +x /usr/local/bin/full_jetson_backup.sh
+Важные предупреждения
+Для восстановления потребуется Live USB с Ubuntu for ARM
+
+Размер бэкапа должен быть больше размера вашей системы
+
+Всегда проверяйте бэкап:
+
+bash
+sudo chroot $BACKUP_DIR/rootfs /bin/bash -c "echo 'Backup verified'"
+Для критических систем NVIDIA рекомендует использовать SDK Manager для создания официальных образов восстановления
+
+Альтернатива: Инструменты NVIDIA
+Для полного резервного копирования с гарантией восстановления:
+
+bash
+sudo apt install nvpmodel nvsysinfo
+sudo nvpmodel -d full_backup.img --backup
+Это создаст официальный образ системы, совместимый с JetPack SDK.
+
+Рекомендую сочетать оба подхода: регулярные бэкапы через rsync и раз в месяц полный системный образ через nvpmodel.
+
+
+
+
 _______
 
 ### reboot
