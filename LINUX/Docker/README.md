@@ -137,6 +137,32 @@ ________
 ```
 docker builder prune
 ```
+
+Stop all docker containers:
+```
+docker stop $(docker ps -aq)
+```
+
+Agressive delete all docker build cache:
+```
+docker system prune -a --volumes -f
+```
+
+```
+$ docker system prune -a --volumes -f
+Deleted Containers:
+e2c6c152db57f0d6420c8fa7e97733749b74eb8f0d70e895d2b3cd94cb92de83
+...
+Deleted build cache objects:
+t8y3xs4ah4ol2zdgiuaue8rrv
+...
+sml0zl2v8zk5fjiw9afzge35i
+lt6n09shuco7ba0s01kuvqiiw
+
+Total reclaimed space: 33.39GB
+```
+
+
 > [!NOTE]
 > WARNING! This will remove all dangling build cache. Are you sure you want to continue? [y/N] y 
 
