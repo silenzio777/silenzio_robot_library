@@ -830,6 +830,14 @@ Install the project...
 
 sudo cp /home/silenzio/lib/CTranslate2/build/libctranslate2.so.4.6.0 /usr/local/lib/
 sudo ldconfig
+```
 
+Compile the Python wrapper:
 
+Once the C++ library is installed, you can compile the Python wrapper which uses pybind11. This step requires the Python development libraries to be installed on the system.
+```
+cd python
+pip install -r install_requirements.txt
+python setup.py bdist_wheel
+pip install dist/*.whl
 ```
