@@ -653,7 +653,7 @@ ls /mnt/SSD_BACKUP_512
 
 _____
 
-### Backup with Rsync:
+## Backup with Rsync:
 
 ```
 mount | grep sda2
@@ -687,40 +687,99 @@ df -h /dev/sda2
 ls -lh /mnt/SSD_BACKUP_512/backup_$(date +%Y-%m-%d)
 ```
 
+____
+
+## Restory from backup with Rsync:
+
+Важные замечания:
+Первый запуск займет много времени (зависит от объема данных)
+
+Последующие бэкапы будут быстрее (копируются только изменения)
+
+Для восстановления:
+
+Разметить новый диск
+
+Скопировать данные обратно через rsync (смена источника и приемника)
+
+Установить загрузчик (grub-install)
+
+Дополнительные советы:
+Автоматизация: Добавьте команду в cron для регулярных бэкапов
+
+Проверка: Периодически проверяйте целостность бэкапа
+
+Хранение: Храните SSD отдельно от устройства
+
+Пример команды для инкрементного бэкапа (только изменения):
+
+```
+sudo rsync -aAXHv --delete / /путь/к/бэкапу
+```
+
+Для восстановления загрузчика после копирования данных:
+
+```
+sudo chroot /target
+mount /dev/nvme0n1p1 /boot
+grub-install /dev/nvme0n1
+update-grub
+exit
+```
+
 _______
 
 Отличный вопрос! Для создания полного, восстанавливаемого бэкапа системы на NVIDIA Jetson Orin NX (включая загрузчик, системные файлы и конфигурации) нужно учитывать особенности архитектуры ARM и специфику загрузки Jetson. Вот надежный метод:
 
 Полный бэкап системы Jetson Orin NX (с возможностью восстановления "как было")
 1. Бэкап загрузчика и таблицы разделов (критически важно!)
-bash
+
+```
 sudo -i
-BACKUP_DIR="/mnt/SSD_BACKUP_512/full_system_backup_$(date +%Y%m%d)"
+BACKUP_DIR="/mnt/SSD_BACKUP_512/full_system_backup_$(date +%Y-%m-%d)"
 mkdir -p $BACKUP_DIR
+```
 
 # Сохраняем таблицу разделов
+```
 sfdisk -d /dev/nvme0n1 > $BACKUP_DIR/partition_table_backup.txt
+```
 
 # Сохраняем загрузочный сектор (MBR)
+```
 dd if=/dev/nvme0n1 bs=512 count=1 of=$BACKUP_DIR/mbr_backup.bin
+```
 
 # Сохраняем загрузчик (UEFI/TrustedOS разделы)
+```
 dd if=/dev/nvme0n1p1 of=$BACKUP_DIR/bootloader_partition.img
+```
+
 2. Бэкап корневой файловой системы
-bash
+
+```
 rsync -aAXHv --delete \
 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/var/log/*"} \
 / $BACKUP_DIR/rootfs
+```
+
 3. Бэкап метаданных системы
-bash
+
 # Информация о блочных устройствах
+```
 lsblk > $BACKUP_DIR/lsblk.txt
+```
 
 # UUID разделов
+```
 blkid > $BACKUP_DIR/blkid.txt
+```
 
 # Список установленных пакетов
+```
 dpkg --get-selections > $BACKUP_DIR/package_list.txt
+```
+
 Восстановление системы из бэкапа (краткий алгоритм)
 Создать разделы на новом диске по сохраненной таблице (sfdisk /dev/nvme0n1 < partition_table_backup.txt)
 
@@ -737,15 +796,18 @@ dpkg --get-selections > $BACKUP_DIR/package_list.txt
 
 Сохранить образы BSP:
 
-bash
+```
 cp /boot/Image $BACKUP_DIR/
 cp /boot/initrd $BACKUP_DIR/
 cp -r /boot/dtb $BACKUP_DIR/
+```
+
 Бэкап NVIDIA-specific разделов:
 
-bash
+```
 dd if=/dev/nvme0n1p7 of=$BACKUP_DIR/APP_boot.img  # BOOT раздел
 dd if=/dev/nvme0n1p8 of=$BACKUP_DIR/APP_root.img  # ROOT раздел
+```
 Автоматизированный скрипт для бэкапа
 Создайте файл /usr/local/bin/full_jetson_backup.sh:
 
