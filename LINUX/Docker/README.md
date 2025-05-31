@@ -313,6 +313,10 @@ docker info | grep "Docker Root Dir"
 
 > Docker Root Dir: /mnt/SSD_BACKUP_512/docker
 
+____
+
+### Как безопасно удалить локальную копию:
+
 1. Переименуем старую папку (на случай отката)
 ```
 sudo mv /var/lib/docker /var/lib/docker.old
