@@ -553,7 +553,7 @@ Clean user cache:
 ```
 rm -rf ~/.cache/* 
 rm -rf ~/.cache/thumbnails/*
-rm -rf ~/.local/share/Trash/*
+sudo rm -rf ~/.local/share/Trash/*
 ```
 
 
