@@ -255,3 +255,39 @@ Or you can use tee to show the logs and also save it to a file
 
 docker build --no-cache --progress=plain . 2>&1 | tee build.log
 If you want to append new logs and not to overwrite on every build, use >> for the redirection as you did originally. If you choose the version with tee, you can use tee -a to append the new logs
+
+
+__________
+
+### Перенос данных Docker на SSD (опционально)
+Если нужно переместить все данные Docker (образы, контейнеры, тома):
+
+Остановите Docker:
+```
+sudo systemctl stop docker
+```
+
+Перенесите данные:
+```
+sudo rsync -av /var/lib/docker/ /mnt/SSD_BACKUP_512/docker
+```
+
+Укажите Docker новый путь к данным:
+Создайте конфигурационный файл:
+
+```
+sudo nano /etc/docker/daemon.json
+```
+
+Добавьте:
+```
+json
+{
+  "data-root": "/mnt/SSD_BACKUP_512/docker"
+}
+```
+
+Перезапустите Docker:
+```
+sudo systemctl start docker
+```
