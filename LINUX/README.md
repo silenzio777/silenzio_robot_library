@@ -583,6 +583,13 @@ sudo apt install stacer
 stacer
 ```
 
+Best!
+```
+sudo apt install ncdu
+sudo ncdu / --exclude /mnt --exclude /media
+```
+
+
 ______
 
 ## Python submodule fix by hands.
