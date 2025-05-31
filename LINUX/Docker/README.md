@@ -313,4 +313,22 @@ docker info | grep "Docker Root Dir"
 
 > Docker Root Dir: /mnt/SSD_BACKUP_512/docker
 
+1. Переименуем старую папку (на случай отката)
+```
+sudo mv /var/lib/docker /var/lib/docker.old
+```
+
+2. Проверяем работу Docker в течение 1-2 дней
+```
+docker run --rm hello-world
+docker images
+docker ps -a
+```
+
+3. Если всё стабильно - удаляем резервную копию
+```
+sudo rm -rf /var/lib/docker.old
+```
+
+
 
