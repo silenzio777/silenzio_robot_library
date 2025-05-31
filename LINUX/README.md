@@ -648,7 +648,6 @@ sudo mount -a
 Check new disk%
 ```
 df -h | grep sda2
-
 ls /mnt/SSD_BACKUP_512
 ```
 
@@ -670,17 +669,23 @@ You should see:
 На SSD создадим отдельную папку для бэкапа (например, с текущей датой):
 
 ```
-sudo mkdir -p /media/silenzio/de820c0d-4633-407e-a630-6ce97a3cab64/backup_$(date +%Y-%m-%d)
 sudo mkdir -p /mnt/SSD_BACKUP_512/backup_$(date +%Y-%m-%d)
 ```
 
 3. Команда rsync для полного бэкапа
 Выполните следующую команду (важно! запускайте через sudo):
 
-bash
+```
 sudo rsync -aAXHv --delete \
 --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} \
-/ /media/silenzio/de820c0d-4633-407e-a630-6ce97a3cab64/backup_$(date +%Y-%m-%d)
+/ /mnt/SSD_BACKUP_512/backup_$(date +%Y-%m-%d)
+```
+
+Check backup copy:
+```
+df -h /dev/sda2
+ls -lh /mnt/SSD_BACKUP_512/backup_$(date +%Y-%m-%d)
+```
 
 _______
 
