@@ -553,7 +553,9 @@ Clean user cache:
 ```
 rm -rf ~/.cache/* 
 rm -rf ~/.cache/thumbnails/*
+rm -rf ~/.local/share/Trash/*
 ```
+
 
 Apt autoremove check, before run "sudo apt autoremove":
 ```
@@ -751,7 +753,7 @@ dd if=/dev/nvme0n1 bs=512 count=1 of=$BACKUP_DIR/mbr_backup.bin
 ```
 
 # Сохраняем загрузчик (UEFI/TrustedOS разделы)
-```
+``` 
 dd if=/dev/nvme0n1p1 of=$BACKUP_DIR/bootloader_partition.img
 ```
 
