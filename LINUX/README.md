@@ -613,6 +613,45 @@ __________
 ```
 git clone --recurse-submodules -j8 https://github.com/OpenNMT/CTranslate2
 ```
+
+_______
+
+### Change external SSD from UID (de820c0d-...) to custom name "SSD_BACKUP_512"
+
+```
+sudo mkdir /mnt/SSD_BACKUP_512
+sudo umount /dev/sda2
+```
+
+```
+sudo mount /dev/sda2 /mnt/SSD_BACKUP_512
+```
+
+Edit /etc/fstab:
+
+```
+sudo nano /etc/fstab
+```
+
+Add at the end of file:
+
+```
+# Custom mount for backup SSD
+UUID=de820c0d-4633-407e-a630-6ce97a3cab64 /mnt/SSD_BACKUP_512 ext4 defaults 0 2
+```
+
+Remount all mounted disk:
+```
+sudo mount -a
+```
+
+Check new disk%
+```
+df -h | grep sda2
+
+ls /mnt/SSD_BACKUP_512
+```
+
 _______
 
 ### reboot
