@@ -162,6 +162,10 @@ lt6n09shuco7ba0s01kuvqiiw
 Total reclaimed space: 33.39GB
 ```
 
+Clear logs:
+```
+sudo find /var/lib/docker/containers/ -name '*.log' -exec truncate -s 0 {} \;
+```
 
 > [!NOTE]
 > WARNING! This will remove all dangling build cache. Are you sure you want to continue? [y/N] y 
