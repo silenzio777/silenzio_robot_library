@@ -838,6 +838,11 @@ Once the C++ library is installed, you can compile the Python wrapper which uses
 ```
 cd python
 pip install -r install_requirements.txt
+
+pip install setuptools==64.0.3
+
 python setup.py bdist_wheel
 pip install dist/*.whl
+
+pip install setuptools==80.7.1
 ```
