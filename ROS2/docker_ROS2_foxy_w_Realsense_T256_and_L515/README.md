@@ -120,4 +120,12 @@ Build:
 ```
 docker build -t foxy_ls_ubi_20_04_lsv_2_50_0 .
 ```
-
+______________
+```
+docker images
+```
+REPOSITORY                        TAG                         IMAGE ID       CREATED          SIZE
+foxy_ls_ubi_20_04_lsv_2_50_0      latest                      399a0e440cfa   11 minutes ago   11.2GB
+ls_2_50_0                         latest                      b88d5b292b3f   48 minutes ago   2.1GB
+dustynv/ros                       foxy-ros-core-l4t-r35.4.1   1671f9250223   18 months ago    11.1GB
+```
