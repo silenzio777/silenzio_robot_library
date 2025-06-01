@@ -5,7 +5,12 @@ https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/resources/riva_quickstart_
 
 ###ngc registry resource download-version "nvidia/riva/riva_quickstart_arm64:2.19.0"
 
+
+The above should be used for Server, Since AGX Orin is an embedded device we need to use
+
 ./ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.3.0
+
+We need to follow instructions for Embedded in the riva docs
 
 
 
