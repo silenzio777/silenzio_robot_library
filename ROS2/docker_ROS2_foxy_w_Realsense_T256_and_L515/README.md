@@ -1,5 +1,5 @@
 
-## Docker container for ROS2 foxy Realsense T256 and L515 cameras
+## Docker container for ROS2 foxy with Realsense T256 and L515 cameras
 
 1.
 
