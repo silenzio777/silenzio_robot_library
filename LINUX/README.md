@@ -586,6 +586,9 @@ stacer
 Best!
 ```
 sudo apt install ncdu
+
+sudo ncdu /
+
 sudo ncdu / --exclude /mnt --exclude /media
 ```
 
