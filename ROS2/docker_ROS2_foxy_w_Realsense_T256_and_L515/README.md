@@ -1,14 +1,13 @@
 
 ## Docker container for ROS2 foxy with Realsense T256 and L515 cameras
 
-1.
+1. Pull Dockerfile:
 
 ```
 docker pull dustynv/ros:foxy-ros-core-l4t-r35.4.1
 ```
 
-2.
-Create Dockerfile:
+2. Create Dockerfile:
 ```
 ARG BASE_IMAGE=ubuntu:20.04 #18.04 #2.51.1 with 20.04 <<-- work but with warnings
 # LIBRS_VERSION=2.47.0 with 20.04 <<-- work OK
@@ -116,6 +115,7 @@ ENV CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 RUN echo ". install/local_setup.bash" >> ~/.bashrc
 ```
+
 Build:
 ```
 docker build -t foxy_ls_ubi_20_04_lsv_2_50_0 .
