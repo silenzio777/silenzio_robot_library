@@ -1,4 +1,5 @@
 
+### Run Riva Speech Server:
 ```
 cd /home/silenzio/lib/riva_quickstart_arm64_2.19.0
 ```
@@ -29,4 +30,12 @@ ____
 ```
 Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
 Waiting for Riva server to load all models...retrying in 10 seconds
+Waiting for Riva server to load all models...retrying in 10 seconds
+...
+> Triton server is ready…
+```
+
+### Run nano_llm:
+```
+jetson-containers run $(autotag nano_llm)
 ```
