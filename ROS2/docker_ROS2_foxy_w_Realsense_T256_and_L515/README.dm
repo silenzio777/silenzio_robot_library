@@ -6,6 +6,7 @@
 ```
 docker pull dustynv/ros:foxy-ros-core-l4t-r35.4.1
 ```
+
 2.
 Create Dockerfile:
 ```
