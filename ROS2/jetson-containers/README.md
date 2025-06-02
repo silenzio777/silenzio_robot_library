@@ -19,9 +19,20 @@ ngc config set
 ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
 
 cd riva_quickstart_arm64_v2.19.0/
+```
+```
+nano config.sh
+```
 
-gedit config.sh
+Change this line:
+```
+service_enabled_asr=true
+service_enabled_nlp=false #true
+service_enabled_tts=true
+service_enabled_nmt=false
+```
 
+```
 mkdir model_repository/models
 
 sudo bash riva_init.sh
