@@ -33,7 +33,7 @@ service_enabled_nmt=false
 ```
 
 ```
-mkdir model_repository/models
+mkdir model_repository/models -p
 
 sudo bash riva_init.sh
 (ok)
