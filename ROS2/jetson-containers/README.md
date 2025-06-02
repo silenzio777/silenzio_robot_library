@@ -12,7 +12,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 wget --content-disposition https://ngc.nvidia.com/downloads/ngccli_arm64.zip && unzip ngccli_arm64.zip && chmod u+x ngc-cli/ngc
 find ngc-cli/ -type f -exec md5sum {} + | LC_ALL=C sort | md5sum -c ngc-cli.md5
-echo “export PATH="$PATH:$(pwd)/ngc-cli"” >> ~/.bash_profile && source ~/.bash_profile
+echo "export PATH='$PATH:$(pwd)/ngc-cli'" >> ~/.bash_profile && source ~/.bash_profile
 
 ngc config set
 
@@ -24,7 +24,8 @@ gedit config.sh
 
 mkdir model_repository/models
 
-sudo bash riva_init.sh (ok)
+sudo bash riva_init.sh
+(ok)
 ```
 
 From riva_start.sh 
