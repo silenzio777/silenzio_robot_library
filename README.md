@@ -61,3 +61,9 @@ Hardware:
 - LAT: 36.4.3
 - Jetpack: 6.2
 
+
+$ cat /etc/nv_tegra_release
+> # R36 (release), REVISION: 4.3, GCID: 38968081, BOARD: generic, EABI: aarch64, DATE: Wed Jan  8 01:49:37 UTC 2025
+  # KERNEL_VARIANT: oot
+  TARGET_USERSPACE_LIB_DIR=nvidia
+  TARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia
