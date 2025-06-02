@@ -105,8 +105,6 @@ Note: This may take some time, depending on the speed of your Internet connectio
 ...
 ```
 
-
-
 ______
 
 
@@ -115,6 +113,8 @@ ______
 ```
 cd /home/silenzio/lib/riva_quickstart_arm64_2.19.0
 ./riva_start.sh
+```
+```
 Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
 Error response from daemon: No such container: riva-speech
 Error response from daemon: No such container: riva-speech
