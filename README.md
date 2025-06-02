@@ -70,3 +70,11 @@ $ cat /etc/nv_tegra_release
 TARGET_USERSPACE_LIB_DIR=nvidia
 TARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia
 ```
+```
+$ docker info | grep -i runtime
+```
+
+```
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: nvidia
+```
