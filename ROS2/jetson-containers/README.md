@@ -70,9 +70,6 @@ root@aafe5d94da02:/opt/riva#
 ```
 ## Works!
 
-______
-
-
 
 _______
 ### Run nano_llm:
