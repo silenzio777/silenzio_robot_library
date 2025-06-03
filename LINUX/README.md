@@ -900,6 +900,12 @@ sudo apt-get install compizconfig-settings-manager
 ```
 compizconfig-settings-manager
 ```
+
+### disable the Super key:
+
+```
+gsettings set org.gnome.mutter overlay-key ''
+```
 _______
 
 ### reboot
