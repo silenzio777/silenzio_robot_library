@@ -880,6 +880,17 @@ sudo nvpmodel -d full_backup.img --backup
 
 Рекомендую сочетать оба подхода: регулярные бэкапы через rsync и раз в месяц полный системный образ через nvpmodel.
 
+______
+
+### Install nomachine:
+
+Get DEB:
+https://downloads.nomachine.com/download/?id=30&platform=linux&distro=arm
+
+```
+sudo dpkg -i nomachine_9.0.188_11_arm64.deb
+```
+
 
 
 
