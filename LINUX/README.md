@@ -890,10 +890,16 @@ https://downloads.nomachine.com/download/?id=30&platform=linux&distro=arm
 ```
 sudo dpkg -i nomachine_9.0.188_11_arm64.deb
 ```
+______
 
+### Install compizconfig-settings-manager:
 
-
-
+```
+sudo apt-get install compizconfig-settings-manager
+```
+```
+compizconfig-settings-manager
+```
 _______
 
 ### reboot
