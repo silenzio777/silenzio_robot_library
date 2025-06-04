@@ -16,7 +16,7 @@ ______
 - [shutdown](#shutdown)<br/>
 
 
-```
+``` 
 echo $(uname -r)
 5.15.148-tegra
 ```
