@@ -913,7 +913,7 @@ _____
 Ubuntu 22.04 will break after sudo apt install fuse. Don't do it! It took me a half day to recover the OS. I saw many times the sudo apt install fuse libfuse2 advice (both fuse and libfuse2 packages). But as I was corrected in a comment the libfuse2 shouldn't break Ubuntu.
 
 ```
-apt install --simulate fuse.
+apt install --simulate fuse
 ```
 The following packages will be REMOVED: fuse3 gnome-remote-desktop gnome-session gnome-shell-extension-desktop-icons-ng gnome-snapshot gvfs-fuse nautilus shotwell ubuntu-desktop ubuntu-desktop-minimal ubuntu-gnome-desktop ubuntu-session xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 
