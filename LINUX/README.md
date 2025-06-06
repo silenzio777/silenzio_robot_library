@@ -906,6 +906,54 @@ compizconfig-settings-manager
 ```
 gsettings set org.gnome.mutter overlay-key ''
 ```
+_____
+
+### Cursor install WO Fuse:
+
+Ubuntu 22.04 will break after sudo apt install fuse. Don't do it! It took me a half day to recover the OS. I saw many times the sudo apt install fuse libfuse2 advice (both fuse and libfuse2 packages). But as I was corrected in a comment the libfuse2 shouldn't break Ubuntu.
+
+```
+apt install --simulate fuse.
+```
+The following packages will be REMOVED: fuse3 gnome-remote-desktop gnome-session gnome-shell-extension-desktop-icons-ng gnome-snapshot gvfs-fuse nautilus shotwell ubuntu-desktop ubuntu-desktop-minimal ubuntu-gnome-desktop ubuntu-session xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+
+Ubuntu 22.04 has fuse3 from the box and the installation of the old fuse lib removes many system packages and breaks the system.
+
+Here are the save instructions for installing Cursor AI IDE on Ubuntu without any fuse package:
+
+Make the downloaded image executable
+```
+chmod +x cursor-0.44.11-build-250103fqxdt5u9z-x86_64.AppImage
+```
+Extract Cursor files without FUSE
+```
+mkdir -p ~/.local/bin/cursor
+./cursor-0.44.11-build-250103fqxdt5u9z-x86_64.AppImage --appimage-extract
+mv squashfs-root/* ~/.local/bin/cursor/
+```
+
+Fix the sandbox permissions
+```
+sudo chown root:root ~/.local/bin/cursor/chrome-sandbox
+sudo chmod 4755 ~/.local/bin/cursor/chrome-sandbox
+```
+
+Run Cursor
+```
+./cursor/AppRun
+```
+
+Create a desktop shortcut
+```
+mkdir -p ~/.local/share/applications
+echo "[Desktop Entry]
+Name=Cursor
+Exec=$HOME/.local/bin/cursor/AppRun
+Icon=$HOME/.local/bin/cursor/cursor.png
+Type=Application
+Categories=Development;" > ~/.local/share/applications/cursor.desktop
+```
+
 _______
 
 ### reboot
