@@ -298,6 +298,106 @@ index 8ad07a9..0cbdb07 100644
 ```
 
 
+### Install riva_server again:
+```
+cd riva_quickstart_arm64_v2.19.0/
+mkdir model_repository/models -p
+```
+
+```
+silenzio@jetsonnx:~/lib/riva_quickstart_arm64_v2.19.0$ bash riva_init.sh
+Logging into NGC docker registry if necessary...
+Pulling required docker images if necessary...
+Note: This may take some time, depending on the speed of your Internet connection.
+> Pulling Riva Speech Server images.
+  > Image nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64 exists. Skipping.
+
+Downloading models (RMIRs) from NGC...
+Note: this may take some time, depending on the speed of your Internet connection.
+To skip this process and use existing RMIRs set the location and corresponding flag in config.sh.
+2025-06-12 11:35:14 URL:https://xfiles.ngc.nvidia.com/org/nvidia/team/ngc-apps/recipes/ngc_cli/versions/3.48.0/files/ngccli_arm64.zip?versionId=sPn0KF0IeLN_9vFxB35JiAi3I4VPz.AW&Signature=YzTxhtOw8~jn0A9SBS-1~xvW2UOxqq0On~llJdKwIZQJvyDl7gdWJ1MLZHqFnwDzX69UWB3imS1X0pT56LrmCoISCZhqAY4TU7rRfrGWYOkXwW9Fp5~vowhouLzwiJWwKHFMxrtAvjvkCQXMgKs5TlMa7PQNEb7Wl1AYUE5Oq3FAxNWHPv9KQ9e41AauTSxJ8YiQSdxPXM3f7G-pAOlKtmozWAH~kLz67vzi2I15EFf-rEVtex2-pb5lnxaKFQUgLM-3cPp1groRbnSDuBpBOc1wSnhrhZj3XFwde4XZrDY3Gk662NWXQo~pdxGQ2JKu~ROgFhyxprPmqcB2SSjB7g__&Expires=1749814510&Key-Pair-Id=KCX06E8E9L60W [50007324/50007324] -> "ngccli_arm64.zip" [1]
+/opt/riva
+
+CLI_VERSION: Latest - 3.152.2 available (current: 3.48.0). Please update by using the command 'ngc version upgrade' 
+
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+       …                   …                                                    
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_asr_conformer_ru_ru_str_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 321.99 MB
+   Started at: 2025-06-12 11:35:20
+   Completed at: 2025-06-12 11:35:52
+   Duration taken: 31s
+--------------------------------------------------------------------------------
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+       …                   …                                                    
+
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_nlp_punctuation_bert_base_ru_ru_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 311.31 MB
+   Started at: 2025-06-12 11:35:55
+   Completed at: 2025-06-12 11:36:26
+   Duration taken: 31s
+--------------------------------------------------------------------------------
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+       …                   …                                                    
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_tts_fastpitch_hifigan_en_us_ipa_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 187.44 MB
+   Started at: 2025-06-12 11:36:29
+   Completed at: 2025-06-12 11:36:47
+   Duration taken: 18s
+--------------------------------------------------------------------------------
+
++ [[ tegra != \t\e\g\r\a ]]
++ [[ tegra == \t\e\g\r\a ]]
++ '[' -d /home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository/rmir ']'
++ [[ tegra == \t\e\g\r\a ]]
++ '[' -d /home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt ']'
++ echo 'Converting prebuilts at /home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt to Riva Model repository.'
+Converting prebuilts at /home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt to Riva Model repository.
++ docker run -it -d --rm -v /home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository:/data --name riva-models-extract nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64
++ docker exec riva-models-extract bash -c 'mkdir -p /data/models; \
+      for file in /data/prebuilt/*.tar.gz; do tar xf $file -C /data/models/ &> /dev/null; done'
++ docker container stop riva-models-extract
++ '[' 0 -ne 0 ']'
++ echo
+
++ echo 'Riva initialization complete. Run ./riva_start.sh to launch services.'
+Riva initialization complete. Run ./riva_start.sh to launch services.
+```
+
+While "riva_init.sh" working:
+```
+$ docker ps
+CONTAINER ID   IMAGE                                                COMMAND   CREATED          STATUS          PORTS     NAMES
+e39ed9a5e764   nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64   "bash"    21 seconds ago   Up 20 seconds             riva-models-download
+```
+
+```
+./riva_start.sh
+```
+```
+$ docker ps
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED         STATUS         PORTS                                                                                                                                                                                                   NAMES
+23762f9e9ad8   nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64   "start-riva --riva-u…"   9 seconds ago   Up 7 seconds   0.0.0.0:8000-8002->8000-8002/tcp, :::8000-8002->8000-8002/tcp, 0.0.0.0:8888->8888/tcp, :::8888->8888/tcp, 0.0.0.0:50000->50000/tcp, :::50000->50000/tcp, 0.0.0.0:50051->50051/tcp, :::50051->50051/tcp   riva-speech
+```
+
+
+
+
+
+
+
 _______
 
 ```
