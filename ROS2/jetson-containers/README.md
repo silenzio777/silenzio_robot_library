@@ -1,4 +1,4 @@
-### fresh install:
+### Fresh install:
 
 ```
 $ ngc config set
@@ -47,9 +47,145 @@ mkdir model_repository/models -p
 ```
 
 ```
-sudo bash riva_init.sh
+$ bash riva_init.sh
+Logging into NGC docker registry if necessary...
+Pulling required docker images if necessary...
+Note: This may take some time, depending on the speed of your Internet connection.
+> Pulling Riva Speech Server images.
+  > Pulling nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64. This may take some time...
+
+Downloading models (RMIRs) from NGC...
+Note: this may take some time, depending on the speed of your Internet connection.
+To skip this process and use existing RMIRs set the location and corresponding flag in config.sh.
+2025-06-12 10:33:07 URL:https://xfiles.ngc.nvidia.com/org/nvidia/team/ngc-apps/recipes/ngc_cli/versions/3.48.0/files/ngccli_arm64.zip?versionId=sPn0KF0IeLN_9vFxB35JiAi3I4VPz.AW&Signature=x03yX4tqGdFYQ2jh~RI10Ffho~JPuiEk8jFwdWutW3-14Cho0LYtBJFlErwHorzjh~6ds4lu7duZpxY~IQgx~qOYZWBy0g32BrmSlvjHNJOQOhsrGS7~nDxr-xISe5YlwNMVLqPEZohWw4m6fIjJwyT5tO4Tvv7jTczQc9UrsM7Broi2uwEBA-QSwLhQmrsQInnYcpQkvW3FpziZCT5coju3I85QPsiTWD9180obuiixh6C~WXd0fkfjFXUfRr~YgjtNC97A095bfxKm0z4Tsbe5VLI8fLsZ-Mf73m2zLJM24yFxNlNfdD44B68MNS0rND8KqJNl0YWkur6Nn5POvw__&Expires=1749810783&Key-Pair-Id=KCX06E8E9L60W [50007324/50007324] -> "ngccli_arm64.zip" [1]
+/opt/riva
+
+CLI_VERSION: Latest - 3.152.2 available (current: 3.48.0). Please update by using the command 'ngc version upgrade' 
+
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_asr_conformer_en_us_str_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 802.72 MB
+   Started at: 2025-06-12 10:33:12
+   Completed at: 2025-06-12 10:34:27
+   Duration taken: 1m 14s
+--------------------------------------------------------------------------------
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_nlp_punctuation_bert_base_en_us_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 191.71 MB
+   Started at: 2025-06-12 10:36:33
+   Completed at: 2025-06-12 10:36:51
+   Duration taken: 18s
+--------------------------------------------------------------------------------
+Getting files to download...
+  ━━ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 1 - Failed: 0
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_nlp_punctuation_bert_base_en_us_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 191.71 MB
+   Started at: 2025-06-12 10:38:58
+   Completed at: 2025-06-12 10:39:17
+   Duration taken: 18s
+--------------------------------------------------------------------------------
+Getting files to download...
+⠸ ━╸ • … • Remaining: 0… • … • Elapsed: 0… • Total: 1 - Completed: 0 - Failed: 0
+
+--------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path model: /tmp/artifacts/models_tts_fastpitch_hifigan_en_us_ipa_v2.19.0-tegra-orin
+   Total files downloaded: 1
+   Total transferred: 187.44 MB
+   Started at: 2025-06-12 10:39:20
+   Completed at: 2025-06-12 10:39:38
+   Duration taken: 17s
+--------------------------------------------------------------------------------
+
++ [[ tegra != \t\e\g\r\a ]]
++ [[ tegra == \t\e\g\r\a ]]
++ '[' -d /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/model_repository/rmir ']'
++ [[ tegra == \t\e\g\r\a ]]
++ '[' -d /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt ']'
++ echo 'Converting prebuilts at /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt to Riva Model repository.'
+Converting prebuilts at /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/model_repository/prebuilt to Riva Model repository.
++ docker run -it -d --rm -v /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/model_repository:/data --name riva-models-extract nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64
++ docker exec riva-models-extract bash -c 'mkdir -p /data/models; \
+      for file in /data/prebuilt/*.tar.gz; do tar xf $file -C /data/models/ &> /dev/null; done'
++ docker container stop riva-models-extract
++ '[' 0 -ne 0 ']'
++ echo
+
++ echo 'Riva initialization complete. Run ./riva_start.sh to launch services.'
+Riva initialization complete. Run ./riva_start.sh to launch services.
+
 ```
-(ok)
+
+### Run test:
+```
+./riva_start.sh
+Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
+Waiting for Riva server to load all models...retrying in 10 seconds
+Riva server is ready...
+Use this container terminal to run applications:
+root@d418cb8c06c2:/opt/riva# riva_streaming_asr_client --audio_file=/opt/riva/wav/en-US_sample.wav
+I0612 10:55:32.405516   311 grpc.h:101] Using Insecure Server Credentials
+Loading eval dataset...
+filename: /opt/riva/wav/en-US_sample.wav
+Done loading 1 files
+what
+what
+what is
+what is
+what is
+what is now tilde
+what is natural
+what is natural
+what is natural
+what is natural language
+what is natural language
+what is natural language
+what is natural language processing
+what is natural language processing
+what is natural language processing
+what is natural language processing
+what is natural language processing
+what is tural language processing
+what is language processing
+What is natural language processing? 
+-----------------------------------------------------------
+File: /opt/riva/wav/en-US_sample.wav
+
+Final transcripts: 
+0 : What is natural language processing? 
+
+Timestamps: 
+Word                                    Start (ms)      End (ms)        Confidence      
+
+What                                    920             960             1.9195e-01      
+is                                      1200            1240            5.4835e-01      
+natural                                 1720            2080            1.0869e-01      
+language                                2240            2600            6.7237e-01      
+processing?                             2720            3200            1.0000e+00      
+
+
+Audio processed: 4.0000e+00 sec.
+-----------------------------------------------------------
+
+Not printing latency statistics because the client is run without the --simulate_realtime option and/or the number of requests sent is not equal to number of requests received. To get latency statistics, run with --simulate_realtime and set the --chunk_duration_ms to be the same as the server chunk duration
+Run time: 7.3754e-01 sec.
+Total audio processed: 4.1520e+00 sec.
+Throughput: 5.6295e+00 RTFX
+root@d418cb8c06c2:/opt/riva# 
+```
 
  
 
