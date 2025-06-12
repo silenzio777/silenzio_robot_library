@@ -235,7 +235,7 @@ sudo du -chs /var/lib/docker/
 ________
 ## Info:
 ```
-info | grep -e "Runtime" -e "Root"
+docker info | grep -e "Runtime" -e "Root"
 ```
 ```
 Runtimes: io.containerd.runc.v2 nvidia runc 
