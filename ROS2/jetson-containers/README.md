@@ -400,6 +400,65 @@ Riva server is ready...
 Use this container terminal to run applications:
 root@8a7d9f1b1acf:/opt/riva# 
 ```
+
+es-ES:
+```
+root@649ce50514e8:/opt/riva# riva_streaming_asr_client --audio_file=/opt/riva/wav/es-ES_sample.wav
+I0612 13:14:02.002132  7733 grpc.h:101] Using Insecure Server Credentials
+Loading eval dataset...
+filename: /opt/riva/wav/es-ES_sample.wav
+Done loading 1 files
+in rio
+in rio
+in rio
+and
+in rio
+in rio de
+rio
+rio
+rio tigris
+rio de grist
+tigris
+tigris
+tigris
+tigris
+rio grist
+rio
+rio tenaya
+rio tania
+rio tigris
+rio tigris on
+rio tigris
+rio tigris
+rio tigris ten on
+rio tigris ten on
+Rio tigris ten tipo 
+-----------------------------------------------------------
+File: /opt/riva/wav/es-ES_sample.wav
+
+Final transcripts: 
+0 : Rio tigris ten tipo 
+
+Timestamps: 
+Word                                    Start (ms)      End (ms)        Confidence      
+
+Rio                                     440             680             3.3618e-02      
+tigris                                  840             1400            9.3009e-03      
+ten                                     1520            1680            7.9300e-02      
+tipo                                    2080            2400            7.8500e-03      
+
+
+Audio processed: 4.4800e+00 sec.
+-----------------------------------------------------------
+
+Not printing latency statistics because the client is run without the --simulate_realtime option and/or the number of requests sent is not equal to number of requests received. To get latency statistics, run with --simulate_realtime and set the --chunk_duration_ms to be the same as the server chunk duration
+Run time: 7.9993e-01 sec.
+Total audio processed: 5.9760e+00 sec.
+Throughput: 7.4706e+00 RTFX
+```
+### Works!
+
+ru-RU:
 ```
 root@649ce50514e8:/opt/riva# riva_streaming_asr_client --audio_file=/opt/riva/wav/ru-RU_sample.wav
 I0612 13:13:45.072036  7693 grpc.h:101] Using Insecure Server Credentials
@@ -432,7 +491,7 @@ Run time: 9.6225e-01 sec.
 Total audio processed: 7.6320e+00 sec.
 Throughput: 7.9314e+00 RTFX
 ```
-### Not work!
+### Not works!
 
 
 
