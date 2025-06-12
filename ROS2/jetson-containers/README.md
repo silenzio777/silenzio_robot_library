@@ -392,7 +392,14 @@ CONTAINER ID   IMAGE                                                COMMAND     
 23762f9e9ad8   nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64   "start-riva --riva-u…"   9 seconds ago   Up 7 seconds   0.0.0.0:8000-8002->8000-8002/tcp, :::8000-8002->8000-8002/tcp, 0.0.0.0:8888->8888/tcp, :::8888->8888/tcp, 0.0.0.0:50000->50000/tcp, :::50000->50000/tcp, 0.0.0.0:50051->50051/tcp, :::50051->50051/tcp   riva-speech
 ```
 
-
+```
+$ ./riva_start.sh
+Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
+Waiting for Riva server to load all models...retrying in 10 seconds
+Riva server is ready...
+Use this container terminal to run applications:
+root@8a7d9f1b1acf:/opt/riva# 
+```
 
 
 
@@ -400,14 +407,7 @@ CONTAINER ID   IMAGE                                                COMMAND     
 
 _______
 
-```
-ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
-```
-### Error:
-```
-Client Error: 403 Response: 403 FORBIDDEN, ProblemDetail [type= 'urn: kaizen :problem-details: forbidden', title='Forbidden, status=403, detail='Artifact is not Guest acc essible!'
-Instance- huti, properties-"nuti* Request Id: 2157ae64-elas- 4628-8393- feel0c3546de Uri: https: //ap1.ngc.nvidia.com/v2/resources/nvidia/riva/riva quicks tart_arm64/versions/2.19.0
-```
+
 ______
 
 ### Isntall Riva Speech Server (embedded device arm64):
@@ -446,7 +446,6 @@ service_enabled_nmt=false
 mkdir model_repository/models -p
 
 sudo bash riva_init.sh
-(ok)
 ```
 
 From riva_start.sh 
