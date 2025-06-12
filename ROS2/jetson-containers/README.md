@@ -51,6 +51,7 @@ sudo bash riva_init.sh
 ```
 (ok)
 
+ 
 
 
 
