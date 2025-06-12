@@ -1,4 +1,6 @@
-
+```
+ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
+```
 
 ### Isntall Riva Speech Server (embedded device arm64):
 
