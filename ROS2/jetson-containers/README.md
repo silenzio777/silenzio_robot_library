@@ -1,6 +1,44 @@
+### fresh install:
+
+```
+$ ngc config set
+Enter API key [no-apikey]. Choices: [<VALID_APIKEY>, 'no-apikey']: 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
+Enter CLI output format type [ascii]. Choices: ['ascii', 'csv', 'json']: 
+Enter org [no-org]. Choices: ['hkpaft3gxabp']: 
+Invalid org. Please re-enter.
+Enter org [no-org]. Choices: ['hkpaft3gxabp']: hkpaft3gxabp
+Enter team [no-team]. Choices: ['no-team']: no-team
+Enter ace [no-ace]. Choices: ['no-ace']: no-ace
+Validating configuration...
+Successfully validated configuration.
+Saving configuration...
+Successfully saved NGC configuration to /home/silenzio/.ngc/config
+```
+
+file "/home/silenzio/.ngc/config":
+```
+;WARNING - This is a machine generated file.  Do not edit manually.
+;WARNING - To update local config settings, see "ngc config set -h" 
+
+[CURRENT]
+apikey = nvapi-...........................................
+format_type = ascii
+org = .......
+```
+
+
+
+_______
+
 ```
 ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
 ```
+### Error:
+```
+Client Error: 403 Response: 403 FORBIDDEN, ProblemDetail [type= 'urn: kaizen :problem-details: forbidden', title='Forbidden, status=403, detail='Artifact is not Guest acc essible!'
+Instance- huti, properties-"nuti* Request Id: 2157ae64-elas- 4628-8393- feel0c3546de Uri: https: //ap1.ngc.nvidia.com/v2/resources/nvidia/riva/riva quicks tart_arm64/versions/2.19.0
+```
+______
 
 ### Isntall Riva Speech Server (embedded device arm64):
 
