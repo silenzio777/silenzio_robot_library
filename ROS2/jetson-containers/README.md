@@ -1,5 +1,29 @@
-### Fresh install:
+## Fresh install:
 
+https://catalog.ngc.nvidia.com/orgs/nvidia/teams/riva/resources/riva_quickstart_arm64
+
+https://docs.nvidia.com/deeplearning/riva/user-guide/docs/quick-start-guide/asr.html
+
+
+### Downgrade Docker:
+```
+sudo apt-get install -y docker-ce=5:27.5* docker-ce-cli=5:27.5* --allow-downgrades
+sudo systemctl restart docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+### Get ngc cli:
+
+Download "ngccli_arm64.zip" from: https://org.ngc.nvidia.com/setup/installers/cli
+Or this way:
+```
+wget --content-disposition https://ngc.nvidia.com/downloads/ngccli_arm64.zip && unzip ngccli_arm64.zip && chmod u+x ngc-cli/ngc
+find ngc-cli/ -type f -exec md5sum {} + | LC_ALL=C sort | md5sum -c ngc-cli.md5
+echo "export PATH='$PATH:$(pwd)/ngc-cli'" >> ~/.bash_profile && source ~/.bash_profile
+```
+
+## Setup ngc cli:
 ```
 $ ngc config set
 Enter API key [no-apikey]. Choices: [<VALID_APIKEY>, 'no-apikey']: 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
@@ -25,11 +49,12 @@ apikey = nvapi-...........................................
 format_type = ascii
 org = .......
 ```
+
+### Get riva_server:
 ```
 $ ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
 Getting files to download...
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • 156.8/156.8 KiB • Remaining: 0:00:00 • 153.8 kB/s • Elapsed: 0:00:02 • Total: 24 - Completed: 24 - Failed: 0
-
 -----------------------------------------------------------------------------------------
    Download status: COMPLETED
    Downloaded local path resource: /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0
@@ -41,6 +66,7 @@ Getting files to download...
 -----------------------------------------------------------------------------------------
 ```
 
+### Install riva_server:
 ```
 cd riva_quickstart_arm64_v2.19.0/
 mkdir model_repository/models -p
@@ -126,10 +152,9 @@ Converting prebuilts at /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0/m
 
 + echo 'Riva initialization complete. Run ./riva_start.sh to launch services.'
 Riva initialization complete. Run ./riva_start.sh to launch services.
-
 ```
 
-### Run test (English languges):
+### Run Riva Speech Services test (English languges):
 ```
 ./riva_start.sh
 Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
@@ -177,7 +202,6 @@ natural                                 1720            2080            1.0869e-
 language                                2240            2600            6.7237e-01      
 processing?                             2720            3200            1.0000e+00      
 
-
 Audio processed: 4.0000e+00 sec.
 -----------------------------------------------------------
 
@@ -205,23 +229,73 @@ jetson-containers run $(autotag nano_llm) \
 
 ________
 
-### Run test (Russian languges):
+### Install Russian languge:
 
+Shutting down docker containers...
 ```
 ./riva_stop.sh
 ```
 
+Check docker: 
 ```
-Shutting down docker containers...
+$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
 
+### Clean riva_server:
 ```
-./riva_clean.sh
+$ ./riva_clean.sh
+Cleaning up local Riva installation.
+Image nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64 found. Delete? [y/N] y
+Error response from daemon: get home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository: no such volume
+'/home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository' is not a Docker volume, or has already been deleted.
+Found models at '/home/silenzio/lib/riva_quickstart_arm64_v2.19.0/model_repository'. Delete? [y/N] y
+[sudo] password for silenzio: 
 ```
- 
 
+Change this line in "config.sh":
+```
+# Specify ASR language to deploy, as defined in "asr_models_languages_map" above
+# For multiple languages, enter space separated language codes
+asr_language_code=("ru-RU") ## en-US")
+```
 
+Make this changes:
+```
+--- a/config.sh
++++ b/config.sh
+@@ -18,7 +18,7 @@ riva_tegra_platform="orin"
 
+ # For any language other than en-US: service_enabled_nlp must be set to false
+ service_enabled_asr=true
+-service_enabled_nlp=true
++service_enabled_nlp=false
+ service_enabled_tts=true
+ service_enabled_nmt=false
+
+@@ -57,7 +57,7 @@ asr_acoustic_model=("conformer")
+
+ # Specify ASR language to deploy, as defined in "asr_models_languages_map" above
+ # For multiple languages, enter space separated language codes
+-asr_language_code=("en-US")
++asr_language_code=("es-ES")
+
+ # Specify ASR accessory model from below list, prebuilt model available only when "asr_acoustic_model" is set to "parakeet_1.1b"
+ # "diarizer" : deploy ASR model with Speaker Diarization model
+diff --git a/riva_start.sh b/riva_start.sh
+index 8ad07a9..0cbdb07 100644
+--- a/riva_start.sh
++++ b/riva_start.sh
+@@ -101,7 +101,7 @@ if [ $(docker ps -q -f "name=^/$riva_daemon_speech$" | wc -l) -eq 0 ]; then
+     docker run -d \
+         --init \
+         --ipc=host \
+-        --gpus '"'$gpus_to_use'"' \
++        --runtime=nvidia \
+         -p $riva_speech_api_port:$riva_speech_api_port \
+         -p $riva_speech_api_http_port:$riva_speech_api_http_port \
+         -e RIVA_SERVER_HTTP_PORT=$riva_speech_api_http_port \
+```
 
 
 _______
