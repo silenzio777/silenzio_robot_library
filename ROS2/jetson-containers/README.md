@@ -25,6 +25,34 @@ apikey = nvapi-...........................................
 format_type = ascii
 org = .......
 ```
+```
+$ ngc registry resource download-version nvidia/riva/riva_quickstart_arm64:2.19.0
+Getting files to download...
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ • 156.8/156.8 KiB • Remaining: 0:00:00 • 153.8 kB/s • Elapsed: 0:00:02 • Total: 24 - Completed: 24 - Failed: 0
+
+-----------------------------------------------------------------------------------------
+   Download status: COMPLETED
+   Downloaded local path resource: /home/silenzio/Downloads/riva_quickstart_arm64_v2.19.0
+   Total files downloaded: 24
+   Total transferred: 156.83 KB
+   Started at: 2025-06-12 13:30:28
+   Completed at: 2025-06-12 13:30:30
+   Duration taken: 2s
+-----------------------------------------------------------------------------------------
+```
+
+```
+cd riva_quickstart_arm64_v2.19.0/
+mkdir model_repository/models -p
+```
+
+```
+sudo bash riva_init.sh
+```
+(ok)
+
+
+
 
 
 
