@@ -129,13 +129,14 @@ Riva initialization complete. Run ./riva_start.sh to launch services.
 
 ```
 
-### Run test:
+### Run test (English languges):
 ```
 ./riva_start.sh
 Starting Riva Speech Services. This may take several minutes depending on the number of models deployed.
 Waiting for Riva server to load all models...retrying in 10 seconds
 Riva server is ready...
 Use this container terminal to run applications:
+
 root@d418cb8c06c2:/opt/riva# riva_streaming_asr_client --audio_file=/opt/riva/wav/en-US_sample.wav
 I0612 10:55:32.405516   311 grpc.h:101] Using Insecure Server Credentials
 Loading eval dataset...
@@ -186,7 +187,37 @@ Total audio processed: 4.1520e+00 sec.
 Throughput: 5.6295e+00 RTFX
 root@d418cb8c06c2:/opt/riva# 
 ```
+### Works!
 
+_______
+### Run nano_llm:
+```
+jetson-containers run $(autotag nano_llm)
+```
+
+```
+jetson-containers run $(autotag nano_llm) \
+  python3 -m nano_llm.agents.web_chat --api=mlc \
+    --model Efficient-Large-Model/VILA-7b \
+    --asr=riva --tts=piper
+```
+### Works!
+
+________
+
+### Run test (Russian languges):
+
+```
+./riva_stop.sh
+```
+
+```
+Shutting down docker containers...
+```
+
+```
+./riva_clean.sh
+```
  
 
 
