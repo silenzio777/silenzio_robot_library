@@ -400,8 +400,39 @@ Riva server is ready...
 Use this container terminal to run applications:
 root@8a7d9f1b1acf:/opt/riva# 
 ```
+```
+root@649ce50514e8:/opt/riva# riva_streaming_asr_client --audio_file=/opt/riva/wav/ru-RU_sample.wav
+I0612 13:13:45.072036  7693 grpc.h:101] Using Insecure Server Credentials
+Loading eval dataset...
+filename: /opt/riva/wav/ru-RU_sample.wav
+Done loading 1 files
+you give it
+you give it
+the
+the
+the prefs use
+the
+the
+the
+The 
+-----------------------------------------------------------
+File: /opt/riva/wav/ru-RU_sample.wav
 
+Final transcripts: 
+0 : The 
 
+Timestamps: 
+Word                                    Start (ms)      End (ms)        Confidence      
+
+The                                     2160            2200            8.2716e-02      
+Audio processed: 3.8400e+00 sec.
+-----------------------------------------------------------
+Not printing latency statistics because the client is run without the --simulate_realtime option and/or the number of requests sent is not equal to number of requests received. To get latency statistics, run with --simulate_realtime and set the --chunk_duration_ms to be the same as the server chunk duration
+Run time: 9.6225e-01 sec.
+Total audio processed: 7.6320e+00 sec.
+Throughput: 7.9314e+00 RTFX
+```
+### Not work!
 
 
 
