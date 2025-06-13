@@ -229,7 +229,7 @@ jetson-containers run $(autotag nano_llm) \
 
 ________
 
-### Install Russian languge:
+### Install Russian language:
 
 Shutting down docker containers...
 ```
