@@ -617,6 +617,22 @@ Only in /путь/к/HDD/каталог: unique_file
 
 ______
 
+Графический интерфейс (Meld)
+Установите и запустите инструмент:
+
+```
+sudo apt install meld
+```
+
+```
+meld /путь/к/HDD/каталог /путь/к/SSD/каталог
+```
+
+> Визуальное сравнение с подсветкой изменений.
+> Поддержка синхронизации файлов.
+
+______
+
 ## Python submodule fix by hands.
 Install packet by localy, update the whisper.cpp and fix they CMakeLists.txt:
 
