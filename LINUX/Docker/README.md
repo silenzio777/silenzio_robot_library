@@ -334,5 +334,20 @@ docker ps -a
 sudo rm -rf /var/lib/docker.old
 ```
 
+____
 
+### Start/stop docker containers
+
+```
+sudo systemctl stop docker containerd
+```
+```
+sudo systemctl start docker containerd
+```
+```
+sudo systemctl status docker containerd
+```
+```
+sudo systemctl restart docker
+```
 
