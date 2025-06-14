@@ -592,6 +592,11 @@ sudo ncdu /
 sudo ncdu / --exclude /mnt --exclude /media
 ```
 
+```
+sudo apt install gdu
+sudo gdu /
+```
+
 ______
 
 Чтобы сравнить два корневых каталога на HDD и SSD в Ubuntu, включая все вложенные файлы и папки, используйте следующие методы:
