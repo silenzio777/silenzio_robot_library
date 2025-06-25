@@ -66,7 +66,7 @@ sudo chmod a+rw /dev/ttyUSB0
 ros2 launch hls_lfcd_lds_driver hlds_laser.launch.py
 ```
 
-## SLAM mapping mide:
+## SLAM mapping mode:
 
 T2:
 ```
