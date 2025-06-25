@@ -151,7 +151,7 @@ export CYCLONEDDS_URI=/.ros/cyclonedds_foxy.xml
 ros2 launch realsense2_camera rs_l515_and_t265_launch.py
 ```
 
-## SLAM mapping mide:
+## SLAM mapping mode:
 
 T1:
 ```
