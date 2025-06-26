@@ -107,6 +107,16 @@ sudo apt install ros-humble-pcl-conversions ros-humble-pcl-ros
 sudo apt install ros-humble-octomap-rviz-plugins
 ```
 
+Install on Ubuntu PC:
+
+```
+cd ~/ros2_ws/src
+git clone -b ros2 https://github.com/OctoMap/octomap_rviz_plugins
+cd ..
+colcon build --packages-select octomap_rviz_plugins
+```
+
+
 By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
 ```
 ros2 launch -s basic_mobile_robot basic_mobile_bot_v1.launch.py
