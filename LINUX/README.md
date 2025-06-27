@@ -529,6 +529,14 @@ cron.service        loaded active running Regular background program processing 
 networkd-dispatcher loaded active running Dispatcher daemon for systemd-networkd
 ...
 ```
+### service stop/start
+
+```
+systemctl status  yahboom_oled.service
+systemctl stop yahboom_oled.service
+systemctl status  yahboom_oled.service
+systemctl start yahboom_oled.service
+```
 
 ### Clean the system 
 
