@@ -43,8 +43,10 @@ T3:
 ros2 launch omni amcl_localization.launch.py
 ```
 
-
-
+T4:
+```
+ros2 launch object_detection_rgbd object_detection.launch.py
+```
 
 
 _______
