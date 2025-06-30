@@ -1063,7 +1063,7 @@ Categories=Development;" > ~/.local/share/applications/cursor.desktop
 
 _______
 
-### aux, top
+### aux, awk, top
 
 Базовый вариант (с заголовком)
 
