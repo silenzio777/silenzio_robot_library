@@ -185,6 +185,5 @@ Hardware:
 - Bios version: F7
 - Board name: Z370 AORUS Gaming 3
 - Board vendor: Gigabyte Technology Co., Ltd.
-- Board version: X.X
 - Product name: Z370 AORUS Gaming 3
 - Sys vendor: Gigabyte Technology Co., Ltd.
