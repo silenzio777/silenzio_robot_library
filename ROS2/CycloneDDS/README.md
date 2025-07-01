@@ -117,8 +117,8 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
-<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="h>
-    <Domain Id="any">
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.i>
+    <Domain id="0">
         <General>
             <Interfaces>
                 <NetworkInterface autodetermine="true" priority="default" />
@@ -132,9 +132,9 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
         <ParticipantIndex>auto</ParticipantIndex>
         <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
             <Peers>
-                <Peer Address="192.168.PC.IP"/>
-                <Peer Address="192.168.JN.IP"/>
-                <!--Peer Address="172.17.0.1"/-->
+        <Peer Address="192.168.JN.IP"/>  <!-- Jetson Nano -->
+        <Peer Address="192.168.JO.IP"/>  <!-- Jetson Orin NX -->
+        <Peer Address="192.168.PC.IP"/>  <!-- Ubuntu PC x86 -->
             </Peers>
         </Discovery>
         <Internal>
@@ -144,6 +144,7 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
         </Internal>
     </Domain>
 </CycloneDDS>
+
 ```
 
 
