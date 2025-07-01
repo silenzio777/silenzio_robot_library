@@ -58,7 +58,7 @@ Libraries:
 Hardware:
 - Model: NVIDIA Jetson Orin NX Engineering Reference Developer Kit Super
 - 699-level Part Number: 699-13767-0000-301 G.1
-- P- Number: p3767-0000
+- P-Number: p3767-0000
 - Module: NVIDIA Jetson Orin NX (16GB ram)
 - Soc: tegra234
 - LAT: 36.4.3
@@ -128,10 +128,60 @@ Libraries:
 Hardware:
 - Model: NVIDIA Jetson Nano Developer Kit
 - 699-level Part Number: 699-13448-0000-402 K.0
-- P- Number: p3448-0000
+- P-Number: p3448-0000
 - Module: NVIDIA Jetson Nano (4 GB ram)
 - Soc: tegra210
 - CUDA Arch BIN: 5.3
 - Codename: Porg
 - LAT: 32.6.1
 - Jetpack: 4.6
+
+________________
+
+```
+            .-/+oossssoo+/-.               kjd6dfH@nchdJYE82
+        `:+ssssssssssssssssss+:`           ----------------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.5 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: Z370 AORUS Gaming 3 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.8.0-60-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 1 hour, 15 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 4186 (dpkg), 17 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.1.16 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 2560x1440 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 42.9 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru-dark [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: Intel i7-8700K (12) @ 4.700GHz 
+    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA GeForce GTX 1050 Ti 
+      -+sssssssssssssssssyyyssss+-         Memory: 1828MiB / 32036MiB 
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.
+
+```
+
+Platform:
+- Machine: ×86_64
+- System: Linux
+- Distribution: Ubuntu 22.04 Jammy Jellyfish
+- Release: 6.8.0-60-generic
+- Python: 3.10.12
+
+Libraries:
+- CUDA: 12.8.93
+- CUDNN: 9.8.0
+- TensorRT: MISSING
+- VPI: MISSING
+- OpenCV: 4.5.4 with CUDA: NO
+
+Hardware:
+- Bios date: 07/05/2018
+- Bios vendor: American Megatrends Inc.
+- Bios version: F7
+- Board name: Z370 AORUS Gaming 3
+- Board vendor: Gigabyte Technology Co., Ltd.
+- Board version: X.X
+- Product name: Z370 AORUS Gaming 3
+- Sys vendor: Gigabyte Technology Co., Ltd.
