@@ -68,11 +68,22 @@ _____________
 
 
 ## Ubuntu PC ROS2 humble:
+
+
+
 ```
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 nano ~/.ros/cyclonedds.xml
 ```
+
+Check active network interface:
+```
+ip -br a | grep UP
+```
+
+> enp6s0           UP             192.168.X.XX/XX xxxxxxxxxxxxxx
+
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
