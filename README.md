@@ -13,7 +13,6 @@ ____
 ### Current Hardware & Software Setup
 
 
-
 ```
 ?ipe.z3sd@bfewtsgn2e:$ neofetch
             .-/+oossssoo+/-.               ?ipe.z3sd@bfewtsgn2e 
@@ -83,6 +82,8 @@ $ docker info | grep -i runtime
 ```
 __________
 
+### Dev-board: nVIDIA Jetson Nano 4GB
+
 ```
             .-/+oossssoo+/-.               dj7dHd@09sKncj 
         `:+ssssssssssssssssss+:`           --------------- 
@@ -137,6 +138,8 @@ Hardware:
 - Jetpack: 4.6
 
 ________________
+
+### Ubuntu PC:
 
 ```
             .-/+oossssoo+/-.               kjd6dfH@nchdJYE82
