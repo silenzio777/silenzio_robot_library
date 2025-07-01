@@ -1,7 +1,6 @@
 
-
-
 ### DDSConfig:
+
 - [source link](https://gist.github.com/robosam2003/d5fcfaf4bfd55298d86c1460cb7fc60c)<br/>
 
 
@@ -109,7 +108,7 @@ nano ~/.ros/cyclonedds.xml
 </CycloneDDS>
 ```
 
-## Jetson NX ROS2 humble:
+## Jetson Orin NX ROS2 humble:
 ```
 nano ~/.ros/cyclonedds.xml
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
@@ -132,9 +131,9 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
         <ParticipantIndex>auto</ParticipantIndex>
         <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
             <Peers>
-        <Peer Address="192.168.JN.IP"/>  <!-- Jetson Nano -->
-        <Peer Address="192.168.JO.IP"/>  <!-- Jetson Orin NX -->
-        <Peer Address="192.168.PC.IP"/>  <!-- Ubuntu PC x86 -->
+             <Peer Address="192.168.JN.IP"/>  <!-- Jetson Nano -->
+             <Peer Address="192.168.JO.IP"/>  <!-- Jetson Orin NX -->
+             <Peer Address="192.168.PC.IP"/>  <!-- Ubuntu PC x86 -->
             </Peers>
         </Discovery>
         <Internal>
@@ -144,8 +143,40 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
         </Internal>
     </Domain>
 </CycloneDDS>
-
 ```
 
+## Jetson Nano ROS2 foxy:
+```
+<CycloneDDS
+    xmlns="https://cdds.io/config"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+
+  <Domain id="0">
+    <General>
+      <NetworkInterfaceAddress>auto</NetworkInterfaceAddress>
+      <AllowMulticast>false</AllowMulticast>
+      <MaxMessageSize>65500B</MaxMessageSize>
+    </General>
+
+    <Discovery>
+      <ParticipantIndex>auto</ParticipantIndex>
+      <MaxAutoParticipantIndex>50</MaxAutoParticipantIndex>
+      <Peers>
+        <Peer Address="192.168.JN.IP"/>  <!-- Jetson Nano -->
+        <Peer Address="192.168.JO.IP"/>  <!-- Jetson Orin NX -->
+        <Peer Address="192.168.PC.IP"/>  <!-- Ubuntu PC x86 -->
+      </Peers>
+    </Discovery>
+
+    <Internal>
+      <Watermarks>
+        <WhcHigh>500kB</WhcHigh>
+      </Watermarks>
+    </Internal>
+  </Domain>
+</CycloneDDS>
+
+```
 
 
