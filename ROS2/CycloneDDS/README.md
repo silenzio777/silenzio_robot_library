@@ -85,7 +85,7 @@ ip -br a | grep UP
 > enp6s0           UP             192.168.X.XX/XX xxxxxxxxxxxxxx
 
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <CycloneDDS
     xmlns="https://cdds.io/config"
@@ -125,7 +125,7 @@ nano ~/.ros/cyclonedds.xml
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 ```
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.i>
     <Domain id="0">
@@ -157,7 +157,7 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 ```
 
 ## Jetson Nano ROS2 foxy:
-```
+```xml
 <CycloneDDS
     xmlns="https://cdds.io/config"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
