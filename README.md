@@ -12,6 +12,8 @@ ____
 
 ### Current Hardware & Software Setup
 
+
+
 ```
 ?ipe.z3sd@bfewtsgn2e:$ neofetch
             .-/+oossssoo+/-.               ?ipe.z3sd@bfewtsgn2e 
@@ -39,6 +41,7 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter
 ### Dev-board: nVIDIA Jetson Orin NX 16GB
 
 Platform:
+- Machine: aarch64
 - System: Linux
 - Distribution: Ubuntu 22.04 Jammy Jellyfish
 - Release: 5.15.148-tegra
@@ -78,3 +81,57 @@ $ docker info | grep -i runtime
  Runtimes: io.containerd.runc.v2 nvidia runc
  Default Runtime: nvidia
 ```
+__________
+
+```
+            .-/+oossssoo+/-.               dj7dHd@09sKncj 
+        `:+ssssssssssssssssss+:`           --------------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 20.04.6 LTS aarch64 
+    .ossssssssssssssssssdMMMNysssso.       Host: NVIDIA Jetson Nano Developer Kit 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 4.9.253-tegra 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 1 hour, 5 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 3498 (dpkg), 10 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.0.17 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1280x1024 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru-dark [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: ARMv8 rev 1 (v8l) (4) @ 1.479GHz 
+    .ossssssssssssssssssdMMMNysssso.       Memory: 1141MiB / 3962MiB 
+      -+sssssssssssssssssyyyssss+-
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.
+```
+
+```
+# R32 (release), REVISION: 6.1, GCID: 27863751, BOARD: t210ref, EABI: aarch64, DATE: Mon Jul 26 19:20:30 UTC 2021
+```
+
+Platform:
+- Machine: aarch64
+- System: Linux
+- Distribution: Ubuntu 20.04 focal
+- Release: 4.9.253-tegra
+- Python: 3.8.10
+  
+Libraries:
+- CUDA: 10.2.300
+- CUDNN: 8.2.1.32
+- TensorRT: 8.0.1.6
+- VPI: 1.1.15
+- Vulkan: 1.2.141
+- OpencV: 4.6.0 with CUDA: YES
+
+Hardware:
+- Model: NVIDIA Jetson Nano Developer Kit
+- 699-level Part Number: 699-13448-0000-402 K.0
+- P- Number: p3448-0000
+- Module: NVIDIA Jetson Nano (4 GB ram)
+- Soc: tegra210
+- CUDA Arch BIN: 5.3
+- Codename: Porg
+- LAT: 32.6.1
+- Jetpack: 4.6
