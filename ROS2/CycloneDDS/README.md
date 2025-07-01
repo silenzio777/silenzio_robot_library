@@ -121,8 +121,9 @@ ip -br a | grep UP
 
 ## Jetson Orin NX ROS2 humble:
 ```
-nano ~/.ros/cyclonedds.xml
 export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+nano ~/.ros/cyclonedds.xml
 ```
 
 ```xml
@@ -160,6 +161,12 @@ export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
 ```
 
 ## Jetson Nano ROS2 foxy:
+```
+export CYCLONEDDS_URI=~/.ros/cyclonedds.xml
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+nano ~/.ros/cyclonedds.xml
+```
+
 ```xml
 <CycloneDDS
     xmlns="https://cdds.io/config"
