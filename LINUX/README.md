@@ -1108,6 +1108,12 @@ top -o %CPU -c
 
 _______
 
+### If you're on X11, gnome-shell should automatically restart:
+```
+killall -3 gnome-shell
+```
+_______
+
 ### reboot
 
 ```
