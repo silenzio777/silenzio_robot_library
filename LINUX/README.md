@@ -1105,6 +1105,23 @@ top -o %CPU -c
 
 -o %CPU: сортировка по CPU.
 -c: показ полных команд.
+______
+
+### Wait for service start: jtop.service and run the command:
+
+- file: /home/silenzio/lib/systemInfo/systemInfo.sh
+
+```
+#!/bin/bash
+
+# Wait for start: jtop.service
+while ! systemctl is-active --quiet jtop.service; do
+    sleep 1
+done
+
+cd ~/ros2_ws && source install/setup.bash
+xterm -bg black -fg white -hold -e python3 /home/silenzio/lib/systemInfo/systemInfo.py
+```
 
 _______
 
