@@ -48,6 +48,14 @@ T4:
 ros2 launch object_detection_rgbd object_detection.launch.py
 ```
 
+T5:
+```
+cd /home/silenzio/ros2_ws/src/omni/omni
+python3 ros2_mcp_server.py
+```
+
+
+
 
 _______
 
