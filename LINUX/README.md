@@ -1133,7 +1133,71 @@ wget --load-cookies ~/Downloads/cookies.txt --continue --content-disposition "ht
 ```
 
 
+_______
 
+### get nvme ssd drive list :
+```
+$ sudo nvme list
+```
+```
+Node                  SN                   Model                                    Namespace Usage                      Format           FW Rev  
+--------------------- -------------------- ---------------------------------------- --------- -------------------------- ---------------- --------
+/dev/nvme0n1          AA00000000035        SSD 256GB                                1         256.06  GB / 256.06  GB    512   B +  0 B   T1103L0L
+/dev/nvme1n1          180693800757         WDC WDS256G1X0C-00ENX0                   1         256.06  GB / 256.06  GB    512   B +  0 B   B35900WD
+```
+- smart info:
+```
+$ sudo nvme smart-log /dev/nvme1n1
+Smart Log for NVME device:nvme1n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 40 C (313 Kelvin)
+available_spare				: 100%
+available_spare_threshold		: 4%
+percentage_used				: 17%
+endurance group critical warning summary: 0
+data_units_read				: 16,338,028
+data_units_written			: 54,329,341
+host_read_commands			: 299,247,072
+host_write_commands			: 1,424,914,546
+controller_busy_time			: 330,178
+power_cycles				: 208
+power_on_hours				: 50,292
+unsafe_shutdowns			: 24
+media_errors				: 0
+num_err_log_entries			: 1
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Thermal Management T1 Trans Count	: 0
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 0
+Thermal Management T2 Total Time	: 0
+```
+```
+silenzio@jetsonnx:~/ros2_ws$ sudo nvme smart-log /dev/nvme0n1
+Smart Log for NVME device:nvme0n1 namespace-id:ffffffff
+critical_warning			: 0
+temperature				: 45 C (318 Kelvin)
+available_spare				: 100%
+available_spare_threshold		: 10%
+percentage_used				: 0%
+endurance group critical warning summary: 0
+data_units_read				: 6,089,028
+data_units_written			: 4,454,575
+host_read_commands			: 63,923,688
+host_write_commands			: 24,033,367
+controller_busy_time			: 2,708
+power_cycles				: 242
+power_on_hours				: 1,332
+unsafe_shutdowns			: 43
+media_errors				: 0
+num_err_log_entries			: 0
+Warning Temperature Time		: 0
+Critical Composite Temperature Time	: 0
+Thermal Management T1 Trans Count	: 5
+Thermal Management T2 Trans Count	: 0
+Thermal Management T1 Total Time	: 65
+Thermal Management T2 Total Time	: 0
+```
 
 _______
 
