@@ -1123,6 +1123,18 @@ cd ~/ros2_ws && source install/setup.bash
 xterm -bg black -fg white -hold -e python3 /home/silenzio/lib/systemInfo/systemInfo.py
 ```
 
+
+_______
+
+### wget with cookies%
+```
+wget --load-cookies ~/Downloads/cookies.txt --continue "https://site.com/large_file.zip"
+wget --load-cookies ~/Downloads/cookies.txt --continue --content-disposition "https://site.com/large_file.zip"
+```
+
+
+
+
 _______
 
 ### If you're on X11, gnome-shell should automatically restart:
