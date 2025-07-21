@@ -1015,7 +1015,7 @@ gsettings set org.gnome.mutter overlay-key ''
 ```
 _____
 
-### Cursor install WO Fuse:
+### Cursor.ai install WO Fuse:
 
 Ubuntu 22.04 will break after sudo apt install fuse. Don't do it! It took me a half day to recover the OS. I saw many times the sudo apt install fuse libfuse2 advice (both fuse and libfuse2 packages). But as I was corrected in a comment the libfuse2 shouldn't break Ubuntu.
 
@@ -1032,12 +1032,30 @@ Make the downloaded image executable
 ```
 chmod +x cursor-0.44.11-build-250103fqxdt5u9z-x86_64.AppImage
 ```
+
+A: FRESH INSTALL:
 Extract Cursor files without FUSE
 ```
 mkdir -p ~/.local/bin/cursor
 ./cursor-0.44.11-build-250103fqxdt5u9z-x86_64.AppImage --appimage-extract
 mv squashfs-root/* ~/.local/bin/cursor/
 ```
+
+B: UPDATE:
+Move old version:
+```
+sudo chown silenzio:silenzio '/home/silenzio/.local/bin/cursor' -R
+sudo mv /home/silenzio/.local/bin/cursor/* /home/silenzio/tmp/cursor_old 
+```
+Or just delete...
+
+Install new versiom:
+```
+cp /home/silenzio/Downloads/Cursor-1.2.2-x86_64.AppImage /home/silenzio/.local/bin/cursor
+chmod +x Cursor-1.2.2-x86_64.AppImage
+./Cursor-1.2.2-x86_64.AppImage --appimage-extract
+```
+
 
 Fix the sandbox permissions
 ```
