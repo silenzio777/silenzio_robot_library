@@ -1042,12 +1042,12 @@ mv squashfs-root/* ~/.local/bin/cursor/
 ```
 
 B: UPDATE:
-Move old version:
+Move old version (Or just delete):
 ```
 sudo chown silenzio:silenzio '/home/silenzio/.local/bin/cursor' -R
 sudo mv /home/silenzio/.local/bin/cursor/* /home/silenzio/tmp/cursor_old 
 ```
-Or just delete...
+
 
 Install new versiom:
 ```
