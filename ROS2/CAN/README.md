@@ -1,3 +1,29 @@
+### Install PCAN on Jetson Orin NX:
+
+### go to ~/lib
+```
+cd '/home/silenzio/lib'
+mkdir PCAN
+cd PCAN
+```
+
+### get PCAN driver from site: 
+https://www.peak-system.com/fileadmin/media/linux/index.php
+https://www.peak-system.com/quick/PCAN-Linux-Driver
+
+```
+tar -xzf pcan-kernel-version.sh.tar.gz
+./pcan-kernel-version.sh
+```
+
+- Bus 001 Device 010: ID 0c72:000c PEAK System PCAN-USB needs Linux 3.4
+
+
+
+
+
+
+
 ### Install CAN on Jetson Orin NX:
 
 - [CAN interface setup](#can-interface-setup)<br/>
