@@ -53,6 +53,24 @@ sudo dmesg | grep pcan
 [19251.537039] pcan: major 486.
 ```
 
+```
+ls -l /dev/pcan* | grep "^c"
+```
+- crw-rw-rw- 1 root root 486, 32 Aug  6 20:58 /dev/pcanusb32
+
+```
+ls -l /dev/pcan*
+```
+
+- lrwxrwxrwx 1 root root       9 Aug  6 20:58 /dev/pcan32 -> pcanusb32
+	crw-rw-rw- 1 root root 486, 32 Aug  6 20:58 /dev/pcanusb32
+	
+	/dev/pcan-usb:
+	total 0
+	drwxr-xr-x 2 root root 60 Aug  6 20:58 0
+
+
+
 
 
 
