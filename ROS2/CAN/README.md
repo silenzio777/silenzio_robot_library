@@ -109,8 +109,23 @@ ls /dev/pcan*
 
 ### run `can1` interface 
 ```
+sudo ip link set can1 down
 sudo ip link set can1 up type can bitrate 500000
+sudo ip link set can1 up
 ```
+
+```
+candump -x can1
+```
+  can1  RX - -  1A1   [8]  00 00 00 00 00 00 00 80
+  can1  RX - -  1A1   [8]  00 00 00 00 01 00 00 80
+
+```
+python3 -m can.viewer -c "can1" -i "socketcan"
+```
+
+Count   Time           dt          ID          DLC  Data
+23      21.996918      0.999835    0x1A1       8    00 00 00 00 01 00 00 80
 
 
 
