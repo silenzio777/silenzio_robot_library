@@ -74,16 +74,18 @@ ls -l /dev/pcan* | grep "^c"
 ```
 ls -l /dev/pcan*
 ```
+```
 lrwxrwxrwx 1 root root       9 Aug  6 20:58 /dev/pcan32 -> pcanusb32
 crw-rw-rw- 1 root root 486, 32 Aug  6 20:58 /dev/pcanusb32
 
 /dev/pcan-usb:
 total 0
 drwxr-xr-x 2 root root 60 Aug  6 20:58 0
-
+```
 
 ```
 cat /proc/pcan
+```
 ```
 *------------- PEAK-System CAN interfaces (www.peak-system.com) -------------
 *------------- Release_20250213_n (8.20.0) Aug  6 2025 20:54:23 --------------
@@ -91,21 +93,25 @@ cat /proc/pcan
 *--------------------- 1 interfaces @ major 486 found -----------------------
 *n -type- -ndev- --base-- irq --btr- --read-- --write- --irqs-- -errors- status
 32    usb   -NA- ffffffff 000 0x001c 00000000 00000000 00000000 00000000 0x0000
+```
 
 ```
 lspcan -T -t -i
 ```
+```
 dev name	port	irq	clock	btrs	bus
 [PCAN-USB 0]
 |_ pcanusb32	CAN1	-	8MHz	500k	CLOSED
+```
 
 ```
 ls /dev/pcan*
 ```
+```
 /dev/pcan32  /dev/pcanusb32
-
 /dev/pcan-usb:
 0
+```
 
 ### run `can1` interface 
 ```
