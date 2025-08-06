@@ -114,20 +114,34 @@ sudo ip link set can1 up type can bitrate 500000
 sudo ip link set can1 up
 ```
 
+### view `can1` interface 
+```
+fconfig
+```
+```
+can1: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 23  bytes 184 (184.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
 ```
 candump -x can1
 ```
+```
   can1  RX - -  1A1   [8]  00 00 00 00 00 00 00 80
   can1  RX - -  1A1   [8]  00 00 00 00 01 00 00 80
+```
 
 ```
 python3 -m can.viewer -c "can1" -i "socketcan"
 ```
-
+```
 Count   Time           dt          ID          DLC  Data
 23      21.996918      0.999835    0x1A1       8    00 00 00 00 01 00 00 80
-
-
+```
 
 
 
