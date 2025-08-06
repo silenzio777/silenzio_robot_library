@@ -1,4 +1,12 @@
-### Install PCAN on Jetson Orin NX:
+### Install PCAN (CANable board) on Jetson Orin NX:
+
+### Put in the PCAN board
+```
+lsusb
+...
+Bus 001 Device 010: ID 0c72:000c PEAK System PCAN-USB.
+...
+```
 
 ### go to ~/lib
 ```
@@ -7,21 +15,51 @@ mkdir PCAN
 cd PCAN
 ```
 
-### get PCAN driver from site: 
-https://www.peak-system.com/fileadmin/media/linux/index.php
-https://www.peak-system.com/quick/PCAN-Linux-Driver
+### get PCAN version checker from site: 
+https://www.peak-system.com/fileadmin/media/linux/files/pcan-kernel-version.sh.tar.gz
 
 ```
 tar -xzf pcan-kernel-version.sh.tar.gz
 ./pcan-kernel-version.sh
 ```
-
 - Bus 001 Device 010: ID 0c72:000c PEAK System PCAN-USB needs Linux 3.4
 
+### get PCAN driver from site:
+https://www.peak-system.com/fileadmin/media/linux/index.php
+https://www.peak-system.com/quick/PCAN-Linux-Driver
+
+```
+tar -xzf peak-linux-driver-8.20.0.tar.gz
+cd '/home/silenzio/lib/peak-linux-driver-8.20.0'
+make clean
+make
+sudo make install
+```
+### done
+
+### Start driver:
+```
+sudo modprobe pcan
+```
+
+```
+sudo dmesg | grep pcan 
+[19251.479209] pcan: module verification failed: signature and/or required key missing - tainting kernel
+[19251.481355] pcan: Release_20250213_n (le)
+[19251.481359] pcan: driver config [mod] [isa] [pci] [pec] [usb] 
+[19251.484000] pcan 1-2.4.3:1.0: PCAN-USB (MCU00h) fw v8.4.0
+[19251.536908] pcan: - usb device minor 32 found
+[19251.537025] usbcore: registered new interface driver pcan
+[19251.537039] pcan: major 486.
+```
 
 
 
 
+
+
+
+________________
 
 
 ### Install CAN on Jetson Orin NX:
