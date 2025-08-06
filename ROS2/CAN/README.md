@@ -32,7 +32,8 @@ https://www.peak-system.com/quick/PCAN-Linux-Driver
 tar -xzf peak-linux-driver-8.20.0.tar.gz
 cd '/home/silenzio/lib/peak-linux-driver-8.20.0'
 make clean
-make
+### make
+make -C driver NET=NETDEV_SUPPORT
 sudo make install
 ```
 ### done
@@ -44,6 +45,7 @@ sudo modprobe pcan
 
 ```
 sudo dmesg | grep pcan 
+$ sudo dmesg | grep pcan
 [19251.479209] pcan: module verification failed: signature and/or required key missing - tainting kernel
 [19251.481355] pcan: Release_20250213_n (le)
 [19251.481359] pcan: driver config [mod] [isa] [pci] [pec] [usb] 
@@ -51,6 +53,17 @@ sudo dmesg | grep pcan
 [19251.536908] pcan: - usb device minor 32 found
 [19251.537025] usbcore: registered new interface driver pcan
 [19251.537039] pcan: major 486.
+[21687.544804] usbcore: deregistering interface driver pcan
+[21687.728881] pcan: removed.
+
+[22144.743666] pcan: Release_20250213_n (le)
+[22144.743677] pcan: driver config [mod] [isa] [pci] [pec] [usb] [net] 
+[22144.746516] pcan 1-2.4.3:1.0: PCAN-USB (MCU00h) fw v8.4.0
+[22144.799867] pcan: registered CAN netdevice can1 for usb hw (486,32)
+[22144.799879] pcan: - usb device minor 32 found
+[22144.799947] usbcore: registered new interface driver pcan
+[22144.799959] pcan: major 486.
+
 ```
 
 ```
@@ -94,8 +107,10 @@ ls /dev/pcan*
 /dev/pcan-usb:
 0
 
-
-
+### run `can1` interface 
+```
+sudo ip link set can1 up type can bitrate 500000
+```
 
 
 
