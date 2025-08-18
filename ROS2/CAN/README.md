@@ -1,3 +1,44 @@
+### Install USBtoCAN (DM tools) on Jetson Orin NX:
+
+### Put in the PCAN board
+```
+lsusb
+...
+Bus 001 Device 004: ID 2e88:4603 HDSC CDC Device
+...
+```
+### Install software:
+```
+~/lib$ git clone https://github.com/enactic/openarm_can.git
+```
+### Configure:
+```
+cd '/home/silenzio/lib/openarm_can'
+setup/configure_socketcan.sh can0
+```
+```
+Configuring can0...
+[sudo] password for silenzio: 
+can0 is now set to CAN 2.0 mode (1000000 bps)
+✓ can0 is active
+```
+```
+ifconfig
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 200  
+```
+
+
+
+
+
+_________
+
 ### Install PCAN (CANable board) on Jetson Orin NX:
 
 ### Put in the PCAN board
