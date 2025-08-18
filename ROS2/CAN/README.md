@@ -4,7 +4,7 @@
 ```
 lsusb
 ...
-Bus 001 Device 004: ID 2e88:4603 HDSC CDC Device
+Bus 001 Device 004: ID 2e88:4603 HDSC CDC Device 
 ...
 ```
 ### Install software:
