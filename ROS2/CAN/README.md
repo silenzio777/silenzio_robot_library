@@ -11,6 +11,8 @@ Bus 001 Device 004: ID 2e88:4603 HDSC CDC Device
 ```
 ~/lib$ git clone https://github.com/enactic/openarm_can.git
 ```
+## Setup CAN Interface
+
 ### Configure:
 ```
 cd '/home/silenzio/lib/openarm_can'
@@ -32,8 +34,46 @@ can0: flags=193<UP,RUNNING,NOARP>  mtu 16
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
         device interrupt 200  
 ```
+## C++ Library
+
+### Build & Install:
+```
+sudo apt-get install ninja-build
+cd openarm_can
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+sudo cmake --install build
+```
+### Done
 
 
+
+
+
+
+Python (🚧 EXPERIMENTAL - TEMPORARY 🚧)
+⚠️ WARNING: UNSTABLE API ⚠️ Python bindings are currently a direct low level temporary port, and will change DRASTICALLY. The interface is may break between versions.Use at your own risk! Discussions on the interface are welcomed.
+
+### Build & Install:
+
+Please ensure that you build and install the C++ library first, as described above.
+```
+cd python
+```
+###  Create and activate virtual environment (recommended)
+```
+python3 -m venv venv
+source venv/bin/activate
+./build.sh
+```
+Usage:
+
+# WARNING: This API is unstable and will change!
+import openarm_can as oa
+
+arm = oa.OpenArm("can0", True)  # CAN-FD enabled
+arm.init_arm_motors([oa.MotorType.DM4310], [0x01], [0x11])
+arm.enable_all()
 
 
 
