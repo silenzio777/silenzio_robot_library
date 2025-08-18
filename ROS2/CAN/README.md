@@ -47,10 +47,6 @@ sudo cmake --install build
 ### Done
 
 
-
-
-
-
 Python (🚧 EXPERIMENTAL - TEMPORARY 🚧)
 ⚠️ WARNING: UNSTABLE API ⚠️ Python bindings are currently a direct low level temporary port, and will change DRASTICALLY. The interface is may break between versions.Use at your own risk! Discussions on the interface are welcomed.
 
@@ -96,7 +92,7 @@ See examples/ directory for usage examples.
 
 ## Usage:
 
-# WARNING: This API is unstable and will change!
+### WARNING: This API is unstable and will change!
 
 ```python
 import openarm_can as oa
