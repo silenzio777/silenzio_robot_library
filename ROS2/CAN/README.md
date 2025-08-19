@@ -133,6 +133,7 @@ tar -xzf pcan-kernel-version.sh.tar.gz
 
 ### get PCAN driver from site:
 https://www.peak-system.com/fileadmin/media/linux/index.php
+
 https://www.peak-system.com/quick/PCAN-Linux-Driver
 
 ```
