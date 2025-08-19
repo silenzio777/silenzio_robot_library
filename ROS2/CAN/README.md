@@ -146,6 +146,20 @@ sudo make install
 ```
 ### done
 
+### for UBUNTUPC:
+```
+sudo apt update
+sudo apt install gcc-12
+```
+
+```
+tar -xzf peak-linux-driver-8.20.0.tar.gz
+cd peak-linux-driver-8.20.0
+make -C driver NET=NETDEV_SUPPORT CC="gcc-12"
+sudo make install
+```
+### done with 2 err
+
 ### Start driver:
 ```
 sudo modprobe pcan
