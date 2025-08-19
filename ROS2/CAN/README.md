@@ -1,3 +1,40 @@
+
+https://github.com/enactic/openarm_can
+
+sudo apt-get update
+sudo apt-get install libfuse2
+
+sudo modprobe slcan
+sudo modprobe can
+sudo ip link set can0 down
+ sudo ip link set can0 type can bitrate 1000000
+ sudo ip link set can0 up
+
+Terminal 2 - Send commands: In Terminal 2, send a motor enable command to motor #1:
+cansend can0 001#FFFFFFFFFFFFFFFC
+
+candump can0
+can0  011   [8]  XX XX XX XX XX XX XX XX
+
+# Disable motor #1
+cansend can0 001#FFFFFFFFFFFFFFFD
+
+ls /dev/ttyACM0
+
+sudo chmod 777 /dev/ttyACM0
+
+cd /home/silenzio/lib/dm-tools-master
+chmod a+x DM-USB2FDCAN-x86_64.AppImage
+./DM-USB2FDCAN-x86_64.AppImage
+
+https://docs.openarm.dev/software/setup/motor-id
+
+Joint	Sender CAN ID	Receiver (Master) ID
+J1		0x01			0x11
+
+
+______
+
 ### Install USBtoCAN (DM tools) on Jetson Orin NX:
 
 ### Put in the PCAN board
