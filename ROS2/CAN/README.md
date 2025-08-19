@@ -94,6 +94,11 @@ See examples/ directory for usage examples.
 
 ### WARNING: This API is unstable and will change!
 
+```
+cd ~/lib/openarm_can/python
+source venv/bin/activate
+```
+
 ```python
 import openarm_can as oa
 
