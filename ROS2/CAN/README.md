@@ -138,7 +138,7 @@ https://www.peak-system.com/quick/PCAN-Linux-Driver
 
 ```
 tar -xzf peak-linux-driver-8.20.0.tar.gz
-cd '/home/silenzio/lib/peak-linux-driver-8.20.0'
+cd peak-linux-driver-8.20.0
 make clean
 ### make
 make -C driver NET=NETDEV_SUPPORT
