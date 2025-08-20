@@ -51,14 +51,12 @@ sudo slcan_attach -f -s6 -o /dev/ttyACM0
 ```
 `attached tty /dev/ttyACM0 to netdevice can0
 
-
-
-# Up interface
+###  Up interface
 ```
 sudo slcand ttyACM0 can0
 ```
 
-# Set CAN-interface speed (1000000 bit/s)
+###  Set CAN-interface speed (1000000 bit/s)
 ```
 sudo ip link set can0 up type can bitrate 1000000
 ```
