@@ -57,6 +57,39 @@ sudo slcand ttyACM0 can0
 sudo ip link set can0 up type can bitrate 500000
 ```
 
+### Create service
+```
+sudo nano /etc/systemd/system/slcan.service
+```
+```
+[Unit]
+Description=SLCAN configuration for USB-CAN adapter
+After=syslog.target network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/slcand -o -s6 -S 1000000 /dev/ttyACM0 can0
+ExecStartPost=/bin/sleep 2
+ExecStartPost=/sbin/ip link set can0 up type can bitrate 1000000
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Activate service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable slcan.service
+```
+
+
+
+
+
+
+
+____
 
 ```
 sudo apt-get update
