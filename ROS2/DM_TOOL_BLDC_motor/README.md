@@ -38,7 +38,11 @@ sudo dmesg | grep -i "cdc\|tty"
 
 ```
 ls /dev/ttyACM*
-/dev/ttyACM0
+```
+`/dev/ttyACM0
+
+```
+sudo chmod 777 /dev/ttyACM0
 ```
 
 # Привяжем последовательный порт к CAN интерфейсу
@@ -46,6 +50,8 @@ ls /dev/ttyACM*
 sudo slcan_attach -f -s6 -o /dev/ttyACM0
 ```
 `attached tty /dev/ttyACM0 to netdevice can0
+
+
 
 # Поднимем интерфейс
 ```
