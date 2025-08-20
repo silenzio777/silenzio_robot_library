@@ -87,9 +87,27 @@ sudo systemctl daemon-reload
 sudo systemctl enable slcan.service
 ```
 
+### Stop prev setup
+```
+sudo pkill slcand
+sudo ip link set can0 down 2>/dev/null
+```
 
+```
+Автоматическая настройка при загрузке
+Для автоматической настройки при подключении устройства создайте udev-правило:
 
-
+1. Создайте файл правил udev
+bash
+sudo nano /etc/udev/rules.d/80-can.rules
+2. Добавьте содержимое
+text
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2e88", ATTRS{idProduct}=="4603", SYMLINK+="can_adapter", RUN+="/usr/bin/slcand -o -s6 -S 3000000 /dev/%k can0", RUN+="/bin/sleep 2", RUN+="/sbin/ip link set can0 up type can bitrate 500000"
+3. Перезагрузите правила udev
+bash
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+```
 
 
 
