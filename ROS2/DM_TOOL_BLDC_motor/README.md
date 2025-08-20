@@ -1,4 +1,36 @@
 
+
+sudo modprobe can
+sudo modprobe can-raw
+sudo modprobe slcan
+sudo modprobe slcan
+
+sudo slcand -o -s8 -t hw -S 500000 /dev/ttyUSBx
+sudo ip link set up slcan0
+
+a:
+
+Your CAN bitrate is wrong. To setup 500kbit/s you need to invoke following commands:
+
+sudo chmod 777 /dev/ttyACM0
+
+## sudo slcand -o -s6 -t hw -S 3000000 /dev/ttyUSBx
+
+sudo slcan_attach -f -s8 -o /dev/ttyACM1
+
+
+sudo ip link set up slcan0
+
+-s6 means CAN bitrate 500kbit/s, 
+-s8 means 1Mbit/s.
+-S parameter is used to setup serial speed to the USB-to-serial controller in the USB-to-CAN cable. 
+
+The full CAN bitrate table for slcan can be found here - http://elinux.org/Bringing_CAN_interface_up#SLCAN_based_Interfaces
+
+
+_____
+
+
 https://docs.openarm.dev/software/
 https://github.com/enactic/openarm_can
 https://wiki.seeedstudio.com/damiao_series/
@@ -35,7 +67,9 @@ sudo dmesg | grep -i "cdc\|tty"
 [   55.253699] usbcore: registered new interface driver cdc_acm
 [   55.253701] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
 ```
-
+```
+sudo modprobe slcan
+```
 ```
 ls /dev/ttyACM*
 ```
@@ -60,6 +94,59 @@ sudo slcand ttyACM0 can0
 ```
 sudo ip link set can0 up type can bitrate 1000000
 ```
+
+```
+ip link show
+
+5: can0: <NOARP,UP,LOWER_UP> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can 
+```
+
+```
+ifconfig
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 64 (64.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+```
+lsusb -v -d 2e88:4603 | grep -i can
+```
+`Couldn't open device, some information will be missing
+
+```
+sudo lsusb -v -d 2e88:4603 | grep -i can
+```
+`>>>> Green led start blinking on USBtoCAN dmbot board. Before it was red. <<<<
+
+
+sudo lsusb -v -d 2e88:4603 | head -20
+
+Bus 001 Device 002: ID 2e88:4603 HDSC CDC Device
+Device Descriptor:
+  bLength                18
+  bDescriptorType         1
+  bcdUSB               2.00
+  bDeviceClass            0 
+  bDeviceSubClass         0 
+  bDeviceProtocol         0 
+  bMaxPacketSize0        64
+  idVendor           0x2e88 
+  idProduct          0x4603 
+  bcdDevice            2.00
+  iManufacturer           1 HDSC
+  iProduct                2 CDC Device
+  iSerial                 3 00000000050C
+  bNumConfigurations      1
+  Configuration Descriptor:
+    bLength                 9
+    bDescriptorType         2
+
+
+
 
 ### Create service
 ```
@@ -108,7 +195,6 @@ bash
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
-
 
 
 ____
