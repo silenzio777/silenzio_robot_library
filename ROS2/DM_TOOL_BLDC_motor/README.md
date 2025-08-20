@@ -1,14 +1,73 @@
 
+https://docs.openarm.dev/software/
 https://github.com/enactic/openarm_can
+https://wiki.seeedstudio.com/damiao_series/
 
+
+```
+lsusb
+...
+Bus 001 Device 002: ID 2e88:4603 HDSC CDC Device
+...
+```
+
+```
+sudo dmesg | grep -i can
+
+[  807.166041] can: controller area network core
+[  807.166066] NET: Registered PF_CAN protocol family
+[  820.957493] CAN device driver interface
+[  820.962446] slcan: serial line CAN interface driver
+```
+
+```
+lsmod | grep cdc_acm
+cdc_acm                45056  0
+```
+
+
+```
+sudo dmesg | grep -i "cdc\|tty"
+[sudo] password for silenzio: 
+[    0.129620] printk: legacy console [tty0] enabled
+[   55.229906] usb 1-7: Product: CDC Device
+[   55.253677] cdc_acm 1-7:1.0: ttyACM0: USB ACM device
+[   55.253699] usbcore: registered new interface driver cdc_acm
+[   55.253701] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+```
+
+```
+ls /dev/ttyACM*
+/dev/ttyACM0
+```
+
+# Привяжем последовательный порт к CAN интерфейсу
+```
+sudo slcan_attach -f -s6 -o /dev/ttyACM0
+```
+`attached tty /dev/ttyACM0 to netdevice can0
+
+# Поднимем интерфейс
+```
+sudo slcand ttyACM0 can0
+```
+
+# Установим скорость CAN-шины (500000 bit/s)
+```
+sudo ip link set can0 up type can bitrate 500000
+```
+
+
+```
 sudo apt-get update
 sudo apt-get install libfuse2
+```
 
 sudo modprobe slcan
 sudo modprobe can
 sudo ip link set can0 down
- sudo ip link set can0 type can bitrate 1000000
- sudo ip link set can0 up
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
 
 Terminal 2 - Send commands: In Terminal 2, send a motor enable command to motor #1:
 cansend can0 001#FFFFFFFFFFFFFFFC
