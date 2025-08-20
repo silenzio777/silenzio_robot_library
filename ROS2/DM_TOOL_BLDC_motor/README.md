@@ -45,7 +45,7 @@ ls /dev/ttyACM*
 sudo chmod 777 /dev/ttyACM0
 ```
 
-# Привяжем последовательный порт к CAN интерфейсу
+### Attach port to CAN interface
 ```
 sudo slcan_attach -f -s6 -o /dev/ttyACM0
 ```
@@ -53,14 +53,14 @@ sudo slcan_attach -f -s6 -o /dev/ttyACM0
 
 
 
-# Поднимем интерфейс
+# Up interface
 ```
 sudo slcand ttyACM0 can0
 ```
 
-# Установим скорость CAN-шины (500000 bit/s)
+# Set CAN-interface speed (1000000 bit/s)
 ```
-sudo ip link set can0 up type can bitrate 500000
+sudo ip link set can0 up type can bitrate 1000000
 ```
 
 ### Create service
