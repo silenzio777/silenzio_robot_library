@@ -138,7 +138,22 @@ can0: flags=193<UP,RUNNING,NOARP>  mtu 16
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
-### Python code:
+## Python code:
+
+### Install:
+Create and activate virtual environment (recommended)
+```
+python3 -m venv venv
+source venv/bin/activate
+./build.sh
+```
+
+### Run:
+
+```
+cd ~/lib/openarm_can/python/
+source venv/bin/activate
+```
 
 ```python
 python3
