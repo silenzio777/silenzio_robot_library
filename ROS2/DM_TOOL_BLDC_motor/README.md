@@ -1,4 +1,133 @@
 
+## Run DM-J4310-2EC motor via PEAK System USB-CAN adapter.
+
+
+
+Connection diagram.
+
+Before CAN interface start:
+![Image](https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4)
+
+After CAN interface start:
+![Image](https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21)
+
+### 120R termination must be enable.
+
+From https://canable.io/getting-started.html site:
+
+```
+The original CANable has two jumpers: "Boot" and "Term".
+
+Jumper towards the screw terminals: the onboard 120R termination is enabled. 
+Jumper away from the screw terminals: termination is disabled.
+
+Connect to the Bus:
+Connect the CANH, CANL, and GND pins of your CANable to your target CAN bus. 
+You must connect ground for the CAN bus to function properly.
+```
+
+
+![Image](https://github.com/user-attachments/assets/66ac670c-dba6-4c74-850b-c6aeef517891)
+
+
+### Get DM-USB2FDCAN-x86_64.AppImage
+
+The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
+
+<img width="1278" height="851" alt="Image" src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" />
+
+<img width="1270" height="866" alt="Image" src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" />
+
+<img width="1273" height="843" alt="Image" src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" />
+
+____
+
+## CAN interface install process:
+
+```
+lsusb
+```
+```
+Bus 001 Device 002: ID 0c72:000c PEAK System PCAN-USB
+```
+
+## Kernel driver:
+```
+sudo modprobe pcan
+```
+```
+sudo dmesg | grep pcan 
+```
+```
+[  376.264297] pcan: Release_20250213_n (le)
+[  376.264303] pcan: driver config [mod] [isa] [pci] [pec] [usb] [net] 
+[  376.264898] pcan 1-7:1.0: PCAN-USB (MCU00h) fw v8.4.0
+[  376.315828] pcan: registered CAN netdevice can0 for usb hw (511,32)
+[  376.315831] pcan: - usb device minor 32 found
+[  376.315855] usbcore: registered new interface driver pcan
+[  376.315860] pcan: major 511.
+```
+
+### Set up CAN interface:
+On motor red LED is on.
+```
+sudo ip link set can0 down
+sudo ip link set can0 up type can bitrate 1000000
+```
+Turn motor ON:
+```
+cansend can0 001#FFFFFFFFFFFFFFFC
+```
+```
+  can0  TX - -  001   [8]  FF FF FF FF FF FF FF FC
+  can0  RX - -  011   [8]  11 83 27 7F F7 FF 00 00
+
+```
+The red LED on motor change to green LED.
+
+Turn motor OFF:
+```
+cansend can0 001#FFFFFFFFFFFFFFFD
+```
+
+```
+  can0  TX - -  001   [8]  FF FF FF FF FF FF FF FD
+  can0  RX - -  011   [8]  01 83 27 7F E7 FF 1A 19
+```
+On motor red LED is on.
+
+### Check CAN interface:
+```
+ifconfig
+```
+```
+can0: flags=193<UP,RUNNING,NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+
+### Python code:
+
+```python
+python3
+Python 3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import openarm_can as oa
+>>> arm = oa.OpenArm("can0", False)
+>>> arm.init_arm_motors([oa.MotorType.DM4310], [0x01], [0x11])
+>>> arm.enable_all()
+```
+
+
+
+
+
+________________________
+_______________________
+
 
 sudo modprobe can
 sudo modprobe can-raw
