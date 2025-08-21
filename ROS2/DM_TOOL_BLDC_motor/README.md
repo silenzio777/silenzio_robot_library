@@ -76,8 +76,14 @@ sudo ip link set can0 down
 sudo ip link set can0 up type can bitrate 1000000
 ```
 Turn motor ON:
+T1:
 ```
 cansend can0 001#FFFFFFFFFFFFFFFC
+```
+
+T2:
+```
+candump can0
 ```
 ```
   can0  TX - -  001   [8]  FF FF FF FF FF FF FF FC
