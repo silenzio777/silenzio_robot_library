@@ -6,11 +6,10 @@
 Connection diagram.
 
 Before CAN interface start:
-<img src="[LogitechCordlessRumblePad_2_front.png](https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4)" width="460">
-![Image](https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4)
+<img src="https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4" width="460">
 
 After CAN interface start:
-![Image](https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21)
+<img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="460">
 
 ### 120R termination must be enable.
 
