@@ -202,8 +202,28 @@ sudo chmod 644 /usr/lib/python3/dist-packages/openarm_can.cpython-310-x86_64-lin
 sudo chmod -R 755 /usr/lib/python3/dist-packages/openarm
 ```
 
+Check install:
+```
+python3 -c "import openarm_can; print('Success! Library is system now')"
+Success! Library is system now
+```
+```
+python3 -c "import openarm_can; print(openarm_can.__file__)"
+/usr/lib/python3/dist-packages/openarm_can.cpython-310-x86_64-linux-gnu.so
+```
 
-
+Run:
+```
+python3
+Python 3.10.12 (main, May 27 2025, 17:12:29) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import openarm_can as oa
+>>> arm = oa.OpenArm("can0", False)
+>>> arm.init_arm_motors([oa.MotorType.DM4310], [0x01], [0x11])
+>>> arm.enable_all()
+>>> exit()
+```
+### works
 
 
 ________________________
