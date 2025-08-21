@@ -167,7 +167,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 __
 
-## Python code without python venv, for ROS2 node:
+## Pure python code without python venv, for ROS2 node:
 
 Check works:
 
