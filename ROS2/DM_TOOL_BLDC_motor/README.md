@@ -6,10 +6,12 @@
 Connection diagram.
 
 Before CAN interface start:
-<img src="https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4" width="460">
+
+<img src="https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4" width="640">
 
 After CAN interface start:
-<img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="460">
+
+<img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="640">
 
 ### 120R termination must be enable.
 
@@ -26,19 +28,18 @@ Connect the CANH, CANL, and GND pins of your CANable to your target CAN bus.
 You must connect ground for the CAN bus to function properly.
 ```
 
-
-![Image](https://github.com/user-attachments/assets/66ac670c-dba6-4c74-850b-c6aeef517891)
-
+<img src="https://github.com/user-attachments/assets/66ac670c-dba6-4c74-850b-c6aeef517891" width="640">
 
 ### Get DM-USB2FDCAN-x86_64.AppImage
 
 The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
 
-<img width="1278" height="851" alt="Image" src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" />
+<img src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" width="640">
 
-<img width="1270" height="866" alt="Image" src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" />
+<img src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" width="640">
 
-<img width="1273" height="843" alt="Image" src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" />
+<img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
+
 
 ____
 
