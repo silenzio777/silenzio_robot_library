@@ -1,7 +1,7 @@
 
 ## Run DM-J4310-2EC motor via PEAK System USB-CAN adapter.
 
-
+### UBUNTU PC
 
 Connection diagram.
 
