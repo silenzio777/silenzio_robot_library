@@ -6,6 +6,7 @@
 Connection diagram.
 
 Before CAN interface start:
+<img src="[LogitechCordlessRumblePad_2_front.png](https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4)" width="460">
 ![Image](https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4)
 
 After CAN interface start:
