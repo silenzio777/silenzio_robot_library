@@ -53,6 +53,8 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 
 ### Set Sender CAN ID	and Receiver (motor) ID
 
+https://wiki.seeedstudio.com/damiao_series/
+
 https://docs.openarm.dev/software/setup/motor-id
 ```
 Joint	Sender CAN ID	Receiver (Master) ID
