@@ -165,6 +165,43 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> arm.enable_all()
 ```
 
+__
+
+## Python code without python venv, for ROS2 node:
+
+Check works:
+
+```
+python3 -c "import openarm_can" || echo "Библиотека не найдена"
+```
+```
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'openarm_can'
+```
+
+### Set lib to system path:
+```
+/usr/local/lib/python3.10/dist-packages/
+/usr/lib/python3/dist-packages/ <<<<<<<<<
+```
+
+Copy .so files:
+```
+sudo cp /home/silenzio/lib/openarm_can/python/venv/lib/python3.10/site-packages/openarm_can.cpython-310-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/
+```
+
+Copy openarm modules:
+```
+sudo cp -r /home/silenzio/lib/openarm_can/python/venv/lib/python3.10/site-packages/openarm /usr/lib/python3/dist-packages/
+```
+
+Give right permissions:
+```
+sudo chmod 644 /usr/lib/python3/dist-packages/openarm_can.cpython-310-x86_64-linux-gnu.so
+sudo chmod -R 755 /usr/lib/python3/dist-packages/openarm
+```
+
 
 
 
