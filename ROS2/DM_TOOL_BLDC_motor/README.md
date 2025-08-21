@@ -30,7 +30,8 @@ You must connect ground for the CAN bus to function properly.
 
 <img src="https://github.com/user-attachments/assets/66ac670c-dba6-4c74-850b-c6aeef517891" width="640">
 
-Attach the motor via USBtoCAN board
+Attach the motor via DM-tools USBtoCAN board (UART interface).
+
 
 ### Run DM-USB2FDCAN-x86_64.AppImage
 ```
