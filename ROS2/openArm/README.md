@@ -108,4 +108,32 @@ Positioning Arguments
 - `right_arm_base_rpy` - Right arm base orientation (default: "1.5708 0 0")
 
 
+Getting Started with MoveIt2
+To use the MoveIt2 integration:
+
+Switch to the moveit2 branch:
+```
+cd ~/ros2_ws/src/openarm_ros2
+git checkout moveit2
+cd ~/ros2_ws && colcon build
+source ~/ros2_ws/install/setup.bash
+```
+
+Launch the MoveIt2 demo:
+
+```
+ros2 launch openarm_bimanual_moveit_config demo.launch.py
+```
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/6ea9618b-eac3-4442-ac8d-6bf36146e517" />
+
+
+Motion Planning
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/3dfe707a-1fe5-4d4f-b104-72fb250fc0fb" />
+
+
+Target positions can be set in the Joints tab in the MotionPlanning panel on the left. Alternatively, the targets on the arms can be dragged and rotated to a target pose, or the goal state can be selected from a list of preset keypoints under Planning > Goal State
+
+The Planning tab provides a GUI to generate trajectories to reach a goal position. Clicking on Plan to preview the path is recommended.
 
