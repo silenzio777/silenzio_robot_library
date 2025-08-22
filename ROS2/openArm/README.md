@@ -45,6 +45,7 @@ ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual
 ```
 <img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/bd4c57fd-5cb0-4d44-a75a-fd12f83c68b0" />
 
+____
 
 Xacro Structure
 The package follows a hierarchical xacro structure with the following organization.
