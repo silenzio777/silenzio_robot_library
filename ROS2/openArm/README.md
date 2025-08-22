@@ -53,7 +53,7 @@ The package follows a hierarchical xacro structure with the following organizati
 Robot (Overarching Structure)
 - `robot/openarm_robot.xacro` - Main robot macro that orchestrates all components
 - `robot/v10.urdf.xacro` - Entry point for v1.0 arm configuration
-- 
+
 Component Structure
 - `arm/` - Arm kinematics, joints, and links
 - `openarm_arm.xacro` - Arm assembly
