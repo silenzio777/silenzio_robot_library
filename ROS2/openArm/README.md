@@ -36,14 +36,14 @@ Visualization:
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false
 ```
-<img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/b9234b6f-1c4f-4ebc-b8b2-ec7d19984b3b" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/b9234b6f-1c4f-4ebc-b8b2-ec7d19984b3b" />
 
 
 `Display single arm without end-effector
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false ee_type:=none
 ```
-<img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/bd4c57fd-5cb0-4d44-a75a-fd12f83c68b0" />
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/bd4c57fd-5cb0-4d44-a75a-fd12f83c68b0" />
 
 ____
 
