@@ -186,9 +186,16 @@ ModuleNotFoundError: No module named 'openarm_can'
 /usr/lib/python3/dist-packages/ <<<<<<<<<
 ```
 
+
 Copy .so files:
+
+UBUNTU PC
 ```
 sudo cp /home/silenzio/lib/openarm_can/python/venv/lib/python3.10/site-packages/openarm_can.cpython-310-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/
+```
+JETSON NX
+```
+sudo cp /home/silenzio/lib/openarm_can/python/venv/lib/python3.10/site-packages/openarm_can.cpython-310-aarch64-linux-gnu.so /usr/lib/python3/dist-packages/
 ```
 
 Copy openarm modules:
