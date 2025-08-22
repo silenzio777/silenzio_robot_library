@@ -17,6 +17,7 @@ Move "openarm_hardware" and "openarm_bringup" dir from "openarm_ros2" to "cd ~/r
 ```
 mv ~/ros2_ws/src/openarm_ros2/openarm_hardware ~/ros2_ws/src
 mv ~/ros2_ws/src/openarm_ros2/openarm_bringup ~/ros2_ws/src
+mv ~/ros2_ws/src/openarm_ros2/openarm_bimanual_moveit_config ~/ros2_ws/src
 ```
 
 Build:
@@ -24,6 +25,7 @@ Build:
 colcon build --packages-select openarm_description
 colcon build --packages-select openarm_hardware
 colcon build --packages-select openarm_bringup
+colcon build --packages-select openarm_bimanual_moveit_config
 ```
 
 Generate URDF Files:
