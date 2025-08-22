@@ -204,8 +204,18 @@ sudo cp -r /home/silenzio/lib/openarm_can/python/venv/lib/python3.10/site-packag
 ```
 
 Give right permissions:
+
+UBUNTU PC
 ```
 sudo chmod 644 /usr/lib/python3/dist-packages/openarm_can.cpython-310-x86_64-linux-gnu.so
+```
+JETSON NX
+```
+sudo chmod 644 /usr/lib/python3/dist-packages/openarm_can.cpython-310-aarch64-linux-gnu.so
+```
+
+
+```
 sudo chmod -R 755 /usr/lib/python3/dist-packages/openarm
 ```
 
