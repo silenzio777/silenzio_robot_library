@@ -127,6 +127,7 @@ ros2 launch openarm_bimanual_moveit_config demo.launch.py
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/6ea9618b-eac3-4442-ac8d-6bf36146e517" />
 
+__
 
 Motion Planning
 
