@@ -45,17 +45,45 @@ ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual
 ```
 <img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/bd4c57fd-5cb0-4d44-a75a-fd12f83c68b0" />
 
+
+Xacro Structure
+The package follows a hierarchical xacro structure with the following organization.
+
+Robot (Overarching Structure)
+robot/openarm_robot.xacro - Main robot macro that orchestrates all components
+robot/v10.urdf.xacro - Entry point for v1.0 arm configuration
+Component Structure
+arm/ - Arm kinematics, joints, and links
+openarm_arm.xacro - Arm assembly
+openarm_macro.xacro - Arm macro definitions
+body/ - Robot base/body components
+openarm_body.xacro - Body assembly
+openarm_body_macro.xacro - Body macro definitions
+ee/ - End-effector components
+openarm_hand.xacro - OpenArm hand gripper
+openarm_hand_macro.xacro - Hand macro definitions
+ee_with_one_link.xacro - Simple single-link end-effector
+ros2_control/ - ROS2 Control with hardware interfaces
+openarm.ros2_control.xacro - Single arm control interface
+openarm.bimanual.ros2_control.xacro - Bimanual control interface
+Configuration Files
+config/arm/v10/ - v1.0 arm parameters (kinematics, limits, inertials)
+config/body/v10/ - v1.0 body parameters
+config/hand/openarm_hand/ - Hand configuration
+
+
+
 Available Arguments
 
 Below are some configurable variables for the OpenArm robot description that allows customization when generating URDFs with xacro.
 
 Core Arguments
-```
-arm_type - Arm version (eg.: "v10")
-body_type - Body version (eg.: "v10")
-ee_type - End-effector type (default: "openarm_hand", options: "openarm_hand", "none")
-bimanual - Enable bimanual configuration (default: false)
-```
+
+- arm_type - Arm version (eg.: "v10")
+- body_type - Body version (eg.: "v10")
+- ee_type - End-effector type (default: "openarm_hand", options: "openarm_hand", "none")
+- bimanual - Enable bimanual configuration (default: false)
+
 
 ROS2 Control Arguments
 ```
@@ -77,3 +105,5 @@ left_arm_base_rpy - Left arm base orientation (default: "-1.5708 0 0")
 right_arm_base_xyz - Right arm base position (default: "0.0 -0.031 0.698")
 right_arm_base_rpy - Right arm base orientation (default: "1.5708 0 0")
 ```
+
+
