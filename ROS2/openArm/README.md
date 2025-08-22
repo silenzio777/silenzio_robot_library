@@ -1,5 +1,6 @@
 
-https://docs.openarm.dev/assets/images/architecture-290b626163f4349197f99f79adb228d2.png
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/0cb4daf2-25fb-416e-b8cd-a7e5527b2baf" />
+
 
 https://docs.openarm.dev/software/description/
 
