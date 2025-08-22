@@ -87,8 +87,8 @@ Core Arguments
 
 ROS2 Control Arguments
 
-- `ros2_control - Enable ROS2 control hardware interface (default: false)
-- `use_fake_hardware - Use fake hardware for simulation (default: false)
+- `ros2_control` - Enable ROS2 control hardware interface (default: false)
+- `use_fake_hardware` - Use fake hardware for simulation (default: false)
 - fake_sensor_commands - Enable fake sensor commands (default: false)
 - can_interface - CAN interface for single arm (default: "can0")
 - left_can_interface - CAN interface for left arm in bimanual setup (default: "can1")
