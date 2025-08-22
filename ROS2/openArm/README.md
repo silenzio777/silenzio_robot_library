@@ -50,27 +50,28 @@ Xacro Structure
 The package follows a hierarchical xacro structure with the following organization.
 
 Robot (Overarching Structure)
-robot/openarm_robot.xacro - Main robot macro that orchestrates all components
-robot/v10.urdf.xacro - Entry point for v1.0 arm configuration
+- `robot/openarm_robot.xacro` - Main robot macro that orchestrates all components
+- `robot/v10.urdf.xacro` - Entry point for v1.0 arm configuration
+- 
 Component Structure
-arm/ - Arm kinematics, joints, and links
-openarm_arm.xacro - Arm assembly
-openarm_macro.xacro - Arm macro definitions
-body/ - Robot base/body components
-openarm_body.xacro - Body assembly
-openarm_body_macro.xacro - Body macro definitions
-ee/ - End-effector components
-openarm_hand.xacro - OpenArm hand gripper
-openarm_hand_macro.xacro - Hand macro definitions
-ee_with_one_link.xacro - Simple single-link end-effector
-ros2_control/ - ROS2 Control with hardware interfaces
-openarm.ros2_control.xacro - Single arm control interface
-openarm.bimanual.ros2_control.xacro - Bimanual control interface
-Configuration Files
-config/arm/v10/ - v1.0 arm parameters (kinematics, limits, inertials)
-config/body/v10/ - v1.0 body parameters
-config/hand/openarm_hand/ - Hand configuration
+- `arm/` - Arm kinematics, joints, and links
+- `openarm_arm.xacro` - Arm assembly
+- `openarm_macro.xacro` - Arm macro definitions
+- `body/` - Robot base/body components
+- `openarm_body.xacro` - Body assembly
+- `openarm_body_macro.xacro` - Body macro definitions
+- `ee/` - End-effector components
+- `openarm_hand.xacro` - OpenArm hand gripper
+- `openarm_hand_macro.xacro` - Hand macro definitions
+- `ee_with_one_link.xacro` - Simple single-link end-effector
+- `ros2_control/` - ROS2 Control with hardware interfaces
+- `openarm.ros2_control.xacro` - Single arm control interface
+- `openarm.bimanual.ros2_control.xacro` - Bimanual control interface
 
+Configuration Files
+- `config/arm/v10/` - v1.0 arm parameters (kinematics, limits, inertials)
+- `config/body/v10/` - v1.0 body parameters
+- `config/hand/openarm_hand/` - Hand configuration
 
 
 Available Arguments
