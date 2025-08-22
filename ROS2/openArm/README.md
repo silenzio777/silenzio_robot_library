@@ -26,3 +26,19 @@ colcon build --packages-select openarm_hardware
 colcon build --packages-select openarm_bringup
 ```
 
+Generate URDF Files:
+```
+xacro ~/ros2_ws/src/openarm_description/urdf/robot/v10.urdf.xacro arm_type:=v10 bimanual:=false > ~/ros2_ws/src/openarm_description/urdf/robot/openarm_single.urdf
+```
+Visualization:
+
+`Display single arm with hand
+```
+ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false
+```
+
+`Display single arm without end-effector
+```
+ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false ee_type:=none
+```
+
