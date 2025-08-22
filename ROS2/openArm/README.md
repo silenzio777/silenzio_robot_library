@@ -86,24 +86,24 @@ Core Arguments
 
 
 ROS2 Control Arguments
-```
-ros2_control - Enable ROS2 control hardware interface (default: false)
-use_fake_hardware - Use fake hardware for simulation (default: false)
-fake_sensor_commands - Enable fake sensor commands (default: false)
-can_interface - CAN interface for single arm (default: "can0")
-left_can_interface - CAN interface for left arm in bimanual setup (default: "can1")
-right_can_interface - CAN interface for right arm in bimanual setup (default: "can0")
-```
+
+- `ros2_control - Enable ROS2 control hardware interface (default: false)
+- `use_fake_hardware - Use fake hardware for simulation (default: false)
+- fake_sensor_commands - Enable fake sensor commands (default: false)
+- can_interface - CAN interface for single arm (default: "can0")
+- left_can_interface - CAN interface for left arm in bimanual setup (default: "can1")
+- right_can_interface - CAN interface for right arm in bimanual setup (default: "can0")
+
 
 Positioning Arguments
-```
-parent - Parent frame (default: "world")
-xyz - Position offset (default: "0 0 0")
-rpy - Orientation offset (default: "0 0 0")
-left_arm_base_xyz - Left arm base position (default: "0.0 0.031 0.698")
-left_arm_base_rpy - Left arm base orientation (default: "-1.5708 0 0")
-right_arm_base_xyz - Right arm base position (default: "0.0 -0.031 0.698")
-right_arm_base_rpy - Right arm base orientation (default: "1.5708 0 0")
-```
+
+- parent - Parent frame (default: "world")
+- xyz - Position offset (default: "0 0 0")
+- rpy - Orientation offset (default: "0 0 0")
+- left_arm_base_xyz - Left arm base position (default: "0.0 0.031 0.698")
+- left_arm_base_rpy - Left arm base orientation (default: "-1.5708 0 0")
+- right_arm_base_xyz - Right arm base position (default: "0.0 -0.031 0.698")
+- right_arm_base_rpy - Right arm base orientation (default: "1.5708 0 0")
+
 
 
