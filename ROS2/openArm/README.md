@@ -36,9 +36,44 @@ Visualization:
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false
 ```
+<img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/b9234b6f-1c4f-4ebc-b8b2-ec7d19984b3b" />
+
 
 `Display single arm without end-effector
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false ee_type:=none
 ```
+<img width="2879" height="1679" alt="image" src="https://github.com/user-attachments/assets/bd4c57fd-5cb0-4d44-a75a-fd12f83c68b0" />
 
+Available Arguments
+
+Below are some configurable variables for the OpenArm robot description that allows customization when generating URDFs with xacro.
+
+Core Arguments
+```
+arm_type - Arm version (eg.: "v10")
+body_type - Body version (eg.: "v10")
+ee_type - End-effector type (default: "openarm_hand", options: "openarm_hand", "none")
+bimanual - Enable bimanual configuration (default: false)
+```
+
+ROS2 Control Arguments
+```
+ros2_control - Enable ROS2 control hardware interface (default: false)
+use_fake_hardware - Use fake hardware for simulation (default: false)
+fake_sensor_commands - Enable fake sensor commands (default: false)
+can_interface - CAN interface for single arm (default: "can0")
+left_can_interface - CAN interface for left arm in bimanual setup (default: "can1")
+right_can_interface - CAN interface for right arm in bimanual setup (default: "can0")
+```
+
+Positioning Arguments
+```
+parent - Parent frame (default: "world")
+xyz - Position offset (default: "0 0 0")
+rpy - Orientation offset (default: "0 0 0")
+left_arm_base_xyz - Left arm base position (default: "0.0 0.031 0.698")
+left_arm_base_rpy - Left arm base orientation (default: "-1.5708 0 0")
+right_arm_base_xyz - Right arm base position (default: "0.0 -0.031 0.698")
+right_arm_base_rpy - Right arm base orientation (default: "1.5708 0 0")
+```
