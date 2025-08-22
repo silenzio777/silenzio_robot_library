@@ -32,14 +32,14 @@ xacro ~/ros2_ws/src/openarm_description/urdf/robot/v10.urdf.xacro arm_type:=v10 
 ```
 Visualization:
 
-`Display single arm with hand
+Display single arm with hand
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false
 ```
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/b9234b6f-1c4f-4ebc-b8b2-ec7d19984b3b" />
 
 
-`Display single arm without end-effector
+Display single arm without end-effector
 ```
 ros2 launch openarm_description display_openarm.launch.py arm_type:=v10 bimanual:=false ee_type:=none
 ```
