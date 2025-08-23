@@ -13,11 +13,15 @@ Install Python dependencies
 pip install timm --extra-index-url https://download.pytorch.org/whl/cpu  # is needed for torch
 
 pip install "openvino>=2024.1" "torch>=2.1" opencv-python supervision transformers yapf pycocotools addict "gradio>=4.19" tqdm
+
 Add your Python virtual environment package path
 Make sure to update <<YOUR_USER_NAME>> with your system username.
 ```
 export PYTHONPATH=/home/silenzio/ros2_ws/vlm-venv/lib/python3.10/site-packages/:$PYTHONPATH
 ```
+
+export PYTHONPATH=/home/silenzio/tws/vlm-venv/lib/python3.10/site-packages/:$PYTHONPATH
+
 
 Clone this repository inside the 'src' folder of your workspace
 cd ~/ros2_ws/src
