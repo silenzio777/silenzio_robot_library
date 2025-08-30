@@ -76,20 +76,31 @@ cd ManiSkill && pip install -e .
 ```
 cd ~/lib
 git clone https://github.com/enactic/openarm_maniskill_simulation.git
+```
 
 # copy openarm assets
-cp -r ~/lib/openarm_maniskill_simulation/urdf ~/lib/ManiSkill/mani_skill/assets/robots/openarm
+```
+## cp -r ~/lib/openarm_maniskill_simulation/urdf ~/lib/ManiSkill/mani_skill/assets/robots/openarm
+cp -r ~/lib/openarm_maniskill_simulation/urdf /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/assets/robots/openarm
+
+```
 
 # copy agents(robot)
-cp ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/__init__.py ~/lib/ManiSkill/mani_skill/agents/robots
-cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm ~/lib/ManiSkill/mani_skill/agents/robots
+```
+## cp ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/__init__.py ~/lib/ManiSkill/mani_skill/agents/robots
+## cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm ~/lib/ManiSkill/mani_skill/agents/robots
+
+cp ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/__init__.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/agents/robots
+cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/agents/robots
+
+```
 
 # copy task files
-cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
-cp ~/lib//openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
-cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pull_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
-cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/push_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
-
+```
+## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
+## cp ~/lib//openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
+## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pull_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
+## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/push_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
 ```
 
 
