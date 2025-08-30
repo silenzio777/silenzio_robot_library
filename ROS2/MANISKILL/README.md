@@ -140,6 +140,12 @@ Run the following to open a viewer displaying any robot given in a empty scene w
 python -m mani_skill.examples.demo_robot -r "openarm"
 ```
 
+--------------
+|Push the cube to the center of the target.　|PushCube-v1|
+|
+|Pull the cube to the cente of the target.	|PullCube-v1|
+|Pick up the cube and move it to the target position.　|PickCube-v1|
+---------------------------------------------------
 
 
 ```
@@ -199,35 +205,6 @@ model saved to runs/PushCube-v1/final_ckpt.pt
 ```
 
   
-Pull the cube to the cente of the target.	PullCube-v1	
-Pick up the cube and move it to the target position.　	PickCube-v1
-
-
-from .allegro_hand import *
-from .anymal import ANYmalC
-from .dclaw import DClaw
-from .fetch import Fetch
-from .floating_panda_gripper import FloatingPandaGripper
-from .floating_robotiq_2f_85_gripper import *
-from .googlerobot import *
-from .humanoid import Humanoid
-from .panda import *
-from .stompy import Stompy
-from .trifingerpro import TriFingerPro
-from .unitree_g1 import *
-from .unitree_go import *
-from .unitree_h1 import *
-from .ur_e import UR10e
-from .widowx import *
-from .xarm6 import *
-from .xarm import XArm7Ability
-from .xmate3 import Xmate3Robotiq
-
-
-
-
-
-
 
 
 
