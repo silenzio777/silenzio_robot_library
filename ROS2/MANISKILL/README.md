@@ -87,6 +87,19 @@ python -m mani_skill.examples.motionplanning.panda.run -e "StackCube-v1" --vis
 python -m mani_skill.examples.teleoperation.interactive_panda -e "StackCube-v1" 
 ```
 
+Click+Drag System
+Requirements: Display, mouse, keyboard
+
+Usability: Extremely easy to generate fine-grained demonstrations
+
+Limitations: Limited to only solving less dynamical tasks with two-finger grippers like picking up a cube. Tasks like throwing a cube would not be possible.
+
+To start the system you can specify an task id with -e and run
+
+
+<img width="1920" height="1194" alt="image" src="https://github.com/user-attachments/assets/1c0f7a6d-248c-4a13-bfd5-562c0072e664" />
+
+
 You can then drag the end-effector of the robot arm around to any position and rotation and press “n” on the keyboard to generate a trajectory to that place (done via motion planning). Each time the system will also print the current info about whether the task is solved or not.
 
 You can press “g” to toggle the gripper to be closing or opening.
@@ -97,9 +110,8 @@ To stop data collection press “q” to quit. This will then save the trajector
 
 You can always press “h” to bring up a help menu describing the keyboard commands.
 
-<img width="1920" height="1194" alt="image" src="https://github.com/user-attachments/assets/1c0f7a6d-248c-4a13-bfd5-562c0072e664" />
 
-
+___
 
 ### Visualize Pointcloud Data
 ```
