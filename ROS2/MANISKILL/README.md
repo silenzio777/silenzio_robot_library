@@ -427,6 +427,26 @@ python ppo.py \
        --checkpoint "/home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PickCube-v1/final_ckpt.pt"
 ```
 
+```
+2025-08-30 21:48:34,765 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
+Saving eval videos to /home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PickCube-v1/test_videos
+2025-08-30 21:48:36,597 - mani_skill  - WARNING - mani_skill is not installed with git.
+Running evaluation
+####
+args.num_iterations=390 args.num_envs=512 args.num_eval_envs=1
+args.minibatch_size=800 args.batch_size=25600 args.update_epochs=4
+####
+Epoch: 1, global_step=0
+Evaluating
+Evaluated 50 steps resulting in 1 episodes
+eval_success_once_mean=1.0
+eval_return_mean=37.54619598388672
+eval_episode_len_mean=50.0
+eval_reward_mean=0.7509239315986633
+eval_success_at_end_mean=1.0
+```
+
+
 
 https://github.com/user-attachments/assets/a77b8634-53d7-44be-bece-93998d1890a9
 
