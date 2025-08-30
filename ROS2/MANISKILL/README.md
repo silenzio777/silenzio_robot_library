@@ -37,6 +37,39 @@ $ cat /usr/share/glvnd/egl_vendor.d/10_nvidia.json
 ```
 
 ```
+sudo nano /etc/vulkan/implicit_layer.d/nvidia_layers.json
+```
+
+Add this text:
+
+```
+{
+    "file_format_version" : "1.0.0",
+    "layer": {
+        "name": "VK_LAYER_NV_optimus",
+        "type": "INSTANCE",
+        "library_path": "libGLX_nvidia.so.0",
+        "api_version" : "1.4.312",
+        "implementation_version" : "1",
+        "description" : "NVIDIA Optimus layer",
+        "functions": {
+            "vkGetInstanceProcAddr": "vk_optimusGetInstanceProcAddr",
+            "vkGetDeviceProcAddr": "vk_optimusGetDeviceProcAddr"
+        },
+        "enable_environment": {
+            "__NV_PRIME_RENDER_OFFLOAD": "1"
+        },
+        "disable_environment": {
+            "DISABLE_LAYER_NV_OPTIMUS_1": ""
+        }
+    }
+}
+```
+
+
+
+
+```
 
 pip3 install numpy==1.23.5
 pip install "pyglet<2"
