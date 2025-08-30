@@ -47,8 +47,6 @@ Run the following to open a viewer displaying any robot given in a empty scene w
 python -m mani_skill.examples.demo_robot -r "panda"
 ```
 
-
-
 __
 
 https://github.com/enactic/openarm_maniskill_simulation
@@ -82,6 +80,7 @@ git clone https://github.com/enactic/openarm_maniskill_simulation.git
 ```
 ## cp -r ~/lib/openarm_maniskill_simulation/urdf ~/lib/ManiSkill/mani_skill/assets/robots/openarm
 cp -r ~/lib/openarm_maniskill_simulation/urdf /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/assets/robots/openarm
+cp -r /home/silenzio/lib/ManiSkill/mani_skill/agents/robots /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/agents/robots
 
 ```
 
@@ -93,6 +92,7 @@ cp -r ~/lib/openarm_maniskill_simulation/urdf /home/silenzio/.local/lib/python3.
 cp ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/__init__.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/agents/robots
 cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/agents/robots
 
+
 ```
 
 # copy task files
@@ -101,7 +101,127 @@ cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm /home/
 ## cp ~/lib//openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
 ## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pull_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
 ## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/push_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
+
+cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/envs/tasks/tabletop
+cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/envs/tasks/tabletop
+cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pull_cube.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/envs/tasks/tabletop
+cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/push_cube.py /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/envs/tasks/tabletop
+
 ```
+
+### Fix the source code
+
+File - "/mani_skill/agents/robots/openarm/openarm.py" line 181:
+
+```python
+
+        # ------- #
+        # Gripper #
+        # ------- #
+        # NOTE(jigu): IssacGym uses large P and D but with force limit
+        # However, tune a good force limit to have a good mimic behavior
+        gripper_pd_mimic_joint_pos = PDJointPosMimicControllerConfig(
+            self.gripper_joint_names,
+            lower=[0],
+            upper=[0.0451],
+            stiffness=self.gripper_stiffness,
+            damping=self.gripper_damping,
+            force_limit=self.gripper_force_limit,
+            #mimic={"openarm_finger_joint2": {"joint": "openarm_finger_joint1", "multiplier": 1.0}}
+        )
+```
+
+
+
+### Visualize Any Robot
+Run the following to open a viewer displaying any robot given in a empty scene with just a floor. You can also specify different keyframes if there are any pre-defined to visualize.
+
+```
+python -m mani_skill.examples.demo_robot -r "openarm"
+```
+
+
+
+```
+python ppo.py \
+	--env_id="PushCube-v1" \
+	--exp-name="PushCube-v1" \
+	--num_envs=1024 \
+	--total_timesteps=12_000_000 \
+	--eval_freq=10 \
+	--num-steps=20 \
+	--num_eval_envs 8
+```
+
+```
+2025-08-30 20:13:59,443 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
+Saving eval videos to runs/PushCube-v1/videos
+Running training
+####
+args.num_iterations=585 args.num_envs=1024 args.num_eval_envs=8
+args.minibatch_size=640 args.batch_size=20480 args.update_epochs=4
+####
+Epoch: 1, global_step=0
+Evaluating
+Evaluated 400 steps resulting in 8 episodes
+eval_success_once_mean=0.0
+eval_return_mean=3.9879086017608643
+eval_episode_len_mean=50.0
+eval_reward_mean=0.0797581672668457
+eval_success_at_end_mean=0.0
+model saved to runs/PushCube-v1/ckpt_1.pt
+SPS: 4386
+Epoch: 2, global_step=20480
+SPS: 7429
+
+...
+
+SPS: 19042
+Epoch: 581, global_step=11878400
+Evaluating
+Evaluated 400 steps resulting in 8 episodes
+eval_success_once_mean=1.0
+eval_return_mean=23.27496337890625
+eval_episode_len_mean=50.0
+eval_reward_mean=0.46549925208091736
+eval_success_at_end_mean=0.375
+model saved to runs/PushCube-v1/ckpt_581.pt
+SPS: 18972
+Epoch: 582, global_step=11898880
+SPS: 18986
+Epoch: 583, global_step=11919360
+SPS: 18999
+Epoch: 584, global_step=11939840
+SPS: 19012
+Epoch: 585, global_step=11960320
+SPS: 19024
+model saved to runs/PushCube-v1/final_ckpt.pt
+```
+
+  
+Pull the cube to the cente of the target.	PullCube-v1	
+Pick up the cube and move it to the target position.　	PickCube-v1
+
+
+from .allegro_hand import *
+from .anymal import ANYmalC
+from .dclaw import DClaw
+from .fetch import Fetch
+from .floating_panda_gripper import FloatingPandaGripper
+from .floating_robotiq_2f_85_gripper import *
+from .googlerobot import *
+from .humanoid import Humanoid
+from .panda import *
+from .stompy import Stompy
+from .trifingerpro import TriFingerPro
+from .unitree_g1 import *
+from .unitree_go import *
+from .unitree_h1 import *
+from .ur_e import UR10e
+from .widowx import *
+from .xarm6 import *
+from .xarm import XArm7Ability
+from .xmate3 import Xmate3Robotiq
 
 
 
