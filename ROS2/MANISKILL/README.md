@@ -221,12 +221,15 @@ How to evaluate a trained model.
 python ppo.py \
        --env_id="PushCube-v1" \
        --evaluate \
-       --checkpoint "/runs/PushCube-v1/final_ckpt.p" \
        --exp-name="PushCube-v1" \
-       --num_eval_envs=1
+       --num_eval_envs=1 \
+       --checkpoint "/home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PushCube-v1/final_ckpt.pt"
 ```
 
 ```
+2025-08-30 20:57:45,278 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
+Saving eval videos to /home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PushCube-v1/test_videos
+2025-08-30 20:57:46,871 - mani_skill  - WARNING - mani_skill is not installed with git.
 Running evaluation
 ####
 args.num_iterations=390 args.num_envs=512 args.num_eval_envs=1
@@ -236,9 +239,9 @@ Epoch: 1, global_step=0
 Evaluating
 Evaluated 50 steps resulting in 1 episodes
 eval_success_once_mean=1.0
-eval_return_mean=39.73570251464844
+eval_return_mean=40.852027893066406
 eval_episode_len_mean=50.0
-eval_reward_mean=0.7947140336036682
+eval_reward_mean=0.8170405626296997
 eval_success_at_end_mean=1.0
 ```
   
