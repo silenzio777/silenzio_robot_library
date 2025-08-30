@@ -415,3 +415,19 @@ Epoch: 146, global_step=11878400
 SPS: 38889
 model saved to runs/PickCube-v1/final_ckpt.pt
 ```
+
+https://github.com/user-attachments/assets/a17aefd0-91e7-4f42-a525-a3b4a2c40c00
+
+```
+python ppo.py \
+       --env_id="PickCube-v1" \
+       --evaluate \
+       --exp-name="PickCube-v1" \
+       --num_eval_envs=1 \
+       --checkpoint "/home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PickCube-v1/final_ckpt.pt"
+```
+
+
+https://github.com/user-attachments/assets/a77b8634-53d7-44be-bece-93998d1890a9
+
+
