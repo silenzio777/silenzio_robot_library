@@ -46,3 +46,44 @@ Run the following to open a viewer displaying any robot given in a empty scene w
 ```
 python -m mani_skill.examples.demo_robot -r "panda"
 ```
+
+
+
+__
+
+https://github.com/enactic/openarm_maniskill_simulation
+
+
+## Clone Maniskill
+
+Clone Maniskill git at your HOME directory
+
+```
+cd ~/lib
+git clone https://github.com/haosulab/ManiSkill.git
+```
+
+## Install Maniskill
+
+```
+cd ManiSkill && pip install -e .
+pip install torch torchvision torchaudio tensorboard wandb
+```
+
+
+## Install OpenArm pick up task
+
+```
+cd ~/lib
+git clone https://github.com/enactic/openarm_maniskill_simulation.git
+cp -r ~/lib/openarm_maniskill_simulation/urdf ~/lib/ManiSkill/mani_skill/assets/robots/openarm
+```
+
+
+
+
+
+
+
+
+
