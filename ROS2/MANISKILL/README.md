@@ -477,3 +477,30 @@ eval_success_at_end_mean=1.0
 https://github.com/user-attachments/assets/a77b8634-53d7-44be-bece-93998d1890a9
 
 
+__
+
+### Parallel Rendering in one Scene
+
+We further support via recording or GUI to view all parallel environments at once, and you can also turn on ray-tracing for more photo-realism. Note that this feature is not useful for any practical purposes (for e.g. machine learning) apart from generating cool demonstration videos.
+
+Turning the parallel GUI render on simply requires adding the argument parallel_in_single_scene to gym.make as so
+
+```python
+import gymnasium as gym
+import mani_skill.envs
+
+env = gym.make(
+    "PickCube-v1",
+    obs_mode="state",
+    control_mode="pd_joint_delta_pos",
+    num_envs=128,
+    parallel_in_single_scene=True,
+    viewer_camera_configs=dict(shader_pack="rt-fast"),
+)
+env.reset()
+while True:
+    env.step(env.action_space.sample())
+    env.render_human()
+```
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d68f25dc-c6da-4f7f-81e5-80b8b871bb6a" />
