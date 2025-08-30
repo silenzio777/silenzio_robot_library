@@ -246,7 +246,41 @@ eval_success_at_end_mean=1.0
 ```
 
 
-  
+
+https://github.com/user-attachments/assets/e9c1f1f0-8412-478d-9f85-addcdd429c73
+
+
+
+File "trajectory.json":
+```
+{
+  "env_info": {
+    "env_id": "PushCube-v1",
+    "env_kwargs": {
+      "num_envs": 1,
+      "reconfiguration_freq": 1,
+      "obs_mode": "state",
+      "render_mode": "rgb_array",
+      "sim_backend": "physx_cuda",
+      "control_mode": "pd_joint_delta_pos"
+    },
+    "max_episode_steps": 50
+  },
+  "commit_info": null,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "episode_seed": 1791095845,
+      "control_mode": "pd_joint_delta_pos",
+      "elapsed_steps": 50,
+      "reset_kwargs": {
+        "options": {}
+      },
+      "success": true
+    }
+  ]
+}
+'''
 
 
 
