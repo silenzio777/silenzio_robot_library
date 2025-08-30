@@ -354,8 +354,64 @@ python ppo.py \
 https://github.com/user-attachments/assets/10436f6f-eb6a-451e-a259-4b2257c859fc
 
 
-
 https://github.com/user-attachments/assets/a3880601-b988-4902-9f1f-c9eafdd0a9c3
 
 
+```
+python ppo.py
+	--env_id="PickCube-v1"
+	--exp-name="PickCube-v1"
+	--num_envs=4096
+	--total_timesteps=12_000_000
+	--eval_freq=10
+	--num-steps=20
+	--num_eval_envs 8
+```
+```
+2025-08-30 21:38:53,399 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
+Saving eval videos to runs/PickCube-v1/videos
+Running training
+####
+args.num_iterations=146 args.num_envs=4096 args.num_eval_envs=8
+args.minibatch_size=2560 args.batch_size=81920 args.update_epochs=4
+####
+Epoch: 1, global_step=0
+Evaluating
+Evaluated 400 steps resulting in 8 episodes
+eval_success_once_mean=0.125
+eval_return_mean=8.787243843078613
+eval_episode_len_mean=50.0
+eval_reward_mean=0.17574487626552582
+eval_success_at_end_mean=0.125
+model saved to runs/PickCube-v1/ckpt_1.pt
+SPS: 13835
+Epoch: 2, global_step=81920
+SPS: 22994
 
+
+...
+
+Epoch: 140, global_step=11386880
+SPS: 39171
+Epoch: 141, global_step=11468800
+Evaluating
+Evaluated 400 steps resulting in 8 episodes
+eval_success_once_mean=1.0
+eval_return_mean=36.434654235839844
+eval_episode_len_mean=50.0
+eval_reward_mean=0.7286931276321411
+eval_success_at_end_mean=0.625
+model saved to runs/PickCube-v1/ckpt_141.pt
+SPS: 38838
+Epoch: 142, global_step=11550720
+SPS: 38832
+Epoch: 143, global_step=11632640
+SPS: 38872
+Epoch: 144, global_step=11714560
+SPS: 38878
+Epoch: 145, global_step=11796480
+SPS: 38876
+Epoch: 146, global_step=11878400
+SPS: 38889
+model saved to runs/PickCube-v1/final_ckpt.pt
+```
