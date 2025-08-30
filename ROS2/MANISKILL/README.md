@@ -479,6 +479,54 @@ https://github.com/user-attachments/assets/a77b8634-53d7-44be-bece-93998d1890a9
 
 __
 
+### GPU Parallelized/Vectorized Tasks
+
+ManiSkill is powered by SAPIEN which supports GPU parallelized physics simulation and GPU parallelized rendering. This enables achieving 200,000+ state-based simulation FPS and 30,000+ FPS with rendering on a single 4090 GPU on a e.g. manipulation tasks. The FPS can be higher or lower depending on what is simulated. For full benchmarking results see this page
+
+In order to run massively parallelized tasks on a GPU, it is as simple as adding the num_envs argument to gym.make as follows:
+
+```python
+import gymnasium as gym
+import mani_skill.envs
+
+env = gym.make(
+    "PickCube-v1",
+    obs_mode="state",
+    control_mode="pd_joint_delta_pos",
+    num_envs=16,
+)
+print(env.observation_space) # will now have shape (16, ...)
+print(env.action_space) # will now have shape (16, ...)
+# env.single_observation_space and env.single_action_space provide non batched spaces
+
+obs, _ = env.reset(seed=0) # reset with a seed for determinism
+for i in range(200):
+    action = env.action_space.sample() # this is batched now
+    obs, reward, terminated, truncated, info = env.step(action)
+    done = terminated | truncated
+    print(f"Obs shape: {obs.shape}, Reward shape {reward.shape}, Done shape {done.shape}")
+env.close()
+```
+
+Note that all values returned by env.step and env.reset are batched and are torch tensors. Whether GPU or CPU simulation is used then determines what device the tensor is on (CUDA or CPU).
+
+To benchmark the parallelized simulation, you can run
+```
+python -m mani_skill.examples.benchmarking.gpu_sim --num-envs=1024
+```
+To try out the parallelized rendering, you can run
+
+- rendering RGB + Depth data from all cameras
+```
+python -m mani_skill.examples.benchmarking.gpu_sim --num-envs=64 --obs-mode="rgbd"
+```
+- directly save 64 videos of the visual observations put into one video
+```
+python -m mani_skill.examples.benchmarking.gpu_sim --num-envs=64 --save-video
+```
+
+__
+
 ### Parallel Rendering in one Scene
 
 We further support via recording or GUI to view all parallel environments at once, and you can also turn on ray-tracing for more photo-realism. Note that this feature is not useful for any practical purposes (for e.g. machine learning) apart from generating cool demonstration videos.
