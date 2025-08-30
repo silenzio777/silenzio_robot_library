@@ -425,8 +425,7 @@ python ppo.py \
        --exp-name="PickCube-v1" \
        --num_eval_envs=1 \
        --checkpoint "/home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PickCube-v1/final_ckpt.pt"
-```
-
+``` 
 ```
 2025-08-30 21:48:34,765 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
 Saving eval videos to /home/silenzio/lib/ManiSkill/examples/baselines/ppo/runs/PickCube-v1/test_videos
