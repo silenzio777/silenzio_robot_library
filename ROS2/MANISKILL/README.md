@@ -81,9 +81,24 @@ pip3 install --upgrade mani_skill
 ```
 python -m mani_skill.examples.demo_random_action -e "TwoRobotStackCube-v1"   --render-mode="human"
 python -m mani_skill.examples.demo_random_action -e "RotateValveLevel2-v1"   --render-mode="human"
-python -m mani_skill.examples.teleoperation.interactive_panda -e "StackCube-v1" 
 python -m mani_skill.examples.motionplanning.panda.run -e "StackCube-v1" --vis
 ```
+```
+python -m mani_skill.examples.teleoperation.interactive_panda -e "StackCube-v1" 
+```
+
+You can then drag the end-effector of the robot arm around to any position and rotation and press “n” on the keyboard to generate a trajectory to that place (done via motion planning). Each time the system will also print the current info about whether the task is solved or not.
+
+You can press “g” to toggle the gripper to be closing or opening.
+
+To finish collecting one trajectory and to move on to another, simply press “c” which will save the last trajectory.
+
+To stop data collection press “q” to quit. This will then save the trajectory data to your demos/teleop/<env_id> folder. In addition it will generate videos of your demos after and put them in the same folder, you can stop this by pressing CTRL+C to stop the script.
+
+You can always press “h” to bring up a help menu describing the keyboard commands.
+
+<img width="1920" height="1194" alt="image" src="https://github.com/user-attachments/assets/1c0f7a6d-248c-4a13-bfd5-562c0072e664" />
+
 
 
 ### Visualize Pointcloud Data
