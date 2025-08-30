@@ -68,9 +68,7 @@ Add this text:
 
 
 
-
 ```
-
 pip3 install numpy==1.23.5
 pip install "pyglet<2"
 pip3 install --upgrade mani_skill
