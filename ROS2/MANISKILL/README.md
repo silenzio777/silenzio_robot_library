@@ -210,7 +210,6 @@ model saved to runs/PushCube-v1/final_ckpt.pt
 ### Run evaluate
 How to evaluate a trained model.
 ```
-cd ~/ManiSkill/examples/baselines/ppo/
 python ppo.py \
        --env_id="PushCube-v1" \
        --evaluate \
