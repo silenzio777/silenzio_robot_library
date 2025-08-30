@@ -140,12 +140,14 @@ Run the following to open a viewer displaying any robot given in a empty scene w
 python -m mani_skill.examples.demo_robot -r "openarm"
 ```
 
+### Run Training
+You can run different tasks. Replace <TASK_NAME> with one of the following available tasks:
+
 | Task Description        | Task Name                      |  Demo                               |
 | ----------------------- | ------------------------------ | ----------------------------------- | 
 | Push the cube to the center of the target.　| `PushCube-v1` | |
 | Pull the cube to the cente of the target. | `PullCube-v1` |   |
 | Pick up the cube and move it to the target position.　| `PickCube-v1` |  |
-
 
 
 ```
@@ -204,6 +206,34 @@ SPS: 19024
 model saved to runs/PushCube-v1/final_ckpt.pt
 ```
 
+
+### Run evaluate
+How to evaluate a trained model.
+```
+cd ~/ManiSkill/examples/baselines/ppo/
+python ppo.py \
+       --env_id=<Task Name> \
+       --evaluate \
+       --checkpoint `your training model path`
+       --exp-name=<Task Name> \
+       --num_eval_envs=1
+```
+
+```
+Running evaluation
+####
+args.num_iterations=390 args.num_envs=512 args.num_eval_envs=1
+args.minibatch_size=800 args.batch_size=25600 args.update_epochs=4
+####
+Epoch: 1, global_step=0
+Evaluating
+Evaluated 50 steps resulting in 1 episodes
+eval_success_once_mean=1.0
+eval_return_mean=39.73570251464844
+eval_episode_len_mean=50.0
+eval_reward_mean=0.7947140336036682
+eval_success_at_end_mean=1.0
+```
   
 
 
