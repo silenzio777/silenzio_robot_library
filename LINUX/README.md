@@ -1140,6 +1140,22 @@ done
 cd ~/ros2_ws && source install/setup.bash
 xterm -bg black -fg white -hold -e python3 /home/silenzio/lib/systemInfo/systemInfo.py
 ```
+_______
+
+### Check version of system python
+```
+python3 --version
+```
+
+### Find out where system Python looks for packages
+```
+python3 -c "import sys; print('\n'.join(sys.path))"
+```
+
+# Find out where pip installs packages
+```
+python3 -c "import site; print(site.getsitepackages())"
+```
 
 
 _______
