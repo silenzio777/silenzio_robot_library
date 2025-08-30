@@ -206,15 +206,6 @@ SPS: 19024
 model saved to runs/PushCube-v1/final_ckpt.pt
 ```
 
-
-cd ~/ManiSkill/examples/baselines/ppo/
-python ppo.py \
-       --env_id=<Task Name> \
-       --evaluate \
-       --checkpoint `your training model path`
-       --exp-name=<Task Name> \
-       --num_eval_envs=1
-
 ### Run evaluate
 How to evaluate a trained model.
 ```
@@ -280,7 +271,18 @@ File "trajectory.json":
     }
   ]
 }
-'''
+```
+
+___
 
 
-
+```
+python ppo.py \
+	--env_id="PullCube-v1" \
+	--exp-name="PullCube-v1" \
+	--num_envs=1024 \
+	--total_timesteps=12_000_000 \
+	--eval_freq=10 \
+	--num-steps=20 \
+	--num_eval_envs 8
+```
