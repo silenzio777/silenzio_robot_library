@@ -1,4 +1,5 @@
 
+# 
 
 https://maniskill.readthedocs.io/en/latest/user_guide/demos/scripts.html
 
@@ -9,10 +10,40 @@ UBUNTU_PC:
 
 ```
 sudo apt-get install libvulkan1
+```
+```
+cat  /usr/share/vulkan/icd.d/nvidia_icd.json
+```
+```
+{
+    "file_format_version" : "1.0.1",
+    "ICD": {
+        "library_path": "libGLX_nvidia.so.0",
+        "api_version" : "1.4.312"
+    }
+}
+```
+
+```
+$ cat /usr/share/glvnd/egl_vendor.d/10_nvidia.json
+```
+```
+{
+    "file_format_version" : "1.0.0",
+    "ICD" : {
+        "library_path" : "libEGL_nvidia.so.0"
+    }
+}
+```
+
+```
+
 pip3 install numpy==1.23.5
 pip install "pyglet<2"
 pip3 install --upgrade mani_skill
 ```
+
+
 
 ## Run:
 
@@ -280,7 +311,7 @@ ___
 python ppo.py \
 	--env_id="PullCube-v1" \
 	--exp-name="PullCube-v1" \
-	--num_envs=1024 \
+	--num_envs=2048 \
 	--total_timesteps=12_000_000 \
 	--eval_freq=10 \
 	--num-steps=20 \
