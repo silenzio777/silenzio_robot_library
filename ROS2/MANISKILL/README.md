@@ -76,7 +76,7 @@ cd ~/lib
 git clone https://github.com/enactic/openarm_maniskill_simulation.git
 ```
 
-# copy openarm assets
+###  copy openarm assets
 ```
 ## cp -r ~/lib/openarm_maniskill_simulation/urdf ~/lib/ManiSkill/mani_skill/assets/robots/openarm
 cp -r ~/lib/openarm_maniskill_simulation/urdf /home/silenzio/.local/lib/python3.10/site-packages/mani_skill/assets/robots/openarm
@@ -84,7 +84,7 @@ cp -r /home/silenzio/lib/ManiSkill/mani_skill/agents/robots /home/silenzio/.loca
 
 ```
 
-# copy agents(robot)
+###  copy agents(robot)
 ```
 ## cp ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/__init__.py ~/lib/ManiSkill/mani_skill/agents/robots
 ## cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm ~/lib/ManiSkill/mani_skill/agents/robots
@@ -95,7 +95,7 @@ cp -r ~/lib/openarm_maniskill_simulation/mani_skill/agents/robots/openarm /home/
 
 ```
 
-# copy task files
+### copy task files
 ```
 ## cp ~/lib/openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
 ## cp ~/lib//openarm_maniskill_simulation//mani_skill/envs/tasks/tabletop/pick_cube_cfgs.py ~/lib/ManiSkill/mani_skill/envs/tasks/tabletop
@@ -140,12 +140,12 @@ Run the following to open a viewer displaying any robot given in a empty scene w
 python -m mani_skill.examples.demo_robot -r "openarm"
 ```
 
---------------
-|Push the cube to the center of the target.　|PushCube-v1|
-|
-|Pull the cube to the cente of the target.	|PullCube-v1|
-|Pick up the cube and move it to the target position.　|PickCube-v1|
----------------------------------------------------
+| Task Description        | Task Name                      |  Demo                               |
+| ----------------------- | ------------------------------ | ----------------------------------- | 
+| Push the cube to the center of the target.　| `PushCube-v1` | |
+| Pull the cube to the cente of the target. | `PullCube-v1` |   |
+| Pick up the cube and move it to the target position.　| `PickCube-v1` |  |
+
 
 
 ```
