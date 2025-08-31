@@ -551,7 +551,7 @@ while True:
     env.render_human()
 ```
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d68f25dc-c6da-4f7f-81e5-80b8b871bb6a" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/d68f25dc-c6da-4f7f-81e5-80b8b871bb6a" />
 
 
 __
@@ -584,6 +584,36 @@ dict_keys(['openarm_joint1', 'openarm_joint2', 'openarm_joint3', 'openarm_joint4
 ### Random actions
 ```
 python test.py -r "openarm" -c "pd_joint_delta_pos" --random-actions
+```
+
+__
+
+### Show sensor data (openarm)
+
+```python
+import gymnasium as gym
+import mani_skill.envs
+
+env = gym.make(
+    "PickCube-v1", # there are more tasks e.g. "PushCube-v1", "PegInsertionSide-v1", ...
+    num_envs=1,
+    obs_mode="state_dict", # there is also "state_dict", "rgbd", ... state
+    control_mode="pd_joint_delta_pos", # there is also "pd_joint_delta_pos", ... pd_ee_delta_pose
+    render_mode="sensors", #human sensors rgb_array
+)
+
+print(">Observation space: ", env.observation_space, "\n")
+print(">Action space:", env.action_space, "\n")
+
+import matplotlib.pyplot as plt
+
+env.reset()
+
+##plt.imshow(env.render(mode='rgb_array'))
+img = env.render()
+
+plt.imshow(img[0].cpu())
+plt.show()
 ```
 
 <img width="544" height="301" alt="Figure_1" src="https://github.com/user-attachments/assets/6051a400-aa68-4e55-b3e1-d3da16ecfc22" />
