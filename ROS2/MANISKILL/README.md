@@ -610,6 +610,11 @@ img = env.render()
 plt.imshow(img[0].cpu())
 plt.show()
 ```
+```
+>Observation space:  Dict('agent': Dict('qpos': Box(-inf, inf, (1, 9), float32), 'qvel': Box(-inf, inf, (1, 9), float32)), 'extra': Dict('is_grasped': Box(False, True, (1,), bool), 'tcp_pose': Box(-inf, inf, (1, 7), float32), 'goal_pos': Box(-inf, inf, (1, 3), float32), 'obj_pose': Box(-inf, inf, (1, 7), float32), 'tcp_to_obj_pos': Box(-inf, inf, (1, 3), float32), 'obj_to_goal_pos': Box(-inf, inf, (1, 3), float32))) 
+
+>Action space: Box(-1.0, 1.0, (8,), float32) 
+```
 
 <img width="544" height="301" alt="Figure_1" src="https://github.com/user-attachments/assets/6051a400-aa68-4e55-b3e1-d3da16ecfc22" />
 
