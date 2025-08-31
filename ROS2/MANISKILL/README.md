@@ -586,5 +586,7 @@ dict_keys(['openarm_joint1', 'openarm_joint2', 'openarm_joint3', 'openarm_joint4
 python test.py -r "openarm" -c "pd_joint_delta_pos" --random-actions
 ```
 
+<img width="544" height="301" alt="Figure_1" src="https://github.com/user-attachments/assets/6051a400-aa68-4e55-b3e1-d3da16ecfc22" />
+
 
 
