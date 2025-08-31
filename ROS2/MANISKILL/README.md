@@ -593,7 +593,7 @@ __
 ```python
 import gymnasium as gym
 import mani_skill.envs
-
+import matplotlib.pyplot as plt
 env = gym.make(
     "PickCube-v1", # there are more tasks e.g. "PushCube-v1", "PegInsertionSide-v1", ...
     num_envs=1,
@@ -605,13 +605,8 @@ env = gym.make(
 print(">Observation space: ", env.observation_space, "\n")
 print(">Action space:", env.action_space, "\n")
 
-import matplotlib.pyplot as plt
-
 env.reset()
-
-##plt.imshow(env.render(mode='rgb_array'))
 img = env.render()
-
 plt.imshow(img[0].cpu())
 plt.show()
 ```
