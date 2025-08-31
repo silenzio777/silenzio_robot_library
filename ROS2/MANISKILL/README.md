@@ -552,3 +552,39 @@ while True:
 ```
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d68f25dc-c6da-4f7f-81e5-80b8b871bb6a" />
+
+
+__
+
+### Make custom robot (openarm)
+
+```python
+import openarm # imports your robot and registers it
+
+from mani_skill.envs.scene import ManiSkillScene
+from mani_skill.utils.building import URDFLoader
+loader = URDFLoader()
+loader.set_scene(ManiSkillScene())
+robot = loader.load("/home/silenzio/lib/openarm_maniskill_simulation/urdf/openarm.urdf")
+print(robot.active_joints_map.keys())
+
+#dict_keys(['openarm_joint1', 'openarm_joint2', 'openarm_joint3', 'openarm_joint4', 'openarm_joint5', 'openarm_joint6', 'openarm_joint7', 'openarm_finger_joint1', 'openarm_finger_joint2'])
+#Selected robot openarm. Control mode: pd_joint_pos
+#Selected Robot has the following keyframes to view: 
+
+# imports the demo_robot example script and lets you test your new robot
+import mani_skill.examples.demo_robot as demo_robot_script
+demo_robot_script.main()
+```
+
+```
+dict_keys(['openarm_joint1', 'openarm_joint2', 'openarm_joint3', 'openarm_joint4', 'openarm_joint5', 'openarm_joint6', 'openarm_joint7', 'openarm_finger_joint1', 'openarm_finger_joint2'])
+```
+
+### Random actions
+```
+python test.py -r "openarm" -c "pd_joint_delta_pos" --random-actions
+```
+
+
+
