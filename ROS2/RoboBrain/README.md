@@ -140,5 +140,85 @@ Prediction: (as an example)
 '''
 ```
 
+____
 
 
+
+
+
+
+### 2. Usage for Affordance Prediction
+```python
+from inference import SimpleInference
+
+model_id = "BAAI/RoboBrain"
+lora_id = "BAAI/RoboBrain-LoRA-Affordance"
+model = SimpleInference(model_id, lora_id)
+
+# Example 1:
+prompt = "You are a robot using the joint control. The task is \"pick_up the suitcase\". Please predict a possible affordance area of the end effector?"
+
+image = "./assets/demo/affordance_1.jpg"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [0.733, 0.158, 0.845, 0.263]
+'''
+
+# Example 2:
+prompt = "You are a robot using the joint control. The task is \"push the bicycle\". Please predict a possible affordance area of the end effector?"
+
+image = "./assets/demo/affordance_2.jpg"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [0.600, 0.127, 0.692, 0.227]
+'''
+
+```
+
+<div align="center">
+<img src="./assets/demo/afford_examples.png" />
+</div>
+
+### 3. Usage for Trajectory Prediction
+```python
+from inference import SimpleInference
+
+model_id = "BAAI/RoboBrain"
+lora_id = "BAAI/RoboBrain-LoRA-Trajectory"
+model = SimpleInference(model_id, lora_id)
+
+# Example 1:
+prompt = "You are a robot using the joint control. The task is \"pick up the knife\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+
+image = "./assets/demo/trajectory_1.png"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [[0.375, 0.297], [0.281, 0.344], [0.214, 0.406], [0.172, 0.473]]
+'''
+
+# Example 2:
+prompt = "You are a robot using the joint control. The task is \"reach for the banana\". Please predict up to 10 key trajectory points to complete the task. Your answer should be formatted as a list of tuples, i.e. [[x1, y1], [x2, y2], ...], where each tuple contains the x and y coordinates of a point."
+
+image = "./assets/demo/trajectory_2.png"
+
+pred = model.inference(prompt, image, do_sample=False)
+print(f"Prediction: {pred}")
+
+'''
+    Prediction: [[0.264, 0.479], [0.387, 0.512], [0.505, 0.554], [0.642, 0.6]]
+'''
+
+```
+
+<div align="center">
+<img src="./assets/demo/traj_examples.png" />
+</div>
