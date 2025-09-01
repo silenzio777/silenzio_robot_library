@@ -82,9 +82,9 @@ _________
 
 #### Option 2: VLLM inference
 Install and launch VLLM
-```bash
+
 # Install vllm package
-```
+```bash
 pip install vllm==0.6.6.post1
 ```
 
