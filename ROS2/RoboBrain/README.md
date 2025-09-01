@@ -77,7 +77,7 @@ The current active token is: `RoboBrain`
 ```
 
 
-
+_________
 
 #### Option 2: VLLM inference
 Install and launch VLLM
