@@ -1,9 +1,16 @@
 
 # RoboBrain
 
+https://github.com/FlagOpen/RoboBrain
+
+__
+
+⭐️ Inference
 
 ### Test iference:
 
+1. Usage for Planning Prediction
+2. 
 ```python
 from inference import SimpleInference
 
