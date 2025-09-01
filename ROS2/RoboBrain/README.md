@@ -7,10 +7,10 @@ __
 
 ⭐️ Inference
 
-### Test iference:
+### 1. Usage for Planning Prediction
 
-1. Usage for Planning Prediction
-2. 
+Option 1: HF inference
+
 ```python
 from inference import SimpleInference
 
@@ -74,5 +74,13 @@ Token has not been saved to git credential helper.
 Your token has been saved to /home/silenzio/.cache/huggingface/token
 Login successful.
 The current active token is: `RoboBrain`
-
 ```
+
+
+
+
+
+
+
+
+
