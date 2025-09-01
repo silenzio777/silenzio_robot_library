@@ -84,8 +84,10 @@ Install and launch VLLM
 ```bash
 # Install vllm package
 pip install vllm==0.6.6.post1
+```
 
-# Launch Robobrain with vllm
+Launch Robobrain with vllm
+```
 python -m vllm.entrypoints.openai.api_server --model BAAI/RoboBrain --served-model-name robobrain  --max_model_len 16384 --limit_mm_per_prompt image=8
 ```
 
