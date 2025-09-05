@@ -11,6 +11,15 @@ Before CAN interface start:
 
 After CAN interface start:
 
+_
+<img src="https://github.com/user-attachments/assets/ff71e87d-2a98-421c-a0cb-8e264f413d35" width="640">
+
+<img src="https://github.com/user-attachments/assets/5b29acd0-adbf-40ef-b3ef-a2509759dad4" width="640">
+
+__
+
+
+
 <img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="640">
 
 ### 120R termination must be enable.
@@ -48,13 +57,6 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 <img src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" width="640">
 
 <img src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" width="640">
-
-_
-<img src="https://github.com/user-attachments/assets/ff71e87d-2a98-421c-a0cb-8e264f413d35" width="640">
-
-<img src="https://github.com/user-attachments/assets/5b29acd0-adbf-40ef-b3ef-a2509759dad4" width="640">
-
-__
 
 <img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
 
