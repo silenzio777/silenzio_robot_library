@@ -247,7 +247,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 ________________________
-_______________________
+below old versions, not need...
+________________________
 
 
 sudo modprobe can
