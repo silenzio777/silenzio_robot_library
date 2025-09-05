@@ -49,6 +49,13 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 
 <img src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" width="640">
 
+_
+<img src="https://github.com/user-attachments/assets/ff71e87d-2a98-421c-a0cb-8e264f413d35" width="640">
+
+<img src="https://github.com/user-attachments/assets/5b29acd0-adbf-40ef-b3ef-a2509759dad4" width="640">
+
+__
+
 <img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
 
 ### Set Sender CAN ID	and Receiver (motor) ID
