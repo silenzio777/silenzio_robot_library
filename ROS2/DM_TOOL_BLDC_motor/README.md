@@ -11,14 +11,6 @@ Before CAN interface start:
 
 After CAN interface start:
 
-_
-<img src="https://github.com/user-attachments/assets/ff71e87d-2a98-421c-a0cb-8e264f413d35" width="640">
-
-<img src="https://github.com/user-attachments/assets/5b29acd0-adbf-40ef-b3ef-a2509759dad4" width="640">
-
-__
-
-
 
 <img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="640">
 
@@ -36,6 +28,14 @@ Connect to the Bus:
 Connect the CANH, CANL, and GND pins of your CANable to your target CAN bus. 
 You must connect ground for the CAN bus to function properly.
 ```
+
+_
+<img src="https://github.com/user-attachments/assets/ff71e87d-2a98-421c-a0cb-8e264f413d35" width="640">
+
+<img src="https://github.com/user-attachments/assets/5b29acd0-adbf-40ef-b3ef-a2509759dad4" width="640">
+
+__
+
 
 <img src="https://github.com/user-attachments/assets/66ac670c-dba6-4c74-850b-c6aeef517891" width="640">
 
