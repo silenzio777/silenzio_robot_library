@@ -1241,6 +1241,19 @@ killall -3 gnome-shell
 ```
 _______
 
+### Check Ollama running models:
+```
+$ ollama ps
+```
+```
+NAME                  ID              SIZE      PROCESSOR    CONTEXT    UNTIL               
+deepseek-r1:latest    0a8c26691023    8.9 GB    100% GPU     32768      29 minutes from now
+```
+### Stop all Ollama model:
+```
+$ ollama stop deepseek-r1:latest
+```
+
 ### Stop all Ollama models:
 
 ```
