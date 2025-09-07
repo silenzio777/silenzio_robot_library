@@ -1241,6 +1241,20 @@ killall -3 gnome-shell
 ```
 _______
 
+### Stop all Ollama models:
+
+```
+sudo systemctl stop ollama
+```
+
+### Run Ollama service again:
+```
+sudo systemctl start ollama
+```
+_______
+
+
+
 ### reboot
 
 ```
