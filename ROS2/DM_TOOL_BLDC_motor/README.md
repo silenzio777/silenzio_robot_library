@@ -1,7 +1,9 @@
 
 ## Run DM-J4310-2EC motor via PEAK System USB-CAN adapter.
 
-### UBUNTU PC
+_______
+### UBUNTU PC | CANable V1.0 Nano (PEAK System PCAN-USB)
+_______
 
 Connection diagram.
 
@@ -10,7 +12,6 @@ Before CAN interface start:
 <img src="https://github.com/user-attachments/assets/698a4982-4901-47e5-bbca-b82ebc973ec4" width="640">
 
 After CAN interface start:
-
 
 <img src="https://github.com/user-attachments/assets/8aec6259-52d2-4593-8edf-f54b4c5bfc21" width="640">
 
@@ -63,7 +64,6 @@ https://docs.openarm.dev/software/setup/motor-id
 Joint	Sender CAN ID	Receiver (Master) ID
 J1		0x01			0x11
 ```
-
 
 ____
 
@@ -244,6 +244,20 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 ```
 ### works
+
+
+_______
+### UBUNTU PC | CANable V2.0 Pro (PEAK System PCAN-USB)
+_______
+
+```
+lsusb
+```
+```
+Bus 001 Device 002: ID 16d0:117e MCS CANable2 b158aa7 github.com/normaldotcom/canable2.git
+```
+
+
 
 
 ________________________
