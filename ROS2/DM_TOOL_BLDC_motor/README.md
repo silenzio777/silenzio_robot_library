@@ -1,5 +1,6 @@
 
-## Run DM-J4310-2EC motor via PEAK System USB-CAN adapter.
+## Run DM-JXXX-2EC motor via PEAK System USB-CAN adapter.
+(DM-J4310-2EC, DM-J4340-2EC, DM-J4340P-2EC)
 
 _______
 ### UBUNTU PC | CANable V1.0 Nano (PEAK System PCAN-USB)
@@ -257,6 +258,34 @@ lsusb
 Bus 001 Device 002: ID 16d0:117e MCS CANable2 b158aa7 github.com/normaldotcom/canable2.git
 ```
 
+```
+ls /dev/ttyACM*
+```
+- /dev/ttyACM0
+- 
+```
+$ sudo chmod 777 /dev/ttyACM0
+```
+```
+sudo modprobe slcan
+```
+```
+silenzio@ubuntuPC:~/lib/dm-tools-master$ sudo slcan_attach -f -s6 -o /dev/ttyACM0
+```
+- attached tty /dev/ttyACM0 to netdevice can0
+
+```
+$ sudo slcand ttyACM0 can0
+$ sudo ip link set can0 up type can bitrate 1000000
+```
+Turn on motor:
+```
+$ cansend can0 001#FFFFFFFFFFFFFFFC
+```
+Turn off motor:
+```
+$ cansend can0 001#FFFFFFFFFFFFFFFD
+```
 
 
 
