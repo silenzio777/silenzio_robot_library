@@ -248,7 +248,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 _______
-### UBUNTU PC | CANable V2.0 Pro (PEAK System PCAN-USB)
+### UBUNTU PC | CANable V2.0 Pro (MCS CANable2 b158aa7 github.com/normaldotcom/canable2.git)
 _______
 
 ```
