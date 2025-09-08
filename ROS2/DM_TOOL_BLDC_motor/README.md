@@ -56,6 +56,12 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 
 <img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
 
+<details> 
+  <summary>Q1: What is the best Language in the World? </summary>
+   A1: JavaScript 
+</details>
+
+
 ### Set Sender CAN ID	and Receiver (motor) ID
 
 https://wiki.seeedstudio.com/damiao_series/
