@@ -263,26 +263,26 @@ ls /dev/ttyACM*
 ```
 - /dev/ttyACM0
 ```
-$ sudo chmod 777 /dev/ttyACM0
+sudo chmod 777 /dev/ttyACM0
 ```
 ```
 sudo modprobe slcan
 ```
 ```
-$ sudo slcan_attach -f -s8 -o /dev/ttyACM0
+sudo slcan_attach -f -s8 -o /dev/ttyACM0
 ```
 - attached tty /dev/ttyACM0 to netdevice can0
 ```
-$ sudo slcand ttyACM0 can0
-$ sudo ip link set can0 up type can bitrate 1000000
+sudo slcand ttyACM0 can0
+sudo ip link set can0 up type can bitrate 1000000
 ```
 Turn on motor:
 ```
-$ cansend can0 001#FFFFFFFFFFFFFFFC
+cansend can0 001#FFFFFFFFFFFFFFFC
 ```
 Turn off motor:
 ```
-$ cansend can0 001#FFFFFFFFFFFFFFFD
+cansend can0 001#FFFFFFFFFFFFFFFD
 ```
 ```
 ~/lib/openarm_can/build$ ./motor-check 1 17 can0
