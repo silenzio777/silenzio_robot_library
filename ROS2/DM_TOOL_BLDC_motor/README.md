@@ -269,7 +269,7 @@ $ sudo chmod 777 /dev/ttyACM0
 sudo modprobe slcan
 ```
 ```
-silenzio@ubuntuPC:~/lib/dm-tools-master$ sudo slcan_attach -f -s6 -o /dev/ttyACM0
+$ sudo slcan_attach -f -s8 -o /dev/ttyACM0
 ```
 - attached tty /dev/ttyACM0 to netdevice can0
 ```
