@@ -57,8 +57,51 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 <img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
 
 <details> 
-  <summary>Q1: What is the best Language in the World? </summary>
-   A1: JavaScript 
+  <summary>DM-J4340P-2EC</summary>
+
+   DMBOT Motor Driver--V3.0
+  
+   Debug Info:
+  
+  Firmware Version: 5117
+  Sub Version: 003
+  Imax: 10.261194
+   I_U Offset:     2047.1090
+   I_V Offset:     2109.7710
+   I_W Offset:     2103.6509
+   Position Sensor Electrical Offset:   -0.9162
+  
+   Mechanical Offset:   
+   0.0000
+  
+   Output Position:  -0.6097
+  
+   CAN ID:     0x001
+  
+   MASTER ID:  0x000
+  
+   CAN Baud: 1.00Mbps
+  
+  
+   Motor Info:
+  
+   Rs  = 846.7125 mΩ
+  
+   Ls  = 346.4771 μH
+  
+   Ψf = 0.0046 Wb
+  
+  V_BUS=24.1230
+  
+   Control Mode : 
+  1:MIT Mode <----
+  
+  2:position-speed cascade Mode
+  
+  3:speed Mode
+  
+  4:Hybrid control Mode 
+
 </details>
 
 
