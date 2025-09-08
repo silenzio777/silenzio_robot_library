@@ -262,7 +262,6 @@ Bus 001 Device 002: ID 16d0:117e MCS CANable2 b158aa7 github.com/normaldotcom/ca
 ls /dev/ttyACM*
 ```
 - /dev/ttyACM0
-- 
 ```
 $ sudo chmod 777 /dev/ttyACM0
 ```
@@ -273,7 +272,6 @@ sudo modprobe slcan
 silenzio@ubuntuPC:~/lib/dm-tools-master$ sudo slcan_attach -f -s6 -o /dev/ttyACM0
 ```
 - attached tty /dev/ttyACM0 to netdevice can0
-
 ```
 $ sudo slcand ttyACM0 can0
 $ sudo ip link set can0 up type can bitrate 1000000
@@ -286,7 +284,41 @@ Turn off motor:
 ```
 $ cansend can0 001#FFFFFFFFFFFFFFFD
 ```
+```
+~/lib/openarm_can/build$ ./motor-check 1 17 can0
+```
 
+```
+=== OpenArm Motor Control Script ===
+Send CAN ID: 1
+Receive CAN ID: 17
+CAN Interface: can0
+CAN-FD Enabled: No
+
+Initializing OpenArm CAN...
+Initializing motor...
+Reading motor parameters...
+
+=== Motor Parameters ===
+Send CAN ID: 1
+Queried Master ID: 17
+Queried Baudrate (1-9): 4
+✓ Master ID verification passed
+
+=== Enabling Motor ===
+
+=== Refreshing Motor Status (10Hz for 1 second) ===
+
+--- Refresh 1/10 ---
+Motor ID: 1
+  Position: 0.195888 rad
+  Velocity: -0.021978 rad/s
+  Torque: -0.002442 Nm
+  Temperature (MOS): 27 °C
+  Temperature (Rotor): 25 °C
+...
+=== Script Completed Successfully ===
+```
 
 
 ________________________
