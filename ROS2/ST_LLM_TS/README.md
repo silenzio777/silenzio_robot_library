@@ -257,7 +257,7 @@ whisper_print_timings:    total time =  5124.30 ms
 ```
 ### sudo apt install ros-humble-audio-common
 cd ~/ros2_ws/src
-gir clone -t ros2 https://github.com/ros-drivers/audio_common
+git clone -b ros2 https://github.com/ros-drivers/audio_common
 cd ..
 colcon build --packages-select audio_common
 ```
