@@ -1267,7 +1267,30 @@ sudo systemctl start ollama
 _______
 
 
+### Custom Keyboard Shortcut:
+```
+Open Settings: Go to "System Settings" on your Ubuntu system. 
+Access Keyboard Shortcuts: Navigate to the "Keyboard" section, then select "Keyboard Shortcuts" -->> "Custom Shortcuts". 
+Add a New Shortcut: Click on the option to add a custom shortcut or find an empty slot. 
+Enter Command:
+For a full shutdown, enter the command: gnome-session-quit --power-off. 
+## For a simpler command, you can use: shutdown now. 
+Set the Hotkey: Assign your desired key combination (Ctrl + Alt + K)
+```
+```
+Then you pressed (Ctrl + Alt + K) on keyboard
+or (Ctrl + Option + K)
+dialog appear:
 
+Power Off
+The system will power off auto in 40 second
+You need to put key <Arrow right> and hit enter
+to shutdown now.
+```
+
+
+
+___
 ### reboot
 
 ```
