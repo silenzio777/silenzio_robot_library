@@ -193,5 +193,6 @@ sudo nano /etc/security/limits.conf
 @realtime hard memlock unlimited
 ```
 
-
+### restart Ubuntu
+ 
 
