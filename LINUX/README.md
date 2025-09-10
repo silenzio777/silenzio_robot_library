@@ -1284,7 +1284,7 @@ dialog appear:
 
 Power Off
 The system will power off auto in 40 second
-You need to put key <Arrow right> and hit enter
+You need to put key <Arrow right> and hit <Enter>
 to shutdown now.
 ```
 
