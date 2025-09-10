@@ -177,6 +177,7 @@ Libraries:
 - CUDNN: 9.8.0
 - TensorRT: MISSING
 - VPI: MISSING
+- Vulkan: 1.3.204
 - OpenCV: 4.5.4 with CUDA: NO
 
 Hardware:
