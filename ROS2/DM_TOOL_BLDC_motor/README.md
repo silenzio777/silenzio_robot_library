@@ -220,6 +220,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 __
 
+<details> 
+  <summary>Pure python code without python venv, for ROS2 node:</summary>
+
 ## Pure python code without python venv, for ROS2 node:
 
 Check works:
@@ -295,7 +298,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 ### works
 
-
+<details> 
 _______
 ### UBUNTU PC | CANable V2.0 Pro (MCS CANable2 b158aa7 github.com/normaldotcom/canable2.git)
 _______
