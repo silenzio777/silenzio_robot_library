@@ -146,9 +146,9 @@ ________________
         `:+ssssssssssssssssss+:`           ----------------- 
       -+ssssssssssssssssssyyssss+-         OS: Ubuntu 22.04.5 LTS x86_64 
     .ossssssssssssssssssdMMMNysssso.       Host: Z370 AORUS Gaming 3 
-   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.8.0-60-generic 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.8.0-79-generic 
   +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 1 hour, 15 mins 
- /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 4186 (dpkg), 17 (snap) 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 4245 (dpkg), 19 (snap) 
 .ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.1.16 
 +sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 2560x1440 
 ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 42.9 
@@ -158,8 +158,8 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter
  /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
   +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
    /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: Intel i7-8700K (12) @ 4.700GHz 
-    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA GeForce GTX 1050 Ti 
-      -+sssssssssssssssssyyyssss+-         Memory: 1828MiB / 32036MiB 
+    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA GeForce RTX 4080 16 Gb
+      -+sssssssssssssssssyyyssss+-         Memory: 2537MiB / 32036MiB 
         `:+ssssssssssssssssss+:`
             .-/+oossssoo+/-.
 
@@ -169,7 +169,7 @@ Platform:
 - Machine: ×86_64
 - System: Linux
 - Distribution: Ubuntu 22.04 Jammy Jellyfish
-- Release: 6.8.0-60-generic
+- Release: 6.8.0-79-generic 
 - Python: 3.10.12
 
 Libraries:
