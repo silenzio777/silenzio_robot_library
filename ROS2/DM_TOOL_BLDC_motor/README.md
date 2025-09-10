@@ -218,8 +218,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> arm.enable_all()
 ```
 
-__
-
 <details> 
   <summary>Pure python code without python venv, for ROS2 node:</summary>
 
