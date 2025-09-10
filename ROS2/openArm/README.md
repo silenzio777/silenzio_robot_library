@@ -140,3 +140,58 @@ Target positions can be set in the Joints tab in the MotionPlanning panel on the
 
 The Planning tab provides a GUI to generate trajectories to reach a goal position. Clicking on Plan to preview the path is recommended.
 
+
+
+
+
+
+
+____________
+
+
+
+
+file - /home/silenzio/ros2_ws/install/openarm_description/share/openarm_description/urdf/ros2_control/openarm.ros2_control.xacro
+
+```
+<xacro:macro name="openarm_arm_ros2_control"
+         params="arm_type
+             can_interface
+             use_fake_hardware:=^|true
+             fake_sensor_commands:=^|false
+             hand:=^|false
+             gazebo_effort:=^|false
+             arm_prefix:=''
+             bimanual:=false
+             can_fd:=^|false">
+```
+__
+
+ros2 launch openarm_bringup openarm.launch.py arm_type:=v10 use_fake_hardware:=true
+
+```
+[ros2_control_node-2] [WARN] [1757516679.323199977] [controller_manager]: No real-time kernel detected on this system. See [https://control.ros.org/master/doc/ros2_control/controller_manager/doc/userdoc.html] for details on how to enable realtime scheduling.
+```
+
+```
+sudo addgroup realtime
+sudo usermod -a -G realtime $(whoami)
+```
+
+Afterwards, add the following limits to the realtime group in /etc/security/limits.conf:
+
+```
+sudo nano /etc/security/limits.conf
+```
+
+```
+@realtime soft rtprio 99
+@realtime soft priority 99
+@realtime soft memlock unlimited
+@realtime hard rtprio 99
+@realtime hard priority 99
+@realtime hard memlock unlimited
+```
+
+
+
