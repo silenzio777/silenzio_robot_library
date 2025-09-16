@@ -57,6 +57,9 @@ ros2 launch openarm_bimanual_moveit_config demo.launch.py hardware_type:=mujoco
 ```
 ### works
 
+<img src="https://github.com/user-attachments/assets/234b345f-51c7-40e6-9f77-15a73372ffe0" width="700">
+
+
 ```
 ros2 launch openarm_bringup openarm.launch.py arm_type:=v10 use_fake_hardware:=true
 ```
