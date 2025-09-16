@@ -56,14 +56,21 @@ at chrome - https://thomasonzhou.github.io/mujoco_anywhere/
 ros2 launch openarm_bimanual_moveit_config demo.launch.py hardware_type:=mujoco
 ```
 ### works
+<img src="https://github.com/user-attachments/assets/e6114715-ed4e-43b2-a219-f9e88a5bb2d9" width="700">
 
-<img src="https://github.com/user-attachments/assets/234b345f-51c7-40e6-9f77-15a73372ffe0" width="700">
-
-
+T1:
 ```
 ros2 launch openarm_bringup openarm.launch.py arm_type:=v10 use_fake_hardware:=true
 ```
 
+T2:
+```
+$ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory '{trajectory: {joint_names: ["openarm_joint1", "openarm_joint2", "openarm_joint3", "openarm_joint4", "openarm_joint5", "openarm_joint6", "openarm_joint7"], points: [{positions: [1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15], time_from_start: {sec: 3, nanosec: 0}}]}}'
+```
+
+### works
+
+<img src="https://github.com/user-attachments/assets/234b345f-51c7-40e6-9f77-15a73372ffe0" width="700">
 
 
 
