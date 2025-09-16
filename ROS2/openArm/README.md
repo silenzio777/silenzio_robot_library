@@ -29,7 +29,7 @@ Summary: 6 packages finished [18.5s]
 ### Add to file:
 /home/silenzio/oa_ws/install/openarm_description/share/openarm_description/urdf/ros2_control/openarm.bimanual.ros2_control.xacro
 
-this lines:
+this lines of code:
 
 ```
     <!-- Left Arm Hardware Interface -->
@@ -50,13 +50,16 @@ this lines:
 ```
 
 
-
-at chrome - https://thomasonzhou.github.io/mujoco_anywhere/
+Run in chrome - https://thomasonzhou.github.io/mujoco_anywhere/
 ```
 ros2 launch openarm_bimanual_moveit_config demo.launch.py hardware_type:=mujoco
 ```
+
 ### works
 <img src="https://github.com/user-attachments/assets/e6114715-ed4e-43b2-a219-f9e88a5bb2d9" width="700">
+
+______
+
 
 T1:
 ```
@@ -72,9 +75,9 @@ $ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory con
 
 <img src="https://github.com/user-attachments/assets/234b345f-51c7-40e6-9f77-15a73372ffe0" width="700">
 
-
-
 _________________
+
+
 ```
 cd ~/ros2_ws/src
 git clone https://github.com/enactic/openarm_description.git
