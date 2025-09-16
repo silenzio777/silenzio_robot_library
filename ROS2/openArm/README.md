@@ -9,7 +9,6 @@ https://docs.openarm.dev/software/ros2/control
 ### Clean install:
 
 ```
-mkdir ~/oa_ws
 mkdir -p ~/oa_ws/scr
 cd ~/oa_ws/src
 git clone https://github.com/enactic/openarm_description
