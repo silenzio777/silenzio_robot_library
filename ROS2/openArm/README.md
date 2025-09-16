@@ -6,7 +6,66 @@ https://docs.openarm.dev/software/description/
 
 https://docs.openarm.dev/software/ros2/control
 
+### Clean install:
 
+```
+mkdir ~/oa_ws
+mkdir -p ~/oa_ws/scr
+cd ~/oa_ws/src
+git clone https://github.com/enactic/openarm_description
+git clone https://github.com/enactic/openarm_ros2
+git clone https://github.com/enactic/openarm_mujoco_hardware
+cd ..
+colcon build --symlink-install
+```
+```
+...
+Finished <<< openarm_mujoco_hardware [18.2s]
+Summary: 6 packages finished [18.5s]
+```
+```
+. install/setup.bash
+```
+
+### Add to file:
+/home/silenzio/oa_ws/install/openarm_description/share/openarm_description/urdf/ros2_control/openarm.bimanual.ros2_control.xacro
+
+this lines:
+
+```
+    <!-- Left Arm Hardware Interface -->
+    <ros2_control name="openarm_left_hardware_interface" type="system">
+        <hardware>
+          <plugin>openarm_mujoco_hardware/MujocoHardware</plugin>
+          <param name="prefix">left_</param>
+          <param name="websocket_port">1337</param>
+         ...
+
+    <!-- Right Arm Hardware Interface -->
+    <ros2_control name="openarm_right_hardware_interface" type="system">
+        <hardware>
+          <plugin>openarm_mujoco_hardware/MujocoHardware</plugin>
+          <param name="prefix">right_</param>
+          <param name="websocket_port">1338</param>
+         ...
+```
+
+
+
+at chrome - https://thomasonzhou.github.io/mujoco_anywhere/
+```
+ros2 launch openarm_bimanual_moveit_config demo.launch.py hardware_type:=mujoco
+```
+### works
+
+```
+ros2 launch openarm_bringup openarm.launch.py arm_type:=v10 use_fake_hardware:=true
+```
+
+
+
+
+_________________
 ```
 cd ~/ros2_ws/src
 git clone https://github.com/enactic/openarm_description.git
