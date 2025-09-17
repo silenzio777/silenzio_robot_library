@@ -118,7 +118,22 @@ colcon build --packages-select octomap_rviz_plugins
 
 ______
 
-### Using overlay
+### 1. Building specific packages 📦
+Instead of trying to build the non-existent openarm_ros2 meta-package, build each of the actual packages individually:
+
+```
+colcon build --packages-select openarm_bringup openarm_bimanual_moveit_config openarm_hardware
+```
+
+Or build them together with their dependencies:
+
+```
+colcon build --packages-up-to openarm_bringup openarm_bimanual_moveit_config openarm_hardware
+```
+
+The --packages-up-to flag will build the specified packages and all their dependencies, but not other packages in the workspace.
+
+### 2. Using overlay
 
 You can create an overlay for an existing workspace:
 
