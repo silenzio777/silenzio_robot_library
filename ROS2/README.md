@@ -128,7 +128,7 @@ colcon build --packages-select openarm_bringup openarm_bimanual_moveit_config op
 Or build them together with their dependencies:
 
 ```
-colcon build --packages-up-to openarm_bringup openarm_bimanual_moveit_config openarm_hardware
+colcon build --packages-up-to openarm_bringup openarm_bimanual_moveit_config openarm_hardware openarm_mujoco_hardware --symlink-install
 ```
 
 The --packages-up-to flag will build the specified packages and all their dependencies, but not other packages in the workspace.
