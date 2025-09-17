@@ -68,7 +68,7 @@ ros2 launch openarm_bringup openarm.launch.py arm_type:=v10 use_fake_hardware:=t
 
 T2:
 ```
-$ ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory '{trajectory: {joint_names: ["openarm_joint1", "openarm_joint2", "openarm_joint3", "openarm_joint4", "openarm_joint5", "openarm_joint6", "openarm_joint7"], points: [{positions: [1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15], time_from_start: {sec: 3, nanosec: 0}}]}}'
+ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory '{trajectory: {joint_names: ["openarm_joint1", "openarm_joint2", "openarm_joint3", "openarm_joint4", "openarm_joint5", "openarm_joint6", "openarm_joint7"], points: [{positions: [1.15, 1.15, 1.15, 1.15, 1.15, 1.15, 1.15], time_from_start: {sec: 3, nanosec: 0}}]}}'
 ```
 
 ### works
