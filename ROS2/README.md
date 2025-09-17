@@ -116,7 +116,36 @@ cd ..
 colcon build --packages-select octomap_rviz_plugins
 ```
 
+______
 
+### Using overlay
+
+You can create an overlay for an existing workspace:
+
+Create a new workspace for openarm_ros2:
+
+```
+mkdir -p ~/openarm_ws/src
+cd ~/openarm_ws/src
+git clone https://github.com/enactic/openarm_ros2
+cd ~/openarm_ws
+```
+
+Build the project in the new workspace:
+```
+colcon build --symlink-install
+```
+
+In your main workspace (~/ros2_ws), overlay the built project:
+```
+cd ~/ros2_ws
+source ~/openarm_ws/install/setup.bash
+```
+
+Now you can use packages from openarm_ros2 along with your existing packages.
+
+
+_______
 By the way, if you want to see the available arguments you can pass to the launch file from the terminal window, type:
 ```
 ros2 launch -s basic_mobile_robot basic_mobile_bot_v1.launch.py
