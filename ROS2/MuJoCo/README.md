@@ -12,7 +12,7 @@ MJCFs (MuJoCo description Files) are XML files used to describe all the moving c
 
 To get started, download the latest MuJoCo binaries and open a simulate window.
 
-
+### Install simulator app:
 For example, for MuJoCo 3.3.6 on x86 linux:
 
 ```
