@@ -1,5 +1,54 @@
 
 
+
+
+
+
+
+
+
+
+
+
+https://github.com/linux-can/can-utils/issues/569
+
+https://github.com/enactic/openarm/issues/16
+
+
+
+________________
+### Install cangaroo on Ubuntu:
+
+
+https://github.com/HubertD/cangaroo
+```
+cd ~/lib
+git clone https://github.com/HubertD/cangaroo.git
+cd cangaroo
+sudo apt-get install build-essential git qt5-qmake qtbase5-dev libnl-3-dev libnl-route-3-dev
+```
+
+### Build 
+
+```
+qmake -qt=qt5
+make
+make install
+```
+
+### Run:
+```
+cd bin
+./cangaroo
+```
+
+
+
+
+
+________________
+### OLD
+
 - source: https://github.com/westonrobot/wrp_ros2
 
 ## Setup CAN-To-USB adapter
