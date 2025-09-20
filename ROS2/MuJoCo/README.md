@@ -27,7 +27,7 @@ cd "mujoco-${MUJOCO_VERSION}/bin"
 
 ### Run simulator app:
 ```
-cd '/home/silenzio/lib/mujoco-3.3.6/bin'
+cd /home/silenzio/lib/mujoco-3.3.6/bin
 ./simulate
 ```
 ```
