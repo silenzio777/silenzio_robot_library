@@ -7,7 +7,7 @@
 https://github.com/stella-cv/stella_vslam_ros
 https://stella-cv.readthedocs.io/en/latest/ros2_package.html
 
-## INSTALL dependencies:
+### INSTALL dependencies:
 
 Tested for Ubuntu 22.04. 
 ROS2 : humble or later.
@@ -52,10 +52,10 @@ make -j$(($(nproc) / 2))
 make install
 ```
 
-## BULD OK
+### BULD OK
 
 
-## INSTALL g2o
+### INSTALL g2o
 https://github.com/rubengooj/pl-slam/issues/1
 https://github.com/RainerKuemmerle/g2o
 
@@ -81,10 +81,10 @@ sudo cp /home/silenzio/lib/g2o/cmake_modules/FindG2O.cmake /usr/share/cmake-3.22
 
 sudo ldconfig
 
-## BULD OK
+### BULD OK
 
 
-## INSTALL CORE 
+### INSTALL STELLA CORE 
 
 ```
 rosdep update
@@ -103,11 +103,11 @@ cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 make -j 7
 sudo make install
 ```
-## BULD OK
+### BULD OK
 
 
 
-# When building with support for PangolinViewer
+### When building with support for PangolinViewer
 ```
 cd ~/lib
 git clone --recursive https://github.com/stella-cv/pangolin_viewer.git
@@ -118,7 +118,7 @@ make -j 7
 sudo make install
 ```
 
-## INSTALL ROS2 WRAPPER
+### INSTALL ROS2 WRAPPER
 
 ```
 cd ~/ros2_ws/src
@@ -129,7 +129,7 @@ colcon build --symlink-install
 ```
 
 
-## RUN:
+### RUN:
 
 ```
 source /opt/ros/humble/setup.bash
@@ -144,7 +144,7 @@ ros2 run stella_vslam_ros run_slam \
 ```
 
 __________
-## RUN T265:
+### RUN ON T265:
 
 T1:
 ```
