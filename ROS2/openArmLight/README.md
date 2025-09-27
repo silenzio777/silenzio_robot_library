@@ -14,7 +14,7 @@ _______________________
 
 # Step 4: J3-J4 Sub-Assembly
 
-| Description  | Photo  |
+| Description  | Drawings  |
 | -------  |-------  |
 | 1. Attach `J4_A` to the `J3` motor using 6 `M3x6` bolts. Make sure the two Power+CAN ports face the front and rear for easy wiring. | <img src="j3-j4/step1.png" alt="step1" width="600" /> | 
 | - tip Keep the communication port of the `J3` motor to the right side | <img src="j3-j4/step1-tip.png" alt="step1 tip" height="800" /> | 
@@ -30,6 +30,8 @@ _______________________
 _______________________
 
 # Step 5: J4-J5 Sub-Assembly
+
+| Description  | Drawings  |
 | -------  |-------  |
 | 1. Attach `J4_C` to the rotor of `J4` motor using 6 `M3x6` bolts | <img src="j4-j5/step1.png" alt="step1" width="600" /> | 
 | 2. Mount the component `J4_D` onto the `FL6803ZZ`  |  <img src="j4-j5/step2.png" alt="step2" width="600" /> | 
