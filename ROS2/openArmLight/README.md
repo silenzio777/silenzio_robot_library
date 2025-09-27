@@ -16,14 +16,8 @@ ____
 | Description  | Photo  |
 | -------  |-------  |
 | 1. Attach `J4_A` to the `J3` motor using 6 `M3x6` bolts. Make sure the two Power+CAN ports face the front and rear for easy wiring. | <img src="j3-j4/step1.png" alt="step1" width="200" /> | 
-
-:::tip
-Keep the communication port of the `J3` motor to the right side
-<img src="j3-j4/step1-tip.png" alt="step1 tip" width="50%" />
-:::
-
-2. Mount the bearing `FL6803ZZ` onto `J4_B`
-<img src="j3-j4/step2.png" alt="step2" width="40%" />
+| - tip Keep the communication port of the `J3` motor to the right side | <img src="j3-j4/step1-tip.png" alt="step1 tip" width="200" /> | 
+| 2. Mount the bearing `FL6803ZZ` onto `J4_B` |  <img src="j3-j4/step2.png" alt="step2" width="200" /> | 
 
 3. Place the `J4_B` on the interior side of `J4_A`,aligning the holes. Do not fasten them yet.
 <img src="j3-j4/step3.png" alt="step3" width="40%" />
