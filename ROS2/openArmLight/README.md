@@ -12,7 +12,7 @@ _______________________
 
 _______________________
 
-# Step 4: J3-J4 Sub-Assembly
+### Step 4: J3-J4 Sub-Assembly
 
 | Description  | Drawings  |
 | -------  |-------  |
@@ -29,7 +29,7 @@ _______________________
 
 _______________________
 
-# Step 5: J4-J5 Sub-Assembly
+### Step 5: J4-J5 Sub-Assembly
 
 | Description  | Drawings  |
 | -------  |-------  |
