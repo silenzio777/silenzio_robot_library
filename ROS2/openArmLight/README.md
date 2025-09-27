@@ -8,7 +8,7 @@
 
 ___
 
- <img src="images/all_manuf_parts_low.jpeg" width="1000"> 
+ <img src="images/all_manuf_parts_low.jpeg" width="800"> 
 
 ____
 
