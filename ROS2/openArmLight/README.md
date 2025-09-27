@@ -12,12 +12,6 @@ ___
 
 ____
 
----
-title: 4. J3-J4
-sidebar_position: 5
-description: ""
----
-
 # Step 4: J3-J4 Sub-Assembly
 
 1. Attach `J4_A` to the `J3` motor using 6 `M3x6` bolts. Make sure the two Power+CAN ports face the front and rear for easy wiring.
@@ -53,4 +47,33 @@ Keep the communication port of the `J4` motor to the position as shown in the fi
 :::info
 That concludes the J3-J4 Sub-Assembly
 <img src="j3-j4/conclusion.png" alt="conclusion" width="40%" />
+:::
+
+
+
+# Step 5: J4-J5 Sub-Assembly
+
+1. Attach `J4_C` to the rotor of `J4` motor using 6 `M3x6` bolts
+<AssemblyGuideImage src="j4-j5/step1.png" alt="step1" width="40%" />
+
+2. Mount the component `J4_D` onto the `FL6803ZZ`
+<AssemblyGuideImage src="j4-j5/step2.png" alt="step2" width="40%" />
+
+:::tip
+Align the `J4_E` component vertically with the mechanical stop on `J4_C`, ensuring proper orientation before fastening.
+<AssemblyGuideImage src="j4-j5/tip.png" alt="tip" width="40%" />
+:::
+
+3. Attach the component `J4_E` to `J4_C` using 6 `M3x6` bolts.
+<AssemblyGuideImage src="j4-j5/step3.png" alt="step3" width="40%" />
+
+4. Place the `J5` motor between the `J4_D` and `J4_E` and fasten them using 6 `M3x6` bolts. Ensure that the Power+CAN ports are facing front and rear for effective wiring. Keep the communication port facing towards the part `J4_E`.
+<AssemblyGuideImage src="j4-j5/step4.png" alt="step4" width="40%" />
+
+5. Carefully place two posts `AETTS8-74.2-SC0-M3-N3` between the `J4_D` and `J4_E` components, and fasten them using `M3x6` bolts
+<AssemblyGuideImage src="j4-j5/step5.png" alt="step5" width="40%" />
+
+:::info
+That concludes the J4-J5 Sub-Assembly
+<AssemblyGuideImage src="j4-j5/conclusion.png" alt="conclusion" width="35%" />
 :::
