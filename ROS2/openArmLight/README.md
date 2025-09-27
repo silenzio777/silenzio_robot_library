@@ -20,8 +20,7 @@ _______________________
 | - tip Keep the communication port of the `J3` motor to the right side | <img src="j3-j4/step1-tip.png" alt="step1 tip" width="400" /> | 
 | 2. Mount the bearing `FL6803ZZ` onto `J4_B` |  <img src="j3-j4/step2.png" alt="step2" width="400" /> | 
 | 3. Place the `J4_B` on the interior side of `J4_A`,aligning the holes. Do not fasten them yet. | <img src="j3-j4/step3.png" alt="step3" width="400" /> | 
-| 4. Carefully slide the `J4` motor between `J4_A` and `J4_B`. Align it with the holes on `J4_B`. Refer to the photo for correct positioning of the Power+CAN port. Fasten the motor `J4` with part `J4_B` using 4 `M3x6` bolts.
-| <img src="j3-j4/step4.png" alt="step4" width="400" /> | 
+| 4. Carefully slide the `J4` motor between `J4_A` and `J4_B`. Align it with the holes on `J4_B`. Refer to the photo for correct positioning of the Power+CAN port. Fasten the motor `J4` with part `J4_B` using 4 `M3x6` bolts. | <img src="j3-j4/step4.png" alt="step4" width="400" /> | 
 | - tip Keep the communication port of the `J4` motor to the position as shown in the figure. |  <img src="j3-j4/step4-tip.png" alt="step4 tip" width="400" /> | 
 | 5. Fasten `J4_A` into `J4_B` using 6 `M3x6` bolts | <img src="j3-j4/step5.png" alt="step5" width="400" /> | 
 | 6. Finally, fasten `J4_A` to the motor `J4` using 6 `M3x6` bolts. |  <img src="j3-j4/step6.png" alt="step6" width="400" /> | 
