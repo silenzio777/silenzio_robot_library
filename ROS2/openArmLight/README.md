@@ -30,7 +30,7 @@ _______________________
 _______________________
 
 # Step 5: J4-J5 Sub-Assembly
-
+| -------  |-------  |
 | 1. Attach `J4_C` to the rotor of `J4` motor using 6 `M3x6` bolts | <img src="j4-j5/step1.png" alt="step1" width="600" /> | 
 | 2. Mount the component `J4_D` onto the `FL6803ZZ`  |  <img src="j4-j5/step2.png" alt="step2" width="600" /> | 
 | - tip Align the `J4_E` component vertically with the mechanical stop on `J4_C`, ensuring proper orientation before fastening. | <img src="j4-j5/tip.png" alt="tip" width="600" />  | 
