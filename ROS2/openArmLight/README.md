@@ -49,7 +49,7 @@ That concludes the J3-J4 Sub-Assembly
 <img src="j3-j4/conclusion.png" alt="conclusion" width="40%" />
 :::
 
-
+_______________________
 
 # Step 5: J4-J5 Sub-Assembly
 
@@ -73,7 +73,7 @@ Align the `J4_E` component vertically with the mechanical stop on `J4_C`, ensuri
 5. Carefully place two posts `AETTS8-74.2-SC0-M3-N3` between the `J4_D` and `J4_E` components, and fasten them using `M3x6` bolts
 <img src="j4-j5/step5.png" alt="step5" width="40%" />
 
-- info
+> info
 That concludes the J4-J5 Sub-Assembly
 <img src="j4-j5/conclusion.png" alt="conclusion" width="35%" />
 
