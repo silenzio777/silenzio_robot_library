@@ -13,7 +13,8 @@ ___
 ____
 
 # Step 4: J3-J4 Sub-Assembly
-| -------  |
+| Name  | Photo  |
+| -------  |-------  |
 | 1. Attach `J4_A` to the `J3` motor using 6 `M3x6` bolts. Make sure the two Power+CAN ports face the front and rear for easy wiring. | 
 | <img src="j3-j4/step1.png" alt="step1" width="30%" /> | 
 
