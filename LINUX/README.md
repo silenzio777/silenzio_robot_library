@@ -304,6 +304,36 @@ dpkg -l | grep "libre*"
 
 ___________
 
+### apt search
+Search for the Correct Package Name:
+
+```
+apt search libxdo
+```
+
+```
+Sorting... Done
+Full Text Search... Done
+libxdo-dev/jammy 1:3.20160805.1-4 arm64
+  library for simulating X11 keyboard/mouse input
+
+libxdo3/jammy 1:3.20160805.1-4 arm64
+  library for simulating (generating) X11 keyboard/mouse input events
+
+libxdot4/jammy-updates 2.42.2-6ubuntu0.1 arm64
+  rich set of graph drawing tools - xdot library
+
+python3-xdo/jammy 0.5-1 all
+  Python 3 library for simulating X11 keyboard/mouse input (libxdo bindings)
+```
+### Then install Package:
+
+```
+sudo apt install libxdo3
+```
+
+___________
+
 ### apt-cache search
 Apt search:
 
