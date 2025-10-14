@@ -72,7 +72,7 @@ cp ~/lib/spacenav ~/ros2_ws/src
 ```
 
 ```
-cd ~/ros2_ws$
+cd ~/ros2_ws
 colcon build --packages-select spacenav
 ```
 
