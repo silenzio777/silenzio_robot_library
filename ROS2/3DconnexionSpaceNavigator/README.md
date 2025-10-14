@@ -6,6 +6,7 @@ $ cd ~/lib/
 silenzio@ubuntuPC:~/lib$ git clone https://github.com/ros-drivers/joystick_drivers.git
 ```
 
+```
 Cloning into 'joystick_drivers'...
 remote: Enumerating objects: 3365, done.
 remote: Counting objects: 100% (394/394), done.
@@ -78,3 +79,4 @@ Setting up spacenavd (0.7.1-1) ...
 Created symlink /etc/systemd/system/graphical.target.wants/spacenavd.service → /lib/systemd/system/spacenavd.service.
 Processing triggers for man-db (2.10.2-1) ...
 #All required rosdeps installed successfully
+```
