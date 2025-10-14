@@ -14,7 +14,11 @@ remote: Compressing objects: 100% (130/130), done.
 remote: Total 3365 (delta 327), reused 264 (delta 264), pack-reused 2971 (from 2)
 Receiving objects: 100% (3365/3365), 812.13 KiB | 3.49 MiB/s, done.
 Resolving deltas: 100% (2040/2040), done.
+```
+```
 silenzio@ubuntuPC:~/lib$ rosdep install --from-paths /home/silenzio/lib/joystick_drivers/spacenav
+```
+```
 executing command [sudo -H apt-get install libspnav-dev]
 [sudo] password for silenzio: 
 Reading package lists... Done
