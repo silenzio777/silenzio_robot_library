@@ -1,4 +1,4 @@
-### 3Dconnexion SpaceNavigator ROS2 driver install:
+## 3Dconnexion SpaceNavigator ROS2 driver install:
 
 https://github.com/ros-drivers/joystick_drivers/tree/ros2/spacenav
 
@@ -98,8 +98,8 @@ $ ros2 topic list
 
 
 ```
-# Spacenav Node #
-##### Published topics #####
+### Spacenav Node
+### Published topics
 * `spacenav/offset` (geometry_msgs/msg/Vector3)
 
    Publishes the linear component of the joystick's position. Approximately normalized to a range of -1 to 1.
@@ -113,7 +113,7 @@ $ ros2 topic list
 
    Outputs the spacenav's six degrees of freedom and its buttons as a joystick message.
 
-##### Parameters #####
+### Parameters
    sets values to zero when the spacenav is not moving
 * `zero_when_static` (boolean, default: true)
 * `static_count_threshold` (int, default: 30)
@@ -135,7 +135,7 @@ $ ros2 topic list
 * `angular_scale/z` (float, default: 1)
    sets the scale of the angular output
 
-## Running the spacenav node ##
+### Running the spacenav node
 
 Running the node is straightforward
 ```
