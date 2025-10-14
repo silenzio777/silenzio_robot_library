@@ -97,7 +97,7 @@ $ ros2 topic list
 ```
 
 
-```
+
 ### Spacenav Node
 ### Published topics
 * `spacenav/offset` (geometry_msgs/msg/Vector3)
@@ -142,4 +142,4 @@ Running the node is straightforward
 $ ros2 run spacenav spacenav_node
 ```
 The node is now publishing to the topics listed above.
-```
+
