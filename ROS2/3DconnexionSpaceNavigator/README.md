@@ -25,19 +25,7 @@ Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
 The following packages were automatically installed and are no longer required:
-  chromium-codecs-ffmpeg-extra libbenchmark-dev libbenchmark1 libgraphics-magick-perl libgraphicsmagick++-q16-12
-  libgraphicsmagick++1-dev libgraphicsmagick-q16-3 libgraphicsmagick1-dev libxtensor-dev nvidia-firmware-550-550.120
-  python3-rosdistro ros-humble-behaviortree-cpp-v3 ros-humble-bond ros-humble-bondcpp ros-humble-costmap-queue
-  ros-humble-dwb-core ros-humble-dwb-critics ros-humble-dwb-msgs ros-humble-dwb-plugins ros-humble-nav-2d-msgs
-  ros-humble-nav-2d-utils ros-humble-nav2-amcl ros-humble-nav2-behavior-tree ros-humble-nav2-behaviors
-  ros-humble-nav2-bt-navigator ros-humble-nav2-collision-monitor ros-humble-nav2-common
-  ros-humble-nav2-constrained-smoother ros-humble-nav2-controller ros-humble-nav2-core ros-humble-nav2-costmap-2d
-  ros-humble-nav2-dwb-controller ros-humble-nav2-lifecycle-manager ros-humble-nav2-mppi-controller
-  ros-humble-nav2-msgs ros-humble-nav2-navfn-planner ros-humble-nav2-planner
-  ros-humble-nav2-regulated-pure-pursuit-controller ros-humble-nav2-rotation-shim-controller
-  ros-humble-nav2-rviz-plugins ros-humble-nav2-simple-commander ros-humble-nav2-smac-planner ros-humble-nav2-smoother
-  ros-humble-nav2-theta-star-planner ros-humble-nav2-util ros-humble-nav2-velocity-smoother ros-humble-nav2-voxel-grid
-  ros-humble-nav2-waypoint-follower ros-humble-smclib xtl-dev
+...
 Use 'sudo apt autoremove' to remove them.
 The following NEW packages will be installed:
   libspnav-dev
@@ -55,18 +43,7 @@ executing command [sudo -H apt-get install spacenavd]
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
-The following packages were automatically installed and are no longer required:
-  chromium-codecs-ffmpeg-extra libbenchmark-dev libbenchmark1 libgraphics-magick-perl libgraphicsmagick++-q16-12 libgraphicsmagick++1-dev
-  libgraphicsmagick-q16-3 libgraphicsmagick1-dev libxtensor-dev nvidia-firmware-550-550.120 python3-rosdistro ros-humble-behaviortree-cpp-v3
-  ros-humble-bond ros-humble-bondcpp ros-humble-costmap-queue ros-humble-dwb-core ros-humble-dwb-critics ros-humble-dwb-msgs
-  ros-humble-dwb-plugins ros-humble-nav-2d-msgs ros-humble-nav-2d-utils ros-humble-nav2-amcl ros-humble-nav2-behavior-tree
-  ros-humble-nav2-behaviors ros-humble-nav2-bt-navigator ros-humble-nav2-collision-monitor ros-humble-nav2-common
-  ros-humble-nav2-constrained-smoother ros-humble-nav2-controller ros-humble-nav2-core ros-humble-nav2-costmap-2d
-  ros-humble-nav2-dwb-controller ros-humble-nav2-lifecycle-manager ros-humble-nav2-mppi-controller ros-humble-nav2-msgs
-  ros-humble-nav2-navfn-planner ros-humble-nav2-planner ros-humble-nav2-regulated-pure-pursuit-controller
-  ros-humble-nav2-rotation-shim-controller ros-humble-nav2-rviz-plugins ros-humble-nav2-simple-commander ros-humble-nav2-smac-planner
-  ros-humble-nav2-smoother ros-humble-nav2-theta-star-planner ros-humble-nav2-util ros-humble-nav2-velocity-smoother
-  ros-humble-nav2-voxel-grid ros-humble-nav2-waypoint-follower ros-humble-smclib xtl-dev
+...
 Use 'sudo apt autoremove' to remove them.
 The following NEW packages will be installed:
   spacenavd
@@ -83,4 +60,21 @@ Setting up spacenavd (0.7.1-1) ...
 Created symlink /etc/systemd/system/graphical.target.wants/spacenavd.service → /lib/systemd/system/spacenavd.service.
 Processing triggers for man-db (2.10.2-1) ...
 #All required rosdeps installed successfully
+```
+
+```
+cp ~/lib/spacenav ~/ros2_ws/src
+```
+
+```
+cd ~/ros2_ws$
+colcon build --packages-select spacenav
+```
+
+```
+cd ~/ros2_ws && source install/setup.bash
+```
+
+```
+ros2 run spacenav spacenav_node
 ```
