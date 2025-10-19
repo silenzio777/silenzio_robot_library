@@ -57,3 +57,9 @@ ns-viewer --load-config pathTo/config.yml
 ```
 http://127.0.0.1:7007/
 ```
+________
+```
+pip3 install spectacularAI[full]
+```
+
+
