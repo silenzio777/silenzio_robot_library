@@ -32,6 +32,7 @@ sudo apt install libbluetooth-dev
 ```
 sudo apt update
 sudo apt install libcwiid-dev
+sudo ldconfig
 ```
 
 __________
