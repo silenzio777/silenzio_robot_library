@@ -6,6 +6,11 @@ git clone https://github.com/ros-drivers/joystick_drivers.git
 
 ```
 cp ~/lib/wiimote ~/ros2_ws/src
+cp ~/lib/wiimote_msgs ~/ros2_ws/src
+```
+
+```
+colcon build --packages-select wiimote_msgs
 ```
 
 ```
