@@ -19,7 +19,7 @@ cd hamer
 
 We recommend creating a virtual environment for HaMeR. You can use venv:
 ```
-python3.10 -m venv .hamer
+python3 -m venv .hamer
 source .hamer/bin/activate
 ```
 
