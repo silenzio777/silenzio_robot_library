@@ -46,11 +46,11 @@ It is possible to load a pretrained model by running
 ns-train nerfacto --data data/nerfstudio/poster --load-dir {outputs/.../nerfstudio_models}
 ```
 
-### Resume from checkpoint / visualize existing run
+### Visualize existing run
+Given a pretrained model checkpoint, you can start the viewer by running
 
-It is possible to load a pretrained model by running
 ```
-ns-train nerfacto --data data/nerfstudio/poster --load-dir {outputs/.../nerfstudio_models}
+ns-viewer --load-config {outputs/.../config.yml}
 ```
 
 ### Run nerfstudio Viser
