@@ -1,5 +1,7 @@
 https://github.com/ros-drivers/joystick_drivers/
 
+https://wiki.ros.org/wiimote
+
 https://wiibrew.org/wiki/Wiimote#SDP_information
 
 ## Nindendo wiimote plus install:
