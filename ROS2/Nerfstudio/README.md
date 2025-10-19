@@ -15,7 +15,7 @@ source .nerfstudio/bin/activate
 ```
 pip3 install torch==2.1.2+cu118 torchvision==0.16.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
 ### pip3 install -c "nvidia/label/cuda-11.8.0" cuda-toolkit
-pip3 install ninja git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+### pip3 install ninja git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 ```
 
 ### Installing nerfstudio
