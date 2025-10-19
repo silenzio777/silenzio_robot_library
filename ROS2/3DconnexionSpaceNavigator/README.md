@@ -1,3 +1,7 @@
+https://github.com/ros-drivers/joystick_drivers/
+
+https://wiibrew.org/wiki/Wiimote#SDP_information
+
 ## Nindendo wiimote plus install:
 
 ```
@@ -34,7 +38,9 @@ sudo apt install libcwiid-dev
 sudo ldconfig
 ```
 
-### works
+### build ok
+
+
 
 __________
 
