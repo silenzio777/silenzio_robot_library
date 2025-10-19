@@ -25,7 +25,9 @@ sudo apt update
 sudo apt install libbluetooth-dev
 ```
 
+### error:
 - "cwiid library not found"
+
 
 __________
 
