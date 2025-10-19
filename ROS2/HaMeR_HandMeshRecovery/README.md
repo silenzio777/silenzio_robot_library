@@ -43,9 +43,20 @@ source .hamer/bin/activate
 ```
 
 Then, you can install the rest of the dependencies. This is for CUDA 11.7, but you can adapt accordingly:
+
 ```
 pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu117
 ```
+
+### Fix in '/home/silenzio/lib/hamer/setup.py' file, conmment two lines:
+```
+        'smplx==0.1.28',
+        #'torch',
+        #'torchvision',
+        'yacs',
+```
+And then%
+
 ```
 pip3 install -e .[all]
 ```
