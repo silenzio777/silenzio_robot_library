@@ -39,7 +39,6 @@ ns-train nerfacto --data data/nerfstudio/poster
 ```
 
 ### works
-
-
-
-
+```
+http://127.0.0.1:7007/
+```
