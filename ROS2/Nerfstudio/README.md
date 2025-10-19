@@ -25,6 +25,20 @@ Easy option:
 pip3 install nerfstudio
 ```
 
+### Training your first model!
+
+The following will train a nerfacto model, our recommended model for real world scenes.
+
+# Download some test data:
+```
+ns-download-data nerfstudio --capture-name=poster
+```
+# Train model
+```
+ns-train nerfacto --data data/nerfstudio/poster
+```
+
+### works
 
 
 
