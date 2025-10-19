@@ -62,4 +62,12 @@ ________
 pip3 install spectacularAI[full]
 ```
 
+```
+ai-cli process /home/silenzio/_dataset/recording_2025-10-19_23-13-30  --preview3d --key_frame_distance=0.05 /home/silenzio/_dataset/output
+```
+```
+Selected device type: ios-tof
+{'maxMapSize': 0, 'useSlam': True, 'passthroughColorImages': True, 'keyframeDecisionDistanceThreshold': 0.05, 'icpVoxelSize': 0.05, 'maxKeypoints': 1000, 'optimizerMaxIterations': 30, 'parameterSets': ['wrapper-base', 'offline-base', 'ios-tof']}
+Segmentation fault (core dumped)
 
+```
