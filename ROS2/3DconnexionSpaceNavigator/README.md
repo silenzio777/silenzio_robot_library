@@ -1,3 +1,30 @@
+## Nindendo wiimote plus install:
+
+```
+git clone https://github.com/ros-drivers/joystick_drivers.git
+```
+
+```
+cp ~/lib/wiimote ~/ros2_ws/src
+```
+
+```
+colcon build --packages-select wiimote
+```
+### error:
+- "bluetooth library not found"
+
+### Install Bluetooth development libraries:
+```
+sudo apt update
+sudo apt install libbluetooth-dev
+```
+
+- "cwiid library not found"
+
+__________
+
+
 ## 3Dconnexion SpaceNavigator ROS2 driver install:
 
 https://github.com/ros-drivers/joystick_drivers/tree/ros2/spacenav
@@ -8,7 +35,7 @@ $ cd ~/lib/
 ```
 
 ```
-silenzio@ubuntuPC:~/lib$ git clone https://github.com/ros-drivers/joystick_drivers.git
+git clone https://github.com/ros-drivers/joystick_drivers.git
 ```
 
 ```
