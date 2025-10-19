@@ -34,11 +34,12 @@ _Fix in '/home/silenzio/lib/hamer/setup.py' file, conmment two lines:_
         #'torchvision',
         'yacs',
 ```
-And then%
+And then:
 
 ```
 pip3 install -e .[all]
 ```
+
 ```
 pip3 install -v -e third-party/ViTPose
 ```
