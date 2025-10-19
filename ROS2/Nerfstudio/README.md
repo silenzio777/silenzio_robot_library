@@ -50,7 +50,7 @@ ns-train nerfacto --data data/nerfstudio/poster --load-dir {outputs/.../nerfstud
 Given a pretrained model checkpoint, you can start the viewer by running
 
 ```
-ns-viewer --load-config {outputs/.../config.yml}
+ns-viewer --load-config pathTo/config.yml
 ```
 
 ### Run nerfstudio Viser
