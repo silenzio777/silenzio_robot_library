@@ -38,18 +38,20 @@ ns-download-data nerfstudio --capture-name=poster
 ns-train nerfacto --data data/nerfstudio/poster
 ```
 
-Resume from checkpoint / visualize existing run
+### Resume from checkpoint / visualize existing run
 
 It is possible to load a pretrained model by running
 
+```
 ns-train nerfacto --data data/nerfstudio/poster --load-dir {outputs/.../nerfstudio_models}
+```
 
-
-Resume from checkpoint / visualize existing run
+### Resume from checkpoint / visualize existing run
 
 It is possible to load a pretrained model by running
-
+```
 ns-train nerfacto --data data/nerfstudio/poster --load-dir {outputs/.../nerfstudio_models}
+```
 
 ### Run nerfstudio Viser
 ```
