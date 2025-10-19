@@ -30,3 +30,26 @@ pip3 install -e .[all]
 ```
 pip3 install -v -e third-party/ViTPose
 ```
+
+You also need to download the trained models:
+```
+bash fetch_demo_data.sh
+```
+
+Besides these files, you also need to download the MANO model. Please visit the MANO website and register to get access to the downloads section. We only require the right hand model. You need to put 
+
+- MANO_RIGHT.pkl 
+
+under the 
+```
+_DATA/data/mano folder.
+```
+
+
+### Demo
+
+```
+python demo.py \
+    --img_folder example_data --out_folder demo_out \
+    --batch_size=48 --side_view --save_mesh --full_frame
+```
