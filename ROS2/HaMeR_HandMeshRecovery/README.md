@@ -1,3 +1,23 @@
+### SYS
+$ python3
+>>> import torch
+>>> torch.__version__
+'2.5.1+cu124'
+
+
+### HAM
+(.hamer) silenzio@ubuntuPC:~/lib/hamer$ python3
+Python 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> torch.__version__
+'2.0.1+cu117'
+>>> 
+
+
+
+
+
 https://github.com/geopavlakos/hamer/tree/main
 
 ## HaMeR: Hand Mesh Recovery
