@@ -2,6 +2,8 @@ https://github.com/geopavlakos/hamer/tree/main
 
 ## HaMeR: Hand Mesh Recovery
 
+https://github.com/geopavlakos/hamer/blob/main/assets/teaser.jpg
+
 Code repository for the paper: Reconstructing Hands in 3D with Transformers
 
 ### Installation
