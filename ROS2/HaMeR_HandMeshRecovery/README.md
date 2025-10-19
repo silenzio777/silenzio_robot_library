@@ -56,10 +56,11 @@ Besides these files, you also need to download the MANO model. Please visit the 
 - MANO_RIGHT.pkl 
 
 under the 
-```
-_DATA/data/mano folder.
-```
 
+```
+_DATA/data/mano 
+```
+folder.
 
 ### Demo
 
