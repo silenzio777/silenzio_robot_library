@@ -139,11 +139,20 @@ sudo apt-get install build-essential libopenexr-dev libxi-dev \
 ```
 cd ~/lib/
 git clone --recursive https://github.com/nvlabs/instant-ngp
-cd instant-ngp
 ```
+
 ### try build:
-instant-ngp$ cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
 
+```
+cd instant-ngp
+cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+```
+```
+...
+-- Build files have been written to: /home/silenzio/lib/instant-ngp/build
+```
 
-
+```
+cmake --build build --config RelWithDebInfo -j
+```
 
