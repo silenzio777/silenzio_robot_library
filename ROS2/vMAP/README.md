@@ -160,3 +160,22 @@ cmake --build build --config RelWithDebInfo -j
 [100%] Linking CXX shared library pyngp.cpython-310-x86_64-linux-gnu.so
 [100%] Built target pyngp
 ```
+
+### run:
+
+```
+cd build
+./instant-ngp
+```
+```
+19:06:09 SUCCESS  Initialized CUDA 12.8. Active GPU is #0: NVIDIA GeForce RTX 4080 [89]
+19:06:09 WARNING  Vulkan instance validation layer is not available. Vulkan errors will be difficult to diagnose.
+19:06:09 SUCCESS  Initialized Vulkan and NGX on GPU #0: NVIDIA GeForce RTX 4080
+19:06:09 SUCCESS  Initialized OpenGL version 4.6.0 NVIDIA 580.65.06
+```
+
+
+
+
+
+
