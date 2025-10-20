@@ -1317,8 +1317,22 @@ The system will power off auto in 40 second
 You need to put key <Arrow right> and hit <Enter>
 to shutdown now.
 ```
+___
 
+### tipical build from source:
 
+1. Configuration
+```
+cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+```
+3. Build
+```
+cmake --build build --config RelWithDebInfo -j
+```
+4. Run
+```
+./build/your_programm
+```
 
 ___
 ### reboot
