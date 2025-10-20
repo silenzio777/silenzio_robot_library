@@ -124,5 +124,26 @@ iMAP
 python3 ./train.py --config ./configs/Replica/config_replica_room0_iMAP.json --logdir ./logs/iMAP/room0 --save_ckpt True
 ```
 
+____________
+## Instant Neural Graphics Primitives 
+https://github.com/NVlabs/instant-ngp
+
+Instant neural graphics primitives: lightning fast NeRF and more 
+
+### Install dep:
+```
+sudo apt-get install build-essential libopenexr-dev libxi-dev \
+    libglfw3-dev libglew-dev libomp-dev libxinerama-dev libxcursor-dev
+```
+### get source code:
+```
+cd ~/lib/
+git clone --recursive https://github.com/nvlabs/instant-ngp
+cd instant-ngp
+```
+### try build:
+instant-ngp$ cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo
+
+
 
 
