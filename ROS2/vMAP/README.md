@@ -155,4 +155,8 @@ cmake . -B build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_POLICY_VERSION_MINIMU
 ```
 cmake --build build --config RelWithDebInfo -j
 ```
-
+```
+...
+[100%] Linking CXX shared library pyngp.cpython-310-x86_64-linux-gnu.so
+[100%] Built target pyngp
+```
