@@ -178,7 +178,10 @@ cd build
 19:06:09 SUCCESS  Initialized OpenGL version 4.6.0 NVIDIA 580.65.06
 ```
 
-
+```
+cd build
+python3 run.py --gui True files /home/silenzio/lib/instant-ngp/data/nerf/fox
+```
 
 
 
