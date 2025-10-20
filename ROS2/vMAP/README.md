@@ -72,5 +72,5 @@ shapely
 ```
 python3 -m venv .vMAP
 source .vMAP/bin/activate
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu113
 ```
