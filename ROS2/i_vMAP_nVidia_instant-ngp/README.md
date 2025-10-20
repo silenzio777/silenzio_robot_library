@@ -183,6 +183,29 @@ cd build
 python3 run.py --gui True files /home/silenzio/lib/instant-ngp/data/nerf/fox
 ```
 
+### capture object on iPhone with Record3D and convert:
+
+With an >=iPhone 12 Pro, one can use Record3D to collect data and avoid COLMAP. Record3D is an iOS app that relies on ARKit to estimate each image's camera pose. It is more robust than COLMAP for scenes that lack textures or contain repetitive patterns. To train instant-ngp with Record3D data, follow these steps:
+
+- Record a video and export with the "Shareable/Internal format (.r3d)".
+
+- Send the exported data to your computer.
+
+- Replace the .r3d extension with .zip and unzip the file to get a directory path/to/data.
+
+Run the preprocessing script:
+```
+instant-ngp$ python scripts/record3d2nerf.py --scene path/to/data
+```
+If you capture the scene in the landscape orientation, add --rotate.
+
+Launch instant-ngp training:
+
+```
+instant-ngp$ ./instant-ngp path/to/data
+```
+
+
 
 
 
