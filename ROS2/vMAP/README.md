@@ -63,6 +63,10 @@ timm==0.6.12
 werkzeug==2.2.2
 yacs==0.1.8
 zipp==3.11.0
+trimesh
+opencv-python
+imgviz
+shapely
 ```
 
 ```
