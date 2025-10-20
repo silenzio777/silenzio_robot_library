@@ -75,6 +75,10 @@ source .vMAP/bin/activate
 pip3 install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu113
 ```
 
+pip3 install torch torchvision torchaudio --upgrade --index-url https://download.pytorch.org/whl/cu118
+
+pip3 install torch torchvision torchaudio --upgrade --index-url https://download.pytorch.org/whl/cu200
+
 
 ### Datasets:
 
