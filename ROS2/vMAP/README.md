@@ -9,6 +9,9 @@ https://github.com/Ifan24/vMAP
 cd ~/lib/
 git clone https://github.com/SrinjaySarkar/imap-Implicit-Mapping-and-Positioning-in-Real-Time.git
 ```
+```
+pip3 install torch torchvision torchaudio --upgrade --index-url https://download.pytorch.org/whl/cu118
+```
 
 use this requirements.txt file:
 ```
@@ -28,9 +31,9 @@ six==1.16.0
 typing_extensions==4.3.0
 urllib3==1.26.12
 
-torch==1.12.1+cu113
-torchvision==0.13.1+cu113
-torchaudio==0.12.1+cu113
+## torch==1.12.1+cu113
+## torchvision==0.13.1+cu113
+## torchaudio==0.12.1+cu113
 
 antlr4-python3-runtime==4.9.3
 bidict==0.22.0
@@ -74,10 +77,6 @@ python3 -m venv .vMAP
 source .vMAP/bin/activate
 pip3 install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu113
 ```
-
-pip3 install torch torchvision torchaudio --upgrade --index-url https://download.pytorch.org/whl/cu118
-
-pip3 install torch torchvision torchaudio --upgrade --index-url https://download.pytorch.org/whl/cu200
 
 
 ### Datasets:
