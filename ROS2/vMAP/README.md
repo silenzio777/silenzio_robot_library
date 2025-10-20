@@ -160,10 +160,10 @@ cmake --build build --config RelWithDebInfo -j
 [100%] Linking CXX shared library pyngp.cpython-310-x86_64-linux-gnu.so
 [100%] Built target pyngp
 ```
-```
-pip3 install -r requirements.txt
-```
 
+```
+pip3 install commentjson imageio pybind11 pyquaternion scipy tqdm
+```
 
 ### run:
 
