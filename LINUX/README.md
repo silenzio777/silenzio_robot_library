@@ -1319,7 +1319,7 @@ to shutdown now.
 ```
 ___
 
-### tipical build from source:
+### Typical build from source:
 
 1. Configuration
 ```
