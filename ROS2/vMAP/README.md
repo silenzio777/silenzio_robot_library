@@ -110,6 +110,7 @@ Then update the config files in configs/.json with your dataset paths, as well a
 ### Running vMAP / iMAP:
 
 The following commands will run vMAP / iMAP in a single-thread setting.
+
 vMAP
 ```
 python3 ./train.py --config ./configs/Replica/config_replica_room0_vMAP.json --logdir ./logs/vMAP/room0 --save_ckpt True
