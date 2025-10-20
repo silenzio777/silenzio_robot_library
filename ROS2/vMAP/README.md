@@ -74,3 +74,51 @@ python3 -m venv .vMAP
 source .vMAP/bin/activate
 pip3 install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu113
 ```
+
+
+### Datasets:
+
+Please download the following datasets to reproduce our results.
+
+Replica Demo - Replica Room 0 only for faster experimentation. 
+https://huggingface.co/datasets/kxic/vMAP/resolve/main/demo_replica_room_0.zip
+    
+Replica - All Pre-generated Replica sequences. For Replica data generation, please refer to directory data_generation.
+https://huggingface.co/datasets/kxic/vMAP/resolve/main/vmap.zip
+
+ScanNet - Official ScanNet sequences. 
+https://github.com/ScanNet/ScanNet
+
+Each dataset contains a sequence of RGB-D images, as well as their corresponding camera poses, and object instance labels. 
+To extract data from ScanNet .sens files, run:
+
+```
+conda activate py2
+python2 reader.py --filename ~/data/ScanNet/scannet/scans/scene0024_00/scene0024_00.sens --output_path ~/data/ScanNet/objnerf/ --export_depth_images --export_color_images --export_poses --export_intrinsics
+```
+
+
+### Config:
+
+Then update the config files in configs/.json with your dataset paths, as well as other training hyper-parameters.
+```
+"dataset": {
+        "path": "/home/silenzio/_dataset/RGBD/room_0",
+    }
+```
+
+### Running vMAP / iMAP:
+
+The following commands will run vMAP / iMAP in a single-thread setting.
+vMAP
+```
+python3 ./train.py --config ./configs/Replica/config_replica_room0_vMAP.json --logdir ./logs/vMAP/room0 --save_ckpt True
+```
+
+iMAP
+```
+python3 ./train.py --config ./configs/Replica/config_replica_room0_iMAP.json --logdir ./logs/iMAP/room0 --save_ckpt True
+```
+
+
+
