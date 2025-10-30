@@ -57,18 +57,20 @@ To remove the Unity Hub from the system, run the following command:
 ```
 sudo apt-get remove unityhub
 ```
+
+### run:
+```
+unityhub
+```
 _______
-
-
-
 
 3. Open the project from the github repository, or from a local folder if cloned already. It should prompt you with the requisite Unity Editor version you'll need to open the project. Install this version.
 https://github.com/PickNikRobotics/meta_quest_teleoperation
 
-The app needs the Android SDK to be built. In File -> Build Profiles enable “Android”. This may require downloading the Android SDK if you haven’t already.
-In Edit->Project Settings, go to the “XR Plugin Management” section and disable “OpenXR”, enable “Oculus”.
-Under XR Plugin Management->Oculus, make sure your device is checked in “Target Devices”. If you have a Quest 1, make sure to disable “Quest 3”, otherwise, support for the Quest 1 won’t be enabled 🤷
-In the main menu, Robotics->ROS Settings, set the IP address of the computer where you will be running all the ROS2 nodes, e.g., where MoveIt Pro runs.
-Connect the Meta Quest to your computer via a USB cable. You should see a message in your headset asking to confirm the debug connection to the computer and data sharing.
-Under File->Build Profiles->Android->Run Device, you should see your Meta Quest device listed. Select it.
-Click Build and Run, which should build the application, push it to the device, and run it.
+4. The app needs the Android SDK to be built. In File -> Build Profiles enable “Android”. This may require downloading the Android SDK if you haven’t already.
+5. In Edit->Project Settings, go to the “XR Plugin Management” section and disable “OpenXR”, enable “Oculus”.
+6. Under XR Plugin Management->Oculus, make sure your device is checked in “Target Devices”. If you have a Quest 1, make sure to disable “Quest 3”, otherwise, support for the Quest 1 won’t be enabled 🤷
+7. In the main menu, Robotics->ROS Settings, set the IP address of the computer where you will be running all the ROS2 nodes, e.g., where MoveIt Pro runs.
+8. Connect the Meta Quest to your computer via a USB cable. You should see a message in your headset asking to confirm the debug connection to the computer and data sharing.
+9. Under File->Build Profiles->Android->Run Device, you should see your Meta Quest device listed. Select it.
+10. Click Build and Run, which should build the application, push it to the device, and run it.
