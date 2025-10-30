@@ -20,11 +20,11 @@ If you need to build the Meta Quest app from source, follow these steps.
 
 The app has been developed using Unity, and therefore, you will need to install Unity to build it.
 
-1. Clone the app repository somewhere in your local system.
-  https://github.com/PickNikRobotics/meta_quest_teleoperation
+1. Clone the [app repository](https://github.com/PickNikRobotics/meta_quest_teleoperation) somewhere in your local system.
+  
 
-2. Install Unity Hub following these instructions. Start the hub and log in, but do not install the Unity editor yet.
-  https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux
+2. Install Unity Hub following [these instructions](https://docs.unity3d.com/hub/manual/InstallHub.html#install-hub-linux). Start the hub and log in, but do not install the Unity editor yet.
+  
 _______
 
 ### Install the Unity Hub on Linux
