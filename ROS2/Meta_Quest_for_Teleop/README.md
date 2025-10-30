@@ -64,8 +64,8 @@ unityhub
 ```
 _______
 
-3. Open the project from the github repository, or from a local folder if cloned already. It should prompt you with the requisite Unity Editor version you'll need to open the project. Install this version.
-https://github.com/PickNikRobotics/meta_quest_teleoperation
+3. Open the project from the [github repository](https://github.com/PickNikRobotics/meta_quest_teleoperation), or from a local folder if cloned already. It should prompt you with the requisite Unity Editor version you'll need to open the project. Install this version.
+
 
 4. The app needs the Android SDK to be built. In File -> Build Profiles enable “Android”. This may require downloading the Android SDK if you haven’t already.
 5. In Edit->Project Settings, go to the “XR Plugin Management” section and disable “OpenXR”, enable “Oculus”.
@@ -89,19 +89,22 @@ When you run the app, you should see a blue sky, a grid, and the two remote cont
 
 ### Connect to ROS
 - note
-- This app collects the state of the Meta Quest controllers and publishes it to ROS via the Unity ROS TCP Connector.
-https://github.com/Unity-Technologies/ROS-TCP-Endpoint
+- This app collects the state of the Meta Quest controllers and publishes it to ROS via the [Unity ROS TCP Connector](https://github.com/Unity-Technologies/ROS-TCP-Endpoint).
 
 To be able to see the topics and data published by the Meta Quest app, you will need a dedicated ROS2 node running on the host computer. This node will be the host endpoint for the connection to the Meta Quest.
 
-Clone Unity’s ROS-TCP-Endpoint repo (main-ros2 branch) in your workspace and build it with the rest of your ROS2 packages.
+1. Clone Unity’s [ROS-TCP-Endpoint](https://github.com/Unity-Technologies/ROS-TCP-Endpoint) repo (main-ros2 branch) in your workspace and build it with the rest of your ROS2 packages.
 
-If you are running a firewall, you will have to allow the port used by the Meta Quest. For example, with UFW, you can run:
+2. If you are running a firewall, you will have to allow the port used by the Meta Quest. For example, with UFW, you can run:
 
+```
 sudo ufw allow 10000
+```
 
 Start the endpoint with the following command, using the IP of the host computer, where you are running the ROS ecosystem, e.g:
 
+```
 ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=192.168.86.25
+```
 
 You should now be able to see the topics published by the headset, including TF.
