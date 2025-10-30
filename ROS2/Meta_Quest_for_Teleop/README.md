@@ -69,6 +69,20 @@ _______
 
 
 4. The app needs the Android SDK to be built. In File -> Build Profiles enable “Android”. This may require downloading the Android SDK if you haven’t already.
+
++++++++++++++
+## NOT WORK 
+
+```
+No Android module loaded.
+Note: Editor will need to be restarted to load any newly installed modules
+Install with Unity Hub
+```
+although modules exist and have correct path...
+
+## NOT WORK 
++++++++++++++
+
 5. In Edit->Project Settings, go to the “XR Plugin Management” section and disable “OpenXR”, enable “Oculus”.
 6. Under XR Plugin Management->Oculus, make sure your device is checked in “Target Devices”. If you have a Quest 1, make sure to disable “Quest 3”, otherwise, support for the Quest 1 won’t be enabled 🤷
 7. In the main menu, Robotics->ROS Settings, set the IP address of the computer where you will be running all the ROS2 nodes, e.g., where MoveIt Pro runs.
