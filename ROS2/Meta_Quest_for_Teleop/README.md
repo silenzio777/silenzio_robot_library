@@ -4,6 +4,7 @@ https://docs.picknik.ai/hardware_guides/setting_up_the_meta_quest_for_teleop/
 
 The Meta Quest is a great tool for ML model data collection. It requires a little Unity app running on the Quest device. We will walk you through how to set this up in the following.
 
+<img width="800" alt="meta-quest" src="https://github.com/user-attachments/assets/979b345c-be76-49cb-b714-11630b1b8686" />
 
 ### Enable Developer Mode
 
