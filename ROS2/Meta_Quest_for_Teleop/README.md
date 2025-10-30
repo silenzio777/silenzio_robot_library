@@ -49,12 +49,14 @@ sudo apt-get install unityhub
 ```
 **Note: For some systems, you may need to ensure the following:
 
-The directory /usr/share/keyrings exists.
-The user or group installing the Hub has write permissions to the /usr/share/keyrings directory.
-The user or group installing Hub has at least read permissions to the resulting file Unity_Technologies_ApS.gpg.**
+- The directory /usr/share/keyrings exists.
+- The user or group installing the Hub has write permissions to the /usr/share/keyrings directory.
+- The user or group installing Hub has at least read permissions to the resulting file Unity_Technologies_ApS.gpg.**
 To remove the Unity Hub from the system, run the following command:
 
-$ sudo apt-get remove unityhub
+```
+sudo apt-get remove unityhub
+```
 _______
 
 
