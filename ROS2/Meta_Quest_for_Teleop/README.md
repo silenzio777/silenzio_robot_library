@@ -88,8 +88,8 @@ When you run the app, you should see a blue sky, a grid, and the two remote cont
 
 
 ### Connect to ROS
-- note
-- This app collects the state of the Meta Quest controllers and publishes it to ROS via the [Unity ROS TCP Connector](https://github.com/Unity-Technologies/ROS-TCP-Endpoint).
+> [!NOTE]
+> This app collects the state of the Meta Quest controllers and publishes it to ROS via the [Unity ROS TCP Connector](https://github.com/Unity-Technologies/ROS-TCP-Endpoint).
 
 To be able to see the topics and data published by the Meta Quest app, you will need a dedicated ROS2 node running on the host computer. This node will be the host endpoint for the connection to the Meta Quest.
 
@@ -108,3 +108,154 @@ ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=192.168.
 ```
 
 You should now be able to see the topics published by the headset, including TF.
+
+### Get familiarized with the controller
+> [!TIP]
+> Understand how the controller pose is reported The controller pose is reported as an Odometry message in the /right_controller_odom topic. Its contents can be received in MoveIt Pro using the GetOdom Behavior.
+
+The robot's initial controller pose is set near the VR world origin, adjusted for your height. In RViz, with TF enabled, you can visualize the target position relative to the world frame.
+
+To manipulate this target position using the controller:
+
+1. Press the clutch button, which effectively "grabs" the moving target.
+2. Release the clutch to "drop" the target at its current location.
+
+
+
+### Use the Meta Quest for Teleoperation
+After all the previous steps, you can now use the Meta Quest to teleoperate your robot.
+
+Create an Objective that uses the SubTree Track Moving Frame either from the core objectives or below to track the controller pose in Cartesian space.
+
+> [!WARNING]
+> If you are using a version prior to 8.7.0, the Track Moving Frame SubTree will not appear in the core objectives.
+
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<root BTCPP_format="4" main_tree_to_execute="Track Moving Frame">
+  <!--//////////-->
+  <BehaviorTree
+    ID="Track Moving Frame"
+    _description="Moves a given end-effector link to track a moving frame, e.g. to control the robot arm with a teleoperation device."
+    _favorite="false"
+  >
+    <Control ID="Sequence" name="TopLevelSequence">
+      <Action
+        ID="CreateStampedWrench"
+        reference_frame="world"
+        stamped_wrench="{stamped_wrench}"
+      />
+      <Action
+        ID="SwitchController"
+        activate_asap="true"
+        automatic_deactivation="true"
+        controller_list_action_name="/controller_manager/list_controllers"
+        controller_switch_action_name="/controller_manager/switch_controller"
+        strictness="1"
+        timeout="1000.0"
+        activate_controllers="{velocity_force_controller_name}"
+      />
+      <Action
+        ID="CreateStampedPose"
+        reference_frame="{default_ik_frame}"
+        stamped_pose="{target_pose_offset}"
+      />
+      <Control ID="Parallel" success_count="3" failure_count="1">
+        <Decorator ID="KeepRunningUntilFailure">
+          <Control ID="Sequence">
+            <Action
+              ID="GetOdom"
+              odometry_pose="{odometry_pose}"
+              subscribed_odometry="{target_motion_state}"
+              odometry_topic_name="{odometry_topic_name}"
+            />
+            <Action
+              ID="VisualizePose"
+              marker_lifetime="0.000000"
+              marker_name="pose"
+              marker_size="0.100000"
+              pose="{odometry_pose}"
+            />
+          </Control>
+        </Decorator>
+        <Decorator ID="Delay" delay_msec="100">
+          <Decorator ID="KeepRunningUntilFailure">
+            <Control ID="Sequence">
+              <Action
+                ID="ComputeVelocityToAlignWithTarget"
+                end_effector_frame="{default_ik_frame}"
+                output_control_velocity="{control_velocity}"
+                output_pose_error="{pose_error}"
+                proportional_gain_linear="{proportional_gain_linear}"
+                target_motion_state="{target_motion_state}"
+                target_pose_offset="{target_pose_offset}"
+                proportional_gain_angular="{proportional_gain_angular}"
+              />
+            </Control>
+          </Decorator>
+        </Decorator>
+        <Decorator ID="Delay" delay_msec="100">
+          <Decorator ID="KeepRunningUntilFailure">
+            <Action
+              ID="PublishVelocityForceCommand"
+              force_controlled_axes="0;0;0;0;0;0"
+              publish_rate="10"
+              twist_stamped="{control_velocity}"
+              velocity_controlled_axes="1;1;1;1;1;1"
+              velocity_force_controller_command_topic="{velocity_force_controller_command_topic}"
+              wrench_gain="0.0"
+              wrench_stamped="{stamped_wrench}"
+            />
+          </Decorator>
+        </Decorator>
+      </Control>
+    </Control>
+  </BehaviorTree>
+  <TreeNodesModel>
+    <SubTree ID="Track Moving Frame">
+      <MetadataFields>
+        <Metadata subcategory="Motion - Execute" />
+        <Metadata runnable="false" />
+      </MetadataFields>
+      <input_port
+        name="default_ik_frame"
+        default="grasp_link"
+        description="The frame to use for the inverse kinematics calculations."
+      />
+      <input_port
+        name="odometry_topic_name"
+        default="{target_odometry_topic}"
+        description="The topic where the target odometry is being published."
+      />
+      <input_port
+        name="proportional_gain_angular"
+        default="2.0"
+        description="The proportional gain for angular velocity control."
+      />
+      <input_port
+        name="proportional_gain_linear"
+        default="2.0"
+        description="The proportional gain for linear velocity control."
+      />
+      <input_port
+        name="velocity_force_controller_command_topic"
+        default="/velocity_force_controller/command"
+        description="The topic to publish velocity force commands."
+      />
+      <input_port
+        name="velocity_force_controller_name"
+        default="velocity_force_controller"
+        description="The name of the velocity force controller."
+      />
+    </SubTree>
+  </TreeNodesModel>
+</root>
+```
+
+You will need to set the odometry_topic_name input port to the topic where the controller odometry is being published, e.g., /right_controller_odom. This Objective will subscribe to the controller's odometry and move the robot end-effector in Cartesian space towards the pose defined by the Meta Quest controller.
+
+> [!WARNING]
+> Before initiating teleoperation in MoveIt Pro, it's crucial to manually position the target pose close to the robot's end-effector. This is because the Objective will immediately activate a control loop, guiding the robot's end-effector towards the controller target pose, so a close initial proximity is desired.
+
+### Summary
+You should now have the Quest ready to talk to MoveIt Pro. Next, checkout our training data collection tutorial.
