@@ -392,7 +392,7 @@ python ppo.py \
 	--total_timesteps=12_000_000 \
 	--eval_freq=10 \
 	--num-steps=20 \
-	--num_eval_envs 8 \
+	--num_eval_envs 8 
 ```
 ```
 2025-08-30 21:38:53,399 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
