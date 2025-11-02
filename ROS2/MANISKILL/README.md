@@ -385,14 +385,14 @@ https://github.com/user-attachments/assets/a3880601-b988-4902-9f1f-c9eafdd0a9c3
 
 
 ```
-python ppo.py
-	--env_id="PickCube-v1"
-	--exp-name="PickCube-v1"
-	--num_envs=4096
-	--total_timesteps=12_000_000
-	--eval_freq=10
-	--num-steps=20
-	--num_eval_envs 8
+python ppo.py \
+	--env_id="PickCube-v1" \
+	--exp-name="PickCube-v1" \
+	--num_envs=4096 \
+	--total_timesteps=12_000_000 \
+	--eval_freq=10 \
+	--num-steps=20 \
+	--num_eval_envs 8 \
 ```
 ```
 2025-08-30 21:38:53,399 - mani_skill  - WARNING - Agent openarm is already registered. Skip registration.
