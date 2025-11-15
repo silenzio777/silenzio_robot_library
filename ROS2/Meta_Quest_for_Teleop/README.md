@@ -101,6 +101,33 @@ although modules exist and have correct path...
 10. Click Build and Run, which should build the application, push it to the device, and run it.
 
 
+__
+
+Introduction
+This repository contains two Unity packages: the ROS TCP Connector, for sending/receiving messages from ROS, and the Visualizations Package, for adding visualizations of incoming and outgoing messages in the Unity scene.
+
+Installation
+1. Using Unity 2020.2 or later, open the Package Manager from Window -> Package Manager.
+
+2. In the Package Manager window, find and click the + button in the upper lefthand corner of the window. Select
+
+<img width="263" height="115" alt="image" src="https://github.com/user-attachments/assets/04f922f7-374c-450e-9453-412a88641585" />
+
+3. Enter the git URL for the desired package. Note: you can append a version tag to the end of the git url, like #v0.4.0 or #v0.5.0, to declare a specific package version, or exclude the tag to get the latest from the package's main branch.
+
+4. For the ROS-TCP-Connector, enter:
+```
+https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.ros-tcp-connector
+```
+For Visualizations, enter:
+```
+https://github.com/Unity-Technologies/ROS-TCP-Connector.git?path=/com.unity.robotics.visualizations.
+```
+Click Add.
+
+
+__
+
 ### Run the Meta Quest APK
 To run the Meta Quest app after it has already been installed:
 
