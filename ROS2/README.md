@@ -720,7 +720,7 @@ ___
 using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 // Используйте сгенерированное пространство имен
-using RosMessageTypes.MyRobotInterfaces;
+using RosMessageTypes.MsgInterfaces;
 
 public class HandMessagePublisher : MonoBehaviour
 {
