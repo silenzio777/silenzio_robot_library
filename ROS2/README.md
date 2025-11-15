@@ -634,3 +634,63 @@ Screenshot showing the PieChartDisplay, a circular gauge
 The PieChartDisplay is a rather boring pie chart, as it only displays a single value. PieChartDisplay and "Circular Gauge" are used synonymously in this package. The gauge allows displaying a - [std_msgs/Float32]( https://github.com/ros2/common_interfaces/blob/rolling/std_msgs/msg/Float32.msg)
 
 Formatting and positioning, as well as setting the maximum value is only possible in the display options inside rviz.
+______
+
+
+📝 Создание кастомного сообщения в ROS2
+Сначала вам нужно создать пакет для ваших пользовательских интерфейсов в вашей рабочей среде ROS2 (workspace). Это стандартная практика, которая помогает избежать путаницы с зависимостями.
+
+Создайте пакет interfaces. Убедитесь, что вы находитесь в папке src вашего workspace (ros2_ws/src), и выполните команду:
+```
+ros2 pkg create --build-type ament_cmake my_robot_interfaces
+```
+
+Создайте структуру папок. Перейдите в созданный пакет и удалите ненужные папки, создав вместо них msg и srv:
+```
+cd my_robot_interfaces
+rm -rf include src
+mkdir msg srv
+```
+
+Определите ваше сообщение. В папке msg создайте файл с именем HandMessage.msg и опишите в нем структуру данных, точно как вы указали в своем примере:
+
+```
+float32[3] wrist_pos
+float32[4] wrist_quat
+bool[5] button_state
+```
+Настройте файлы сборки. Отредактируйте CMakeLists.txt и package.xml, чтобы сообщения правильно генерировались.
+
+В CMakeLists.txt найдите и дополните следующие строки:
+```
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/HandMessage.msg"
+)
+```
+
+В package.xml добавьте:
+```
+<buildtool_depend>rosidl_default_generators</buildtool_depend>
+<exec_depend>rosidl_default_runtime</exec_depend>
+<member_of_group>rosidl_interface_packages</member_of_group>
+```
+
+Соберите пакет. Вернитесь в корень вашего workspace (ros2_ws) и выполните:
+```
+colcon build --packages-select my_robot_interfaces
+source install/setup.bash
+```
+
+После этого ваше сообщение HandMessage станет доступно в системе ROS2. Проверить это можно командой:
+```
+cd ~/ros2_ws
+ros2 interface show my_robot_interfaces/msg/HandMessage
+```
+
+### wokrs
+```
+float32[3] wrist_pos
+float32[4] wrist_quat
+bool[5] button_state
+```
