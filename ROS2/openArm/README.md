@@ -1,7 +1,10 @@
 
-[![Quest 3 VR headset for teleop](https://github.com/user-attachments/assets/6aac896d-3b5b-487c-afe1-0acc192acd78)](https://youtu.be/StTqXEQ2l-Y?v=dvdwOGvkGcE")
 
-___
+
+[https://github.com/user-attachments/assets/0a42dd82-9316-4a5f-aa9e-1be2aab0128e](https://github.com/user-attachments/assets/15b8f646-4ae0-4378-9d57-d59e3aa12946)
+
+
+__________
 
 
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/0cb4daf2-25fb-416e-b8cd-a7e5527b2baf" />
