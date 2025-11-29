@@ -1,6 +1,12 @@
 
+[![Everything Is AWESOME](https://github.com/user-attachments/assets/6aac896d-3b5b-487c-afe1-0acc192acd78)](https://youtu.be/StTqXEQ2l-Y?v=dvdwOGvkGcE")
+
+<img width="1279" height="693" alt="Screenshot 2025-11-30 at 00 08 30" src="https://github.com/user-attachments/assets/6aac896d-3b5b-487c-afe1-0acc192acd78" />
+
+
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/0cb4daf2-25fb-416e-b8cd-a7e5527b2baf" />
 
+ 
 
 https://docs.openarm.dev/software/description/
 
