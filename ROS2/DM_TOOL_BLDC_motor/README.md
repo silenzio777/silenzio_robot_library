@@ -47,6 +47,8 @@ cd /home/silenzio/lib/dm-tools-master
 chmod a+x DM-USB2FDCAN-x86_64.AppImage
 ./DM-USB2FDCAN-x86_64.AppImage
 ```
+Connection diagram.
+<img src="https://github.com/user-attachments/assets/da4c52a2-92b7-4df3-af60-0acb36b96c9f" width="640">
 
 The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
 
