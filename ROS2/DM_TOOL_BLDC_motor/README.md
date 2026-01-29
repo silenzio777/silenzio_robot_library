@@ -303,7 +303,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 _______
-### UBUNTU PC | PCAN-USB Pro FD
+## UBUNTU PC | PCAN-USB Pro FD
 
 <img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" />
 
@@ -328,7 +328,7 @@ lsusb
 Bus 001 Device 008: ID 0c72:0011 PEAK System PCAN-USB Pro FD
 ```
 
-for UBUNTUPC:
+### for UBUNTUPC:
 
 get PCAN version checker from site:
 ```
@@ -349,7 +349,7 @@ https://www.peak-system.com/fileadmin/media/linux/index.php
 https://www.peak-system.com/quick/PCAN-Linux-Driver
 ```
 
-install:
+### install:
 ```
 sudo apt update
 sudo apt install gcc-12
@@ -362,7 +362,7 @@ sudo make install
 ```
 done with 2 err...
 
-Start driver:
+### Start driver:
 
 ```
 sudo modprobe pcan
@@ -380,7 +380,7 @@ sudo modprobe pcan
 [16058.580743] pcan: major 510.
 
 ```
-
+### Check:
 ```
 ifconfig -a
 
