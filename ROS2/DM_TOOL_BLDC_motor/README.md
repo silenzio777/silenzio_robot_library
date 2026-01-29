@@ -400,7 +400,49 @@ can1: flags=128<NOARP>  mtu 16
 
 ```
 
+```
+ip link show
 
+...
+4: can0: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
+    link/can 
+5: can1: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
+    link/can 
+```
+
+### setup manually:
+
+CAN 2.0 Mode
+
+```
+sudo ip link set can0 down
+# configure CAN 2.0 with 1mbps
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
+
+```
+
+CAN FD Mode
+
+```
+sudo ip link set can0 down
+# configure CAN FD with 5mbps
+sudo ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
+sudo ip link set can0 up
+```
+
+### test:
+
+T1:
+```
+candump can0
+```
+
+T2:
+```
+cansend can0 001#FFFFFFFFFFFFFFFC
+cansend can0 001#FFFFFFFFFFFFFFFD
+```
 
 
 _______
