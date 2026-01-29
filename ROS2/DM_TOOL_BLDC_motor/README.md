@@ -2,9 +2,7 @@
 _______
 ## UBUNTU PC | PCAN-USB Pro FD
 
-<img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" />
-
-
+<!--img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" /-->
 <img width="640" alt="image" src="https://github.com/user-attachments/assets/397884a1-1e67-445e-91d9-85d6db4a029a" />
 
 
