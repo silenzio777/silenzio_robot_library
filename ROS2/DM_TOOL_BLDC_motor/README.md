@@ -310,6 +310,10 @@ _______
 
 ```
 sudo dmesg -wT
+
+```
+Then plug-in PCAN-USB Pro FD board
+```
 ...
 [Thu Jan 29 17:51:00 2026] usb 1-11: new high-speed USB device number 6 using xhci_hcd
 [Thu Jan 29 17:51:00 2026] usb 1-11: New USB device found, idVendor=0c72, idProduct=0011, bcdDevice= 0.00
