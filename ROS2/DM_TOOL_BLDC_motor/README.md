@@ -360,7 +360,7 @@ make -C driver NET=NETDEV_SUPPORT CC="gcc-12"
 sudo make install
 
 ```
-done with 2 err...
+done
 
 ### start driver:
 
