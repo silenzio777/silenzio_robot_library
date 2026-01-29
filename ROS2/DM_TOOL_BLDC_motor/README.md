@@ -1,4 +1,158 @@
 
+_______
+## UBUNTU PC | PCAN-USB Pro FD
+
+<img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" />
+
+
+```
+sudo dmesg -wT
+
+```
+Then plug-in PCAN-USB Pro FD board
+```
+...
+[Thu Jan 29 17:51:00 2026] usb 1-11: new high-speed USB device number 6 using xhci_hcd
+[Thu Jan 29 17:51:00 2026] usb 1-11: New USB device found, idVendor=0c72, idProduct=0011, bcdDevice= 0.00
+[Thu Jan 29 17:51:00 2026] usb 1-11: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[Thu Jan 29 17:51:00 2026] usb 1-11: Product: PCAN-USB Pro FD
+[Thu Jan 29 17:51:00 2026] usb 1-11: Manufacturer: PEAK-System Technik GmbH
+```
+
+```
+lsusb
+...
+Bus 001 Device 008: ID 0c72:0011 PEAK System PCAN-USB Pro FD
+```
+
+### for UBUNTUPC:
+
+get PCAN version checker from site:
+```
+https://www.peak-system.com/fileadmin/media/linux/files/pcan-kernel-version.sh.tar.gz
+
+tar -xzf pcan-kernel-version.sh.tar.gz
+./pcan-kernel-version.sh
+```
+
+```
+    Bus 001 Device 010: ID 0c72:000c PEAK System PCAN-USB needs Linux 3.4
+```
+
+get PCAN driver from site:
+
+```
+https://www.peak-system.com/fileadmin/media/linux/index.php
+https://www.peak-system.com/quick/PCAN-Linux-Driver
+```
+
+### install:
+```
+sudo apt update
+sudo apt install gcc-12
+
+tar -xzf peak-linux-driver-8.20.0.tar.gz
+cd peak-linux-driver-8.20.0
+make -C driver NET=NETDEV_SUPPORT CC="gcc-12"
+sudo make install
+
+```
+done
+
+### start driver:
+
+```
+sudo modprobe pcan
+```
+
+```
+[16058.579190] pcan: Release_20250213_n (le)
+[16058.579193] pcan: driver config [mod] [isa] [pci] [pec] [usb] [net] 
+[16058.579805] pcan 1-11:1.0: PCAN-USB Pro FD (MCU01h PCB02h) fw v3.2.0 bl v2.1.0
+[16058.580209] pcan: registered CAN-FD netdevice can0 for usbfd hw (510,32)
+[16058.580211] pcan: - usb fd device minor 32 number -2130771968 found
+[16058.580685] pcan: registered CAN-FD netdevice can1 for usbfd hw (510,33)
+[16058.580688] pcan: - usb fd device minor 33 number -2130771968 found
+[16058.580738] usbcore: registered new interface driver pcan
+[16058.580743] pcan: major 510.
+
+```
+### check:
+```
+ifconfig -a
+
+can0: flags=128<NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+can1: flags=128<NOARP>  mtu 16
+        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+```
+
+```
+ip link show
+
+...
+4: can0: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
+    link/can 
+5: can1: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
+    link/can 
+```
+
+### setup manually:
+
+CAN 2.0 Mode
+```
+sudo ip link set can0 down
+# configure CAN 2.0 with 1mbps
+sudo ip link set can0 type can bitrate 1000000
+sudo ip link set can0 up
+```
+
+CAN FD Mode can0
+```
+sudo ip link set can0 down
+# configure CAN FD with 5mbps
+sudo ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
+sudo ip link set can0 up
+```
+
+
+CAN FD Mode can1
+```
+sudo ip link set can1 down
+# configure CAN FD with 5mbps
+sudo ip link set can1 type can bitrate 1000000 dbitrate 5000000 fd on
+sudo ip link set can1 up
+```
+
+### test:
+
+T1:
+```
+candump can0
+```
+
+T2:
+```
+cansend can0 001#FFFFFFFFFFFFFFFC
+cansend can0 001#FFFFFFFFFFFFFFFD
+```
+
+
+
+
+
+_______
+
 ## Run DM-JXXX-2EC motor via PEAK System USB-CAN adapter.
 (DM-J4310-2EC, DM-J4340-2EC, DM-J4340P-2EC)
 
@@ -301,154 +455,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 </details>
 
-
-_______
-## UBUNTU PC | PCAN-USB Pro FD
-
-<img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" />
-
-
-```
-sudo dmesg -wT
-
-```
-Then plug-in PCAN-USB Pro FD board
-```
-...
-[Thu Jan 29 17:51:00 2026] usb 1-11: new high-speed USB device number 6 using xhci_hcd
-[Thu Jan 29 17:51:00 2026] usb 1-11: New USB device found, idVendor=0c72, idProduct=0011, bcdDevice= 0.00
-[Thu Jan 29 17:51:00 2026] usb 1-11: New USB device strings: Mfr=1, Product=2, SerialNumber=0
-[Thu Jan 29 17:51:00 2026] usb 1-11: Product: PCAN-USB Pro FD
-[Thu Jan 29 17:51:00 2026] usb 1-11: Manufacturer: PEAK-System Technik GmbH
-```
-
-```
-lsusb
-...
-Bus 001 Device 008: ID 0c72:0011 PEAK System PCAN-USB Pro FD
-```
-
-### for UBUNTUPC:
-
-get PCAN version checker from site:
-```
-https://www.peak-system.com/fileadmin/media/linux/files/pcan-kernel-version.sh.tar.gz
-
-tar -xzf pcan-kernel-version.sh.tar.gz
-./pcan-kernel-version.sh
-```
-
-```
-    Bus 001 Device 010: ID 0c72:000c PEAK System PCAN-USB needs Linux 3.4
-```
-
-get PCAN driver from site:
-
-```
-https://www.peak-system.com/fileadmin/media/linux/index.php
-https://www.peak-system.com/quick/PCAN-Linux-Driver
-```
-
-### install:
-```
-sudo apt update
-sudo apt install gcc-12
-
-tar -xzf peak-linux-driver-8.20.0.tar.gz
-cd peak-linux-driver-8.20.0
-make -C driver NET=NETDEV_SUPPORT CC="gcc-12"
-sudo make install
-
-```
-done
-
-### start driver:
-
-```
-sudo modprobe pcan
-```
-
-```
-[16058.579190] pcan: Release_20250213_n (le)
-[16058.579193] pcan: driver config [mod] [isa] [pci] [pec] [usb] [net] 
-[16058.579805] pcan 1-11:1.0: PCAN-USB Pro FD (MCU01h PCB02h) fw v3.2.0 bl v2.1.0
-[16058.580209] pcan: registered CAN-FD netdevice can0 for usbfd hw (510,32)
-[16058.580211] pcan: - usb fd device minor 32 number -2130771968 found
-[16058.580685] pcan: registered CAN-FD netdevice can1 for usbfd hw (510,33)
-[16058.580688] pcan: - usb fd device minor 33 number -2130771968 found
-[16058.580738] usbcore: registered new interface driver pcan
-[16058.580743] pcan: major 510.
-
-```
-### check:
-```
-ifconfig -a
-
-can0: flags=128<NOARP>  mtu 16
-        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-can1: flags=128<NOARP>  mtu 16
-        unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 10  (UNSPEC)
-        RX packets 0  bytes 0 (0.0 B)
-        RX errors 0  dropped 0  overruns 0  frame 0
-        TX packets 0  bytes 0 (0.0 B)
-        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-
-```
-
-```
-ip link show
-
-...
-4: can0: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
-    link/can 
-5: can1: <NOARP> mtu 16 qdisc noop state DOWN mode DEFAULT group default qlen 10
-    link/can 
-```
-
-### setup manually:
-
-CAN 2.0 Mode
-```
-sudo ip link set can0 down
-# configure CAN 2.0 with 1mbps
-sudo ip link set can0 type can bitrate 1000000
-sudo ip link set can0 up
-```
-
-CAN FD Mode can0
-```
-sudo ip link set can0 down
-# configure CAN FD with 5mbps
-sudo ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
-sudo ip link set can0 up
-```
-
-
-CAN FD Mode can1
-```
-sudo ip link set can1 down
-# configure CAN FD with 5mbps
-sudo ip link set can1 type can bitrate 1000000 dbitrate 5000000 fd on
-sudo ip link set can1 up
-```
-
-### test:
-
-T1:
-```
-candump can0
-```
-
-T2:
-```
-cansend can0 001#FFFFFFFFFFFFFFFC
-cansend can0 001#FFFFFFFFFFFFFFFD
-```
 
 
 _______
