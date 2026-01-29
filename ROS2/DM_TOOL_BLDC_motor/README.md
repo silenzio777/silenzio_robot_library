@@ -413,22 +413,28 @@ ip link show
 ### setup manually:
 
 CAN 2.0 Mode
-
 ```
 sudo ip link set can0 down
 # configure CAN 2.0 with 1mbps
 sudo ip link set can0 type can bitrate 1000000
 sudo ip link set can0 up
-
 ```
 
-CAN FD Mode
-
+CAN FD Mode can0
 ```
 sudo ip link set can0 down
 # configure CAN FD with 5mbps
 sudo ip link set can0 type can bitrate 1000000 dbitrate 5000000 fd on
 sudo ip link set can0 up
+```
+
+
+CAN FD Mode can1
+```
+sudo ip link set can1 down
+# configure CAN FD with 5mbps
+sudo ip link set can1 type can bitrate 1000000 dbitrate 5000000 fd on
+sudo ip link set can1 up
 ```
 
 ### test:
