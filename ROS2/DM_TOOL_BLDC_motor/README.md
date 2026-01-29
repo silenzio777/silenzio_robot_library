@@ -362,7 +362,7 @@ sudo make install
 ```
 done with 2 err...
 
-### Start driver:
+### start driver:
 
 ```
 sudo modprobe pcan
@@ -380,7 +380,7 @@ sudo modprobe pcan
 [16058.580743] pcan: major 510.
 
 ```
-### Check:
+### check:
 ```
 ifconfig -a
 
