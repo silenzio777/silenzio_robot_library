@@ -305,6 +305,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 _______
 ### UBUNTU PC | PCAN-USB Pro FD
 
+<img width="244" height="193" alt="image" src="https://github.com/user-attachments/assets/ef70f746-e2e8-474f-be89-42f2a7f10de5" />
+
 
 ```
 sudo dmesg -wT
