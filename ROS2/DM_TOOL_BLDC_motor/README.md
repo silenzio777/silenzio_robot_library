@@ -65,7 +65,7 @@ mkdir -p /usr/lib
 cp -d lib/* /usr/lib
 cp: cannot stat 'lib/*': No such file or directory
 make[1]: *** [Makefile:184: install] Error 1
-make[1]: Leaving directory '/home/silenzio/Downloads/peak-linux-driver-8.20.0/lib'
+...
 make: *** [Makefile:99: install] Error 2
 ```
 error, but it ok...
