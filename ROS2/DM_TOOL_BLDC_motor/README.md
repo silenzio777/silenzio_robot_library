@@ -273,6 +273,60 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 </details>
 
 
+
+<details> 
+  <summary>DM-J8009P-2EC</summary>
+
+Sub Version: 004
+Imax: 41.044777
+ I_U Offset:     1995.6260
+ I_V Offset:     2009.3000
+ I_W Offset:     2120.0620
+ Position Sensor Electrical Offset:   -2.7397
+
+ Mechanical Offset:   0.0000
+
+ Output Position:  0.1553
+
+ CAN ID:     0x001
+
+ MASTER ID:  0x011
+
+ CAN Baud: 1.00Mbps
+
+
+ Motor Info:
+
+ Rs  = 145.0602 mΩ
+
+ Ls  = 62.8951 μH
+
+ Ψf = 0.0042 Wb
+
+V_BUS=23.9747
+
+
+ Control Mode : 
+1:MIT Mode <----
+
+2:position-speed cascade Mode
+
+3:speed Mode
+
+4:Hybrid control Mode
+
+
+ Commands:
+
+ m - Motor Mode
+
+ s - Setup Mode
+
+ esc - Exit to Menu
+
+</details>
+
+
 ### Set Sender CAN ID	and Receiver (motor) ID
 
 https://wiki.seeedstudio.com/damiao_series/
