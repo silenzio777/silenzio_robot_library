@@ -212,23 +212,23 @@ cd ~/lib/dm-tools-master/_01/dm-tools-master/USB2CANFD/DMTool_v2.1.5.3
 chmod a+x DMTool_v2.1.5.3-x86_64.AppImage
 ./DMTool_v2.1.5.3-x86_64.AppImage
 ```
+The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
+
 <img width="640" alt="Version_V2 1 5 3_01" src="https://github.com/user-attachments/assets/d996cb05-3b66-4201-8bf8-fa27a5eafb2b" />
 
 <img width="640" alt="Version_V2 1 5 3_02" src="https://github.com/user-attachments/assets/d27534fc-f7b9-4e18-9493-49c85eb76715" />
 
-
+</br>
 
 Connection diagram.
 
 <img src="https://github.com/user-attachments/assets/da4c52a2-92b7-4df3-af60-0acb36b96c9f" width="640">
 
-The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
+</br>
 
-<img src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" width="640">
-
+<!--img src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" width="640">
 <img src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" width="640">
-
-<img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640">
+<img src="https://github.com/user-attachments/assets/383da361-1931-4643-a084-7e886613d4a8" width="640"-->
 
 <details> 
   <summary>DM-J4340P-2EC</summary>
