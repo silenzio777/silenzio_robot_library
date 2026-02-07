@@ -218,13 +218,15 @@ The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_6
 
 <img width="640" alt="Version_V2 1 5 3_02" src="https://github.com/user-attachments/assets/d27534fc-f7b9-4e18-9493-49c85eb76715" />
 
-</br>
+
+_____
 
 Connection diagram.
 
 <img src="https://github.com/user-attachments/assets/da4c52a2-92b7-4df3-af60-0acb36b96c9f" width="640">
 
-</br>
+
+_____
 
 <!--img src="https://github.com/user-attachments/assets/34d3cd1c-aecb-4321-86d3-a7586b3cb0c0" width="640">
 <img src="https://github.com/user-attachments/assets/280250f2-4887-4b2e-b68c-e5c1477a4052" width="640">
