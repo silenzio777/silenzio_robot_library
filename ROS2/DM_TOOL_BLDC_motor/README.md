@@ -212,7 +212,8 @@ cd ~/lib/dm-tools-master/_01/dm-tools-master/USB2CANFD/DMTool_v2.1.5.3
 chmod a+x DMTool_v2.1.5.3-x86_64.AppImage
 ./DMTool_v2.1.5.3-x86_64.AppImage
 ```
-The motor is visible and controlled via the developer program DM-USB2FDCAN-x86_64.AppImage:
+
+The motor is visible and controlled via the developer program DMTool:
 
 <img width="640" alt="Version_V2 1 5 3_01" src="https://github.com/user-attachments/assets/d996cb05-3b66-4201-8bf8-fa27a5eafb2b" />
 
