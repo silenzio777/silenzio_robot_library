@@ -208,9 +208,9 @@ Attach the motor via DM-tools USBtoCAN board (UART interface).
 ```
 ls /dev/ttyACM0
 sudo chmod 777 /dev/ttyACM0
-cd /home/silenzio/lib/dm-tools-master
-chmod a+x DM-USB2FDCAN-x86_64.AppImage
-./DM-USB2FDCAN-x86_64.AppImage
+cd ~/lib/dm-tools-master/_01/dm-tools-master/USB2CANFD/DMTool_v2.1.5.3
+chmod a+x DMTool_v2.1.5.3-x86_64.AppImage
+./DMTool_v2.1.5.3-x86_64.AppImage
 ```
 Connection diagram.
 
