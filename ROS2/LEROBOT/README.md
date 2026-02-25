@@ -47,7 +47,7 @@ print("cv2 version:", cv2.__version__)
 
 # Create a `RealSenseCameraConfig` specifying your camera’s serial number and enabling depth.
 config = RealSenseCameraConfig(
-    serial_number_or_name="944622071791",
+    serial_number_or_name="xxxxxxxxxxxx",
     fps=15,
     #width=640, height=480,
     width=1280, height=720,
