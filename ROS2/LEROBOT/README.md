@@ -45,14 +45,17 @@ from lerobot.cameras.configs import ColorMode, Cv2Rotation
 
 print("cv2 version:", cv2.__version__)
 
+DEPTH_MAP = False # False True
+
 # Create a `RealSenseCameraConfig` specifying your camera’s serial number and enabling depth.
 config = RealSenseCameraConfig(
     serial_number_or_name="xxxxxxxxxxxx",
-    fps=15,
+    fps=30, #15,
     #width=640, height=480,
-    width=1280, height=720,
+    #width=1280, height=720,
+    width=1920, height=1080,
     color_mode=ColorMode.BGR, #RGB,
-    use_depth=True,
+    use_depth=DEPTH_MAP, # False True
     rotation=Cv2Rotation.NO_ROTATION
 )
 
@@ -64,14 +67,16 @@ camera.connect()
 # Capture a color frame via `read()` and a depth map via `read_depth()`.
 try:
     color_frame = camera.read()
-    depth_map = camera.read_depth()
+    if DEPTH_MAP: depth_map = camera.read_depth()
     print("Color frame shape:", color_frame.shape)
-    print("Depth map shape:", depth_map.shape)
-    print(f"Data type: {depth_map.dtype}")
+    if DEPTH_MAP: print("Depth map shape:", depth_map.shape)
+    if DEPTH_MAP: print(f"Data type: {depth_map.dtype}")
 
 finally:
     #camera.disconnect()
     pass
+
+
 
 
 def read_cam():
@@ -82,20 +87,22 @@ def read_cam():
 
         while True:
             color_frame = camera.read()
-            depth_map_img16 = camera.read_depth()
-            img8 = (depth_map_img16 / 256.0).astype('uint8')
 
-            #alpha = (255.0 / 65535.0) 
-            #img8 = cv2.convertScaleAbs(depth_map_img16, alpha=alpha)
+            if DEPTH_MAP:
+                depth_map_img16 = camera.read_depth()
+                img8 = (depth_map_img16 / 256.0).astype('uint8')
 
-            ## cv2.normalize(depth_map_img16, img8, 0, 255, cv2.NORM_MINMAX)
+                #alpha = (255.0 / 65535.0) 
+                #img8 = cv2.convertScaleAbs(depth_map_img16, alpha=alpha)
 
-            heatmap_image = cv2.applyColorMap(img8, cv2.COLORMAP_JET ) #cv2.COLORMAP_HOT) # cv2.COLORMAP_RAINBOW)
+                ## cv2.normalize(depth_map_img16, img8, 0, 255, cv2.NORM_MINMAX)
 
-            #img2 = cv2.cvtColor(img, cv2.COLOR_YUV2BGR_I420);
+                heatmap_image = cv2.applyColorMap(img8, cv2.COLORMAP_JET ) #cv2.COLORMAP_HOT) # cv2.COLORMAP_RAINBOW)
+
+                #img2 = cv2.cvtColor(img, cv2.COLOR_YUV2BGR_I420);
 
             cv2.imshow('color_frame',color_frame)
-            cv2.imshow('depth_map',heatmap_image)
+            if DEPTH_MAP: cv2.imshow('depth_map',heatmap_image)
 
             keyCode = cv2.waitKey(10) & 0xFF
             if keyCode == 27 or keyCode == ord('q'):
