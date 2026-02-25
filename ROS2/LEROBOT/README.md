@@ -14,3 +14,100 @@ source venv/bin/activate
 pip3 install -e .
 ```
 
+### fix cv2
+```
+pip3 uninstall opencv-python-headless
+pip3 install opencv-python
+```
+
+
+
+## trlc-dk1
+
+An Open Source Dev Kit for AI-native Robotics
+https://github.com/robot-learning-co/trlc-dk1
+```
+git clone https://github.com/robot-learning-co/trlc-dk1.git
+```
+
+```
+~/lib/trlc-dk1/lerobot_robot_trlc_dk1$ python3 lerobot_realsense_01.py
+```
+
+
+``` python
+import sys
+import cv2
+import numpy as np
+from lerobot.cameras.realsense.configuration_realsense import RealSenseCameraConfig
+from lerobot.cameras.realsense.camera_realsense import RealSenseCamera
+from lerobot.cameras.configs import ColorMode, Cv2Rotation
+
+print("cv2 version:", cv2.__version__)
+
+# Create a `RealSenseCameraConfig` specifying your camera’s serial number and enabling depth.
+config = RealSenseCameraConfig(
+    serial_number_or_name="944622071791",
+    fps=15,
+    #width=640, height=480,
+    width=1280, height=720,
+    color_mode=ColorMode.BGR, #RGB,
+    use_depth=True,
+    rotation=Cv2Rotation.NO_ROTATION
+)
+
+# Instantiate and connect a `RealSenseCamera` with warm-up read (default).
+camera = RealSenseCamera(config)
+camera.connect()
+
+
+# Capture a color frame via `read()` and a depth map via `read_depth()`.
+try:
+    color_frame = camera.read()
+    depth_map = camera.read_depth()
+    print("Color frame shape:", color_frame.shape)
+    print("Depth map shape:", depth_map.shape)
+    print(f"Data type: {depth_map.dtype}")
+
+finally:
+    #camera.disconnect()
+    pass
+
+
+def read_cam():
+
+    try:
+        
+        #cv2.namedWindow("demo", cv2.WINDOW_AUTOSIZE) 
+
+        while True:
+            color_frame = camera.read()
+            depth_map_img16 = camera.read_depth()
+            img8 = (depth_map_img16 / 256.0).astype('uint8')
+
+            #alpha = (255.0 / 65535.0) 
+            #img8 = cv2.convertScaleAbs(depth_map_img16, alpha=alpha)
+
+            ## cv2.normalize(depth_map_img16, img8, 0, 255, cv2.NORM_MINMAX)
+
+            heatmap_image = cv2.applyColorMap(img8, cv2.COLORMAP_JET ) #cv2.COLORMAP_HOT) # cv2.COLORMAP_RAINBOW)
+
+            #img2 = cv2.cvtColor(img, cv2.COLOR_YUV2BGR_I420);
+
+            cv2.imshow('color_frame',color_frame)
+            cv2.imshow('depth_map',heatmap_image)
+
+            keyCode = cv2.waitKey(10) & 0xFF
+            if keyCode == 27 or keyCode == ord('q'):
+                break
+
+    finally:
+        cv2.destroyAllWindows()
+
+
+if __name__ == '__main__':
+
+    read_cam()
+    camera.disconnect()
+    
+```
