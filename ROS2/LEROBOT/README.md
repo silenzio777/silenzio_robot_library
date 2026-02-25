@@ -31,6 +31,10 @@ git clone https://github.com/robot-learning-co/trlc-dk1.git
 ```
 
 ```
+cd '/home/silenzio/lib/lerobot' 
+silenzio@jetsonnx:~/lib/lerobot$ source venv/bin/activate
+(venv) silenzio@jetsonnx:~/lib/lerobot$ cd ~/lib/trlc-dk1/lerobot_robot_trlc_dk1
+(venv) silenzio@jetsonnx:~/lib/trlc-dk1/lerobot_robot_trlc_dk1$ python3 lerobot_realsense_01.py
 ~/lib/trlc-dk1/lerobot_robot_trlc_dk1$ python3 lerobot_realsense_01.py
 ```
 
