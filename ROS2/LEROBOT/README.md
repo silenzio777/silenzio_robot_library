@@ -30,7 +30,7 @@ https://github.com/robot-learning-co/trlc-dk1
 git clone https://github.com/robot-learning-co/trlc-dk1.git
 ```
 
-```
+```bash
 cd '/home/silenzio/lib/lerobot' 
 silenzio@jetsonnx:~/lib/lerobot$ source venv/bin/activate
 (venv) silenzio@jetsonnx:~/lib/lerobot$ cd ~/lib/trlc-dk1/lerobot_robot_trlc_dk1
