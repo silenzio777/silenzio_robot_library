@@ -49,7 +49,7 @@ DEPTH_MAP = False # False True
 
 # Create a `RealSenseCameraConfig` specifying your camera’s serial number and enabling depth.
 config = RealSenseCameraConfig(
-    serial_number_or_name="xxxxxxxxxxxx",
+    serial_number_or_name="xxxxxxxxx",
     fps=30, #15,
     #width=640, height=480,
     #width=1280, height=720,
