@@ -20,6 +20,12 @@ pip3 uninstall opencv-python-headless
 pip3 install opencv-python
 ```
 
+### install realsence2 
+```
+pip3 install realsence2 
+```
+
+
 ________________________
 
 ## trlc-dk1
