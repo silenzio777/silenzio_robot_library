@@ -105,6 +105,31 @@ sudo apt install ros-humble-moveit
 sudo apt install ros-$ROS_DISTRO-perception-pcl
 sudo apt install ros-humble-pcl-conversions ros-humble-pcl-ros
 sudo apt install ros-humble-octomap-rviz-plugins
+
+```
+
+
+### create:
+```
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_python my_package --node-name my_node
+```
+
+### build:
+```
+cd ~/ros2_ws
+colcon build --packages-select my_package
+source install/setup.bash
+```
+
+### run:
+```
+ros2 run my_package my_node
+```
+
+_________________
+
+
 ```
 
 Install on Ubuntu PC:
