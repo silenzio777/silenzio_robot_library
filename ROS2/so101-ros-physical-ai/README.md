@@ -1,3 +1,4 @@
+
 ```
 cd ~/ros2_ws/src
 git clone --recurse-submodules https://github.com/legalaspro/so101-ros-physical-ai.git
@@ -9,7 +10,6 @@ colcon build --symlink-install --packages-select \
     so101_description \
     so101_teleop \
     so101_moveit_config \
-    episode_recorder \
     rosbag_to_lerobot \
     so101_inference \
     feetech_ros2_driver
@@ -17,10 +17,7 @@ colcon build --symlink-install --packages-select \
 
 ```
 ---
-Finished <<< so101_teleop [13.0s]
-
-Summary: 6 packages finished [13.7s]
-  3 packages had stderr output: so101_bringup so101_description so101_teleop
+Summary: 7 packages finished [17.8s]
 ```
 
 ```
