@@ -215,5 +215,21 @@ can0  001   [8]  FF FF FF FF FF FF FF FD
 ```
 
 
+___
 
+```
+ip -d link show can0
+```
+```
+20: can0: <NOARP,UP,LOWER_UP> mtu 72 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can  promiscuity 0 minmtu 0 maxmtu 0 
+    can <FD> state ERROR-PASSIVE (berr-counter tx 0 rx 0) restart-ms 0 
+	  bitrate 1000000 sample-point 0.750 
+	  tq 12 prop-seg 29 phase-seg1 30 phase-seg2 20 sjw 10
+	  pcan: tseg1 1..256 tseg2 1..128 sjw 1..128 brp 1..1024 brp-inc 1
+	  dbitrate 5000000 dsample-point 0.750 
+	  dtq 12 dprop-seg 5 dphase-seg1 6 dphase-seg2 4 dsjw 2
+	  pcan: dtseg1 1..32 dtseg2 1..16 dsjw 1..16 dbrp 1..1024 dbrp-inc 1
+	  clock 80000000 numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 
+```
 
