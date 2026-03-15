@@ -201,6 +201,18 @@ Summary
 Total motors found: 1
 ```
 
+```
+can0  001   [8]  FF FF FF FF FF FF FF FD
+  can0  002   [8]  FF FF FF FF FF FF FF FD
+  can0  003   [8]  FF FF FF FF FF FF FF FD
+  can0  004   [8]  FF FF FF FF FF FF FF FD
+  can0  005   [8]  FF FF FF FF FF FF FF FD
+  can0  011   [8]  01 7E EB 80 07 E8 1E 1C
+  can0  012   [8]  02 70 41 7F F8 00 1E 1C
+  can0  013   [8]  03 80 DF 80 08 11 1F 1C
+  can0  014   [8]  04 80 B5 7F E8 14 1E 1D
+  can0  015   [8]  05 7F 8D 7F F7 FF 1F 1E
+```
 
 
 
