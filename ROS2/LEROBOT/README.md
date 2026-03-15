@@ -149,6 +149,58 @@ lerobot-setup-can --mode=test --interfaces=can0,can1
 ```
 
 
+```
+lerobot-setup-can --mode=setup --interfaces can0
+```
+```
+==================================================
+CAN Interface Setup
+==================================================
+Mode: CAN FD
+Bitrate: 1.0 Mbps
+Data bitrate: 5.0 Mbps
+
+Configuring can0...
+  ✓ can0: UP
+
+Setup complete!
+
+Next: Test motors with:
+  lerobot-setup-can --mode=test --interfaces can0
+```
+
+
+```
+lerobot-setup-can --mode=test --interfaces can0
+```
+
+```
+==================================================
+CAN Motor Test
+==================================================
+Testing motors 0x01-0x08
+Mode: CAN FD
+
+
+can0: UP
+  Motor 0x01 (joint_1): ✓ FOUND
+    → Response 0x04: 0000000000000000
+  Motor 0x02 (joint_2): ✗ No response
+  Motor 0x03 (joint_3): ✗ No response
+  Motor 0x04 (joint_4): ✗ No response
+  Motor 0x05 (joint_5): ✗ No response
+  Motor 0x06 (joint_6): ✗ No response
+  Motor 0x07 (joint_7): ✗ No response
+  Motor 0x08 (gripper): ✗ No response
+
+  Summary: 1/8 motors found
+
+==================================================
+Summary
+==================================================
+Total motors found: 1
+```
+
 
 
 
