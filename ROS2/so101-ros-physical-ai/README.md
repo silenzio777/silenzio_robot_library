@@ -55,7 +55,8 @@ gmake: *** [Makefile:146: all] Error 2
 
 ___
 
-## HARDWARE setup:
+
+### HARDWARE setup:
 
 https://github.com/legalaspro/so101-ros-physical-ai/blob/main/docs/hardware.md#5-calibration-eeprom-and-optional-joint-config-overrides
 
