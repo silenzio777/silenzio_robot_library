@@ -53,11 +53,14 @@ gmake: *** [Makefile:146: all] Error 2
 
 ___
 
+```
 pip3 install feetech-servo-sdk
-
 ~/lib$ git clone https://github.com/Adam-Software/Feetech-Servo-SDK.git
+```
 
-$ python3 ping.py 
+```
+$ python3 ping.py
+```
 
 ```python
 # Default setting
