@@ -59,10 +59,22 @@ pip3 install feetech-servo-sdk
 
 $ python3 ping.py 
 
+```python
+# Default setting
+SCS_ID                  = 101                # SCServo ID : 1
+BAUDRATE                = 1000000           # SCServo default baudrate : 1000000
+DEVICENAME              = '/dev/ttyACM0'    # Check which port is being used on your controller
+                                            # ex) Windows: "COM1"   Linux: "/dev/ttyUSB0" Mac: "/dev/tty.usbserial-*"
+protocol_end            = 0                 # SCServo bit end(STS/SMS=0, SCS=1)
 ```
+
+
+```
+~/lib/Feetech-Servo-SDK/scsservo_sdk_example$ python3 ping.py 
 Succeeded to open the port
 Succeeded to change the baudrate
-[TxRxResult] There is no status packet!
+[ID:101] ping Succeeded. SCServo model number : 777
+
 ```
 
 ___
