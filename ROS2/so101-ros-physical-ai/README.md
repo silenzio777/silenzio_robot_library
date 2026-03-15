@@ -85,9 +85,8 @@ lerobot-find-cameras opencv
 ```
 
 <details> 
-  <summary>DM-J4340P-2EC</summary>
+  <summary>opencv</summary>
     
-    ```
     $ lerobot-find-cameras opencv
     [ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (2075) handleMessage OpenCV | GStreamer warning: Embedded video playback halted; module source reported: Could not read from resource.
     [ WARN:0] global ./modules/videoio/src/cap_gstreamer.cpp (1053) open OpenCV | GStreamer warning: unable to start pipeline
@@ -142,12 +141,38 @@ lerobot-find-cameras opencv
     Finalizing image saving...
     Image capture finished. Images saved to outputs/captured_images
     
-    ```
-
 </details>
 
 
 lerobot-find-cameras realsense
+
+<details> 
+  <summary>realsense</summary>
+
+
+    --- Detected Cameras ---
+    Camera #0:
+      Name: Intel RealSense D435
+      Type: RealSense
+      Id: 944622071791
+      Firmware version: 5.17.0.10
+      Usb type descriptor: 2.1
+      Physical port: /sys/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4.3/1-4.3:1.0/video4linux/video0
+      Product id: 0B07
+      Product line: D400
+      Default stream profile:
+        Stream_type: Color
+        Format: rgb8
+        Width: 640
+        Height: 480
+        Fps: 15
+    --------------------
+    
+    Finalizing image saving...
+    Image capture finished. Images saved to outputs/captured_images
+
+</details>
+
 ___
 
 
