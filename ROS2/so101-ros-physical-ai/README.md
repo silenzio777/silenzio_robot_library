@@ -62,43 +62,19 @@ https://github.com/legalaspro/so101-ros-physical-ai/blob/main/docs/hardware.md#5
 
 
 ```
-udevadm info --query=property --name=/dev/ttyACM0
+# Arms — replace /dev/ttyACM0 with the device you see:
+udevadm info --query=property --name=/dev/ttyACM0 | \
+  egrep 'ID_VENDOR_ID|ID_MODEL_ID|ID_SERIAL_SHORT|ID_PATH'
 ```
 
 ```
-DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4.2/1-4.2:1.0/tty/ttyACM0
-DEVNAME=/dev/ttyACM0
-MAJOR=166
-MINOR=0
-SUBSYSTEM=tty
-USEC_INITIALIZED=10901291550
-ID_BUS=usb
+  egrep 'ID_VENDOR_ID|ID_MODEL_ID|ID_SERIAL_SHORT|ID_PATH'
 ID_VENDOR_ID=1a86
 ID_MODEL_ID=55d3
-ID_PCI_CLASS_FROM_DATABASE=Serial bus controller
-ID_PCI_SUBCLASS_FROM_DATABASE=USB controller
-ID_PCI_INTERFACE_FROM_DATABASE=XHCI
-ID_VENDOR_FROM_DATABASE=QinHeng Electronics
-ID_MODEL_FROM_DATABASE=200 Series/Z370 Chipset Family USB 3.0 xHCI Controller
-ID_VENDOR=1a86
-ID_VENDOR_ENC=1a86
-ID_MODEL=USB_Single_Serial
-ID_MODEL_ENC=USB\x20Single\x20Serial
-ID_REVISION=0445
-ID_SERIAL=1a86_USB_Single_Serial_58A6070029
 ID_SERIAL_SHORT=58A6070029
-ID_TYPE=generic
-ID_USB_INTERFACES=:020201:0a0000:
-ID_USB_INTERFACE_NUM=00
-ID_USB_DRIVER=cdc_acm
-ID_USB_CLASS_FROM_DATABASE=Communications
 ID_PATH=pci-0000:00:14.0-usb-0:4.2:1.0
 ID_PATH_TAG=pci-0000_00_14_0-usb-0_4_2_1_0
-ID_MM_CANDIDATE=1
-ID_FOR_SEAT=tty-pci-0000_00_14_0-usb-0_4_2_1_0
-DEVLINKS=/dev/serial/by-id/usb-1a86_USB_Single_Serial_58A6070029-if00 /dev/serial/by-path/pci-0000:00:14.0-usb-0:4.2:1.0
-TAGS=:seat:uaccess:snap_cups_ippeveprinter:snap_cups_cupsd:systemd:
-CURRENT_TAGS=:seat:uaccess:snap_cups_ippeveprinter:snap_cups_cupsd:systemd:
+
 ```
 
 
