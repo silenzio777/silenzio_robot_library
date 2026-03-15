@@ -86,9 +86,6 @@ finally:
     #camera.disconnect()
     pass
 
-
-
-
 def read_cam():
 
     try:
@@ -128,3 +125,31 @@ if __name__ == '__main__':
     camera.disconnect()
     
 ```
+
+
+
+
+__________
+
+## OpenArm
+
+https://huggingface.co/docs/lerobot/openarm?follower=Command
+
+
+### Quick setup:
+
+```
+# Setup CAN interfaces
+lerobot-setup-can --mode=setup --interfaces=can0,can1
+```
+
+```
+# Test motor communication
+lerobot-setup-can --mode=test --interfaces=can0,can1
+```
+
+
+
+
+
+
