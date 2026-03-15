@@ -144,7 +144,9 @@ lerobot-find-cameras opencv
 </details>
 
 
+```
 lerobot-find-cameras realsense
+```
 
 <details> 
   <summary>realsense</summary>
