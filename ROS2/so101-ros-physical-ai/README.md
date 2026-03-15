@@ -24,13 +24,14 @@ Make Error at feetech_driver/CMakeLists.txt:36 (find_package):
     range-v3-config.cmake
 
 ## FIX:
-
+```
 cd ~/lib/
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.sh
 ./vcpkg integrate install
 ./vcpkg install range-v3
+```
 
 Computing installation plan...
 The following packages will be built and installed:
