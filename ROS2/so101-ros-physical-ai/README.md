@@ -57,6 +57,14 @@ pip3 install feetech-servo-sdk
 
 ~/lib$ git clone https://github.com/Adam-Software/Feetech-Servo-SDK.git
 
+$ python3 ping.py 
+
+```
+Succeeded to open the port
+Succeeded to change the baudrate
+[TxRxResult] There is no status packet!
+```
+
 ___
 
 
