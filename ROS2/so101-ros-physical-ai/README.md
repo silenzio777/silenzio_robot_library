@@ -1,8 +1,9 @@
-
+```
 cd ~/lib
 cd src/
 git clone --recurse-submodules https://github.com/legalaspro/so101-ros-physical-ai.git
 sudo apt update
+```
 
 colcon build --packages-select so101-ros-physical-ai
 [0.614s] colcon.colcon_core.package_selection WARNING ignoring unknown package 'so101-ros-physical-ai' in --packages-select
