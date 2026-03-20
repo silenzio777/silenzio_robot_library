@@ -21,6 +21,9 @@ echo $(uname -r)
 5.15.148-tegra
 ```
 
+```
+nano ~/.bashrc
+```
 
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))<br/>
