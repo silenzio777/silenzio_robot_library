@@ -65,8 +65,51 @@ sudo apt install -qqy robotpkg-py3*-pinocchio
 
 
 
+### run:
 
-_________
+```
+cd ~/lib/skate_teleop/teleop$
+python3 teleop_main.py
+```
+
+http://127.0.0.1:7000/static/
+```
+dataVisClient Failed to resolve hostname 'r.local': [Errno -2] Name or service not known
+
+********** Television starting: vuer_vis  **********
+
+Vuer Server
+
+Local:   https://vuer.ai?ws=ws://localhost:8012
+Network: https://vuer.ai?ws=ws://10.8.1.2:8012
+
+Workspace:
+
+ · file:///home/silenzio/lib/skate_teleop/skt_v3
+-> https://vuer.ai/workspace
+
+Press Ctrl-C to exit.
+###
+Not Connected to robot
+###
+process_teleop_rx performance: 61.91 Hz (processed 31 loops in 0.50 sec)
+###
+Not Connected to robot
+###
+process_teleop_rx performance: 60.09 Hz (processed 31 loops in 0.52 sec)
+process_teleop_tx performance: 61.91 Hz (processed 31 loops in 0.50 sec)
+process_collect_vr_state performance: 59.71 Hz (processed 30 loops in 0.50 sec)
+process_prep_udp_to_send performance: 61.90 Hz (processed 31 loops in 0.50 sec)
+You can open the visualizer by visiting the following URL:
+http://127.0.0.1:7000/static/
+
+```
+
+
+
+
+
+__________________
 
 **🥽 Headset Setup**
 1. Install and connect [Tailscale](https://github.com/tailscale/tailscale-android/releases/latest). Once setup, you will see both `oculus-quest3` and `your PC name` listed in the Tailscale app.
