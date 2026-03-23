@@ -189,6 +189,8 @@ ___
 
 https://github.com/unitreerobotics/xr_teleoperate
 
+https://support.unitree.com/home/en/Teleoperation
+
 This repository implements teleoperation control of a Unitree humanoid robot using XR (Extended Reality) devices (such as Apple Vision Pro, PICO 4 Ultra Enterprise, or Meta Quest 3).
 
 ___
