@@ -20,7 +20,7 @@ import casadi as cpin
 ```
 
 ```
-pip3 install pin
+## pip3 install pin
 pip3 install numpy==1.23.5
 pip3 install casadi
 ```
@@ -28,6 +28,41 @@ pip3 install casadi
 ### Install Pinocchio:
 
 https://stack-of-tasks.github.io/pinocchio/download.html
+
+Add robotpkg apt repository
+
+If you have never added robotpkg as a softwares repository, please follow first the instructions from 1 to 4. Otherwise, go directly to instruction 5. Those instructions are similar to the installation procedures presented in http://robotpkg.openrobots.org/debian.html.
+
+Ensure you have some required installation dependencies
+```
+sudo apt install -qqy lsb-release curl
+```
+
+Register the authentication certificate of robotpkg:
+```
+sudo mkdir -p /etc/apt/keyrings
+curl http://robotpkg.openrobots.org/packages/debian/robotpkg.asc \
+    | sudo tee /etc/apt/keyrings/robotpkg.asc
+```
+Add robotpkg as source repository to apt:
+
+```
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/robotpkg.asc] http://robotpkg.openrobots.org/packages/debian/pub $(lsb_release -cs) robotpkg" \
+    | sudo tee /etc/apt/sources.list.d/robotpkg.list
+```
+
+You need to run at least once apt update to fetch the package descriptions:
+```
+sudo apt update
+```
+
+Install Pinocchio:
+
+The installation of Pinocchio and its dependencies is made through the line:
+```
+sudo apt install -qqy robotpkg-py3*-pinocchio
+```
+
 
 
 
