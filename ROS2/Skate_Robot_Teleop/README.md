@@ -183,3 +183,18 @@ https://localtunnel.me/
 sudo npm install -g localtunnel
 lt --port 8000
 ```
+
+
+___
+
+https://github.com/unitreerobotics/xr_teleoperate
+
+This repository implements teleoperation control of a Unitree humanoid robot using XR (Extended Reality) devices (such as Apple Vision Pro, PICO 4 Ultra Enterprise, or Meta Quest 3).
+
+___
+
+https://github.com/OpenTeleVision/TeleVision
+
+[CoRL 2024] Open-TeleVision: Teleoperation with
+Immersive Active Visual Feedback
+
