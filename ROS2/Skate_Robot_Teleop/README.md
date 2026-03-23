@@ -25,6 +25,11 @@ pip3 install numpy==1.23.5
 pip3 install casadi
 ```
 
+### Install Pinocchio:
+
+https://stack-of-tasks.github.io/pinocchio/download.html
+
+
 
 _________
 
