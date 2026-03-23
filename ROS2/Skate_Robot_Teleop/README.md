@@ -41,6 +41,14 @@ pip3 install vuer==0.1.5
 
 ### 4. 🥽 Remote Access via Tailscale (Optional for XR Teleoperation)
 
+### INstall tailscale:
+https://tailscale.com/docs/install/linux
+
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
 To view on VR/XR devices, use Tailscale to promote your local Vuer server to HTTPS:
 
 ```bash
