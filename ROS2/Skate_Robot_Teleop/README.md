@@ -46,8 +46,10 @@ https://tailscale.com/docs/install/linux
 
 
 ```bash
-curl -fsSL https://tailscale.com/install.sh | sh
+#curl -fsSL https://tailscale.com/install.sh | sh
+sudo snap install tailscale
 ```
+
 
 To view on VR/XR devices, use Tailscale to promote your local Vuer server to HTTPS:
 
