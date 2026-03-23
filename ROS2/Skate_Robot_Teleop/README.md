@@ -13,6 +13,21 @@ pip3 install vuer==0.1.5
 ```
 
 
+```python
+import casadi as cpin                                                                                
+...
+#from pinocchio import casadi as cpin  
+```
+
+```
+pip3 install pin
+pip3 install numpy==1.23.5
+pip3 install casadi
+```
+
+
+_________
+
 **🥽 Headset Setup**
 1. Install and connect [Tailscale](https://github.com/tailscale/tailscale-android/releases/latest). Once setup, you will see both `oculus-quest3` and `your PC name` listed in the Tailscale app.
 2. Open `https://your-machine.tailxxxx.ts.net` in the Quest browser.
