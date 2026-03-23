@@ -1,1 +1,57 @@
 
+
+# Skate Robot Teleoperation and Telemetry
+
+https://github.com/Rbotic/skate_teleop
+
+### install:
+```
+cd ~/lib/
+silenzio@ubuntuPC:~/lib$ git clone https://github.com/Rbotic/skate_teleop.git
+pip3 install meshcat
+pip3 install vuer==0.1.5
+```
+
+
+**🥽 Headset Setup**
+1. Install and connect [Tailscale](https://github.com/tailscale/tailscale-android/releases/latest). Once setup, you will see both `oculus-quest3` and `your PC name` listed in the Tailscale app.
+2. Open `https://your-machine.tailxxxx.ts.net` in the Quest browser.
+3. Select “Passthrough” at the bottom-center of the browser.
+4. Face the same direction as the ground arrow; hold the Meta button to re-orient if needed.
+
+#### 🛑 Controller Mapping & Safety 
+
+* **'A' button** is a *deadman's switch*
+
+  * Releasing the button immediately places the robot motors into a safe state
+  * Motors are fully disabled after 10 seconds if it is not re-engaged
+
+* **Grip Buttons** is a *deadman's switch* for their respective robot arms
+* **Triggers** control their respective grippers
+
+---
+
+## 📋 Notes 
+
+* Tested on Ubuntu 20.04 and 22.04
+* Should work with other OpenXR headsets (e.g. Apple Vision Pro, PICO4) with minor code changes
+* Can run without the physical robot using a virtual robot model
+
+
+
+### 4. 🥽 Remote Access via Tailscale (Optional for XR Teleoperation)
+
+To view on VR/XR devices, use Tailscale to promote your local Vuer server to HTTPS:
+
+```bash
+sudo tailscale up
+sudo tailscale serve localhost:8012
+```
+
+This generates a Tailscale HTTPS URL (e.g. https://your-machine.tailxxxx.ts.net). **Keep this terminal running.**
+
+(Optional - for virtual robot control) Modify line 215 of `teleop/open_television/television.py`:
+```python
+src = "https://user-computer.tail1234.ts.net/workspace/skt_v3.urdf"  # replace 'https://user-computer.tail1234.ts.net/' with your own Tailscale URL
+```
+
