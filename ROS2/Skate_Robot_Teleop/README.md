@@ -55,3 +55,20 @@ This generates a Tailscale HTTPS URL (e.g. https://your-machine.tailxxxx.ts.net)
 src = "https://user-computer.tail1234.ts.net/workspace/skt_v3.urdf"  # replace 'https://user-computer.tail1234.ts.net/' with your own Tailscale URL
 ```
 
+
+
+
+
+___
+
+
+https://docs.vuer.ai/en/latest/examples/vr_xr/motion_controllers.html
+
+Quest 3 Motion Controller States
+The MotionController offers a way to stream the current pose, button and trackpad states of the Quest 3 motion controller to the python side. To use this mixed reality (XR) feature, you need to setup vuer behind a SSL proxy. I usually use ngrok, which is a paid service. You can also use local tunnel, which is free.
+
+https://localtunnel.me/
+```
+sudo npm install -g localtunnel
+lt --port 8000
+```
