@@ -139,7 +139,7 @@ __________________
 
 ### 4. 🥽 Remote Access via Tailscale (Optional for XR Teleoperation)
 
-### INstall tailscale:
+### install tailscale:
 https://tailscale.com/docs/install/linux
 
 
