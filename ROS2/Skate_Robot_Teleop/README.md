@@ -200,3 +200,78 @@ https://github.com/OpenTeleVision/TeleVision
 [CoRL 2024] Open-TeleVision: Teleoperation with
 Immersive Active Visual Feedback
 
+
+
+
+
+_____
+
+
+
+
+
+__
+git clone https://github.com/tailscale/tailscale-android.git
+
+___
+
+
+$ sudo tailscale serve localhost:8012
+Available within your tailnet:
+
+https://ubuntupc.tailXXXacX.ts.net/
+|-- proxy http://localhost:8012
+
+___
+
+
+
+$ sudo ss -tlnp | grep 8012
+LISTEN 0      128                        0.0.0.0:8012       0.0.0.0:*    users:(("python3",pid=550467,fd=36))     
+___
+
+$ tailscale ip
+100.124.252.XXX
+fd7a:115c:a1e0::be01:XXX
+
+___
+$ sudo tailscale serve status
+No serve config
+
+__
+
+python3 teleop/teleop_main.py
+
+********** Television starting: vuer_vis  **********
+
+Vuer Server
+
+Local:   https://vuer.ai?ws=ws://localhost:8012
+Network: https://vuer.ai?ws=ws://192.168.2.XX:8012
+
+Workspace:
+
+ · file:///home/silenzio/lib/skate_teleop/skt_v3
+-> https://vuer.ai/workspace
+
+Press Ctrl-C to exit.
+You can open the visualizer by visiting the following URL:
+http://127.0.0.1:7000/static/
+websocket is connected. id:c126801b-d09b-4488-b617-a4534dc0c168
+default socket worker is up, adding clientEvents 
+Uplink task running. id:c126801b-d09b-4488-b617-a4534dc0c168
+
+
+
+
+___
+
+1. Запустили Vuer сервер на порту 8012, он слушал на всех интерфейсах (0.0.0.0).
+
+2. Вместо tailscale serve использовали прямой HTTP-доступ по Tailscale IP (http://100.124.252.101:8012) — это проще и надёжнее, так как Tailscale сам шифрует трафик между устройствами.
+
+3. Исправили путь к URDF в teleop/open_television/television.py, указав актуальный адрес сервера.
+
+4. Перезапустили сервер — робот появился.
+
+
