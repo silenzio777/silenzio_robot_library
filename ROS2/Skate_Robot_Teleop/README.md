@@ -177,41 +177,6 @@ https://tailscale.com/docs/install/linux
 sudo snap install tailscale
 ```
 
-
-To view on VR/XR devices, use Tailscale to promote your local Vuer server to HTTPS:
-
-```bash
-sudo tailscale up
-sudo tailscale serve localhost:8012
-```
-
-This generates a Tailscale HTTPS URL (e.g. https://your-machine.tailxxxx.ts.net). **Keep this terminal running.**
-
-(Optional - for virtual robot control) Modify line 215 of `teleop/open_television/television.py`:
-```python
-src = "https://user-computer.tail1234.ts.net/workspace/skt_v3.urdf"  # replace 'https://user-computer.tail1234.ts.net/' with your own Tailscale URL
-```
-
-
-### 4. 🥽 Remote Access via Tailscale (Optional for XR Teleoperation)
-
-### install tailscale:
-https://tailscale.com/docs/install/linux
-
-
-```bash
-#curl -fsSL https://tailscale.com/install.sh | sh
-sudo snap install tailscale
-```
-
-
-To view on VR/XR devices, use Tailscale to promote your local Vuer server to HTTPS:
-
-```bash
-sudo tailscale up
-sudo tailscale serve localhost:8012
-```
-
 This generates a Tailscale HTTPS URL (e.g. https://your-machine.tailxxxx.ts.net). **Keep this terminal running.**
 
 (Optional - for virtual robot control) Modify line 215 of `teleop/open_television/television.py`:
