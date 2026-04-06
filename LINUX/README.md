@@ -35,6 +35,12 @@ python -c "import sys; print(sys.path)"   # теперь пути из PYTHONPAT
 python3 -c "import sys; print(sys.path)"   # теперь пути из PYTHONPATH не добавлены
 ```
 
+```
+git clone https://github.com/dimensionalOS/dimos.git
+uv venv --python 3.12
+source .venv/bin/activate
+uv pip install 'dimos[base,unitree]'
+```
 
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))<br/>
