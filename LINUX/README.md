@@ -25,6 +25,17 @@ echo $(uname -r)
 nano ~/.bashrc
 ```
 
+```
+echo $PYTHONPATH           # выводит: /opt/openrobots/lib/python3.10/site-packages:...
+unset PYTHONPATH
+echo $PYTHONPATH           # ничего не выводит (переменная пуста)
+unset LD_LIBRARY_PATH
+echo $LD_LIBRARY_PATH
+python -c "import sys; print(sys.path)"   # теперь пути из PYTHONPATH не добавлены
+python3 -c "import sys; print(sys.path)"   # теперь пути из PYTHONPATH не добавлены
+```
+
+
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))<br/>
 [systemctl info](https://tokmakov.msk.ru/blog/item/464)
