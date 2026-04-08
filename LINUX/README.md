@@ -42,12 +42,13 @@ source .venv/bin/activate
 uv pip install 'dimos[base,unitree]'
 ```
 
+### error:
 $ python3 -m pip install pybind11
 ```
 /home/silenzio/lib/judo/.pixi/envs/dev/bin/python3: No module named pip
 ```
-### fix:
 
+### fix:
 ```
 python3 -m ensurepip --upgrade
 ```
