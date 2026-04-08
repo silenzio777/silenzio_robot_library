@@ -42,6 +42,22 @@ source .venv/bin/activate
 uv pip install 'dimos[base,unitree]'
 ```
 
+$ python3 -m pip install pybind11
+```
+/home/silenzio/lib/judo/.pixi/envs/dev/bin/python3: No module named pip
+```
+### fix:
+
+```
+python3 -m ensurepip --upgrade
+```
+
+### works:
+```
+python3 -m pip install pybind11==2.13.6
+```
+
+
 ### Text or GUI
 [source link]([HARDWARE/README.md](https://www.cyberciti.biz/faq/switch-boot-target-to-text-gui-in-systemd-linux/))<br/>
 [systemctl info](https://tokmakov.msk.ru/blog/item/464)
