@@ -22,7 +22,17 @@ adb logcat -s Unity
 ```
 
 You will see all Debug.Log files in real time in the Linux terminal.
+---
 
+Очистка временных файлов
+Иногда Unity "клинит" на кэше импорта. Находясь в корне проекта, удали папку Library (не бойся, Unity пересоберет её при запуске, это безопасно):
+
+```
+rm -rf Library/
+```
+---
+
+__
 
 ## file: /UnityProject/Assets/Plugins/Android/AndroidManifest.xml
 ```xml
@@ -50,6 +60,9 @@ You will see all Debug.Log files in real time in the Linux terminal.
     </application>
 </manifest>
 ```
+
+
+
 
 ## PassthroughCamera
 
