@@ -51,20 +51,21 @@ You will see all Debug.Log files in real time in the Linux terminal.
 </manifest>
 ```
 
-### PassthroughCamera
-## Need this 3 files:
+## PassthroughCamera
+
+### Need this 3 files:
 ```
 _PassthroughCamera/CameraViewerManagerPrefab.prefab
 _PassthroughCamera/libopencv_java4.so
 _PassthroughCamera/libOpenCvSharpExtern.so
 ```
 
-# Даем права на чтение и запись всем файлам в папке плагинов
+## Даем права на чтение и запись всем файлам в папке плагинов
 ```
 sudo chmod -R 777 Assets/Plugins/Android/libs/arm64-v8a/
 ```
 
-# Убираем атрибут "только чтение", если он прилетел из архива
+## Убираем атрибут "только чтение", если он прилетел из архива
 ```
 find Assets/Plugins/Android/libs/arm64-v8a/ -type f -name "*.so" -exec chmod 644 {} +
 ```
