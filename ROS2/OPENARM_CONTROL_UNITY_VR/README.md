@@ -1,14 +1,5 @@
 
-
-
-
-
-
-
-
-
-
-# PassthroughCamera with libOpenCvSharp (CV2) with Unity
+# PassthroughCamera with libOpenCvSharp (CV2) on Unity
 
 __
 
@@ -43,6 +34,7 @@ add 3 lines
 
 ### You need this files, put it to this dir:
 ```
+Assets/Plugins/OpenCvSharp.dll
 Assets/Plugins/Android/libs/arm64-v8a/libopencv_java4.so
 Assets/Plugins/Android/libs/arm64-v8a//libOpenCvSharpExtern.so
 Assets/Prefabs/CameraViewerManagerPrefab.prefab
