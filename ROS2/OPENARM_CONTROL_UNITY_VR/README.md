@@ -8,33 +8,12 @@
 
 
 
-## write apk on quest
-```
-adb install -r quest_teleop_new.apk
-```
+# PassthroughCamera with libOpenCvSharp (CV2) with Unity
 
 __
 
-## logging on headset
-Android Logcat: Connect the headset via USB/Wi-Fi and enter the following in the PC terminal:
-```
-adb logcat -s Unity
-```
-
-You will see all Debug.Log files in real time in the Linux terminal.
----
-
-Очистка временных файлов
-Иногда Unity "клинит" на кэше импорта. Находясь в корне проекта, удали папку Library (не бойся, Unity пересоберет её при запуске, это безопасно):
-
-```
-rm -rf Library/
-```
----
-
-__
-
-## file: /UnityProject/Assets/Plugins/Android/AndroidManifest.xml
+## change this file: /UnityProject/Assets/Plugins/Android/AndroidManifest.xml
+add 3 lines
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
@@ -62,15 +41,12 @@ __
 ```
 
 
-
-
-## PassthroughCamera with libOpenCvSharp (CV2) with Unity
-
-### You need this 3 files, put it to this dir:
+### You need this files, put it to this dir:
 ```
 Assets/Plugins/Android/libs/arm64-v8a/libopencv_java4.so
 Assets/Plugins/Android/libs/arm64-v8a//libOpenCvSharpExtern.so
 Assets/Prefabs/CameraViewerManagerPrefab.prefab
+Assets/CameraViewerManager.cs
 ```
 
 ## Give rights to files
@@ -86,3 +62,31 @@ find Assets/Plugins/Android/libs/arm64-v8a/ -type f -name "*.so" -exec chmod 644
 
 
 
+
+
+
+________________
+
+## write apk on quest
+```
+adb install -r quest_teleop_new.apk
+```
+
+---
+
+## logging on headset
+Android Logcat: Connect the headset via USB/Wi-Fi and enter the following in the PC terminal:
+```
+adb logcat -s Unity
+```
+
+You will see all Debug.Log files in real time in the Linux terminal.
+---
+
+Очистка временных файлов
+Иногда Unity "клинит" на кэше импорта. Находясь в корне проекта, удали папку Library (не бойся, Unity пересоберет её при запуске, это безопасно) 5-7 мин:
+
+```
+rm -rf Library/
+```
+---
