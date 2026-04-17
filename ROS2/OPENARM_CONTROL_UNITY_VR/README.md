@@ -64,21 +64,21 @@ __
 
 
 
-## PassthroughCamera
+## PassthroughCamera with libOpenCvSharp (CV2) with Unity
 
-### Need this 3 files:
+### You need this 3 files, put it to this dir:
 ```
-_PassthroughCamera/CameraViewerManagerPrefab.prefab
-_PassthroughCamera/libopencv_java4.so
-_PassthroughCamera/libOpenCvSharpExtern.so
+Assets/Plugins/Android/libs/arm64-v8a/libopencv_java4.so
+Assets/Plugins/Android/libs/arm64-v8a//libOpenCvSharpExtern.so
+Assets/Prefabs/CameraViewerManagerPrefab.prefab
 ```
 
-## Даем права на чтение и запись всем файлам в папке плагинов
+## Give rights to files
 ```
 sudo chmod -R 777 Assets/Plugins/Android/libs/arm64-v8a/
 ```
 
-## Убираем атрибут "только чтение", если он прилетел из архива
+## Remove ReadOnly attribute
 ```
 find Assets/Plugins/Android/libs/arm64-v8a/ -type f -name "*.so" -exec chmod 644 {} +
 ```
