@@ -1,6 +1,13 @@
 
 # PassthroughCamera with libOpenCvSharp (CV2) on Unity
 
+
+
+
+Meta XR All-in-One SDK
+85.0.0 - Feb 13,2026
+
+
 __
 
 ## change this file: /UnityProject/Assets/Plugins/Android/AndroidManifest.xml
