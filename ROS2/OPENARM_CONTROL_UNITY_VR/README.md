@@ -3,9 +3,13 @@
 
 
 
+Unity editor 
+6000.3.ffl
 
 Meta XR All-in-One SDK
 85.0.0 - Feb 13,2026
+
+
 
 
 __
