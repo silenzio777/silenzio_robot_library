@@ -12,6 +12,9 @@ cd lerobot
 python3 -m venv venv
 source venv/bin/activate
 pip3 install -e .
+
+pip3 install -e ".[damiao]"
+pip3 install -e ".[pi0]"
 ```
 
 ### fix cv2
@@ -55,7 +58,7 @@ RuntimeError: operator torchvision::nms does not exist
 ```
 pip3 uninstall torch torchvision torchaudio -y
 ## pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
-pip3 install torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+pip3 install torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126 --no-deps
 ```
 
 __________
