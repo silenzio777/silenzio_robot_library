@@ -130,7 +130,31 @@ drwxr-xr-x 15 root root 4096 Mar  8  2025 cuda-12.8
 ```
 
 ```
-$ CUDA_HOME=/usr/local/cuda-12.6 MAX_JOBS=1 pip install flash-attn --no-build-isolation -v
+CUDA_HOME=/usr/local/cuda-12.6 MAX_JOBS=1 pip install flash-attn --no-build-isolation -v
+# ~ 2-3 ours...
+```
+
+### backup:
+```
+cp /home/silenzio/.cache/pip/wheels/f5/05/1e/a6726e9eee2e7ee6151dbfed113e89d220dd3964ba617ab32d/flash_attn-2.8.3-cp310-cp310-linux_x86_64.whl ~/flash_attn_backup.whl
+```
+### reinstall:
+
+```
+pip install flash_attn-2.8.3-cp310-cp310-linux_x86_64.whl
+
+# Убираем право на запись (write) для всех
+chmod -R a-w /home/silenzio/.local/lib/python3.10/site-packages/flash_attn*
+# вернуть права: 
+## chmod -R u+w /home/silenzio/.local/lib/python3.10/site-packages/flash_attn*
+```
+
+_________
+
+```
+python3 -m venv ~/lerobot_env
+source ~/lerobot_env/bin/activate
+pip install ~/flash_attn_backup.whl  # Ставим из нашего бэкапа
 ```
 
 
