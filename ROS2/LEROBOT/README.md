@@ -59,9 +59,16 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 ```
 python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda); print('CUDA:', torch.version.cuda)"
-#12.6
-#12060
-#
+# 12.6
+# 12060
+# CUDA: 12.6
+```
+```
+nvcc --version
+
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Fri_Feb_21_20:23:50_PST_2025
 ```
 
 ### fix flash-attn:
@@ -82,7 +89,8 @@ Version: 2.7.0.post2
 ```
 pip uninstall flash-attn -y
 ### pip install flash-attn --no-build-isolation
-pip install flash-attn --no-build-isolation --extra-index-url https://download.pytorch.org/whl/cu126
+##### pip install flash-attn --no-build-isolation --extra-index-url https://download.pytorch.org/whl/cu126
+pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.0.post2/flash_attn-2.7.0.post2+cu12cxx-cp310-cp310-linux_x86_64.whl
 ```
 
 ### or:
