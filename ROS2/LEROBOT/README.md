@@ -63,13 +63,22 @@ python -c "import torch; print(torch.version.cuda); import torchvision; print(to
 # 12060
 # CUDA: 12.6
 ```
+
 ```
 nvcc --version
-
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2025 NVIDIA Corporation
 Built on Fri_Feb_21_20:23:50_PST_2025
 ```
+
+```
+ls /usr/local/ | grep cuda
+
+cuda
+cuda-12
+cuda-12.8
+```
+
 
 ### fix flash-attn:
 
