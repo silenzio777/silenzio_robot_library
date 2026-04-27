@@ -27,11 +27,13 @@ pip3 install realsence2
 
 ### fix xformers:
 
+```
 python eval_pio_aloha_live.py
 WARNING: xformers: WARNING [XFORMERS]: XFormers can't load C++ /CUDA extensions. xFormers was built for :
 PyTorch 2.5.1+CU121 with CUDA 1201 (you have 2.7.1+cU126)
 Python 3.10.15 (you have 3.10.12)
 Please reinstall xformers (se https: //github.com/facebookresearch/xformers#installing-xformers)
+```
 
 ```
 # [linux & win] cuda 12.6 version
