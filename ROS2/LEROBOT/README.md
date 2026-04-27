@@ -2,6 +2,58 @@
 
 https://github.com/huggingface/lerobot
 
+
+
+
+```
+$ lerobot-info
+- LeRobot version: 0.4.4
+- Platform: Linux-6.8.0-110-generic-x86_64-with-glibc2.35
+- Python version: 3.10.12
+- Huggingface Hub version: 0.35.3
+- Datasets version: 4.1.1
+- Numpy version: 2.2.6
+- FFmpeg version: 4.4.2-0ubuntu0.22.04.1
+- PyTorch version: 2.11.0+cu126
+- Is PyTorch built with CUDA support?: True
+- Cuda version: 12.6
+- GPU model: NVIDIA GeForce RTX 4080
+- Using GPU in script?: <fill in>
+- lerobot scripts: ['lerobot-calibrate', 'lerobot-dataset-viz', 'lerobot-edit-dataset', 'lerobot-eval', 'lerobot-find-cameras', 'lerobot-find-joint-limits', 'lerobot-find-port', 'lerobot-imgtransform-viz', 'lerobot-info', 'lerobot-record', 'lerobot-replay', 'lerobot-setup-can', 'lerobot-setup-motors', 'lerobot-teleoperate', 'lerobot-train', 'lerobot-train-tokenizer']
+```
+
+```
+$ lerobot-setup-can --mode=test --interfaces=can0,can1
+==================================================
+CAN Motor Test
+==================================================
+Testing motors 0x01-0x08
+Mode: CAN FD
+
+
+can0: Interface not found
+  ⚠ Interface is not UP. Run: lerobot-setup-can --mode=setup --interfaces can0
+
+can1: Interface not found
+  ⚠ Interface is not UP. Run: lerobot-setup-can --mode=setup --interfaces can1
+
+==================================================
+Summary
+==================================================
+Total motors found: 0
+
+⚠ No motors found! Check:
+  1. Motors are powered (24V)
+  2. CAN wiring (CANH, CANL, GND)
+  3. Motor timeout parameter > 0 (use Damiao tools)
+  4. 120Ω termination at both cable ends
+  5. Interface configured: lerobot-setup-can --mode=setup --interfaces can0
+```
+
+____________
+____________
+
+
 ### install:
 
 https://huggingface.co/docs/lerobot/installation
@@ -56,7 +108,9 @@ RuntimeError: operator torchvision::nms does not exist
 ```
 
 ```
-pip3 uninstall torch torchvision torchaudio -y
+### pip3 uninstall torch torchvision torchaudio -y
+## pip3 uninstall torch torchvision torchaudio
+pip3 uninstall torch torchvision torchaudio --no-deps
 ## pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 pip3 install torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126 --no-deps
 ```
