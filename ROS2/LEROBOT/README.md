@@ -57,6 +57,9 @@ pip uninstall torch torchvision torchaudio -y
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 ```
 
+__________
+## CUDA driver mismach, fix:
+
 ```
 python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda); print('CUDA:', torch.version.cuda)"
 # 12.6
@@ -65,10 +68,12 @@ python -c "import torch; print(torch.version.cuda); import torchvision; print(to
 ```
 
 ```
-nvcc --version
+$ nvcc --version
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2025 NVIDIA Corporation
 Built on Fri_Feb_21_20:23:50_PST_2025
+Cuda compilation tools, release 12.8, V12.8.93
+Build cuda_12.8.r12.8/compiler.35583870_0
 ```
 
 ```
@@ -78,6 +83,32 @@ cuda
 cuda-12
 cuda-12.8
 ```
+
+### fix, install CUDA Toolkit 12.6:
+https://developer.nvidia.com/cuda-12-6-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=runfile_local
+
+### download:
+```
+wget https://developer.download.nvidia.com/compute/cuda/12.6.0/local_installers/cuda_12.6.0_560.28.03_linux.run
+```
+
+### run install:
+```
+sudo sh cuda_12.6.0_560.28.03_linux.run
+```
+
+Когда вы запустите `.run` файл, через несколько секунд (после распаковки) появится текстовый интерфейс в терминале.
+
+1.  **Accept EULA**: Сначала появится лицензионное соглашение. Нужно набрать `accept` и нажать **Enter**.
+2.  **Меню выбора компонентов**: Появится список с крестиками `[X]`.
+3.  **Снятие галочки**:
+    * С помощью стрелок на клавиатуре наведите курсор на строку **Driver**.
+    * Нажмите **Space** (Пробел), чтобы убрать крестик. Должно стать **`[ ] Driver`**.
+    * Убедитесь, что на строке **CUDA Toolkit 12.6** крестик стоит: **`[X] CUDA Toolkit 12.6`**.
+4.  **Установка**: Спуститесь стрелками вниз до кнопки **Install** и нажмите **Enter**.
+
+
+__________
 
 
 ### fix flash-attn:
