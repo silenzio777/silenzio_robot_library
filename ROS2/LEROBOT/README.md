@@ -43,6 +43,16 @@ WARNING:xformers:WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFo
 pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126
 ```
 
+```
+python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda)"
+#12.6
+```
+
+
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+
+
 
 
 ________________________
