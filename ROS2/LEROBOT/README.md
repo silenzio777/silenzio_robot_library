@@ -43,14 +43,51 @@ WARNING:xformers:WARNING[XFORMERS]: xFormers can't load C++/CUDA extensions. xFo
 pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126
 ```
 
+## fix torchvision:
+
+```
+$ python eval_pi0_aloha_live.py
+...
+if torch._C._dispatch_has_kernel_for_dispatch_key(self.qualname, "Meta"):
+RuntimeError: operator torchvision::nms does not exist
+```
+
+```
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+```
+
 ```
 python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda)"
 #12.6
+#12060
+```
+
+### fix flash-attn:
+
+```
+$ python eval_pi0_aloha_live.py
+...
+import flash_attn_2_cuda as flash_attn_cuda
+ImportError: /home/silenzio/.local/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3c104cuda29c10_cuda_check_implementationEiPKcS2_ib
+```
+
+```
+$ pip show flash-attn
+Name: flash-attn
+Version: 2.7.0.post2
+```
+
+```
+pip uninstall flash-attn -y
+pip install flash-attn --no-build-isolation
 ```
 
 
-pip uninstall torch torchvision torchaudio -y
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+
+
+
+
 
 
 
