@@ -107,6 +107,32 @@ sudo sh cuda_12.6.0_560.28.03_linux.run
     * Убедитесь, что на строке **CUDA Toolkit 12.6** крестик стоит: **`[X] CUDA Toolkit 12.6`**.
 4.  **Установка**: Спуститесь стрелками вниз до кнопки **Install** и нажмите **Enter**.
 
+```
+===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-12.6/
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-12.6/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-12.6/lib64, or, add /usr/local/cuda-12.6/lib64 to /etc/ld.so.conf and run ldconfig as root
+```
+__
+
+```
+$ ls -l /usr/local/ | grep cuda
+lrwxrwxrwx  1 root root   21 Apr 27 17:33 cuda -> /usr/local/cuda-12.6/
+lrwxrwxrwx  1 root root   25 Mar  8  2025 cuda-12 -> /etc/alternatives/cuda-12
+drwxr-xr-x 16 root root 4096 Apr 27 17:34 cuda-12.6
+drwxr-xr-x 15 root root 4096 Mar  8  2025 cuda-12.8
+```
+
+```
+$ CUDA_HOME=/usr/local/cuda-12.6 MAX_JOBS=1 pip install flash-attn --no-build-isolation -v
+```
+
 
 __________
 
