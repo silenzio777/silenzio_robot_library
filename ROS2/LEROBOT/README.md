@@ -58,9 +58,10 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 ```
 
 ```
-python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda)"
+python -c "import torch; print(torch.version.cuda); import torchvision; print(torchvision.version.cuda); print('CUDA:', torch.version.cuda)"
 #12.6
 #12060
+#
 ```
 
 ### fix flash-attn:
@@ -80,9 +81,27 @@ Version: 2.7.0.post2
 
 ```
 pip uninstall flash-attn -y
-pip install flash-attn --no-build-isolation
+### pip install flash-attn --no-build-isolation
+pip install flash-attn --no-build-isolation --extra-index-url https://download.pytorch.org/whl/cu126
 ```
 
+### or:
+```
+# Ограничиваем сборку 1 или 2 потоками (самый безопасный вариант)
+MAX_JOBS=1 pip install flash-attn --no-build-isolation
+# Это будет долго (может занять 30–60 минут), но машина останется отзывчивой.
+```
+
+
+
+
+```
+$ python3 eval_pi0_aloha_live.py
+Traceback (most recent call last):
+  File "/home/silenzio/lib/lerobot/eval_pi0_aloha_live.py", line 5, in <module>
+    from lerobot.policies.pi0.policy import PI0Policy
+ModuleNotFoundError: No module named 'lerobot.policies.pi0.policy'
+```
 
 
 
