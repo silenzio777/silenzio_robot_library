@@ -54,7 +54,8 @@ RuntimeError: operator torchvision::nms does not exist
 
 ```
 pip3 uninstall torch torchvision torchaudio -y
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+## pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+pip3 install torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 ```
 
 __________
