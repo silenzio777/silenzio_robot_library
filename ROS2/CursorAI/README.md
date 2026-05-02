@@ -8,8 +8,7 @@
 ```bash
 cd ~/lib
 mkdir -p cursor_backup
-cp -r ~/.config/Cursor ~/.cursor
-cursor_backup/
+cp -r ~/.config/Cursor ~/.cursor cursor_backup
 ```
 
 *   **`~/.config/Cursor/`**: Хранит важные настройки, такие как `settings.json` (настройки редактора), `keybindings.json` (горячие клавиши), а также данные о чатах и состоянии интерфейса.
