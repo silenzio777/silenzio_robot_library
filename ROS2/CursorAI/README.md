@@ -54,4 +54,24 @@ rm -rf ~/cursor_backup
 
 Теперь при следующем запуске Cursor вы увидите все свои привычные настройки, горячие клавиши и расширения именно в том виде, в котором они были.
 
-Надеюсь, этот план поможет! Если на каком-то из шагов возникнут вопросы, спрашивайте.
+### add app and icon:
+```
+bash -c 'cat > ~/.local/share/applications/cursor.desktop << EOF
+[Desktop Entry]
+Name=Cursor
+Comment=AI Code Editor
+Exec=/usr/bin/cursor %F
+Icon=/home/silenzio/.config/Cursor/cursor.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+MimeType=text/plain;inode/directory;
+StartupWMClass=Cursor
+EOF'
+
+```
+
+### refresh:
+```
+update-desktop-database ~/.local/share/applications/
+```
