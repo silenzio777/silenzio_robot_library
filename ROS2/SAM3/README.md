@@ -1,5 +1,8 @@
 # facebook/SAM3
 
+https://github.com/facebookresearch/sam3
+
+___
 ### facebook/sam3 download model
 
 https://www.modelscope.cn/models/facebook/sam3/files
@@ -17,7 +20,7 @@ modelscope download --model facebook/sam3
 Downloading Model to directory: /home/silenzio/.cache/modelscope/hub/models/facebook/sam3
 ...
 ```
-
+___
 ### facebook/sam3 install:
 
 ```
