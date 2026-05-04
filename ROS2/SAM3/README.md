@@ -1,4 +1,6 @@
-# facebook/sam3 download model
+# facebook/SAM3
+
+### facebook/sam3 download model
 
 https://www.modelscope.cn/models/facebook/sam3/files
 
