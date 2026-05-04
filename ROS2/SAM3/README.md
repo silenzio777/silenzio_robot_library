@@ -10,4 +10,9 @@ pip3 install modelscope
 modelscope download --model facebook/sam3
 ```
 
+```
+...
+Downloading Model to directory: /home/silenzio/.cache/modelscope/hub/models/facebook/sam3
+...
+```
 
