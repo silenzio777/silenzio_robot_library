@@ -16,3 +16,13 @@ Downloading Model to directory: /home/silenzio/.cache/modelscope/hub/models/face
 ...
 ```
 
+### facebook/sam3 install:
+
+```
+cd /home/silenzio/lib/sam3/
+git clone https://github.com/facebookresearch/sam3.git
+python3 -m venv venv
+source venv/bin/activate
+cd /home/silenzio/lib/sam3/
+```
+
