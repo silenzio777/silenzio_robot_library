@@ -711,7 +711,7 @@ source install/setup.bash
 После этого ваше сообщение HandMessage станет доступно в системе ROS2. Проверить это можно командой:
 ```
 cd ~/ros2_ws
-ros2 interface show my_robot_interfaces/msg/HandMessage
+ros2 interface show openarm_interfaces/msg/HandMessage
 ```
 
 ### wokrs
