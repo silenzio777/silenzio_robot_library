@@ -672,6 +672,15 @@ sudo apt install gdu
 sudo gdu /
 ```
 
+___
+```
+uv cache clean
+```
+```
+Clearing cache at: /home/silenzio/.cache/uv
+Removed 103306 files (14.0GiB)
+```
+
 ______
 
 Чтобы сравнить два корневых каталога на HDD и SSD в Ubuntu, включая все вложенные файлы и папки, используйте следующие методы:
