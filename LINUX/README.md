@@ -1363,6 +1363,15 @@ The system will power off auto in 40 second
 You need to put key <Arrow right> and hit <Enter>
 to shutdown now.
 ```
+
+___
+
+Как найти все упоминания torch_dtype в исходниках:
+
+### Поиск в папке проекта
+```
+grep -r "torch_dtype" ~/lib/ml-fastvlm/
+```
 ___
 
 ### Typical build from source:
