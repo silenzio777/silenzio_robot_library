@@ -18,6 +18,7 @@ Unzip to IsaacLab_2_2_0
 ```
 python3 -m venv env_isaaclab_2_2_0
 source env_isaaclab_2_2_0/bin/activate
+unset PYTHONPATH
 ```
 
 pip3 install --upgrade pip
