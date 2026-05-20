@@ -44,11 +44,24 @@ export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/silenzio/lib/isaac/IsaacLab_2_2_0/env_isaaclab_2_2_0/lib/python3.10/site-packages/isaacsim/exts/isaacsim.ros2.bridge/humble/lib
 ```
 
+### add config:
+```
+nano /home/silenzio/lib/isaac/IsaacLab_2_2_0/env_isaaclab_2_2_0/bin/activate
+```
+
+### add text to file:
+```
+# Настройки для ROS2 Bridge в Isaac Sim
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/silenzio/lib/isaac/IsaacLab_2_2_0/env_isaaclab_2_2_0/lib/python3.10/site-packages/isaacsim/exts/isaacsim.ros2.bridge/humble/lib
+```
 
 ### run:
 ```
 ./isaaclab.sh -s
 ```
+
+
 
 
 
