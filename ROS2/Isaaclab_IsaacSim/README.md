@@ -74,7 +74,10 @@ source env_isaaclab_2_2_0/bin/activate
 ./isaaclab.sh -s --/app/extensions/syncRegistry=false
 ```
 
-
+### kill isaac:
+```
+pkill -9 -f isaac
+```
 
 
 
