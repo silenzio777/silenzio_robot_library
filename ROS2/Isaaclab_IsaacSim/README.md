@@ -21,6 +21,8 @@ pip3 install 'isaacsim[all,extscache]==4.5.0' --extra-index-url https://pypi.nvi
 ---
 ```
 sudo apt install cmake build-essential
+pip install "cmake<3.27"
+export CMAKE_POLICY_VERSION_MINIMUM=3.5
 ```
 
 ### Download isaac-sim 2.2.0
