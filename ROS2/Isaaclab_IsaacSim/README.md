@@ -39,5 +39,17 @@ cd IsaacLab_2_2_0
 ./isaaclab.sh --install # or "./isaaclab.sh -i"
 ```
 
-### works
+```
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/silenzio/lib/isaac/IsaacLab_2_2_0/env_isaaclab_2_2_0/lib/python3.10/site-packages/isaacsim/exts/isaacsim.ros2.bridge/humble/lib
+```
+
+
+### run:
+```
+./isaaclab.sh -s
+```
+
+
+
 
