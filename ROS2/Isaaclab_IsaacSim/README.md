@@ -61,6 +61,19 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/silenzio/lib/isaac/IsaacLab_2_2_0/
 ./isaaclab.sh -s
 ```
 
+### run without registry:
+```
+cd ~/lib/isaac/IsaacLab_2_2_0
+source env_isaaclab_2_2_0/bin/activate
+
+./isaaclab.sh -s --/app/extensions/registry/enabled=false
+```
+
+### or:
+```
+./isaaclab.sh -s --/app/extensions/syncRegistry=false
+```
+
 
 
 
