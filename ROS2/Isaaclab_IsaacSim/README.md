@@ -1,4 +1,4 @@
-# install isaac-sim 2.2.0 
+# install isaac-sim 4.5, isaac-lab 2.2.0 
 
 ```
 cd ~/lib
@@ -58,7 +58,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/silenzio/lib/isaac/IsaacLab_2_2_0/
 
 ### run:
 ```
-./isaaclab.sh -s
+_./isaaclab.sh -s
+./isaaclab.sh --sim
 ```
 
 ### run without registry:
