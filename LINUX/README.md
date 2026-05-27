@@ -1388,6 +1388,30 @@ cmake --build build --config RelWithDebInfo -j
 ```
 ./build/your_programm
 ```
+____
+
+### zip unzip:
+
+whit GUI:
+
+```
+sudo apt install ark
+
+ark
+```
+
+terminal:
+
+```
+unzip -O cp866 имя_архива.zip
+unzip -O cp1251 имя_архива.zip
+```
+
+```
+7z x имя_файла.7z
+```
+
+
 
 ___
 ### reboot
