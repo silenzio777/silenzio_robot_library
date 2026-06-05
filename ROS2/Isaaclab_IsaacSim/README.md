@@ -171,7 +171,18 @@ sudo tailscale up
 ```
 
 
+### Train:
 
+Isaac-Velocity-Rough-Anymal-C-v0
+
+```
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/train.py --task=Isaac-Ant-v0 --headless
+```
+
+### PLay:
+```
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play.py --task=Isaac-Ant-v0
+```
 
 
 
