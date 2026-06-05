@@ -149,12 +149,11 @@ __
 Попробуй запустить самый минимальный headless-тест:
 
 ```
-python -c "
+python3 -c "
 from isaacsim import SimulationApp
 simulation_app = SimulationApp({'headless': True})
 print('OK')
-simulation_app.close()
-"
+simulation_app.close()"
 ```
 
 
