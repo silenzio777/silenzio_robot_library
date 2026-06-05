@@ -155,6 +155,23 @@ simulation_app = SimulationApp({'headless': True})
 print('OK')
 simulation_app.close()"
 ```
+___
+
+### tailscale OFF
+
+```
+sudo snap stop tailscale
+sudo snap disable tailscale
+```
+
+### tailscale ON
+```
+sudo snap enable tailscale
+sudo tailscale up
+```
+
+
+
 
 
 
