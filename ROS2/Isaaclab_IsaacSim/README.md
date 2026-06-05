@@ -94,7 +94,13 @@ source env_isaaclab_2_2_0/bin/activate
 ```
 watch -n 2 'du -sh ~/.local/share/ov/data/exts/v2 2>/dev/null'
 ```
-
+___
+### CLEAR CACHE
+```
+rm -rf ~/.cache/ov
+rm -rf ~/.cache/nvidia/GLCache
+rm -rf ~/.local/share/ov/data/Kit/Isaac-Sim/4.5
+```
 
 
 
