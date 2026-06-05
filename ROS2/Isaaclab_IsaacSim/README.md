@@ -104,6 +104,19 @@ rm -rf ~/.cache/nvidia/GLCache
 rm -rf ~/.local/share/ov/data/Kit/Isaac-Sim/4.5
 ```
 
+___
+```
+du -sh ~/.cache/ov
+```
+
+300M	/home/silenzio/.cache/ov
+
+```
+du -sh  ~/.local/share/ov
+```
+359M	/home/silenzio/.local/share/ov
+
+
 
 
 
