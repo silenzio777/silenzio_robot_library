@@ -136,4 +136,12 @@ http://d4i3qtqj3r0z5.cloudfront.net/omni.kit.menu.edit-874360293737b28f.zip
 ```
 
 ```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  352k  100  352k    0     0  1200k      0 --:--:-- --:--:-- --:--:-- 1227k
+
+Speed: 1229307 bytes/sec
+```
+
+
 
