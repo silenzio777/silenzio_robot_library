@@ -80,6 +80,21 @@ source env_isaaclab_2_2_0/bin/activate
 pkill -9 -f isaac
 ```
 
+____
+### T1:
+
+
+```
+./isaaclab.sh -p '/home/silenzio/lib/isaac/IsaacLab_2_2_0/scripts/tutorials/00_sim/create_empty.py'
+```
+
+### T2:
+```
+watch -n 2 'du -sh ~/.local/share/ov/data/exts/v2 2>/dev/null'
+```
+
+
+
 
 
 
