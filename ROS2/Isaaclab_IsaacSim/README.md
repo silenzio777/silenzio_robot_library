@@ -93,6 +93,8 @@ source env_isaaclab_2_2_0/bin/activate
 ### T2:
 ```
 watch -n 2 'du -sh ~/.local/share/ov/data/exts/v2 2>/dev/null'
+watch -n 2 'du -sh ~/.local/share/ov 2>/dev/null'
+watch -n 2 'du -sh ~/.cache/ov 2>/dev/null'
 ```
 ___
 ### CLEAR CACHE
