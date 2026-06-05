@@ -125,6 +125,15 @@ du -sh  ~/.local/share/ov
 _isaac_sim/kit/exts
 _isaac_sim/exts
 
+___
 
+## Test speed:
+```
+curl -o /dev/null \
+-L \
+-w "\nSpeed: %{speed_download} bytes/sec\n" \
+http://d4i3qtqj3r0z5.cloudfront.net/omni.kit.menu.edit-874360293737b28f.zip
+```
 
+```
 
