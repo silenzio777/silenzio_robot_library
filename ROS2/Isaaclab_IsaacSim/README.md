@@ -117,6 +117,13 @@ du -sh  ~/.local/share/ov
 359M	/home/silenzio/.local/share/ov
 
 
+Найдите папки кэша Omniverse:
+~/.cache/ov – общий кэш Kit
+~/.local/share/ov – могут быть дополнительные данные
+
+Также расширения могут лежать прямо внутри установки Isaac Sim:
+_isaac_sim/kit/exts
+_isaac_sim/exts
 
 
 
