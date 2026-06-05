@@ -183,8 +183,15 @@ sudo tailscale up
 ### PLay:
 ```
 ./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play.py --task=Isaac-Ant-v0
+./isaaclab.sh -p scripts/reinforcement_learning/rsl_rl/play.py --task=Isaac-Velocity-Rough-Anymal-C-v0
 ```
 
+___
+
+
+КатегорияРоботы / ПлатформыПопулярные задачи (--task)Четвероногие (Quadrupeds)ANYbotics ANYmal (B, C, D)Unitree (A1, Go1, Go2)Boston Dynamics SpotIsaac-Velocity-Rough-Anymal-C-v0Isaac-Velocity-Rough-Unitree-Go2-v0Isaac-Velocity-Flat-Spot-v0Гуманоиды (Humanoids)Unitree H1Unitree G1Isaac-Velocity-Rough-Unitree-G1-v0Isaac-Humanoid-AMP-v0Манипуляторы (Arms)Franka Emika PandaUniversal Robots (UR10, UR10e)Isaac-Reach-Franka-v0Isaac-Lift-Cube-Franka-v0Isaac-Pick-Cube-UR10-v0Роборуки (Dexterous Hands)Allegro HandShadow HandIsaac-Repose-Allegro-Hand-v0Isaac-Shadow-Hand-Direct-v0
+
+На заметку по именованию: В названии таски зашифрована логика. Например, Isaac-Velocity-Rough-Anymal-C-v0 означает: симуляция на базе Isaac Lab (Isaac), задача на удержание заданной линейной/угловой скорости (Velocity), по пересеченной местности (Rough), для робота Anymal-C, версия v0.
 
 
 
