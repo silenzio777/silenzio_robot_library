@@ -143,5 +143,21 @@ http://d4i3qtqj3r0z5.cloudfront.net/omni.kit.menu.edit-874360293737b28f.zip
 Speed: 1229307 bytes/sec
 ```
 
+__
+
+Быстрый эксперимент
+Попробуй запустить самый минимальный headless-тест:
+
+```
+python -c "
+from isaacsim import SimulationApp
+simulation_app = SimulationApp({'headless': True})
+print('OK')
+simulation_app.close()
+"
+```
+
+
+
 
 
