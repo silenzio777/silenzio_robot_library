@@ -85,6 +85,8 @@ ____
 
 
 ```
+cd ~/lib/isaac/IsaacLab_2_2_0
+source env_isaaclab_2_2_0/bin/activate
 ./isaaclab.sh -p '/home/silenzio/lib/isaac/IsaacLab_2_2_0/scripts/tutorials/00_sim/create_empty.py'
 ```
 
