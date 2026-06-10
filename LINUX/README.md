@@ -1411,6 +1411,111 @@ unzip -O cp1251 имя_архива.zip
 7z x имя_файла.7z
 ```
 
+___
+
+QQQ:
+Я достал из NAS Synology DS210 диск.
+Хочу прочитать его под Ubentu 22.
+
+Его данные:
+
+Model ACASIS EC-7351 (1.02)
+Serial Number 012345678999
+Size 2.0 TB (2,000,398,934,016 bytes)
+Partitioning Master Boot Record
+
+Партиция:
+
+Size 2.6 GB (2,550,005,760 bytes)
+Contents Linux RAID Member (version 0.90.0)
+Device /dev/sdb1
+UUID e7daf6e3-8ado-fc10-50c3-8b7df0626b61
+Partition Type Linux RAID auto
+
+Как прочитать с него данные?
+
+Он не виден в системе и не дает сделать mount
+
+AAA:
+
+```
+sudo apt update
+sudo apt install mdadm lvm2
+```
+
+```
+$ lsblk /dev/sdb
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
+sdb      8:16   0  1.8T  0 disk 
+├─sdb1   8:17   0  2.4G  0 part 
+├─sdb2   8:18   0    2G  0 part 
+├─sdb3   8:19   0    1K  0 part 
+└─sdb5   8:21   0  1.8T  0 part 
+```
+
+
+```
+sudo mdadm --assemble --run /dev/md0 /dev/sdb5
+
+cat /proc/mdstat
+```
+
+```
+$ sudo vgscan
+  WARNING: PV /dev/md0 in VG vg1000 is using an old PV header, modify the VG to update.
+  Found volume group "vg1000" using metadata type lvm2
+
+
+sudo vgchange -ay vg1000
+
+$ sudo vgchange -ay vg1000
+  WARNING: PV /dev/md0 in VG vg1000 is using an old PV header, modify the VG to update.
+  1 logical volume(s) in volume group "vg1000" now active
+
+
+
+sudo lvdisplay vg1000
+
+$ sudo lvdisplay vg1000
+  WARNING: PV /dev/md0 in VG vg1000 is using an old PV header, modify the VG to update.
+  --- Logical volume ---
+  LV Path                /dev/vg1000/lv
+  LV Name                lv
+  VG Name                vg1000
+  LV UUID                AlrsAJ-hfFM-W6lD-lTPF-aUTH-JocZ-ItY2iQ
+  LV Write Access        read/write
+  LV Creation host, time , 
+  LV Status              available
+  # open                 0
+  LV Size                1.81 TiB
+  Current LE             475776
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           252:0
+
+
+sudo mkdir -p /mnt/syno_data
+sudo mount -o ro /dev/vg1000/lv /mnt/syno_data
+```
+
+
+Вижу его тут: но не вижу его в GUI
+
+```
+$ df -h
+Filesystem             Size  Used Avail Use% Mounted on
+...
+/dev/mapper/vg1000-lv  1.8T  950G  880G  52% /mnt/syno_data
+```
+
+Как найти?
+```
+nautilus /mnt/syno_data &
+
+ln -s /mnt/syno_data ~/Desktop/Synology_Files
+```
 
 
 ___
@@ -1428,5 +1533,6 @@ _______
 sudo shutdown now
 sudo shutdown -r now
 ```
+
 
 
