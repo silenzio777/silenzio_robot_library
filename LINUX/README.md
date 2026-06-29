@@ -1309,12 +1309,7 @@ Thermal Management T1 Total Time	: 65
 Thermal Management T2 Total Time	: 0
 ```
 
-_______
 
-### If you're on X11, gnome-shell should automatically restart:
-```
-killall -3 gnome-shell
-```
 _______
 
 ### Check Ollama running models:
@@ -1517,7 +1512,12 @@ nautilus /mnt/syno_data &
 ln -s /mnt/syno_data ~/Desktop/Synology_Files
 ```
 
+_______
 
+### If you're on X11, gnome-shell should automatically restart:
+```
+killall -3 gnome-shell
+```
 ___
 ### reboot
 
