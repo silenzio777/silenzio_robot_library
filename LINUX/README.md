@@ -1514,6 +1514,37 @@ ln -s /mnt/syno_data ~/Desktop/Synology_Files
 
 _______
 
+1. Установка Python 3.12 рядом с 3.10
+
+```bash
+# 1. Добавляем репозиторий deadsnakes (если ещё не)
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+
+# 2. Ставим Python 3.12
+sudo apt install python3.12 python3.12-venv python3.12-dev
+```
+
+После этого у вас появятся:
+
+python3.10 — ваш старый, никуда не делся
+
+python3.12 — новый, полностью изолированный
+
+Системный python3 по-прежнему указывает на 3.10, ничего не сломано.
+
+
+2. Создаёте виртуальное окружение под новый проект:
+
+```bash
+python3.12 -m venv venv312
+source venv312/bin/activate
+python --version  # Python 3.12.x
+pip install ваш-пакет
+```
+
+_______
+
 ### If you're on X11, gnome-shell should automatically restart:
 ```
 killall -3 gnome-shell
