@@ -1545,6 +1545,51 @@ pip install ваш-пакет
 
 _______
 
+
+### trash-cli
+```
+sudo apt install trash-cli
+alias rm='trash-put'
+```
+
+Что делает trash-cli
+Это набор утилит командной строки, которые работают с корзиной (Trash) как в графическом интерфейсе, но из терминала. Удаленные файлы можно восстановить!
+
+Основные команды:
+```
+# Удалить файл в корзину (вместо rm)
+trash-put file.txt
+
+# Показать содержимое корзины
+trash-list
+
+# Восстановить файл из корзины
+trash-restore
+
+# Очистить корзину (аналог rm -rf для корзины)
+trash-empty
+```
+
+# БЕЗ алиаса (опасно!)
+
+```
+rm -R ~/ros2_ws/install/
+```
+# Файлы удалены НАВСЕГДА
+
+# С алиасом (безопасно!)
+```
+alias rm='trash-put'
+rm -R ~/ros2_ws/install/
+```
+# На самом деле выполнится: trash-put -R ~/ros2_ws/install/
+# Файлы в корзине, можно восстановить!
+
+
+
+
+_______
+
 ### If you're on X11, gnome-shell should automatically restart:
 ```
 killall -3 gnome-shell
