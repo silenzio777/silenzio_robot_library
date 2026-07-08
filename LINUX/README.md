@@ -1609,7 +1609,76 @@ trash-restore
 ```
 → выбрали папку install/
 → она вернулась бы на место
+_________
 
+### BACKUP HOME:
+
+backup_home_run.sh
+
+```bash
+#!/bin/bash
+
+BACKUP_BASE="/media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC"
+LATEST="$BACKUP_BASE/latest"
+TIMESTAMP=$(date +%Y-%m-%d)
+DEST="$BACKUP_BASE/$TIMESTAMP"
+
+mkdir -p "$DEST"
+
+# Массив исключений
+EXCLUDES=(
+    --exclude=.cache
+    --exclude=.thumbnails
+    --exclude=.local/share/Trash
+    --exclude=ros2_ws/build
+    --exclude=ros2_ws/install
+    --exclude=ros2_ws/log
+    --exclude='.*~'
+    --exclude='*.tmp'
+    --exclude='*.swp'
+    --exclude=node_modules
+    --exclude=__pycache__
+    --exclude='*.pyc'
+)
+
+if [ -L "$LATEST" ] && [ -d "$(readlink "$LATEST")" ]; then
+    PREV="$(readlink "$LATEST")"
+    echo "Incremental backup relative to: $PREV"
+    rsync -avh --delete --link-dest="$PREV" "${EXCLUDES[@]}" ~/ "$DEST"
+else
+    echo "Full first backup (no previous)"
+    rsync -avh --delete "${EXCLUDES[@]}" ~/ "$DEST"
+fi
+
+ln -snf "$DEST" "$LATEST"
+
+echo "Done. Backup in: $DEST"
+```
+
+### Запуск батника:
+
+backup_home.sh
+
+```
+#!/bin/bash
+xterm -bg black -fg white -hold -e /home/silenzio/Desktop/run/backup_home_run.sh
+```
+
+1. Удаляем неполный бэкап
+```
+rm -rf /media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC/2026-07-08
+```
+
+3. Перенаправляем latest на предыдущий рабочий бэкап
+```
+ln -snf /media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC/2026-06-27 \
+       /media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC/latest
+```
+
+5. Проверяем
+```
+ls -l /media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC/latest
+```
 
 _______
 
@@ -1632,6 +1701,8 @@ _______
 sudo shutdown now
 sudo shutdown -r now
 ```
+
+
 
 
 
