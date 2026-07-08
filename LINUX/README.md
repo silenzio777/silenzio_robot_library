@@ -1663,6 +1663,7 @@ backup_home.sh
 #!/bin/bash
 xterm -bg black -fg white -hold -e /home/silenzio/Desktop/run/backup_home_run.sh
 ```
+____
 
 1. Удаляем неполный бэкап
 ```
