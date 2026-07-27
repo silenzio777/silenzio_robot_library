@@ -1,3 +1,55 @@
+
+Схема команд для Включить PBR / Выключить PBR.
+
+Включить PBR (пустить .3.0/24 через VPN)
+
+EdgeRouter:
+```
+configure
+set interfaces ethernet eth0 firewall in modify QUEST3-VPN
+commit
+save
+exit
+```
+
+Это всё, что нужно если Ubuntu не перезагружалась с прошлого раза (iptables-правила и там уже стоят). Если Ubuntu перезагружалась — правила iptables слетают (это runtime-настройки), тогда сначала на Ubuntu:
+
+```
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A POSTROUTING -s 192.168.3.0/24 -o amn0 -j MASQUERADE
+sudo iptables -I DOCKER-USER -s 192.168.3.0/24 -j ACCEPT
+sudo iptables -I DOCKER-USER -d 192.168.3.0/24 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -t mangle -A FORWARD -o amn0 -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+sudo ip route add 192.168.3.0/24 via 192.168.2.1 dev enp6s0
+```
+
+Не забудь, что перед этим на Ubuntu должен быть запущен и подключён Amnezia VPN.
+
+Выключить PBR (вернуть обычный интернет)
+
+EdgeRouter (это единственное, что реально нужно):
+```
+configure
+delete interfaces ethernet eth0 firewall in modify QUEST3-VPN
+commit
+save
+exit
+```
+Правила iptables на Ubuntu можно не трогать — без PBR-привязки на роутере трафик до них просто не доходит, они безвредно "простаивают".
+
+
+Как проверить, что сейчас в каком состоянии:
+```
+show configuration commands | grep "interfaces ethernet eth0 firewall"
+```
+Если строка есть — PBR включён. Если пусто — выключен.
+
+
+
+
+_____
+
+
 ## Meta Quest for Teleop Setup Guide
 
 https://github.com/xiaoxiaoxh/TactAR_APP/blob/master/Docs/Build.md
