@@ -245,3 +245,7 @@ ID : GUID                             : GamePad : Mapped : Joystick Device Name
 
 https://forums.developer.nvidia.com/t/logitech-f710-does-not-show-up-in-dev-input/292637/4
 
+
+
+http://i.imgur.com/dKIOSuF.png<img width="750" height="500" alt="image" src="https://github.com/user-attachments/assets/3c7e51aa-14b5-46ad-a987-fb640dff6931" />
+
