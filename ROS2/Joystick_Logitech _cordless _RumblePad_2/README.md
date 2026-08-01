@@ -250,6 +250,9 @@ https://forums.developer.nvidia.com/t/logitech-f710-does-not-show-up-in-dev-inpu
 _____
 
 
+A B X Y version:
+
+
 <img width="944" height="603" alt="613ASmbfV+L _AC_SL1000_" src="https://github.com/user-attachments/assets/2a2849aa-358d-43fc-bdc6-a4fabb4d6c2a" />
 
 
