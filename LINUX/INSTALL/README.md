@@ -71,7 +71,7 @@ ___________
 
 ### Install amnezia kvn:
 
-- Update Ubunte software in System `Software Updater`
+- Update Ubuntu software in System `Software Updater`
 
 ```
 sudo apt update
