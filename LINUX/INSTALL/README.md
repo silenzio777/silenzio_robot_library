@@ -95,5 +95,114 @@ Install app, run:
 ```
 `./AmneziaVPN_Linux_Installer.bin`
 ```
+__________
 
+
+Как перенести на другую машину
+
+Всего два файла определяют всё поведение — их достаточно скопировать (или пересоздать вручную по инструкции ниже). Требования на целевой машине: Ubuntu + GNOME, установлен terminator, установлен ROS2 Humble в /opt/ros/humble (или поправить путь), и существует каталог ~/lib/robot_stand (или тоже поправить путь).
+
+Вариант А — просто скопировать файлы (быстрее всего)
+
+scp ~/.config/terminator/config user@другая-машина:~/.config/terminator/config
+scp ~/.config/autostart/terminator-tree.desktop user@другая-машина:~/.config/autostart/terminator-tree.desktop
+
+⚠️ Если на целевой машине в ~/.config/terminator/config уже что-то настроено (свои профили/layout'ы) — файл перезапишется целиком. Тогда используй Вариант Б и просто добавь секцию [[tree]] руками в существующий файл.
+
+Вариант Б — воспроизвести вручную
+
+1. Установить terminator (если не стоит):
+sudo apt install terminator
+
+2. Прописать layout. Открой ~/.config/terminator/config и вставь/слей это содержимое (секция [[tree]] внутри [layouts] — если файла ещё нет, можно взять целиком):
+
+[global_config]
+  suppress_multiple_term_dialog = True
+[profiles]
+  [[default]]
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+  [[tree]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      size = 894, 554
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+    [[[child4]]]
+      type = Window
+      parent = ""
+      order = 0
+      size = 1091, 1106
+    [[[child5]]]
+      type = VPaned
+      parent = child4
+      order = 0
+      position = 550
+    [[[child6]]]
+      type = VPaned
+      parent = child5
+      order = 0
+      position = 272
+    [[[terminal7]]]
+      type = Terminal
+      parent = child6
+      order = 0
+      profile = default
+      command = "source /opt/ros/humble/setup.bash && echo 'ros2 run joy joy_node' && ros2 run joy joy_node; exec bash"
+    [[[terminal8]]]
+      type = Terminal
+      parent = child6
+      order = 1
+      profile = default
+      command = "source /opt/ros/humble/setup.bash && echo 'ros2 run teleop_twist_joy teleop_node --ros-args -p axis_linear.x:=1 -p scale_linear.x:=1.0 -p axis_linear.y:=0 -p scale_linear.y:=1.0 -p axis_angular.yaw:=3 -p scale_angular.yaw:=1.0 -p require_enable_button:=false' && ros2 run teleop_twist_joy teleop_node --ros-args -p axis_linear.x:=1 -p scale_linear.x:=1.0 -p axis_linear.y:=0 -p scale_linear.y:=1.0 -p axis_angular.yaw:=3 -p scale_angular.yaw:=1.0 -p require_enable_button:=false; exec bash"
+    [[[child9]]]
+      type = VPaned
+      parent = child5
+      order = 1
+      position = 272
+    [[[terminal10]]]
+      type = Terminal
+      parent = child9
+      order = 0
+      profile = default
+    [[[terminal11]]]
+      type = Terminal
+      parent = child9
+      order = 1
+      profile = default
+      directory = /home/ИМЯ_ПОЛЬЗОВАТЕЛЯ/lib/robot_stand
+      command = "source /opt/ros/humble/setup.bash; exec bash"
+[plugins]
+
+Замени ИМЯ_ПОЛЬЗОВАТЕЛЯ и, если ROS2 не Humble или лежит в другом месте — путь /opt/ros/humble/setup.bash везде (4 места).
+
+3. Проверить layout:
+terminator --layout=tree
+Должно открыться 2 окна: одиночный терминал + окно с деревом из 4 панелей (joy_node / teleop_twist_joy / df -h / robot_stand).
+
+4. Настроить автозапуск при входе:
+mkdir -p ~/.config/autostart
+cat > ~/.config/autostart/terminator-tree.desktop << 'EOF'
+[Desktop Entry]
+Type=Application
+Name=Terminator (tree layout)
+Comment=Launch Terminator with the "tree" layout at login
+Exec=terminator --layout=tree
+Icon=terminator
+Terminal=false
+X-GNOME-Autostart-enabled=true
+EOF
+
+Готово — при следующем входе в систему откроется тот же layout с теми же командами.
 
