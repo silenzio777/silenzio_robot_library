@@ -53,10 +53,12 @@ sudo apt install curl git wget nano
 
 ### Disabling Wayland:
 - Wayland is an alternative to the xorg windows system. One day, it will be terrific. For now, it does not work with x11vnc or other important applications like TeamViewer.
+
 ```
 sudo nano /etc/gdm3/custom.conf
 ```
-- # Uncomment the line below to force the login screen to use Xorg
+`#` Uncomment the line below to force the login screen to use Xorg
+
 ```
 WaylandEnable=false
 ```
