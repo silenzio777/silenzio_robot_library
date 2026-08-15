@@ -98,24 +98,16 @@ Install app, run:
 __________
 
 
-Как перенести на другую машину
-
-Всего два файла определяют всё поведение — их достаточно скопировать (или пересоздать вручную по инструкции ниже). Требования на целевой машине: Ubuntu + GNOME, установлен terminator, установлен ROS2 Humble в /opt/ros/humble (или поправить путь), и существует каталог ~/lib/robot_stand (или тоже поправить путь).
-
-Вариант А — просто скопировать файлы (быстрее всего)
-
-scp ~/.config/terminator/config user@другая-машина:~/.config/terminator/config
-scp ~/.config/autostart/terminator-tree.desktop user@другая-машина:~/.config/autostart/terminator-tree.desktop
-
-⚠️ Если на целевой машине в ~/.config/terminator/config уже что-то настроено (свои профили/layout'ы) — файл перезапишется целиком. Тогда используй Вариант Б и просто добавь секцию [[tree]] руками в существующий файл.
-
-Вариант Б — воспроизвести вручную
+### Как layout перенести на другую машину
 
 1. Установить terminator (если не стоит):
+```
 sudo apt install terminator
+```
 
 2. Прописать layout. Открой ~/.config/terminator/config и вставь/слей это содержимое (секция [[tree]] внутри [layouts] — если файла ещё нет, можно взять целиком):
 
+```
 [global_config]
   suppress_multiple_term_dialog = True
 [profiles]
@@ -184,14 +176,16 @@ sudo apt install terminator
       directory = /home/ИМЯ_ПОЛЬЗОВАТЕЛЯ/lib/robot_stand
       command = "source /opt/ros/humble/setup.bash; exec bash"
 [plugins]
-
-Замени ИМЯ_ПОЛЬЗОВАТЕЛЯ и, если ROS2 не Humble или лежит в другом месте — путь /opt/ros/humble/setup.bash везде (4 места).
+```
 
 3. Проверить layout:
+```
 terminator --layout=tree
-Должно открыться 2 окна: одиночный терминал + окно с деревом из 4 панелей (joy_node / teleop_twist_joy / df -h / robot_stand).
+```
 
 4. Настроить автозапуск при входе:
+
+```  
 mkdir -p ~/.config/autostart
 cat > ~/.config/autostart/terminator-tree.desktop << 'EOF'
 [Desktop Entry]
@@ -203,6 +197,5 @@ Icon=terminator
 Terminal=false
 X-GNOME-Autostart-enabled=true
 EOF
-
-Готово — при следующем входе в систему откроется тот же layout с теми же командами.
+```
 
