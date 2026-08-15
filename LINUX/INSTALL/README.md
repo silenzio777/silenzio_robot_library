@@ -1,1 +1,40 @@
 
+
+
+
+
+
+### Install sublime text:
+
+```
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/sublimehq-archive.gpg
+echo "deb [signed-by=/etc/apt/keyrings/sublimehq-archive.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt install -y sublime-text
+```
+_________
+
+### Install ros-humble-desktop-full:
+
+```
+sudo apt update
+sudo apt install -y software-properties-common curl
+sudo add-apt-repository -y universe
+```
+```
+ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+CODENAME=$(. /etc/os-release && echo "$VERSION_CODENAME")
+curl -L -o /tmp/ros2-apt-source.deb \
+  "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.${CODENAME}_all.deb"
+sudo apt install -y /tmp/ros2-apt-source.deb
+```
+```
+sudo apt update
+sudo apt install -y ros-humble-desktop-full python3-colcon-common-extensions
+```
+```
+echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
+source /opt/ros/humble/setup.bash
+python3 -c "import rclpy; from geometry_msgs.msg import Twist; print('rclpy OK')"
+```
