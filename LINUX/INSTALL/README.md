@@ -38,3 +38,40 @@ echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
 source /opt/ros/humble/setup.bash
 python3 -c "import rclpy; from geometry_msgs.msg import Twist; print('rclpy OK')"
 ```
+
+
+### Fresh system install:
+
+```
+sudo add-apt-repository universe
+sudo apt update
+sudo apt-get install chromium-browser
+sudo apt-get install python3-pip
+sudo apt install curl git wget nano
+```
+
+
+### Disabling Wayland:
+- Wayland is an alternative to the xorg windows system. One day, it will be terrific. For now, it does not work with x11vnc or other important applications like TeamViewer.
+```
+sudo nano /etc/gdm3/custom.conf
+```
+- # Uncomment the line below to force the login screen to use Xorg
+```
+WaylandEnable=false
+```
+
+reboot
+
+
+___________
+
+### Install amnezia kvn:
+
+```
+sudo apt update
+
+sudo apt-get install chromium-browser
+sudo apt-get install python3-pip
+sudo apt install curl git wget nano
+```
