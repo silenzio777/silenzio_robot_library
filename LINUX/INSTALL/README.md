@@ -90,8 +90,10 @@ Unzip archive `AmneziaVPN_4.8.11.4_linux_x64.tar.zip`
 chmod +x AmneziaVPN_Linux_Installer.bin
 ```
 
-### Install app
-Run `./AmneziaVPN_Linux_Installer.bin`
+Install app, run:
 
+```
+`./AmneziaVPN_Linux_Installer.bin`
+```
 
 
