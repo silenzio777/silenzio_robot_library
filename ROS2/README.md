@@ -5,6 +5,34 @@
 - [teleop_keyboard](#turtlebot3-turtlebot3-teleop-teleop-keyboard)<br/>
 - [rviz_2d_overlay_plugins](#rviz-2d-overlay-plugins)<br/>
 
+
+
+
+## ROS2 install:
+```
+sudo apt update
+sudo apt install -y software-properties-common curl
+sudo add-apt-repository -y universe
+```
+```
+ROS_APT_SOURCE_VERSION=$(curl -s https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F "tag_name" | awk -F\" '{print $4}')
+CODENAME=$(. /etc/os-release && echo "$VERSION_CODENAME")
+curl -L -o /tmp/ros2-apt-source.deb \
+  "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.${CODENAME}_all.deb"
+sudo apt install -y /tmp/ros2-apt-source.deb
+```
+```
+sudo apt update
+sudo apt install -y ros-humble-desktop-full python3-colcon-common-extensions
+```
+```
+echo 'source /opt/ros/humble/setup.bash' >> ~/.bashrc
+source /opt/ros/humble/setup.bash
+python3 -c "import rclpy; from geometry_msgs.msg import Twist; print('rclpy OK')"
+```
+______
+
+
 ## ROS2 command:
 ```
 nano ~/.bashrc
