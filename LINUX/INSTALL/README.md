@@ -73,8 +73,12 @@ ___________
 
 ```
 sudo apt update
-
-sudo apt-get install chromium-browser
-sudo apt-get install python3-pip
-sudo apt install curl git wget nano
+sudo apt autoremove -y
+sudo apt update
+sudo apt install -y qt6-base-dev libqt6widgets6
+sudo apt install -y libxcb-cursor0 libxcb-xinerama0 libxcb-icccm4 libxcb-keysyms1 libopengl0 libxkbcommon-x11-0
 ```
+### get AmneziaVPN_4.8.11.4_linux_x64.tar.zip from amnezia github:
+[AmneziaVPN_4.8.11.4_linux_x64.tar.zip](https://github.com/amnezia-vpn/amnezia-client/releases/download/4.8.11.4/AmneziaVPN_4.8.11.4_linux_x64.tar.zip)
+
+
