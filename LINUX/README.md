@@ -1682,6 +1682,13 @@ ls -l /media/silenzio/HGST_2TB_BACKUP/BACKUP/UBUNTU_PC/latest
 ```
 
 _______
+### kill f*cking anydesk:
+```
+pgrep anydesk
+2414917
+kill -9 2414917
+```
+_______
 
 ### If you're on X11, gnome-shell should automatically restart:
 ```
